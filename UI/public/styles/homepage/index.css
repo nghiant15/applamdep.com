@@ -1,0 +1,247 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #F3F3F6 !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+video.video-bg {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* HEAD */
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 6rem;
+    height: 100vh;
+}
+
+.header-navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 3rem 0rem;
+}
+
+.header-logo {
+    padding: 0rem 0rem !important;
+}
+
+.custom-input-search {
+    position: relative;
+    margin-left: auto;
+}
+
+.custom-input-search img {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.input-rounded {
+    border-radius: 6rem;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #00070A;
+    background-color: #FFFFFF;
+    background-clip: padding-box;
+    border: 1px solid #FFFFFF;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    outline: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    flex: 4;
+    z-index: 1;
+    color: white;
+}
+
+.header-content .header-title {
+    font-family: "Helvetica-Neue-Bold";
+    font-size: 3.5rem;
+}
+
+.header-content .header-text {
+    font-family: "Helvetica-Neue-Regular";
+    font-size: 2.5rem;
+}
+
+.header-content .header-desript {
+    font-family: "Helvetica-Neue-Regular";
+    font-size: 1.5rem;
+}
+
+.border-homepage {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+}
+
+
+/* END HEAD */
+
+
+/* BODY */
+
+.custom-px {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+
+.descript-box-common {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#homepage_scroll_ID {
+    z-index: 1;
+}
+
+.homepage-introduce-box {
+    padding: 3rem 0rem;
+    text-align: center;
+}
+
+.homepage-introduce-text {
+    font-family: "Helvetica-Neue-Medium";
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: #000000;
+    z-index: 1;
+}
+
+
+/* CARD VIDEO */
+
+.card-app-title {
+    font-family: "Helvetica-Neue-Medium";
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.btn-app-descript,
+.btn-service-descript {
+    font-family: "Helvetica-Neue-Regular";
+    font-size: 1rem;
+    background-color: #f55581;
+    border: 1px solid #f55581;
+    border-radius: 2rem;
+    padding: 0.2rem 0.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.btn-app-descript img,
+.btn-service-descript img {
+    margin-left: 2px;
+}
+
+.card.custom-border {
+    border-radius: 0.6rem;
+}
+
+.card video {
+    max-width: 100%;
+    border-radius: 0.6rem 0.6rem 0rem 0rem;
+}
+
+.card.custom-app-shadow {
+    box-shadow: 0 7px 15px rgb(0 0 0 / 16%)
+}
+
+.service-introduce {
+    font-family: "Helvetica-Neue-Medium";
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.service-descript-box {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+
+.service-title {
+    justify-content: center;
+    font-family: "Helvetica-Neue-Medium";
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.service-text {
+    text-transform: capitalize;
+}
+
+.service-link {
+    text-align: center;
+}
+
+.service-descript {
+    display: flex;
+    align-items: center;
+}
+
+img.custom-border-img {
+    border-radius: 0.6rem 0.6rem 0rem 0rem;
+}
+
+.service-end-text {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0rem;
+    font-family: "Helvetica-Neue-Regular";
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-service-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+}
+
+
+/* CUSTOM FOOTER */
+
+.footer-flex-common {
+    padding: 0px 5px !important;
+}

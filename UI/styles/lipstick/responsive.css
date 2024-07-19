@@ -1,0 +1,30 @@
+@media screen and (min-width: 1440px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    .service-introduce-common-2{
+        font-size: 1.3rem !important;
+        letter-spacing: -1px;
+    }
+    
+}
+
+
+@media screen and (max-width: 480px) {
+    /* BODY */
+    .border-info-common .border-info-body .info-body-box{
+        padding: 0 !important;
+    }
+
+    .info-body-box .info-body-title{
+        font-size: 1.3rem !important;
+        letter-spacing: -1px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .service-introduce-common-2{
+        word-spacing: 4px;
+    }
+}

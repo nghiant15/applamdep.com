@@ -1,0 +1,244 @@
+.table-center {
+    text-align: center;
+  }
+  .history_newSoida h1 {
+    margin: auto 0;
+    color: var(--main_color);
+    font-family: var(--font-main);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    /* line-height: 19px; */
+    text-transform: uppercase;
+    text-align: center;
+  }
+  #table_info-voucher{
+    /* overflow-x: scroll; */
+  }
+  .history_newSoida {
+    padding-top: 40px;
+    min-height: 400px;
+  }
+  .title-table-history {
+    z-index: 10;
+    background: #fff;
+    padding: 0px 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0px;
+  }
+  .center-right {
+    padding: 0px 16px;
+    flex: 0 0 auto;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  .center-right h3 {
+    flex: 1 1 auto;
+  }
+  .center-right svg {
+    margin-bottom: 6px;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    cursor: pointer;
+  
+    stroke: none;
+    fill: var(--main_color);
+    width: 32px;
+    height: 32px;
+    line-height: 0;
+    font-size: 0px;
+    vertical-align: middle;
+  }
+  .table_newSoida {
+  
+    padding: 12px 6px 0px 6px;
+    display: flex;
+    justify-content: center;
+  }
+  .table_infoVoucher{
+    overflow-x: scroll;;
+  }
+  .table_newSoida table {
+    width: 100%;
+    border-collapse: collapse !important;
+  }
+  
+  .table_newSoida table .history-none {
+    padding: 3em 0;
+    color: var(--main_color);
+    font-family: var(--font-main);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .table_newSoida thead {
+    background-color: #f2f2f2;
+    padding: 8px;
+  }
+  .table_newSoida th {
+    text-transform: uppercase;
+    color: var(--font-black);
+    padding: 14px;
+    border: 1px solid var(--main_color);
+    border-bottom: none !important;
+    font-family: var(--font-main);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+  }
+  .table_newSoida td {
+    color: var(--font-black);
+    padding: 14px;
+    border: 1px solid var(--main_color);
+    font-family: var(--font-main);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 14px;
+    text-align: center;
+  }
+  .table_newSoida tbody {
+    padding: 8px;
+  }
+  .table_newSoida a {
+    text-decoration: underline !important;
+    color: var(--main_color) !important;
+  
+    cursor: pointer;
+  }
+  .table_newSoida a:hover {
+    background-color: none !important;
+    background: none !important;
+    color: var(--main_color) !important;
+  }
+  
+  #table-voucher td {
+    font-size: 14px;
+  }
+  .table-history table {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  .table-history thead tr th {
+    background-color: var(--main_color);
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+  }
+  .table-history thead tr {
+    background-color: var(--main_color);
+  }
+  .table-history tbody td {
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    text-align: center;
+  }
+  .table-history img {
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+  .table-history table span:hover {
+    text-decoration: underline !important;
+  }
+  .table-history table {
+    color: black;
+  }
+  .table-history table span {
+    cursor: pointer;
+  }
+  .table-history {
+    background-size: 100% 100%;
+  }
+  .position__btn-select-modal__desktop {
+    left: 21%;
+    top: 1%;
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    width: 44.6%;
+    justify-content: space-between;
+  }
+  .svg-selection {
+    height: 32px;
+    width: 32px;
+  }
+  .position__btn-select-modal__mobile {
+    position: fixed;
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+  }
+  .img-title-voucher {
+    height: 210px;
+  }
+  .history__content-p {
+    display: flex;
+  
+    justify-content: space-between;
+  }
+  .table-history a {
+    cursor: pointer;
+  }
+  .table-history a:hover {
+    background-color: none !important;
+    background: none !important;
+    color: black !important;
+  }
+  .table-history {
+    overflow-x: scroll;
+  }
+  .table-history table {
+    min-width: 800px;
+  }
+  .product-hot-a {
+    font-size: 13px !important;
+  }
+  
+  .title-history-soida {
+    position: fixed;
+  }
+  .status-tag {
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    -webkit-font-feature-settings: "tnum";
+    font-feature-settings: "tnum";
+    display: inline-block;
+    height: auto;
+    padding: 0 7px !important;
+    font-size: 12px;
+    line-height: 20px;
+    white-space: nowrap;
+    background: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .table_newSoida th {
+      padding: 4px;
+    }
+    .table_newSoida td {
+      padding: 10px;
+    }
+    .table_newSoida table .history-none {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }

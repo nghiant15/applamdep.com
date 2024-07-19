@@ -1,0 +1,134 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: "Helvetica-Neue";
+    background-color: #FFFFFF;
+}
+
+img {
+    max-width: 100%;
+}
+
+@font-face {
+    font-family: "Helvetica-Neue";
+    src: url("../../assets/font/Helvetica/helveticaneue.ttf");
+}
+
+@font-face {
+    font-family: "Helvetica-Neue-Light";
+    src: url("../../assets/font/Helvetica/helvetica-neue-light.ttf");
+}
+
+@font-face {
+    font-family: "Helvetica-Neue-Regular";
+    src: url("../../assets/font/Helvetica/helvetica-neue-regular.ttf");
+}
+
+@font-face {
+    font-family: "Helvetica-Neue-Bold";
+    src: url("../../assets/font/Helvetica/helvetica-neue-bold.ttf");
+}
+
+@font-face {
+    font-family: "Helvetica-Neue-Medium";
+    src: url("../../assets/font/Helvetica/helvetica-neue-medium.ttf");
+}
+
+/*HEAD*/
+
+.header-bg {
+    background: url("../../assets/images/try_dyeing_hair/banner-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 0rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.custom-input-search {
+    position: relative;
+    margin-left: auto;
+}
+
+.custom-input-search img {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+}
+
+.input-rounded {
+    border-radius: 6rem;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: #FFFFFF;
+    background-clip: padding-box;
+    border: 1px solid #FFFFFF;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    outline: none;
+}
+
+.input-rounded::placeholder {
+    color: #000;
+}
+
+.header-content {
+    flex: 4;
+    align-items: center;
+}
+
+.header-title {
+    font-family: "Helvetica-Neue-Bold";
+    font-size: 3rem;
+    color: #000;
+    line-height: 1;
+}
+
+.header-title span {
+    color: #B67A39 !important;
+}
+
+.header-text {
+    font-family: "Helvetica-Neue-Medium";
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin: 0.5rem 0rem;
+}
+
+.btn-header-more {
+    font-family: "Helvetica-Neue-Regular";
+    color: #FFFFFF;
+    border-radius: 1.5rem;
+    padding: 0.7rem 2.2em;
+    background: #3178E5;
+    outline: 0;
+    border: 1px solid #3178E5;
+    margin: 0.5rem 0rem;
+    color: #FFFFFF;
+}
+
+/* BODY */
+.servive-descript-common{
+    height: 6rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    font-size: 0.9rem;
+}
+
+/*  FOOTER */
+.footer-flex-common{
+    padding: 0 15px !important;
+}

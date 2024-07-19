@@ -1,0 +1,100 @@
+/* .c-sidebar-nav-title {
+  background-color: #363636;
+} */
+.card .card-header .fa {
+  font-weight: bold;
+}
+
+.c-sidebar ul li.c-sidebar-nav-title {
+  /* color: #252525; */
+  color: #000;
+
+  font-weight: bolder;
+  font-size: 13px;
+}
+
+.c-sidebar ul li.c-sidebar-nav-item .c-active {
+  background-color: #ffffff;
+  font-weight: 500;
+}
+
+
+.c-sidebar ul li.c-sidebar-nav-item .c-active .c-sidebar-nav-icon {
+  /* color: #000000; */
+  /* color: #011741; */
+  font-weight: 500;
+  color: #000 !important;
+}
+
+.c-body {
+  background-color: #fff9fe;
+}
+
+.c-header {
+  background-color: #ffffff;
+}
+
+.c-footer {
+  background-color: #fff9fe;
+}
+
+.card .card-header {
+  background-color: #fdfdff;
+}
+
+.modal .modal-dialog .modal-content .modal-body .carousel .carousel-indicators li {
+  background-color: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+.c-sidebar { 
+  background-color: #ffffff !important;
+
+}
+
+.c-sidebar .c-sidebar-brand {
+  
+  background: #321fdb;
+}
+
+.c-sidebar {
+  color:#000 !important;
+}
+
+.c-sidebar-nav-item {
+  background-color: #ffffff;
+ 
+}
+.c-sidebar-nav-item a {
+  color: #000 !important;
+ }
+
+ .c-sidebar-nav-item {
+ 
+  border-bottom: 0.02rem solid #dee5eb !important;
+ 
+ }
+
+ .c-sidebar-nav-item a svg {
+  color: #321fdb !important;
+ }
+
+
+ .c-sidebar-nav-dropdown-toggle {
+
+  color: #000 !important;
+ }
+ .c-sidebar-nav-dropdown-toggle svg {
+  color: #321fdb !important;
+ }
+
+ .c-sidebar ul li.c-sidebar-nav-item .c-active {
+  background-color: #321fdb;
+  color: #ffffff !important;
+
+  
+}

@@ -1,0 +1,286 @@
+@media screen and (min-width: 1025px) {
+    /* HEAD */
+    .input-rounded {
+        padding: 1.375rem 2.5rem;
+    }
+     
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    /* HEAD */
+    .input-rounded {
+        padding: 1.375rem 2.5rem;
+    }
+    .header-bg {
+        padding: 0rem 3rem;
+    }
+    .btn-box-common span {
+        font-size: 1.8rem;
+    }
+    .btn-border-common {
+        width: 4rem;
+        height: 4rem;
+    }
+    .btn-border-common img {
+        padding: 1rem;
+    }
+
+    .service-introduce-common{
+        font-size: 2rem;
+    }
+  
+
+    /* HEAD COL */
+    .header-content .header-title {
+        font-size: 2.5rem;
+    }
+
+
+    /* BORDER SERVICE */
+    .custom-card-title {
+        font-family: "Helvetica-Neue-Bold";
+        color: #FFFFFF;
+        font-size: 1.1rem;
+        overflow: hidden;
+        display: -webkit-box;
+        margin: 0rem;
+        -webkit-line-clamp: 2;
+        height: 2.5rem;
+        line-height: 1.2;
+        word-spacing: -2px;
+    }
+
+
+
+    /* BANNER */
+     .banner-display{
+        margin-bottom: 4rem;
+    }
+
+    /* FOOTER */
+    .footer-title-common {
+        font-size: 1.3rem;
+    }
+    .about-text {
+        font-size: 1.5rem;
+    }
+    .about-box {
+        line-height: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* HEAD */
+    .input-rounded {
+        padding: 1.375rem 2.5rem;
+    }
+    .header-bg {
+        padding: 0rem 2rem;
+    }
+    .btn-box-common span {
+        font-size: 1.4rem;
+    }
+    .btn-border-common {
+        width: 3rem;
+        height: 3rem;
+    }
+    .btn-border-common img {
+        padding: 0.8rem;
+    }
+
+    /* HEAD COL */
+    
+    .header-col .header-title {
+        display: inline-block;
+        font-size: 2rem;
+    }   
+
+
+    /* SERVICE TEXT */
+    .service-introduce-common {
+        font-size: 2rem !important;
+        word-spacing: 7px;
+    }
+
+    .service-introduce-common-2{
+        font-size: 1.3rem;
+    }
+
+    /* BORDER SERVICE */
+    .custom-card-title {
+        display: flex;
+        align-items: center;
+        font-family: "Helvetica-Neue-Bold";
+        color: #FFFFFF;
+        font-size: 1.1rem;
+        overflow: hidden;
+        margin: 0rem;
+        -webkit-line-clamp: unset;
+        height: unset;
+        line-height: 1.2;
+        word-spacing: -2px
+    }
+
+    
+    /* CARD IMAGE PLUGIN */
+    .border-info-common .border-info-body {
+        padding: 2rem 1rem 0rem;
+    }
+    .border-info-common .border-info-body .info-body-box {
+        padding: 1rem 0.5em 0rem;
+        background: #FFFFFF;
+    }
+
+
+    /* FEATURE INTRDUCE */
+    .feature-image-box{
+        margin-bottom: 0px;
+    }
+
+    
+
+
+    /* BANNER */
+    .banner-display{
+        margin-bottom: 3rem;
+    }
+
+
+
+    /* FOOTER */
+    .about-box {
+        flex-direction: column;
+    }
+    .about-box .about-info {
+        margin-bottom: 0.5rem;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    /* HEAD */
+    .header-bg {
+        padding: 0rem 1rem;
+    }
+    .header-navbar .header-logo {
+        display: none !important;
+    }
+    .header-navbar .col-sm-5 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .btn-box-common span {
+        font-size: 1.3rem;
+    }
+    .btn-border-common {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+    .btn-border-common img {
+        padding: 0.8rem;
+    }
+
+    /* SERVICE TEXT */
+    .service-introduce-common{
+        padding: 0 !important;
+        font-size: 1.8rem !important;
+    }
+
+
+    /* FOOTER */
+    .about-info .about-text {
+        font-size: 1.3rem;
+    }
+    .footer-flex-common {
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+      /* INTODUCE BACKGROUND BLUE */
+      .border-info-head .info-head-title, strong{
+        word-spacing: -1px;
+        font-size: 1.3rem;;
+    }
+
+    .input-rounded {
+        padding: 1.375rem 2.5rem;
+    }
+    .about-info .about-descript {
+        word-spacing: -2px;
+    }
+    /* BODY */
+    .border-info-common .border-info-body {
+        padding: 1rem 1rem 0 !important;
+    }
+
+    .border-info-common .border-info-body .info-body-box {
+        padding: 1rem 0.5em 0rem;
+        background: #FFFFFF;
+    }
+
+      /* SERVICE TEXT */
+      .service-introduce-common{
+        padding: 0 !important;
+        font-size: 1.5rem !important;
+    }
+
+    .border-info-common .border-info-common .b
+    /* FOOTER */
+    .footer-about-us .footer-card-body {
+        padding: 1.5rem !important;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    /* INTODUCE BACKGROUND BLUE */
+    .border-info-head .info-head-title, strong{
+        word-spacing: -1px;
+        font-size: 1.2rem;;
+    }
+
+    /* FOOTER */
+    .footer-container-common .container {
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+    .footer-flex-common {
+        justify-content: space-between !important;
+        padding: 0 !important;
+        margin-bottom: 2rem !important;
+    }
+    .footer-about-us .footer-card-body {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    /* HEAD SOCIAL */
+    .header-social{
+        gap: 1rem;
+        justify-content: center;
+    }
+
+      /* INTODUCE BACKGROUND BLUE */
+    .border-info-common .border-info-body .info-body-box{
+        padding: 0rem !important;
+    }
+    .border-info-head .info-head-title, strong{
+        word-spacing: -1px;
+        font-size: 1rem;;
+    }
+
+    /* BANNER */
+    .banner-display{
+        margin-bottom: 2rem;
+    }
+
+    /* ABOUT US */
+    .about-info .about-text {
+        letter-spacing: -2px;
+    }
+    
+}

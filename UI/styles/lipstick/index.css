@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: "Helvetica-Neue";
+    background-color: #FFFFFF;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* HEAD */
+.header-bg {
+    background: url("../../assets/images/lipstick/banner_lipstick.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 0rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.custom-input-search {
+    position: relative;
+    margin-left: auto;
+}
+
+.custom-input-search img {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+}
+
+.input-rounded {
+    border-radius: 6rem;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: #FFFFFF;
+    background-clip: padding-box;
+    border: 1px solid #FFFFFF;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    outline: none;
+}
+
+.input-rounded::placeholder {
+    color: #000;
+}
+
+
+.lipstick-btn-box{
+    flex: 5;
+    align-items: flex-end;
+}
+
+
+/* CUSTOM CLASS GLOBAL */
+
+.info-head-text{
+    text-align: justify;
+}

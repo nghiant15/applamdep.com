@@ -1,0 +1,149 @@
+@media screen and (min-width: 1025px) {
+    .input-rounded {
+        padding: 1.375rem 3rem;
+    }
+
+    /* .cskh-box {
+        padding: 3rem 0rem 4rem;
+    }
+    .cskh-text-2::before {
+        width: calc(50% - 20%);
+        left: calc(50% - 15%);
+    } */
+}
+
+@media screen and (max-width:1024px) {
+    
+    /* HEAD */
+    .header-container{
+        padding:0rem 4rem;
+    }
+
+
+    .header-content .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-content .header-text {
+        font-size: 2rem;
+    }
+
+    .header-content .header-desript {
+        font-size: 1.3rem;
+    }
+
+   
+    .border-homepage{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .border-homepage img {
+        padding: 1rem;
+    }
+
+    /* END HEAD */
+
+
+    /* BODY */
+    .homepage-introduce-text, .service-introduce{
+        font-size: 1.7rem;
+    }
+
+    .card-app-title{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    /* HEAD */
+    .header-container{
+        padding:0rem 2rem;
+    }
+
+    .header-content .header-title {
+        font-size: 2.0rem;
+    }
+    .header-content .header-text {
+        font-size: 1.5rem;
+    }
+
+    .header-content .header-desript {
+        font-size: 1.2rem;
+    }
+
+    
+    .border-homepage{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .border-homepage img {
+        padding: 0.8rem;
+    }
+
+    /* END HEAD */
+
+
+    /* BODY */
+    .homepage-introduce-text, .service-introduce{
+        font-size: 1.3rem;
+    }
+
+    .service-end-text{
+        font-size: 1.2rem;
+    }
+
+    .card-app-title{
+        font-size: 1.2rem;
+        word-spacing: -2px;
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+
+    /*  HEAD  */
+    .header-container{
+        padding: 0 1rem;
+    }
+
+    .header-content .header-title {
+        font-size: 1.5rem;
+    }
+    .header-content .header-text {
+        font-size: 1.3rem;
+    }
+    .header-content .header-desript {
+        font-size: 1rem;
+    }
+
+  
+
+    .border-homepage{
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .border-homepage img {
+        padding: 0.8rem;
+    }
+    /* END HEAD */
+
+
+    /* BODY */
+    /* .homepage-introduce-text{
+        font-size: 1rem;
+    } */
+
+    .homepage-introduce-box{
+        padding: 2rem 0rem;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .header-container{
+        padding: 0 .5rem;
+    }
+}

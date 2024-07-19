@@ -1,0 +1,42 @@
+@media screen and (max-width: 1024px) {
+    .header-content .header-title {
+        font-size: 2.5rem; 
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .header-col {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        text-align: center;
+    }
+
+    .header-col {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .border-info-common .border-info-head {
+        padding: 0 !important;
+    }
+
+    #chart_image_ID{
+        margin-bottom: 1rem;
+    }
+
+    .chart-title{
+        font-size: 1rem;
+        margin-bottom: 0rem;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .border-info-head .info-head-title, strong{
+        font-size: 1.2rem !important;
+    }
+}

@@ -1,0 +1,329 @@
+
+.nav-button{
+    margin-top: 20px !important;
+}
+@media only screen and (max-width: 600px) {
+    .content-plugin {
+        .bold-text {
+            font-family: SFU Futura;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px !important;
+            line-height: 17px !important;
+
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .normal-text {
+            font-family: SFU Futura;
+            font-style: lighter;
+
+            font-weight: 300 !important;
+            font-size: 10px !important;
+            line-height: 14px !important;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        width: 100%;
+        max-width: unset !important;
+        .banner {
+          
+            .titleBanner {
+                font-size: 82px !important;
+                line-height: 127px !important;
+            }
+        }
+        .hadernav {
+            max-width: 100% !important;
+            margin: auto !important;
+            .title-header {
+                .soida {
+                    font-size: 30px !important;
+                    line-height: 62px !important;
+                    margin-right: unset !important;
+                }
+                .online {
+                    font-size: 30px !important;
+                    line-height: 62px !important;
+                }
+                .ai {
+                    font-size: 22px !important;
+                    line-height: 31px !important;
+                }
+            }
+            .sologan {
+                display: flex !important;
+                img {
+                    width: 20.62px !important;
+                    height: 5px !important;
+                }
+                font-size: 12px !important;
+                line-height: 17px !important;
+                /* identical to box height */
+
+                letter-spacing: 0.05em !important;
+
+                color: #1a214f;
+            }
+        }
+
+        .homepage-bottom {
+            .nav-column1 {
+                width: 108px;
+                height: 54px;
+            }
+            .nav-column2 {
+                width: 89px;
+                height: 71px;
+            }
+            .nav-column3 {
+                width: 110px;
+                height: 71px;
+            }
+
+            .bold-text {
+                font-size: 12px !important;
+                line-height: 17px !important;
+            }
+
+            .normal-text {
+                font-size: 10px !important;
+                line-height: 14px !important;
+                // font-style: lighter !important;
+            }
+            .row_bottom {
+                span {
+                    font-family: SFU Futura;
+                    font-style: normal !important;
+                    font-weight: normal !important;
+                    font-size: 12px !important;
+                    line-height: 17px !important;
+                }
+            }
+        }
+    }
+
+    .button-menu-button {
+        .btn1 {
+            width: 54px !important;
+            height: 28px !important;
+        }
+
+        .btn2 {
+            width: 76px !important;
+            height: 28px !important;
+        }
+        .btn3 {
+            width: 116px !important;
+            height: 28px !important;
+        }
+
+        .btn4 {
+            width: 83px !important;
+            height: 28px !important;
+        }
+        button {
+            font-family: SFU Futura;
+            font-style: normal !important;
+            font-weight: bold !important;
+            font-size: 12px !important;
+            line-height: 17px !important;
+        }
+        .tablink {
+            padding: 0 0 !important;
+            margin-right: 2% !important;
+        }
+    }
+    .tabcontent {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+        .description-contet {
+            .title-description-content {
+                font-family: SFU Futura;
+                font-style: normal;
+                font-weight: bold !important;
+                font-size: 12px !important;
+                line-height: 17px !important;
+                /* identical to box height */
+
+                color: #1a214f;
+            }
+            .content-paragraph {
+                font-family: SFU Futura;
+                font-style: normal !important;
+                font-weight: normal !important;
+                font-size: 12px !important;
+                line-height: 17px !important;
+
+                color: #000000;
+            }
+        }
+    }
+    .spaceAjustVer {
+        margin-top: 23px !important;
+    }
+    .nav-button {
+        padding: unset !important;
+        button {
+            padding: unset !important;
+            width: 194px !important;
+            height: 35px !important;
+            background-color: #3c77e3 !important;
+            font-family: SFU Futura;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 17px;
+            /* identical to box height */
+
+            color: #ffffff;
+            border: none;
+        }
+    }
+
+    .poupupContainer {
+        .modalpopup {
+            .maincontent {
+                font-family: SFU Futura !important;
+                font-style: normal;
+                font-weight: bold !important;
+                font-size: 12px !important;
+                line-height: 17px !important;
+
+                color: #000000 !important;
+            }
+            .descriptionContent {
+                font-family: SFU Futura;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px !important;
+                line-height: 17px !important;
+
+                color: #000000 !important;
+            }
+        }
+    }
+
+    .box-modal-suggestion {
+        width: 292px !important;
+        height: 42px !important;
+        margin: auto;
+
+        .text-center-box {
+            font-family: SFU Futura;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 21px;
+            text-align: center;
+
+            color: #000000;
+        }
+    }
+    .resultNote {
+        width: 100%;
+        padding: 0px 23px;
+
+        .text-title-paragraph {
+            margin-top: 19px !important;
+            font-family: SFU Futura;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 17px;
+            /* identical to box height */
+
+            color: #1c213f;
+        }
+        .description {
+            font-family: SFU Futura;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 17px;
+
+            color: #1c213f;
+        }
+    }
+
+    .result-list {
+        margin-top: 19px !important;
+
+        .result-item {
+            width: 362px !important;
+            height:  max-content !important;
+            padding: 0px 0px !important;
+            margin-top: 20px !important;
+
+            .avatar-image {
+                width: 137px !important;
+                img {
+                    width: 97% !important;
+                    // height: 200px;
+                }
+            
+            }
+            .content-description {
+                width: 216px !important;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: justify;
+                span {
+                    font-family: SFU Futura;
+                    font-style: normal;
+                    font-weight: 300 !important;
+                    font-size: 12px !important;
+                    line-height: 17px !important;
+
+                    color: #1c213f;
+                }
+
+                .title-bold {
+                    font-family: SFU Futura;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 20px;
+                    /* identical to box height */
+
+                    color: #1c213f;
+                }
+                a {
+                    color: #1c213f;
+                    font-family: SFU Futura;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 12px;
+                    line-height: 17px;
+                }
+            }
+        }
+    }
+
+    .box-class-center {
+        margin-top: 21px;
+        margin-bottom: 22px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    
+        background-color:#e9f3ff;
+
+        p{
+            width: 312px !important;
+
+            font-family: SFU Futura;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center !important;
+
+            color: #1C213F;
+        }
+    }
+    
+}

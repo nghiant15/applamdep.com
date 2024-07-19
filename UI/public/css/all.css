@@ -1,0 +1,153 @@
+/* @import "./recommend.css"; */
+@import "./main.css";
+/* @import "./history.css"; */
+@import "./layout.css";
+@import "./welcome.css";
+/* @import "./result.css"; */
+/* @import "./templateForm.css"; */
+/* @import "./makeup.css"; */
+/* @import "./footer.css"; */
+/* @import "./global.css"; */
+@import "./status.css";
+@import "./table.css";
+@import "./button.css";
+@import "./form.css";
+/* @import "./aia.css"; */
+/* @import './evoucher.css'; */
+/* @import './header.css'; */
+@import "./general.css";
+@import "./animation.css";
+@import "./reponsive.css";
+/* @import "./updateResponsive.css"; */
+
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../newFont/SFUFutura/SFUFuturaRegular.TTF");
+}
+@font-face {
+  font-family: "SFU Futura";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../newFont/SFUFutura/SFUFuturaBook.TTF");
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../newFont/SFUFutura/SFUFuturaBold.TTF");
+
+  font-weight: bold;
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../newFont/SFUFutura/SFUFuturaBookOblique.TTF");
+
+  font-style: oblique;
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../newFont/SFUFutura/SFUFuturaLightOblique.TTF");
+
+  font-style: italic;
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../newFont/SFUFutura/SFUFuturaExtraBoldOblique.TTF");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../newFont/SFUFutura/SFUFuturaLight.TTF");
+
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../public/fonts/Futura/FUTURA/SFUFuturaLight.TTF");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../public/fonts/Futura/FUTURA/SFUFuturaRegular.TTF");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../public/fonts/Futura/FUTURA/SFUFuturaRegular.TTF");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFU Futura";
+  src: url("../../public/fonts/Futura/FUTURA/SFUFuturaRegular.TTF");
+  font-weight: 600;
+  font-style: italic;
+}
+html {
+  font-family: "SFU Futura", sans-serif !important;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+button {
+  cursor: pointer;
+}
+svg {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+
+:root {
+  --a-blue-1: #027fca;
+  --font-main: Arial, Helvetica, sans-serif;
+  --black: black;
+  --font-black: #343a40;
+  --font-black-2: #343a40;
+  --font-footer: #343a40;
+  --font-gray: #787576;
+  --font-smoke: rgba(102, 102, 102, 0.85);
+}
+
+.tippy-box[data-theme~="main"] {
+  background-color: var(--main_color);
+  color: #fff;
+}
+.tippy-box[data-theme~="main"] > .tippy-arrow::before {
+  border-top-color: var(--main_color);
+  border-bottom-color: var(--main_color);
+}
+.font--black{
+  color: var(--font-footer);
+}
+.font--white{
+  color: var(--white);
+}
+.font--main{
+  color: var(--main_color);
+}
+.desktop-inline{
+  display: inline-block;
+}
+
+@media (max-width:768px) {
+  .desktop-inline{
+    display: block;
+  }
+  .mobi-center{
+    text-align: center;
+  }
+}

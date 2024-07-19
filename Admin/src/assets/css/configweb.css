@@ -1,0 +1,149 @@
+.config-web__border-img {
+  padding: 20px 40px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  position: relative;
+}
+.config_footer_box {
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-top: 20px;
+}
+.config-box-border {
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-top: 20px;
+  position: relative;
+}
+.config-web .box-edit {
+  border: 1px dashed #333;
+  padding: 10px;
+}
+.config-web .box-edit--guide-photo {
+  position: absolute;
+}
+
+.config-web__border-img .field__editor {
+  position: absolute;
+  gap: 20px;
+  width: 88%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+}
+
+.field__editor input {
+  min-width: 600px;
+  height: 100%;
+}
+.field__editor .form-group {
+  height: 100%;
+  display: flex;
+  margin: 0;
+}
+.field__editor-voucher--endow {
+  top: 390px;
+  left: 42px;
+}
+.field__editor-voucher--expiry {
+  top: 490px;
+  left: 42px;
+}
+
+.field__editor-voucher--supplier {
+  top: 590px;
+  left: 42px;
+}
+.field__editor-voucher--condition {
+  top: 690px;
+  left: 42px;
+}
+.field__editor-voucher--sendSMS {
+  height: 100px !important;
+  top: 740px;
+  left: 42px;
+}
+.img--guide-photo {
+  width: 500px;
+  height: 500px;
+  top: 62px;
+  left: 121px;
+  position: absolute;
+}
+.field__editor-homepage--guide-photo {
+  cursor: pointer;
+  color: #fff !important;
+  width: auto !important;
+  background: #585a61;
+  border-radius: 8px;
+  border: 1px dashed #ccc;
+  justify-content: left !important;
+  top: 300px;
+  left: 290px;
+  padding: 10px;
+  gap: 10px !important;
+}
+.field__editor-homepage--guide-photo svg {
+  fill: #fff !important;
+  color: #fff !important;
+}
+.field__editor-homepage--guide-photo p {
+  margin: auto 0;
+}
+.field__editor-homepage--guide-photo input {
+  position: absolute;
+  height: 100%;
+  min-width: 100px;
+  z-index: 20;
+  opacity: 0;
+}
+.field__editor-button--get-voucher {
+  height: 75px !important;
+  top: 575px;
+  left: 44px;
+}
+.field__editor-button--get-voucher input{
+  min-width: 450px !important;
+}
+.field__editor-button--register-get-voucher{
+  height: 93px !important;
+  top: 525px;
+  left: 43px;
+}
+.field__editor-button--register-get-voucher input{
+  min-width: 450px !important;
+}
+.field__editor-form--title-get-voucher{
+  height: 93px !important;
+  top: 53px;
+  left: 43px;
+}
+.field__editor-form--title-get-voucher input{
+  min-width: 600px !important;
+}
+.field__editor-form--text-sales{
+  height: 40px !important;
+  top: 156px;
+  left: 43px;
+}
+.field__editor-form--text-sales input{
+  min-width: 450px !important;
+}
+.field__editor-form--title-login-view-voucher{
+  height: 75px !important;
+  top: 225px;
+  left: 46px;
+}
+.field__editor-form--title-login-view-voucher input{
+  min-width: 620px !important;
+}
+.field__editor-button--title-register-get-voucher{
+  height: 90px !important;
+  top: 88px;
+  left: 46px;
+}
+.field__editor-button--title-register-get-voucher input{
+  min-width: 650px !important;
+
+}

@@ -1,0 +1,47 @@
+.text-center-paragrapb {
+
+    text-align: center;
+    margin-top: 20px;
+}
+
+#formReward {
+     margin-top: 32px;
+    padding: 10px;
+    button {
+        text-align: center;
+        width: 115px;
+height: 35px;
+background-color: #3C77E3;
+border: none;
+font-family: SFU Futura;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 17px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+    }
+    .submit-form{
+        width: 100%;
+        text-align: center;
+    }
+
+    input {
+        background-color : #F1F4F1; 
+        
+    }
+    label{
+        font-family: SFU Futura;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 21px;
+/* identical to box height */
+
+
+color: #000000;
+
+    }
+}

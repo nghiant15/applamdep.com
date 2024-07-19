@@ -1,0 +1,1000 @@
+   45  git pull
+   46  pm2 reload all
+   47  pm2 restart all
+   48  service nginx restart
+   49  pm2 reload all
+   50  pm2 restart all
+   51  service nginx restart
+   52  ls
+   53  cd ~
+   54  ls
+   55  cd totalServe/
+   56  ls
+   57  cd tikiweb-admin/
+   58  git pull
+   59  pm2 reload all
+   60  pm2 restart all
+   61  service nginx restart
+   62  cd totalServe/
+   63  cd tikiweb-admin/
+   64  git pull
+   65  pm2 reload all
+   66  pm2 restart all
+   67  service nginx restart all
+   68  service nginx restart
+   69  service nginx reload
+   70  service nginx restart
+   71  exit
+   72  cd totalServe/
+   73  ls
+   74  cd tikiweb-admin/
+   75  git pull
+   76  pm2 reload all
+   77  pm2 restart all
+   78  service nginx restart
+   79  cd ..
+   80  cd tikiweb-admin/
+   81  service nginx stop
+   82  certbot certonly --standalone
+   83  service nginx start
+   84  cd ..
+   85  cd tikiweb-admin/
+   86  git pull
+   87  pm2 reload all
+   88  pm2 restart all
+   89  service nginx restart
+   90  cd /var/www
+   91  s
+   92  ls
+   93  cd 
+   94  cd totalServe/
+   95  ls
+   96  cd tikiweb-admin/
+   97  git pull
+   98  pm2 reload all
+   99  pm2 restart all
+  100  service nginx restart
+  101  ls
+  102  service nginx reload  
+  103  service nginx restart
+  104  pm2 reload all
+  105  pm2 restrt all
+  106  pm2 restart ll
+  107  pm2 restart all
+  108  service nginx restart 
+  109  pm2 reload all
+  110  pm2 restart
+  111  pm2 restart all
+  112  cd etc
+  113  ls
+  114  cd con
+  115  cd ~
+  116  cd etc
+  117  ls
+  118  cd etc
+  119  cd /etc/nginx/
+  120  ls
+  121  cd conf.d/
+  122  ls
+  123  cd ..
+  124  vi nginx.conf
+  125  service nginx restart
+  126  vi nginx.conf
+  127  service nginx restart
+  128  cd ~
+  129  cd totalServe/
+  130  ls
+  131  cd tikiweb-admin
+  132  git pull
+  133  pm2 reload all
+  134  pm2 restart all
+  135  service nginx restart
+  136  cd totalServe/
+  137  git pull
+  138  cd tikiweb-admin/
+  139  git pull
+  140  git status
+  141  pm2 reload all
+  142  pm2 restart all
+  143  cd /var/www
+  144  ls
+  145  cd ~
+  146  cd totalServe/
+  147  ls
+  148  cd tikiweb-admin/
+  149  git pull
+  150  pm2 reload all
+  151  pm2 restart all
+  152  service nginx restart
+  153  cd totalServe/
+  154  ls
+  155  cd tikiweb-admin/
+  156  git pull
+  157  pm2 reload all
+  158  pm2 restart all
+  159  service nginx restart
+  160  git pull
+  161  cd ..
+  162  cd tikiweb-admin/
+  163  git pull
+  164  pm2 reload all
+  165  pm2 restart all
+  166  service nginx restart
+  167  cd ..
+  168  cd tikiweb-admin/
+  169  ls
+  170  cd ~
+  171  cd totalServe/
+  172  cd tikiweb-admin/
+  173  git pull
+  174  pm2 reload all
+  175  pm2 restart all
+  176  service nginx restart
+  177  cd totalServe/
+  178  cd tikiweb-admin/
+  179  git pull
+  180  pm2 reload all
+  181  pm2 restart all
+  182  service nginx restart
+  183  service nginx reload
+  184  service nginx restart
+  185  cd ~
+  186  ls
+  187  cd /var/www
+  188  ls
+  189  cd html/
+  190  ls
+  191  cd ..
+  192  ls
+  193  cd /var/www
+  194  ls
+  195  cd ~
+  196  ls
+  197  cd totalServe/
+  198  cd tikiweb-admin/
+  199  git pull
+  200  pm2 reload all
+  201  pm2 restart all
+  202  service nignx restart
+  203  service nginx restart
+  204  ls
+  205  cd ~
+  206  ls
+  207  git pull
+  208  cd totalServe/
+  209  ls
+  210  cd tikiweb-admin/
+  211  git pull
+  212  pm2 reload all
+  213  pm2 restart all
+  214  service nginx restart
+  215  git pull
+  216  pm2 reload all
+  217  pm2 restart all
+  218  service nginx restart
+  219  git pull
+  220  pm2 reload all
+  221  pm2 restart all
+  222  service nginx restart
+  223  git pull
+  224  pm2 reload all
+  225  pm2 restart all
+  226  service nginx restart
+  227  cd ..
+  228  ls
+  229  cd tikiweb-admin/
+  230  cd ..
+  231  cd tikiweb-admin/
+  232  git pull
+  233  pm2 reload all
+  234  pm2 restart all
+  235  service nginx reload
+  236  service nginx restart
+  237  git pull
+  238  pm2 reload all
+  239  pm2 restart all
+  240  service nginx reload
+  241  service nginx restart
+  242  ls
+  243  cd /var/www
+  244  ls
+  245  cd html
+  246  ls
+  247  cd ..
+  248  cd soidaNew/
+  249  ls
+  250  cd ..
+  251  ls
+  252  service nginx stop
+  253  certbot certonly --standalone
+  254  service nginx restart
+  255  exit
+  256  cd /var/www
+  257  ls
+  258  cd soidaNew/
+  259  ls
+  260  cd ..
+  261  cd  plugin/
+  262  ls
+  263  cd skinAI/
+  264  ls
+  265  cd ..
+  266  cd trangdiem
+  267  cd ..
+  268  ls
+  269  cd plugin/
+  270  ls
+  271  cd cd ~
+  272  cd to
+  273  cd  ~
+  274  cd t
+  275  cd totalServe/
+  276  cd tikiweb-admin/
+  277  git pull
+  278  pm2 reload all
+  279  pm2 restart all
+  280  service nginx restart
+  281  service nginx reload
+  282  service nginx restart
+  283  cd ~
+  284  cd /var/www
+  285  ls
+  286  cd html/
+  287  ls
+  288  cd ..
+  289  ls
+  290  cd ..
+  291  exit
+  292  cd totalServe/
+  293  ls
+  294  cd tikiweb-admin/
+  295  git pull
+  296  pm2 reload all
+  297  pm2 restart all
+  298  pm2 reload all
+  299  pm2 restart all
+  300  pm2 reload all
+  301  pm2 restart all
+  302  service nginx restart
+  303  cd ..
+  304  exit
+  305  cd /var/www
+  306  ls
+  307  cd ..
+  308  cd to
+  309  cd ~
+  310  cd totalServe/
+  311  ls
+  312  cd tikiweb-admin/
+  313  git pull
+  314  pm2 reload all
+  315  pm2 restart all
+  316  service nginx restart
+  317  cd /var/www
+  318  ls
+  319  cd ~
+  320  cd totalServe/
+  321  ls
+  322  cd tikiweb-admin/
+  323  git pull
+  324  pm2 reload all
+  325  pm2 restart all
+  326  service nginx restart 
+  327  service nginx reload 
+  328  service nginx restart
+  329  cd totalServe/
+  330  ls
+  331  cd tikiweb-admin/
+  332  git pull
+  333  pm2 reload all
+  334  pm2 restart all
+  335  serice nginx restart
+  336  service nginx restart
+  337  service nginx reload 
+  338  service nginx restart
+  339  cd ..
+  340  cd tikiweb-admin/
+  341  git pull
+  342  pm2 reload ll
+  343  pm2 reload all
+  344  pm2 restart all
+  345  service nginx restart
+  346  service nginx reload 
+  347  service nginx restart
+  348  cd totalServe/
+  349  cd tikiweb-admin/
+  350  exit
+  351  cd totalServe/
+  352  ls
+  353  cd tikiweb-admin/
+  354  git pull
+  355  pm2 reload all
+  356  pm2 restart all
+  357  service nginx restart
+  358  exit
+  359  cd /etc/
+  360  cd nginx/
+  361  ls
+  362  cd conf.d/
+  363  ls
+  364  cd /to
+  365  cd totalServe/
+  366  ls
+  367  cd tikiweb-admin/
+  368  git pull
+  369  pm2 reload all
+  370  pm2 restart all
+  371  service nginx restart
+  372  git pull
+  373  pm2 reload all
+  374  pm2 restart all
+  375  service nginx restart
+  376  cd ..
+  377  ls
+  378  cd tikiweb-admin/
+  379  ls
+  380  cd ..
+  381  cd /var/www
+  382  ls
+  383  cd ~
+  384  ls
+  385  cd totalServe/
+  386  ls
+  387  cd tikiweb-admin/
+  388  git pull
+  389  pm2 reload all
+  390  pm2 restart all
+  391  service nginx restart
+  392  service nginx stop
+  393  certbot certonly --standalone
+  394  service nginx restart
+  395  service nginx reload
+  396  service nginx restart
+  397  git pull
+  398  pm2 reload all
+  399  pm2 restart all
+  400  service nginx restart
+  401  pm2 reload all
+  402  pm2 restart all
+  403  servic nginx restart
+  404  service nginx restart
+  405  cd ..
+  406  ls
+  407  cd totalServe/
+  408  ls
+  409  cd tikiweb-admin/
+  410  git pull
+  411  pm2 reload all
+  412  pm2 restart all
+  413  service nginx restart
+  414  cd ..
+  415  cd tikiweb-admin/
+  416  git pull
+  417  pm2 reload all
+  418  pm2 restart all
+  419  service nginx restart
+  420  cd ..
+  421  ls
+  422  cd tikiweb-admin/
+  423  git pull
+  424  pm2 reload all
+  425  pm2 restart all
+  426  service nginx restart
+  427  cd /var/www
+  428  ls
+  429  cd ~
+  430  cd totalServe/
+  431  ls
+  432  cd tikiweb-admin/
+  433  git pull
+  434  pm2 reload all
+  435  pm2 restart all
+  436  service nginx restart
+  437  cd totalServe/
+  438  ls
+  439  cd tikiweb-admin/
+  440  git pull
+  441  pm2 relod all
+  442  pm2 reload ll
+  443  pm2 reload all
+  444  pm2 restart all
+  445  service nginx restart
+  446  service nginx stop
+  447  certbot certonly --standalone
+  448  pm2 reload all
+  449  pm2 restart all
+  450  service nginx restart
+  451  service nginx stop
+  452  certbot certonly --standalone
+  453  service nignx restart
+  454  service nginx restart
+  455  cd /etc/nginx
+  456  ls
+  457  cd conf.d/
+  458  cd con
+  459  ls
+  460  rm -rf ungdungsalon.com.conf 
+  461  rm -rf ungdungsoida.com.conf 
+  462  rm -rf thanhvien-ui.applamdep.com.conf 
+  463  rm -rf thanhvien.applamdep.com.conf 
+  464  rm -rf quangcaotuongtac.conf 
+  465  vi menard.applamdep.com.conf
+  466  service nignx restart
+  467  service nginx restart
+  468  systemctl status nginx.service
+  469  service nginx restart
+  470  journalctl -xe
+  471  vi menard.applamdep.com.conf 
+  472  service nginx restart
+  473  ls
+  474  vi tikitech.vn.conf 
+  475  vi menard.applamdep.com.conf 
+  476  service nginx restart
+  477  cd ..
+  478  cd ~
+  479  ls
+  480  cd /var/wwww
+  481  cd /var/www
+  482  ls
+  483  cd soidaNew/
+  484  ls
+  485  git branch
+  486  cd ..
+  487  ls
+  488  cd plugin/
+  489  ls
+  490  cd ..
+  491  ls
+  492  cd html
+  493  ls
+  494  cd ..
+  495  ls
+  496  cd /var/www
+  497  ls
+  498  cd soidaNew/
+  499  ls
+  500  cd ..
+  501  ls
+  502  cd ~
+  503  pm2 reload all
+  504  pm2 restart all
+  505  service nginx restart
+  506  service nginx reload
+  507  service nginx restart
+  508  ls
+  509  service nginx stop
+  510  certbot certonly --standalone
+  511  service nginx restart
+  512  certbot certonly --standalone
+  513  service nginx stop
+  514  certbot certonly --standalone
+  515  service nginx restart
+  516  service nginx stop
+  517  certbot certonly --standalone
+  518  service nginx restart
+  519  cd /var/www
+  520  ls
+  521  exit
+  522  cd /var/www
+  523  ls
+  524  cd ~
+  525  cd totalServe/
+  526  ls
+  527  cd tikiweb-admin/
+  528  git pull
+  529  pm2 reload all
+  530  pm2 restart all
+  531  service nginx restart
+  532  ls
+  533  git remote -v
+  534  git remote set-url origin https://NghiaNT15@bitbucket.org/1313133/tikiweb-admin.git
+  535  git remote -v
+  536  git branch
+  537  git fetch origin toalServerTikitech
+  538  git merge origin toalServerTikitech
+  539  git pull
+  540  git log
+  541  !
+  542  cd ..
+  543  ls
+  544  cd tikiweb-admin/
+  545  git pull
+  546  pm2 reload all
+  547  pm2 restart all
+  548  service nginx restart
+  549  cd ..
+  550  cd /var/www
+  551  ls
+  552  rm -rf timdung.com/
+  553  ls
+  554  cd html/
+  555  ls
+  556  git clone https://NghiaNT15@bitbucket.org/1313133/tikiweb-admin-ui.git
+  557  ls
+  558  cd tikiweb-admin-ui
+  559  git checkout is_voucher_admin
+  560  ls
+  561  git pull
+  562  npm install
+  563  ls
+  564  npm install
+  565  npm run build
+  566  pm2 reload all
+  567  pm2 restart all
+  568  service nginx restart
+  569  pm2 stop 7
+  570  pm2 list
+  571  pm2 restart all
+  572  pm2 reload ll
+  573  pm2 reload all
+  574  pm2 restart all
+  575  service nginx restart
+  576  cd /var/www
+  577  ls
+  578  cd ..
+  579  cd ti
+  580  ls
+  581  cd ..
+  582  ls
+  583  cd ~
+  584  ls
+  585  cd tikitech-admin/
+  586  ls
+  587  cd ..
+  588  cd totalServe/
+  589  ls
+  590  cd tikiweb-admin/
+  591  git branch
+  592  pm2 start bin/www 
+  593  pm2 stop 6
+  594  npm start
+  595  setenforce 0
+  596  pm2 list
+  597  pm2 reload ll
+  598  pm2 reload all
+  599  pm2 restart all
+  600  service nginx restart
+  601  pm2 reload all
+  602  pm2 restart all
+  603  service nginx restart
+  604  pm2 reload all
+  605  pm2 restart all
+  606  service nginx restart
+  607  cd ..
+  608  ls
+  609  pm2 reload all
+  610  pm2 restart all
+  611  service nginx restart
+  612  cd  tiki
+  613  ls
+  614  cd totalServe/
+  615  ls
+  616  cd tikiweb-admin/
+  617  ls
+  618  git log
+  619  git pull
+  620  pm2 reload all
+  621  pm2 restart all
+  622  service nginx restart
+  623  pm2 stop 5
+  624  pm2 stop 3
+  625  pm2 start 3
+  626  pm2 stop 1
+  627  pm2 reload all
+  628  pm2 restart all
+  629  service nginx restart
+  630  cd totalServe/
+  631  ls
+  632  cd tikiweb-admin/
+  633  git pull
+  634  pm2 reload all
+  635  pm2 restart all
+  636  service nginx restartr
+  637  service nginx restart
+  638  pm2 restart all
+  639  pm2 reload all
+  640  pm2 restart all
+  641  service nginx restartr
+  642  pm2 reload all
+  643  pm2 restart all
+  644  service nginx restartr
+  645  cd /var/wwww
+  646  ls
+  647  cd /etc/nginx
+  648  ls
+  649  vi nginx.conf
+  650  cd conf.d/
+  651  ls
+  652  vi app.lamdep.com.conf 
+  653  cd /etc/nginx
+  654  ls
+  655  cdc conf.d/
+  656  ls
+  657  cd conf.d/
+  658  ls
+  659  cat portal.applamdep.com.conf 
+  660  vi api.deal24h.vn.conf
+  661  nginx -t
+  662  ls
+  663  cat tikitech.vn.conf 
+  664  ls
+  665  vi easyfc.com.vn.conf 
+  666  :q!
+  667  cd /etc/nginx
+  668  ls
+  669  cd conf.d/
+  670  ls
+  671  vi portal.applamdep.com.conf 
+  672  pm2 reload all
+  673  pm2 restart all
+  674  service nginx restart
+  675  systemctl status nginx.service
+  676  cd /etc/nginx/conf.d
+  677  ls
+  678  vi api.deal24h.vn.conf 
+  679  service nginx restart
+  680  systemctl status nginx.service
+  681  nginx -t
+  682  service nginx stop
+  683  certbot certonly --standalone
+  684  ls
+  685  rm -rf api.deal24h.vn.conf 
+  686  ls
+  687  nginx -t
+  688  service nginx restart
+  689  service nginx stop
+  690  certbot certonly --standalone
+  691  service nginx restart
+  692  pm2 reload all
+  693  pm2 restart all
+  694  service nginx restart
+  695  pm2 reload all
+  696  pm2 restart all
+  697  service nginx restart
+  698  pm2 reload all 
+  699  pm2 restart ll
+  700  pm2 restart all
+  701  service nginx stop
+  702  certbot certonly --standalone
+  703  service nginx restart
+  704  certbot certonly --standalone
+  705  service nginx restart
+  706  ls
+  707  cd /var/
+  708  ls
+  709  cd www/
+  710  ls
+  711  cd tikitech
+  712  ls
+  713  cd ..
+  714  cd ~
+  715  ls
+  716  cd plugin/
+  717  ls
+  718  cd tikiweb-admin
+  719  git status
+  720  git branch
+  721  git add .
+  722  git commit -m "update code"
+  723  git pull
+  724  pm2 reload all
+  725  pm2 restart all
+  726  service nginx restart
+  727  ls
+  728  cd plugin/
+  729  ls
+  730  cd tikiweb-admin
+  731  ls
+  732  pm2 reload all
+  733  git pull
+  734  git branch
+  735  pm2 reload all
+  736  pm2 restart all
+  737  service nginx restart
+  738  service nginx stop
+  739  service nginx start
+  740  ls
+  741  npm start
+  742  pm2 list
+  743  pm2 log
+  744  pm2 dash
+  745  cd ~
+  746  cd plugin/
+  747  ls
+  748  cd tikiweb-admin
+  749  ls
+  750  git pulll
+  751  git pull
+  752  pm2 list
+  753  pm2 stop 0
+  754  npm start
+  755  git log
+  756  ls
+  757  pm2 restart all
+  758  pm2 reload all
+  759  service nginx restart
+  760  cd routes/
+  761  ls
+  762  cd api/
+  763  ls
+  764  cd restful/
+  765  ls
+  766  vi api.js 
+  767  ls
+  768  pm2 reload all
+  769  pm2 restart all
+  770  service nginx restart
+  771  ls
+  772  cd plugin/
+  773  ls
+  774  cd tikiweb-admin
+  775  ls
+  776  git branch
+  777  cd ..
+  778  ls
+  779  cd tikiweb-admin-ui/
+  780  ls
+  781  cd ..
+  782  cd /varr
+  783  cd /var/www
+  784  ls
+  785  cd soidaNew/
+  786  ls
+  787  git branch
+  788  cd /etc/nginx
+  789  ls
+  790  cd conf.d/
+  791  ls
+  792  cat app.lamdep.com.conf 
+  793  cat /var/www/tikitech-fe/applamdep
+  794  cd /var/www/tikitech-fe/applamdep
+  795  ls
+  796  cd /var/www/soidaNew/p
+  797  cd /var/www/soidaNew
+  798  ls
+  799  git remote -v
+  800  git branch
+  801  pm2 reload ll
+  802  pm2 reload all
+  803  pm2 restart all
+  804  cd totalServe/
+  805  ls
+  806  cd tikiweb-admin/
+  807  git pull
+  808  pm2 reload all
+  809  pm2 restart all
+  810  pm2 save
+  811  service nginx restart
+  812  cd /etc/nginx/
+  813  ls
+  814  cd conf.d/
+  815  ls
+  816  cat app.lamdep.com.conf 
+  817  pm2 reload all
+  818  pm2 restart all
+  819  service nginx restart
+  820  ls
+  821  cd plugin/
+  822  ls
+  823  cd tikiweb-admin
+  824  git pull
+  825  pm2 reload all
+  826  pm2 restart all
+  827  service nginx restart
+  828  find / -name iphone-dev.svg
+  829  cd /var/www/tikitech-fe/tikitechapp/
+  830  ls
+  831  service nginx restart
+  832  cd /var/www/tikitech-fe/tikitechapp/
+  833  service nginx restart
+  834  ls
+  835  cd plugin/
+  836  ls
+  837  cd tikiweb-admin
+  838  git puill
+  839  git pull
+  840  git branch
+  841  git pull
+  842  git log
+  843  !
+  844  git remote -v
+  845  find . -type f | grep -i "\.git" | xargs rm
+  846  git remove -v
+  847  it remote add https://NghiaNT15@bitbucket.org/1313133/tikiweb-admin.git
+  848  git remote add https://NghiaNT15@bitbucket.org/1313133/tikiweb-admin.git
+  849  git
+  850  git remove -v
+  851  git init
+  852  git add .
+  853  git remote add origin  https://NghiaNT15@bitbucket.org/1313133/tikiweb-admin.git 
+  854  git branch
+  855  git checkout dev_plugin
+  856  git push origin  dev_plugin
+  857  git pull
+  858  git branch
+  859  git checkout dev_plugin
+  860  git checkout .
+  861  git checkout dev_plugin
+  862  git add .
+  863  git commit -m "update code"
+  864  git checkout dev_plugin
+  865  git branch
+  866  git log
+  867  !
+  868  pm2 reload all
+  869  pm2 restart all
+  870  pm2 reload all
+  871  pm2 restart all
+  872  service nginx restart
+  873  git branch
+  874  npm install
+  875  npm start
+  876  pm2 reload all
+  877  pm2 restart all
+  878  service nginx restart
+  879  ls
+  880  cd  soida/
+  881  ls
+  882  cd ..
+  883  ;s
+  884  cd /var/www
+  885  ls
+  886  cd soidaNew/
+  887  ls
+  888  git branch
+  889  cd /et
+  890  cd /etc/nginx/
+  891  ls
+  892  cd conf.d/
+  893  cat app.lamdep.com.conf 
+  894  ls
+  895  cat menard.applamdep.com.conf 
+  896  cd ~
+  897  service nginx stop
+  898  service nginx restart
+  899  service nginx stop
+  900  certbot certonly --standalone
+  901  service nginx restart
+  902  cd totalServe/
+  903  ls
+  904  cd tikiweb-admin/
+  905  git pull'
+  906  git pull
+  907  pm2 reload all
+  908  pm2 restart all
+  909  serve nginx restart
+  910  service nginx restart
+  911  serve nginx restart
+  912  pm2 reload all
+  913  pm2 restart all
+  914  service nginx restart
+  915  cd ~
+  916  ls
+  917  cd totalServe/
+  918  ls
+  919  cd tikiweb-admin/
+  920  ls
+  921  git pull
+  922  git log
+  923  !
+  924  cd ..
+  925  cd admin-app/
+  926  cd ..
+  927  ls
+  928  cd totalServe/
+  929  ls
+  930  cd tikiweb-admin/
+  931  ls
+  932  git pull
+  933  git add .
+  934  git commit -m "update code:
+  935  git commit -m "update code"
+  936  git pull
+  937  git checkout package-lock.json
+  938  git add .
+  939  git commit -m "update ocee"
+  940  git pull
+  941  sudo rm -rf package-lock.json 
+  942  ls
+  943  pm2 reload all
+  944  pm2 restart all
+  945  service nginx restart
+  946  service nginx stop
+  947  certbot certonly --standalone
+  948  pm2 reload all
+  949  pm2 restart all
+  950  service nginx restart
+  951  ls
+  952  cd /etc/nginx/
+  953  ls
+  954  cd conf.d/
+  955  ls
+  956  cat booking.applamdep.com.conf 
+  957  cd /var/www/html
+  958  ls
+  959  cd booking/
+  960  ls
+  961  service nginx stop
+  962  certbot certonly --standalone
+  963  service nginx restart
+  964  cd /etc/nginx/
+  965  ;s
+  966  ls
+  967  cd conf.d/
+  968  ls
+  969  vi admin-api-app.applamdep.com.conf 
+  970  cd ~
+  971  ls
+  972  cd admin-app/
+  973  ls
+  974  cd tikiweb-admin
+  975  git branch
+  976  pm2 list
+  977   service nginx stop
+  978  certbot certonly --standalone
+  979  service nginx restRT
+  980  service nginx restart
+  981  cd /etc/nginx
+  982  ls
+  983  cd conf.d/
+  984  ls
+  985  vi gianhang.applamdep.com.conf 
+  986  service nginx restart
+  987  service nginx stop
+  988  certbot certonly --standalone
+  989  service nginx restart
+  990  ping thulamua.com 
+  991  cd /etc/nginx/
+  992  ls
+  993  cd conf.d/
+  994  ls
+  995  service nginx stop
+  996  certbot certonly --standalone
+  997  service nginx restart
+  998  service nginx stop
+  999  certbot certonly --standalone
+ 1000  service nginx restart
+ 1001  ls
+ 1002  cd plugin/
+ 1003  ls
+ 1004  cd tikiweb-admin
+ 1005  ls
+ 1006  cd public/
+ 1007  ls
+ 1008  cd ls
+ 1009  cd image_b
+ 1010  cd image_banner/
+ 1011  ls
+ 1012  cd ...
+ 1013  cd ..
+ 1014   — inode 2 /
+ 1015   — inode 2 
+ 1016  ls
+ 1017  cd image_brand/
+ 1018  ls
+ 1019  cd ..
+ 1020  ld
+ 1021  cd /etc/nginx
+ 1022  ls
+ 1023  cd conf.d/
+ 1024  ls
+ 1025  cat api-soida.applamdep.com.conf 
+ 1026  cd ..
+ 1027  cd /var
+ 1028  ls
+ 1029  cd ~
+ 1030  cd plugin/
+ 1031  ls
+ 1032  cd tikiweb-admin
+ 1033  git branch
+ 1034  cat package.json 
+ 1035  cd bin/
+ 1036  ls
+ 1037  cat www 
+ 1038  cd ..
+ 1039  ls
+ 1040  lsof -nP | grep -i deleted
+ 1041  cd public/
+ 1042  ls
+ 1043  lsof -nP | grep -i deleted
+ 1044  history >> history.txt

@@ -1,0 +1,1348 @@
+@font-face {
+    font-family: "SFU Futura";
+    src: url("../fonts/SFUFuturaRegular.TTF")
+}
+
+@font-face {
+    font-family: "SFU Futura";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/SFUFuturaRegular.TTF")
+}
+
+@font-face {
+    font-family: "SFU Futura";
+    src: url("../fonts/SFUFuturaBold.TTF");
+    font-weight: bold
+}
+
+@font-face {
+    font-family: "SFU Futura";
+    src: url("../fonts/SFUFuturaObliqueTTF.TTF");
+    font-style: oblique
+}
+
+@font-face {
+    font-family: "SFU Futura";
+    src: url("../fonts/SFUFuturaObliqueTTF.TTF");
+    font-style: italic
+}
+
+@font-face {
+    font-family: "SFU Futura";
+    src: url("../fonts/SFUFuturaBoldOblique.TTF");
+    font-weight: bold;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "SFU Futura";
+    src: url("../fonts/SFUFuturaLight.TTF");
+    font-style: lighter
+}
+
+html {
+    font-family: SFU Futura;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden
+}
+
+.content-page {
+    width: 100%
+}
+
+.content-page .content-plugin {
+    max-width: 800px;
+    margin: auto
+}
+
+.content-page .content-plugin .banner {
+    margin: 10px 0px;
+    background-color: #c4c4c4;
+    color: #000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    text-align: center
+}
+
+.content-page .content-plugin .banner .titleBanner {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 120px;
+    line-height: 150px
+}
+
+.content-page .content-plugin .banner img {
+    max-width: 100%
+}
+
+.content-page .content-plugin .hadernav {
+    max-width: 86%;
+    margin: auto
+}
+
+.content-page .content-plugin .hadernav .title-header {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    font-family: SFU Futura;
+    font-size: 70px !important;
+    font-size: 59px;
+    line-height: 62px;
+    color: #1a214f;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.content-page .content-plugin .hadernav .title-header .soidaXemTuong {
+    
+    font-size: 2.9rem !important;
+   
+}
+
+.content-page .content-plugin .hadernav .title-header .soida {
+    font-weight: bold;
+    margin-right: 10px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, .25)
+}
+
+.content-page .content-plugin .hadernav .title-header .online {
+    font-style: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, .25)
+}
+
+.content-page .content-plugin .hadernav .title-header .ai {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 31px;
+    color: #1a214f
+}
+
+.content-page .content-plugin .hadernav .sologan {
+    display: flex;
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: .05em;
+    color: #1a214f;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.body-image {
+    position: relative;
+    max-width: 464px;
+    max-height: 464px;
+    margin: auto;
+    margin-top: 20px
+}
+
+.body-image .img-top {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.body-image .img-top img {
+    width: 20px;
+    height: 20px
+}
+
+.body-image .img-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+.body-image .img-bottom img {
+    width: 20px;
+    height: 20px
+}
+
+.body-image .image-body {
+    padding: 10px
+}
+
+.body-image .image-body img {
+    width: 98%;
+    display: block;
+    margin: auto
+}
+
+.nav-button {
+    padding: 20px 0px;
+    width: 100%;
+    text-align: center
+}
+
+.nav-button img {
+    margin-right: 5px
+}
+
+.nav-button a {
+    font-family: SFU Futura;
+    background-color: #3c77e3;
+    color: #fff !important;
+    padding: 10px 14px;
+    border: none;
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: bold
+}
+
+.introduction {
+    margin: 20px 0px;
+    width: 100%;
+    height: 200px;
+    background-color: #1c213f;
+    position: relative
+}
+
+.introduction img {
+    width: 100px;
+    height: 200px;
+    margin: auto;
+    margin-left: 66%;
+    margin-right: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+.introduction .text-bold {
+    font-weight: bolder
+}
+
+.introduction .introduction-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: -moz-max-content;
+    height: max-content;
+    text-align: center;
+    display: block
+}
+
+.content-avatar2 {
+    max-width: 464px;
+    margin: auto
+}
+
+.content-avatar2 img {
+    width: 96%;
+    display: block;
+    margin: auto
+}
+
+.content-avata3 {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.content-avata3 img {
+    width: 96%;
+    display: block;
+    margin: auto
+}
+
+.homepage-bottom {
+    padding: 10px 0px;
+    background-color: #1c213f;
+    width: 100%;
+    text-align: center
+}
+
+.homepage-bottom .bold-text {
+    font-size: 16px !important
+}
+
+.homepage-bottom .normal-text {
+    font-size: 18px !important;
+    font-style: lighter !important
+}
+
+.homepage-bottom .row_bottom {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px
+}
+
+span {
+    display: block
+}
+
+p {
+    margin-bottom: 0 !important
+}
+
+.bold-text {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, .25)
+}
+
+.normal-text {
+    font-family: SFU Futura;
+    font-style: lighter;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, .25)
+}
+
+.centerDirect {
+    width: 100%;
+    text-align: center;
+    padding: 3vh 0px
+}
+
+.centerDirect img {
+    margin-top: 10px
+}
+
+.slidebanner {
+    padding: 0px 0px;
+    display: flex
+}
+
+.slidebanner .slidebannerItem {
+    position: relative;
+    width: 206px;
+    height: 226px
+}
+
+.slidebanner .slidebannerItem .avatar {
+    background-color: red;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 2
+}
+
+.slidebanner .slidebannerItem .text-column {
+    background-color: #e9f3fe;
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 30;
+    z-index: 1
+}
+
+.slidebanner .slidebannerItem .text-column span {
+    position: absolute;
+    right: 20;
+    bottom: 30px;
+    color: #636c88;
+    font-family: SFU Futura;
+    font-size: 14px
+}
+
+.nav-menu {
+    padding: 10px 0px;
+    width: 60%;
+    height: 78px;
+    margin: auto;
+    display: flex
+}
+
+.nav-menu .uploadButton {
+    display: inline-block;
+    width: 100px;
+    margin: auto;
+    text-align: center
+}
+
+.nav-menu .uploadButton .uploadImage {
+    width: 73px;
+    height: 78px
+}
+
+.nav-menu .uploadButton .cameraNow {
+    width: 97px;
+    height: 78px
+}
+
+.nav-menu .uploadButton .text {
+    margin-top: 5px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    color: #000
+}
+
+.nav-menu .uploadButton .text a {
+    margin: auto;
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 17px;
+    color: #000;
+    text-decoration: none
+}
+
+.nav-menu .nav-avatar {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: var(--main_color);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, .3);
+    border-radius: 50%
+}
+
+.nav-menu .nav-avatar img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto
+}
+
+.center-text {
+    text-align: center;
+    width: 100%
+}
+
+.boldTitle {
+    font-family: SFU Futura;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 17px;
+    color: #1c213f;
+    margin-bottom: 20px
+}
+
+.startPage-boldTitle {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%
+}
+
+.description-text {
+    padding: 10px
+}
+
+.description-text p {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: flex-end;
+    text-align: justify;
+    color: #000
+}
+
+.last-item span {
+    bottom: 1px !important;
+    text-align: justify
+}
+
+.takeCamera {
+    width: 86%;
+    margin: auto
+}
+
+.takeCamera img {
+    width: 100%
+}
+
+.alerpopup {
+    display: flex;
+    width: 94%;
+    margin: auto
+}
+
+.alerpopup .alert {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 15px
+}
+
+.alerpopup .alert img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.tablink {
+    background-color: #f1f4f1;
+    color: #1a214f;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 17px;
+    width: 22%;
+    margin-right: 3%
+}
+
+.tablink:hover {
+    background-color: #777
+}
+
+.tabcontent {
+    color: #fff;
+    display: none;
+    padding: 100px 20px;
+    height: -moz-max-content;
+    height: max-content;
+    font-family: SFU Futura
+}
+
+.tabcontent .modalpopup {
+    width: 100%;
+    background-color: #f1f4f1;
+    color: #000;
+    padding: 10px;
+    text-align: justify
+}
+
+.tabcontent .modalpopup .maincontent {
+    font-weight: bold;
+    margin-bottom: 13px !important;
+    font-size: 12px;
+    line-height: 17px
+}
+
+.tabcontent .modalpopup .descriptionContent {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    color: #000
+}
+
+.tabcontent .content-tab {
+    width: 100%;
+    display: flex
+}
+
+.tabcontent .content-tab .column-image {
+    width: 30%
+}
+
+.tabcontent .content-tab .column-content {
+    width: 70%
+}
+
+.tabcontent .content-tab .column-content .description-contet {
+    width: 90%;
+    position: relative;
+    background-color: #e9f3ff;
+    height: 100%;
+    color: #1a214f;
+    font-size: 12px;
+    line-height: 17px
+}
+
+.tabcontent .content-tab .column-content .description-contet .title-description-content {
+    font-weight: bold
+}
+
+.tabcontent .content-tab .column-content .description-contet .content-paragraph {
+    color: #000
+}
+
+.poupupContainer {
+    color: #fff;
+    padding: 20px 20px;
+    font-family: SFU Futura
+}
+
+.modalpopup {
+    width: 100%;
+    background-color: #f1f4f1;
+    color: #000;
+    padding: 10px;
+    text-align: justify
+}
+
+.modalpopup .maincontent {
+    font-weight: bold;
+    margin-bottom: 13px !important;
+    font-size: 12px;
+    line-height: 17px
+}
+
+.modalpopup .descriptionContent {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    color: #000;
+    position: relative
+}
+
+.modalpopup .descriptionContent p {
+    font-size: 12px;
+    line-height: 17px
+}
+
+.center-div {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.box-class {
+    background-color: #e9f3ff
+}
+
+.box-class-center {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: SFU Futura;
+    background-color: #e9f3ff;
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center
+}
+
+.button-menu-button {
+    width: 100%;
+    margin: 20px 0px
+}
+
+.image-control-nav {
+    display: flex;
+    font-family: SFU Futura
+}
+
+.box-modal-suggestion {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 21px;
+    text-align: center;
+    color: #000;
+    width: 100%
+}
+
+.box-modal-suggestion .text-center-box {
+    width: 292px;
+    height: 42px;
+    margin: auto;
+    margin-top: 19px;
+    margin-bottom: 19px
+}
+
+.resultNote {
+    margin-top: 19px
+}
+
+.resultNote .text-title-paragraph {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1c213f
+}
+
+.resultNote .description {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1c213f
+}
+
+.result-list {
+    width: 100%;
+    padding: 0px 10px;
+    margin: auto;
+    margin-top: 20px
+}
+
+.result-list .result-item {
+    padding: 0px 0px;
+    height: -moz-max-content;
+    height: max-content;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex
+}
+
+.result-list .result-item .avatar-image {
+    width: 30%
+}
+
+.result-list .result-item .avatar-image img {
+    width: 97%;
+    max-height: 100%
+}
+
+.result-list .result-item .content-description {
+    width: 69%;
+    padding: 0px 10px;
+    text-align: justify
+}
+
+.result-list .result-item .content-description span {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 17px;
+    color: #1c213f
+}
+
+.result-list .result-item .content-description .title-bold {
+    font-weight: bold !important
+}
+
+.result-list .result-item .content-description a {
+    color: #1c213f;
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 17px
+}
+
+.result-list .result-item .content-description ul {
+    margin-left: 0px;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.result-list .result-item .content-description li {
+    padding-left: 0rem !important;
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 17px;
+    color: #1c213f
+}
+
+.modal-content {
+    display: flex
+}
+
+.modal-content .alertRec {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: red;
+    position: relative;
+    margin-right: 10px
+}
+
+.modal-content .alertRec img {
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+.modal-content .description p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000
+}
+
+.nav-button1 button {
+    width: 234px !important
+}
+
+.button-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px
+}
+
+.button-nav a {
+    font-family: SFU Futura;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 17px;
+    color: #1a214f;
+    text-transform: uppercase;
+    color: #1a214f;
+    background-color: #f1f4f1;
+    padding: 6px 10px;
+    margin-right: 20px;
+    text-decoration: none;
+    border: none
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #1c213f !important
+}
+
+button:hover {
+    background-color: #1c213f !important
+}
+
+.right-text {
+    text-align: right
+}
+
+.nav-bar-product-item {
+    padding: 0px 23px
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden
+}
+
+.record-content {
+    width: 100%;
+    padding: 10px 0px
+}
+
+.record-content .record-content-tab {
+    display: flex;
+    width: 100%
+}
+
+.record-content .record-content-tab .image {
+    width: 30%
+}
+
+.record-content .record-content-tab .description {
+    width: 70%;
+    position: relative;
+    background-color: #e9f3ff
+}
+
+.record-content .record-content-tab .description .description-content {
+    width: 90%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #e9f3ff;
+    height: 100%;
+    color: #1a214f;
+    font-size: 12px;
+    line-height: 17px
+}
+
+.record-content .record-content-tab .description .description-content .title-description-content {
+    font-weight: bold !important
+}
+
+.nav-avatar:hover {
+    opacity: .5;
+    color: #666;
+    cursor: pointer
+}
+
+button:hover {
+    background-color: #1a214f;
+    opacity: .7;
+    color: #666;
+    cursor: pointer
+}
+
+ul,
+li {
+    font-family: SFU Futura !important;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 17px;
+    color: #1c213f
+}
+
+.content-tuvan {
+    font-family: SFU Futura !important;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 17px;
+    color: #1c213f
+}
+
+.centerText {
+    text-align: center
+}
+
+.recomendProduct {
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.title-description-content {
+    font-weight: bold !important;
+    margin-bottom: 5px;
+    font-family: SFU Futura !important
+}
+
+.btnrecomend {
+    margin-bottom: 20px
+}
+
+.btnrecomend a {
+    padding: 10px
+}
+
+.content-paragraph {
+    display: list-item !important;
+    line-height: 110%;
+    font-size: 13px !important
+}
+
+.content-paragraph .boldText {
+    font-weight: bold !important
+}
+
+.content-paragraph strong {
+    font-size: unset !important;
+    color: #8fbc8f
+}
+
+.avgclass{
+    width: 100%;
+
+    text-align: center;
+    .title {
+        font-weight: bold;
+        font-size: 1.34rem;
+        display: inline-flex;
+        color: #4A6C99;
+     
+        .level{
+              background-color:#FF66C4;
+                color: #ffffff;
+        }
+    }
+    .desavg {
+        color: #FF7474;
+        display: none;
+    }
+}
+
+.popupgame  {
+    color: #Ffffff;
+    background-color: blue !important;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: azure;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+.popupgame:hover {
+    background-color: red !important; 
+    color: #ffffff !important;
+}
+
+#tipsGuildLine {
+
+    .titleMain {
+        text-align: right;
+        font-weight: bold;
+      }
+    .titleMain2 {
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+.popupgamedisplay {
+    font-family: SFU Futura;
+    text-align: center;
+    color :var(--main_color);
+    h6 {
+        font-weight: bold;
+    }
+    p{
+        font-weight: 500;
+        font-style: italic;
+    }
+}
+
+.leveldegree {
+
+    font-weight: bold;
+    color: #b2414b;
+}
+
+
+#subscribleId{
+    margin-top: 50px;
+    .contentModal1 {
+        margin-top: 50px !important;
+
+        padding: 20px;
+         width: 360px;
+     
+        margin: auto;
+
+      
+        border-radius: 10px;
+        background-color: #ffffff;
+
+
+    }
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    bottom: 0;
+    z-index: 1000;
+    left: 0;
+
+    h6 {
+     flex: 1 1 auto;
+    margin: auto 0;
+    color: var(--main_color);
+    font-family: var(--font-main);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    }
+   
+}
+.blurdiv .ConcludeItem:first-child .concludeDetalText{
+    opacity: 0.6;
+}
+.blurdiv .ConcludeItem:nth-child(2){
+    opacity: 0.3;
+}
+.blurdiv .ConcludeItem:nth-child(2) .concludeDetalText{
+    opacity: 0.1;
+}
+
+.blurdiv .ConcludeItem:nth-child(3){
+   display: none;
+}
+
+.blurdiv .ConcludeItem:nth-child(4){
+    display: none;
+ }
+
+ .blurdiv .ConcludeItem:nth-child(5){
+    display: none;
+ }
+  .blurdiv#tvtq_area {
+    display: none;
+ }
+ .blurdiv#idtuvantongquan {
+    display: none;
+ }
+
+
+ 
+.contentModal1 {
+  
+
+}
+
+
+ #subscribleId {
+    form {
+        width: 80%;
+        margin: auto;
+    }
+    #titleSubscrible {
+        
+
+        color:  var(--main_color);
+        font-family: var(--font-main);
+        padding-bottom: 10px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .btnCotinue {
+        cursor: pointer;
+     
+        background-color: var(--main_color);
+        z-index: 1000;
+
+        color: #ffffff;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2rem;
+        
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .btnCotinue:hover{
+        opacity: .3;
+    }
+ }
+
+ 
+
+ .expandableBanner{
+    position: absolute;
+    right: 10;
+    top: 10;
+ }
+
+ #foolterBlu {
+    z-index: 10000;
+    
+    padding: 15px;
+
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    span {
+        color:  #ffffff;
+        font-size: 1.3rem;
+        font-weight: bold;
+        display: block;
+    }
+ }
+ #subscribleId {
+    display: none;
+    height: 360px !important;
+ }
+
+
+
+#foolterBlu {
+    display: none;
+}
+
+.score {
+    /* display: inline-flex; */
+    font-weight: bold;
+    margin-left: 5px;
+    color: #B2414B;
+    text-align: center;
+    font-size: 1.34rem;
+}
+
+// .titleScore2{
+//     display: inline-flex;
+//     text-align: center;
+    
+// }
+// .score2 {
+//     color: red;
+// }
+
+.score2 {
+    color: red;
+    font-weight: bold;
+}
+
+.titleScore2{
+    display: inline-flex;
+    text-align: center;
+    
+}
+
+.scoreBeauty{
+    // display:none;
+    strong {
+        color:red;
+    }
+    text-align: center;
+    color: green;
+}
+
+
+.bookdisplay {
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    
+    .search-box {
+        width: 60%;
+        margin-left: auto;
+
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .booknav{
+        .nav {
+            .nav-item {
+                text-align: center;
+                border-radius: 30px;
+                background-color: #aeae1175;
+                width: 25%;
+                a{
+                    text-decoration: none;
+                    color: blue;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                 
+                .nav-item {
+                   
+                   
+                    width: 50% !important;
+                    margin-top: 10px;
+                   
+                }
+            }
+        }
+    }
+
+    .databook {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        .book-item {
+            width: 20%;
+            padding: 1%;
+            margin-bottom: 10px;
+            img { 
+                width: 98%;
+                height: 220px;
+                
+            }
+            p{
+                text-align: center;
+            }
+            @media only screen and (max-width: 600px) {
+                 
+                img { 
+                    width: 98%;
+                    height: 100px !important;
+                    
+                }
+            }
+        }
+
+    }
+ 
+ .pagination {
+  display: inline-block;
+  text-align: center;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+ }
+
+ .viewpdf {
+    display:none;
+
+    .display-title{
+        text-align: center;
+
+        color: var(--main_color) !important;
+        .title{
+            font-weight: bold;
+        }
+    }
+    a {
+        color: white !important;
+    }
+    .btnBack {
+        
+        padding: 2px 3px;
+        background-color: blue;
+        color: var(--primary-text-color);
+    }
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
+ 
+
+
+ #messenger 
+    {
+        img {
+             height: 90px;
+        }
+    }
+
+    #zaloMessage {
+        img {
+            height: 90px;
+       }
+    }
+    .hideWrapper {
+        display: none;
+    }

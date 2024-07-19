@@ -1,0 +1,26 @@
+.displayblock{
+    span {
+        display: block !important;
+    }
+}
+.removeMargin{
+    margin: unset !important;
+}
+.searchArea{
+    width: 100%;
+    justify-content: flex-end;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    button {
+        width: 100px;
+        margin-right: 10px;
+    }
+}
+
+.formatIcon{
+    width: 40px;
+}
+.form-check-label {
+    margin-left: 20px;
+}

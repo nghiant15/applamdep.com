@@ -1,0 +1,1178 @@
+#form__voucher__code--hide {
+  display: none;
+}
+
+.form__voucher__image__voucher {
+  width: 100%;
+  height: 160px;
+  margin: 10px 0 0 0;
+}
+
+.form__get-voucher-aia--title-list-campaign {
+  color: var(--main_color);
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.form__get-voucher-input__scroll-campaign {
+  overflow-y: scroll;
+  height: 350px;
+  padding: 10px 0;
+}
+
+.form__get-voucher-input__scroll-campaign::-webkit-scrollbar {
+  width: 10px;
+}
+
+.form__get-voucher-input__scroll-campaign::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.form__get-voucher-input__scroll-campaign::-webkit-scrollbar-thumb {
+  background: var(--main_color);
+  border-radius: 8px;
+}
+
+.form__get-voucher-input__scroll-campaign--has-login {
+  overflow-y: scroll;
+  height: 510px;
+  padding: 10px 0;
+}
+.form__get-voucher-input__scroll-campaign--has-login::-webkit-scrollbar {
+  width: 0px;
+}
+.form__get-voucher-input__scroll-campaign--has-login::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.form__get-voucher-input__scroll-campaign--has-login::-webkit-scrollbar-thumb {
+  background: var(--main_color);
+  border-radius: 8px;
+}
+
+.popup-voucher-no-scroll {
+  position: relative;
+  margin: 0 auto;
+  width: 420px;
+  height: auto;
+  padding: 36px 32px 8px 32px;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+
+.account_hover {
+  margin: auto 0;
+}
+
+.popup-voucher {
+  position: relative;
+  margin: 0 auto;
+  width: 350px;
+  height: auto;
+  padding: 36px 16px 8px 16px;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  /* overflow-y: scroll; */
+}
+
+.popup-voucher::-webkit-scrollbar {
+  width: 10px;
+}
+
+.popup-voucher::-webkit-scrollbar-track {
+  /* width: 10px; */
+  border-radius: 10px;
+}
+
+.popup-voucher::-webkit-scrollbar-thumb {
+  background: var(--main_color);
+  border-radius: 8px;
+}
+
+.popup-voucher h5 {
+  margin: auto 0;
+  color: var(--main_color);
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+}
+
+.position-close2 {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+}
+
+.position-close2 svg {
+  cursor: pointer;
+  stroke: none;
+  fill: var(--main_color);
+  width: 30px;
+  height: 30px;
+  line-height: 0;
+  font-size: 0px;
+  vertical-align: middle;
+}
+
+.position-close-suggest-login {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+}
+
+.position-close-suggest-login svg {
+  color: var(--main_color);
+  stroke: none;
+  fill: var(--main_color);
+  width: 28px;
+  height: 28px;
+  line-height: 0;
+  font-size: 0px;
+  vertical-align: middle;
+}
+
+.text-suggest-login {
+  text-align: center;
+  font-size: 20px !important;
+  line-height: 26px;
+  /* font-style: italic; */
+}
+
+.svg-close {
+  cursor: pointer;
+  stroke: none;
+  fill: var(--main_color);
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 0;
+  font-size: 0px;
+  vertical-align: middle;
+}
+
+@keyframes modal-gift {
+  0% {
+      opacity: 0;
+      background: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.textbox_isVoucher {
+  /* border: 2px dashed #32ba7c; */
+  /* padding: 10px; */
+}
+
+.copy_isVoucher:hover .tooltip_isVoucher {
+  display: block;
+  position: relative;
+}
+
+.form_isVoucher svg {
+  cursor: pointer;
+}
+
+.form_isVoucher {
+  animation: scale 0.6s ease !important;
+  overflow-y: scroll;
+  padding: 32px 28px 18px 28px !important;
+  height: auto;
+  width: 450px;
+  max-width: 450px;
+  max-height: 100%;
+}
+.form_isVoucher::-webkit-scrollbar {
+  width: 0px;
+}
+.form_isVoucher::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.form_isVoucher::-webkit-scrollbar-thumb {
+  background: var(--main_color);
+  border-radius: 8px;
+}
+.form_isVoucher h6 {
+  line-height: 18px;
+  /* text-align: left; */
+  color: #fff;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.form_isVoucher h4 {
+  text-align: center;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--main_color);
+}
+
+.bg-code-voucher {
+  overflow: hidden;
+  height: 120px;
+  position: relative;
+  border-radius: 0.125rem;
+  /* background: linear-gradient(90deg,transparent 0 0.25rem,#fff4f4 0.25rem); */
+  background: #eb3833;
+  background-image: linear-gradient( to right bottom, #ff541e, #ff4835, #fc3d47, #f63657) !important;
+  width: 100%;
+}
+
+.bg-code-voucher::after {
+  right: calc(50% - 93px);
+  top: calc(50% - 77px);
+  z-index: 1;
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* border: 1px solid #e5e9ec; */
+  border-radius: 50%;
+  background: #fff;
+}
+
+.bg-code-voucher::before {
+  bottom: calc(50% - 77px);
+  right: calc(50% - 93px);
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  /* border: 1px solid #e5e9ec; */
+  border-radius: 50%;
+  background: #fff;
+}
+
+.flex-form-uploadImgErr {
+  text-align: center;
+}
+
+.forgot_pass_p {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--main_color);
+}
+
+.form-information-user svg {
+  cursor: pointer !important;
+}
+
+.form-information-user svg {
+  cursor: pointer;
+}
+
+.nav_toolModal {
+  background: #fff;
+  transition: all 3s ease-out;
+  -webkit-animation-name: changeOpacity;
+  -webkit-animation-duration: 4s;
+  animation-name: changeOpacity;
+  animation-duration: 4s;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0px;
+  overflow: visible;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
+.nav_back_position {
+  position: absolute;
+  right: 25px;
+}
+
+.title_nav {
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title_nav button {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-left: calc(-24px);
+  padding: 0px;
+  border: none;
+  outline: none;
+  background: none;
+  line-height: 0;
+  font-size: 0px;
+  cursor: pointer;
+}
+
+.title_nav button:hover {
+  opacity: 0.7;
+  background: none !important;
+  background-color: none !important;
+}
+
+.title_nav>button>svg {
+  stroke: none;
+  fill: var(--main_color);
+  width: 28px;
+  height: 28px;
+  line-height: 0;
+  font-size: 0px;
+  vertical-align: middle;
+}
+
+.title_nav h5 {
+  flex: 1 1 auto;
+  /* text-transform: uppercase; */
+  margin: auto 0;
+  font-size: 18px;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.title_nav h6 {
+  flex: 1 1 auto;
+  margin: auto 0;
+  color: var(--main_color);
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.form_historyIframe {
+  margin: 0 auto;
+  width: 60%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  border-radius: 6px;
+  padding-bottom: 80px;
+}
+
+.form-uploadImgErr {
+  width: 440px;
+  padding: 16px;
+  z-index: 999;
+  background: white;
+  height: auto;
+  border-radius: 8px;
+}
+
+.form-uploadImgErr span {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 18px;
+  color: var(--main_color);
+  z-index: 1;
+}
+
+.form-uploadImgErr svg {
+  margin: 0 4px !important;
+}
+
+.form-information-user {
+  overflow: hidden;
+  position: relative;
+}
+
+.form-voucher-gift-input-title {
+  animation: form-voucher-gift-input-title 1s linear infinite;
+}
+
+@keyframes form-voucher-gift-input-title {
+  0% {
+      transform: translateY(-2px);
+  }
+  50% {
+      transform: translateY(2px);
+  }
+  100% {
+      transform: translateY(-2px);
+  }
+}
+
+.form-goiy-login {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  padding: 26px 26px 13px 26px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.form-goiy-login h5 {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  font-size: 22px;
+  color: var(--main_color);
+  text-align: center;
+}
+
+.form-goiy-login h6 {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  font-size: 18px;
+  color: var(--main_color);
+  text-align: center;
+}
+
+.my-form-control {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  /* background-color: rgba(0, 0, 0, 0.01); */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--font-gray);
+  display: block;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  height: 50px;
+  line-height: normal;
+  padding: 20px;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.my-form-control:hover {
+  box-shadow: rgb(0 0 0 / 15%) 0px 5px 15px !important;
+}
+
+.my-form-control:focus {
+  box-shadow: rgb(0 0 0 / 15%) 0px 5px 15px !important;
+}
+
+.my-form-control::placeholder {
+  font-size: 12px;
+  padding-left: 6px;
+}
+
+.my-form-control:focus,
+:focus-visible {
+  /* outline: none; */
+  outline: none !important;
+}
+
+.form-function-user svg {
+  fill: var(--main_color);
+}
+
+.form-function-user p {
+  color: var(--main_color);
+  position: relative;
+  padding: 8px;
+  margin: 0;
+  line-height: 20px;
+  font-size: 16px;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form-function-user p:hover {
+  opacity: 0.5;
+}
+
+.form-function-user hr {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.hover-after-login:hover .status-form-after-login {
+  display: block;
+}
+
+.status-form-after-login {
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  top: 10px;
+  right: 0;
+  width: 208px;
+  min-height: 100px;
+  /* background-color: red; */
+  position: absolute;
+  display: none;
+  z-index: 99;
+}
+
+.status-form-function-user {
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  top: 20px;
+  right: 0;
+  width: 208px;
+  min-height: 260px;
+  /* background-color: red; */
+  position: absolute;
+  display: none;
+  z-index: 99;
+}
+
+@keyframes moveForm {
+  from {
+      left: 170px;
+      opacity: 0;
+  }
+  to {
+      left: 40px;
+      opacity: 1;
+  }
+}
+
+.form-function-user {
+  top: 20px;
+  right: 0;
+  padding: 12px;
+  max-width: 228px;
+  min-width: 180px;
+  padding: 6px 12px;
+  position: absolute;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px 1px;
+  animation: form-function-user 0.8s ease-out;
+}
+
+.form-function-user p::before {
+  content: "";
+  color: var(--main_color);
+  bottom: 0;
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: var(--main_color);
+  z-index: 2;
+  transition: all 0.4s linear;
+}
+
+.form-function-user::before {
+  /* content: ""; */
+  position: absolute;
+  top: -20px;
+  right: 15px;
+  z-index: 1;
+  border: solid 10px transparent;
+  border-bottom-color: white;
+}
+
+.status-modal-information {
+  width: 100%;
+  z-index: 99;
+  display: none;
+}
+
+.form-information-user {
+  margin: 0 auto;
+  width: 420px;
+  height: auto;
+  padding: 36px 16px 16px 16px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.form-datlich {
+  margin: 0 auto;
+  width: 50%;
+  height: 90%;
+  padding: 36px 36px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.form-suggest-experts {
+  width: 60% !important;
+  padding: 0 !important;
+}
+
+.form-suggest-experts h1 {
+  font-size: 36px;
+  font-family: var(--font-main);
+  color: var(--main_color) !important;
+  font-weight: bold !important;
+}
+
+.form-information-user-btn-close {
+  position: fixed;
+  top: 2%;
+  left: 26%;
+}
+
+.form-information-user-btn-close svg {
+  cursor: pointer;
+}
+
+.form-information-user-title h3 {
+  margin: auto 0;
+  color: var(--main_color);
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  /* line-height: 19px; */
+  text-transform: uppercase;
+}
+
+.form-information-user-save {
+  width: 25%;
+}
+
+.flex-item-center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-align: center;
+}
+
+.form-information-user::-webkit-scrollbar {
+  width: 10px;
+}
+
+.form-information-user::-webkit-scrollbar-track {
+  /* width: 10px; */
+  border-radius: 10px;
+}
+
+.form-information-user::-webkit-scrollbar-thumb {
+  background: var(--main_color);
+  border-radius: 8px;
+}
+
+.form-share-link {
+  position: relative;
+  width: 500px;
+  height: auto;
+  padding: 26px 16px 8px 16px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.form-share-link::-webkit-scrollbar {
+  width: 10px;
+}
+
+.form-share-link::-webkit-scrollbar-track {
+  /* width: 10px; */
+  border-radius: 10px;
+}
+
+.form-share-link::-webkit-scrollbar-thumb {
+  background: var(--main_color);
+  border-radius: 8px;
+}
+
+.form-history-user-btn-close svg {
+  height: 30px;
+  width: 30px;
+  fill: var(--main_color) !important;
+  cursor: pointer;
+  color: var(--main_color) !important;
+}
+
+.form-suggest-experts-close {
+  position: fixed !important;
+  top: 2%;
+  right: 0;
+  left: 22%;
+  z-index: 99;
+}
+
+.form-suggest-experts-close>span {
+  cursor: pointer;
+  color: var(--main_color) !important;
+  font-size: 32px;
+  font-weight: bold !important;
+}
+
+.form-information-user-btn-close>span {
+  cursor: pointer;
+  color: var(--main_color) !important;
+  font-size: 32px;
+  font-weight: bold !important;
+}
+
+.form-history-user-btn-close>span {
+  cursor: pointer;
+  color: var(--main_color) !important;
+  font-size: 32px;
+  font-weight: bold !important;
+}
+
+.check-login-success:hover .status-form-function-user {
+  animation: blockForm ease 0.5s;
+  display: block;
+}
+
+.hoverBlock_form_account:hover .status-form-function-user {
+  animation: blockForm ease 0.5s;
+  display: block;
+}
+
+@keyframes blockForm {
+  from {
+      transform: scale(0);
+  }
+  to {
+      transform: scale(1);
+  }
+}
+
+.form-iframe-voucher {
+  width: 50%;
+  height: 80% !important;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.position-suggest-experts-close {
+  position: fixed !important;
+  top: 12%;
+  right: 0;
+  left: 22%;
+  z-index: 99;
+}
+
+.position-suggest-experts-close svg {
+  width: 32px;
+  height: 32px;
+}
+
+.my-voucher img {
+  width: 50px;
+  height: 50px;
+}
+
+.text-center-paragrapb {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#formReward {
+  margin-top: 32px;
+  padding: 10px;
+}
+
+.formReward {
+  margin: 16px 0 0 0 !important;
+  padding: 10px 16px 0 16px;
+}
+
+.flex-content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#formReward a {
+  text-align: center;
+  color: #fff;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.formReward a {
+  text-align: center;
+  color: #fff;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+#formReward .submit-form {
+  width: 100%;
+  text-align: center;
+}
+
+.formReward .submit-form {
+  width: 100%;
+  text-align: center;
+}
+
+.formReward label {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  color: #000;
+}
+
+#formReward input {
+  /* background-color: #f1f4f1; */
+}
+
+#formReward label {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  color: #000;
+}
+
+#formReward label {
+  display: flex;
+}
+
+#formReward label span {
+  margin-left: 5px;
+  color: red;
+}
+
+.form-result-success h2 {
+  font-family: var(--font-main);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.errorReward {
+  color: red !important;
+  display: none;
+  text-align: left;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.form-result-success {
+  display: none;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.form-goiy-login svg {
+  cursor: pointer;
+}
+
+.form_voucher {
+  padding: 28px;
+  position: relative;
+  width: 420px;
+  margin: 0 auto;
+  height: auto;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.position_close_form_voucher {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+}
+
+.position_close_form_voucher svg {
+  height: 22px;
+  width: 22px;
+}
+
+.form_voucher h5 {
+  color: var(--main_color);
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.6;
+  text-align: center;
+  font-family: var(--font-main);
+}
+
+.title_form_voucher h6 {
+  margin: auto 0;
+  text-align: center;
+  color: var(--main_color);
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.login-gg h3 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 8px;
+  position: relative;
+  font-size: 14px !important;
+}
+
+.login-gg {
+  color: #ccc;
+  /* padding: 0 1rem; */
+  text-transform: uppercase;
+  font-size: 14px !important;
+  text-align: center;
+}
+
+.forget-pass a {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px !important;
+  line-height: 21px !important;
+  color: #000 !important;
+}
+
+.forget-pass a:hover {
+  background-color: none !important;
+  color: none !important;
+}
+
+.login-my-btn {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.login-my-btn>button:hover {
+  /* background-color: none !important; */
+  /* background: none !important; */
+  border: 1px solid #b6b6bc;
+  text-decoration: none;
+}
+
+.login-my-btn>button:hover .login-my-btn>button p {
+  color: #000 !important;
+}
+
+.not-account {
+  margin: 0 auto;
+}
+
+.not-account p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 21px;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.not-account span {
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal !important;
+  font-weight: bold;
+  line-height: 21px !important;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 500;
+  color: var(--main_color);
+}
+
+.form-login-account {
+  overflow: hidden;
+}
+
+.form_goiychuyengia label {
+  font-size: 16px;
+  line-height: 21px !important;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+  color: var(--main_color);
+}
+
+.form_isVoucher span {
+  text-align: center;
+  /* padding: 0px 4px; */
+  color: white;
+  border-radius: 6px;
+  /* background: #444; */
+  font-weight: 300;
+
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 18px;
+}
+
+.position-close svg {
+  stroke: none;
+  fill: var(--main_color);
+  width: 30px;
+  height: 30px;
+  line-height: 0;
+  font-size: 0px;
+  vertical-align: middle;
+}
+
+.popup__info-voucher {
+  min-height: 480px;
+  border-radius: 20px;
+  position: fixed;
+  animation: showOpacity 0.2s ease;
+  overflow: hidden;
+  padding: 32px 28px 18px 28px;
+  height: auto;
+  width:  450px;
+  max-width: 450px;
+  margin: auto;
+  box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+  z-index: 3;
+  background: #FFF;
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .form-information-user {
+      width: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .form-information-user {
+      padding: 23px !important;
+      width: 380px;
+      height: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form_historyIframe{
+      border-radius: 0;
+  }
+  .bg-image__mobi-full{
+      background-size: 100% 100% !important;
+  }
+  .form__voucher__image__voucher{
+      height: 120px;
+  }
+  .popup__info-voucher {
+      width: 400px;
+  }
+  .text-suggest-login {
+      font-size: 16px !important;
+  }
+  .form-information-user {
+      width: 350px;
+  }
+  .form-goiy-login h6 {
+      font-size: 16px !important;
+  }
+  .title_get_voucher {
+      font-size: 16px !important;
+  }
+  .form_isVoucher h4 {
+      font-size: 17px !important;
+  }
+  .form_isVoucher h6 {
+      font-size: 14px !important;
+  }
+  .form_isVoucher {
+      width: 400px !important;
+  }
+  .form_isVoucher span {
+      font-size: 22px !important;
+  }
+  .bg-code-voucher::after {
+      right: calc(50% - 84px);
+      top: calc(50% - 80px);
+  }
+  .bg-code-voucher::before {
+      right: calc(50% - 84px);
+      bottom: calc(50% - 80px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup-voucher-no-scroll{
+      padding: 23px 23px 6px 23px !important;
+      width: 350px;
+  }
+  .popup__info-voucher {
+      padding: 32px 14px 16px 14px !important;
+  }
+
+  .form__get-voucher-input__scroll-campaign {
+      height: 300px;
+  }
+  .popup-voucher-aia {
+      /* max-height: 80% !important; */
+      width: 100%;
+  }
+  .paper-voucher {
+      font-size: 14px !important;
+  }
+  .bg-code-voucher::after {
+      right: calc(50% - 89px);
+      top: calc(50% - 75px);
+  }
+  .bg-code-voucher::before {
+      right: calc(50% - 89px);
+      bottom: calc(50% - 75px);
+  }
+  .sticky-button-result {
+      position: sticky;
+      bottom: 20px;
+  }
+  .paper-voucher {
+      width: 111px !important;
+      left: -35px !important;
+      top: -38px !important;
+  }
+  .bg-code-voucher {
+      height: 110px !important;
+  }
+  /* .body-voucher {
+      padding-left: 30px;
+  } */
+  .form_isVoucher {
+      padding: 32px 14px 16px 14px !important;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .popup__info-voucher {
+      width: 330px !important;
+  }
+  .form_isVoucher {
+      width: 330px !important;    
+  }
+  .bg-code-voucher::after {
+      right: calc(50% - 75px);
+      top: calc(50% - 75px);
+  }
+  .bg-code-voucher::before {
+      right: calc(50% - 75px);
+      bottom: calc(50% - 75px);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .form_isVoucher h6 {
+      font-size: 12px !important;
+  }
+  .form_isVoucher span {
+      font-size: 20px !important;
+  }
+}

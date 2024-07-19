@@ -1,0 +1,141 @@
+.areaLogin
+{
+  
+    
+    top: 0;
+    width: 100%;
+    .right-menu 
+    {
+        float: right;
+    }
+    ul {
+       display: flex;
+       margin-top: 20px;
+
+       li {
+           margin-right: 10px;
+           padding: 5px 0px;
+
+           a {
+               padding: 12px 16px;
+               background-color: #f55581;
+               color: #fff;
+
+               text-align: center;
+               text-decoration: none;
+               border-radius: 5px;
+
+            
+           }
+       }
+    }
+}
+
+
+#loginModal {
+    .modal-content
+    {
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .modal-header{
+        border: none;
+    }
+   
+}
+
+.loginpopup
+{
+   text-align: center;
+   display: block;
+   .break-line{
+       margin-top: 10px;
+       margin-bottom: 10px;
+   }
+
+}
+.login-google 
+{
+   
+    width: 100%;
+    padding: 10px 20px;
+
+    border:  3px solid #f55581;
+    background-color: #fff;
+    color: #f55581;
+    font-weight: bolder;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+ 
+
+}
+
+.login-google:hover {
+    color: #fff;
+    background-color: #f55581  !important;
+}
+.login-input {
+    height: 50px;
+    border: 3px solid #f55581;
+    margin-bottom: 20px;
+
+    width: 100%;
+    border-radius: 5px;
+}
+.login-input:focus {
+    border: 3px solid #f55581;
+}
+
+
+.login-btn
+{
+ 
+    border: 1px solid #f55581;
+    width: 100%;
+    padding: 10px 20px;
+
+    border:  1px solid #f55581;
+    background-color: #f55581;
+    color: #fff;
+    border-radius: 5px;
+
+}
+.bottomPage
+{
+    padding: 20px;
+    strong {
+        font-size: 1.2rem;
+    }
+}
+
+
+.errorMessage
+{
+    color :red;
+    float: left;
+    padding-bottom: 10px;
+}
+
+
+.profilearea
+{
+    display:none;
+    float: right;
+    width: 100%;
+    text-align: right;
+    // position: absolute;
+    // top:0;
+}
+.abcRioButton
+{
+    width: 100% !important;
+}
+
+.abcRioButtonBlue {
+    background-color: #f55581;
+    color: #fff;
+}
+.abcRioButtonBlue, .abcRioButtonBlue:hover {
+  background-color: #f55581 !important;
+}

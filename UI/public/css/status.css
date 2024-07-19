@@ -1,0 +1,267 @@
+
+.status__info-voucher{
+    display: none;
+  }
+  .status__loading-info-voucher{
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    z-index: 99;
+    display: none;
+  }
+  .status-backToTop-campaign {
+    display: none;
+  }
+  .status-modal-account-get-voucher--aia{
+    display: none;
+  
+  }
+  .status-modal-input-get-voucher--aia{
+    display: none;
+  
+  }
+  .status-loader-22-get-voucher-aia{
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    z-index: 99;
+    display: none;
+  }
+  .status-loader-22--input-get-voucher-aia{
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    z-index: 99;
+    display: none;
+  }
+  .status-loader-22 {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    z-index: 99;
+    display: none;
+  }
+  
+  .backToTop {
+    display: block;
+  }
+  .position-close {
+    position: absolute;
+    top: 7px;
+    right: 0px;
+  }
+  
+  .status-modal-account {
+    display: none;
+  }
+  .status_iframeHistorySoida {
+    display: block;
+  }
+  .status-modal-goiychuyengia {
+    display: none;
+  }
+  .status__isLogin {
+    /* width: 600px; */
+    width: 100%;
+    display: block;
+    opacity: 1;
+    transition: 1s ease-in-out;
+  }
+  .status__isRegister {
+    width: 100%;
+    display: none;
+    opacity: 1;
+    transition: 1s ease-in-out;
+    /* width: 600px; */
+  }
+  .status-modal-openCameraErr {
+    display: none;
+  }
+  .status_tips {
+    display: none;
+  }
+  .status_nav_toolModal {
+    display: none;
+  }
+  #hidePassForgot {
+    display: block;
+  }
+  #showPassForgot {
+    display: none;
+  }
+  #hidePassForgot2 {
+    display: block;
+  }
+  #hidePassOld {
+    display: none;
+  }
+  #hidePassNew {
+    display: none;
+  }
+  #hideReNewPass {
+    display: none;
+  }
+  #showPassForgot2 {
+    display: none;
+  }
+  .status_form_isInfo {
+    display: none;
+  }
+  .status_form_isChangePass {
+    display: none;
+  }
+  .status_form_changeSucess {
+    display: none;
+  }
+  .status_loading_step_photo {
+    display: none;
+  }
+  .status_modal_ketqua {
+    display: none;
+  }
+  .btn_loading_uploadImg {
+    display: none;
+  }
+  .status-modal-uploadImgErr {
+    display: none;
+  }
+  
+  .btn_error_uploadImg {
+    display: none;
+  }
+  .status_alert_isVoucher {
+    display: none;
+  }
+  .status_goiy_login {
+    display: none;
+  }
+  .status_welcome_step2 {
+    display: block;
+  }
+  .status-modal-history .form-group {
+    margin-bottom: 4px !important;
+  }
+  .status-modal-history p {
+    font-size: 16px;
+    color: black;
+    font-weight: 450;
+  }
+  .status-modal-suggest-experts {
+    width: 100%;
+    z-index: 99;
+    display: none;
+  }
+  .status-modal-history {
+    width: 100%;
+    z-index: 99;
+    display: none;
+  }
+  .status_isVoucher {
+    display: none;
+  }
+  .status_isVoucher_logined {
+    z-index: 10;
+    display: none;
+  }
+  #roleUser {
+    display: none;
+  }
+  #rolePjButton {
+    display: none;
+  }
+  #passwordPj {
+    display: none;
+  }
+  .status-modal-inputUser {
+    z-index: 3;
+    display: none;
+  }
+  .status-loading_get_voucher2 {
+    z-index: 3;
+    display: none;
+  }
+  .status-loader-22-info {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+  }
+  .status-loader-22-register-voucher {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+  }
+  .status-loader-openCamera {
+    display: none;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+  }
+  .status-share {
+    z-index: 3;
+    display: none;
+  }
+  .status_alert_isVoucher-gift {
+    z-index: 3;
+    display: none;
+  }
+  #form-voucher-gift-back {
+    display: none;
+  }
+  #form-voucher-gift-input {
+    display: none;
+  }
+  .status_notifyDesk {
+    display: block;
+  }
+  .status_position_btnrewardLoading {
+    display: none;
+  }
+  .status_iframeHistorySoida {
+    display: none;
+  }
+  .status_modal_tuvan {
+    display: none;
+  }
+  .loading-bg{
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+  .loading-bg .border-loading-spin{
+    background: var(--font-black);
+  }
+  .loading{
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    z-index: 99;
+  }
+  
+  .loading svg{
+    height: 100px;
+    width: 100px;
+    overflow: visible;
+  }
+  @media (max-width:600px) {
+    .loading{
+      position: absolute;
+      top: calc(50% - 40px);
+      left: calc(50% - 40px);
+      z-index: 99;
+    }
+    
+    .loading svg{
+      height: 80px;
+      width: 80px;
+      overflow: visible;
+    }
+  }

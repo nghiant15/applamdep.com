@@ -1,0 +1,10 @@
+
+@import './login.css';
+@import './configweb.css';
+
+.display-flex {
+    display: flex !important;
+}
+
+
+
