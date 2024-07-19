@@ -1,2 +1,4 @@
 /Admin/node_modules
 /API/node_modules
+/UI/vendor
+/Admin/build

@@ -1,14 +1,14 @@
 export default {
  
-   "BASE_URL" : "https://api-soida.applamdep.com",
+   "BASE_URL" : "http://localhost:3002",
   "BASE_URL_HISTORY_SKIN" : "https://applamdep.com/xemchitietlichsu/",
-  "BASE_URL_CURRENT" : "https://id.applamdep.com",
+  "BASE_URL_CURRENT" : "http://localhost:3003",
   "LIST_USER" : "/api/list-user",
   "LIST_USER_WITH_ID" : "/api/list-user?id=",
   "ADD_USER" : "/api/add-user",
   "UPDATE_USER" : "/api/update-user",
   "DELETE_USER" : "/api/delete-user",
-  "LOGIN_ADMIN" : "/api/login_admin",
+"LOGIN_ADMIN" : "/api/login_admin",
   "GET_SHOP" : "/api/get-shop",
   "GET_SALE" : "/api/get-s ale",
   "GET_COEFFICIENT" : "/api/calculator-coefficient-user",

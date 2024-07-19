@@ -96,7 +96,7 @@ class EndUserv2 extends Component {
     const { company_id } = this.state;
     this.setState({ isLoading: true });
     const res = await axios({
-      baseURL: "https://api-soida.applamdep.com",
+      baseURL: "http://localhost:3002",
       url: "/api/report/getOverviewDashboard?page=1",
       data: {
         company_id : company_id
@@ -330,7 +330,7 @@ class EndUserv2 extends Component {
                               datacompany = datacompany[0];
                              }
                              let hrefLink = "https://applamdep.com/"+datacompany.Slug;
-                             let hrefVievDetail ="https://id.applamdep.com/#/historyskin/"+datacompany._id;
+                             let hrefVievDetail ="http://localhost:3003/#/historyskin/"+datacompany._id;
                             return (
                               <tr key={i}>
                                 <td className="text-center">{i + 1}</td>

@@ -543,7 +543,7 @@ changeCompanySet = (e) => {
                               <td className="text-center">{item.score}</td>
                               <td className="text-center">
                                               <CButton style={styles.mgl5} outline color="primary" size="sm" onClick={async (e) => {
-                                              window.open("https://id.applamdep.com/#lich-su-ca-nhan/"+ item.Phone, "_blank")
+                                              window.open("http://localhost:3003/#lich-su-ca-nhan/"+ item.Phone, "_blank")
 
                                               }} >
                                               Lịch sử soi da

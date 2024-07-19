@@ -780,7 +780,20 @@ const _naveUser = [
   
   
   ]
-
+  const _navMinisize = [
+    {
+      _tag: 'CSidebarNavTitle',
+      _children: ['Quản lý Banner kết quả'],
+      role: [ '0','1','2']
+    },
+    {
+      _tag: 'CSidebarNavItem',
+      name: 'Banner kết quả',
+      to: '/banner-ket-qua',
+      icon: <CIcon style={css} content={freeSet.cilList} customClasses="c-sidebar-nav-icon" />,
+      role: [ '0','1','2']
+    } 
+  ]
 
 
   const _navManagementConclue = [
@@ -1270,4 +1283,4 @@ const _naveUser = [
       ]
   
 
-export default [_navVendor, _naveUser,_navManagementConclue, _navBeauty,_navTuvan,_navSoida,_navGame,_navDisplay, _navOrther, _navContact, _navLogOut,_navSpecialProduct  ]
+export default [_navVendor, _naveUser,_navMinisize,_navManagementConclue, _navBeauty,_navTuvan,_navSoida,_navGame,_navDisplay, _navOrther, _navContact, _navLogOut,_navSpecialProduct  ]

@@ -315,7 +315,7 @@ class EndUser extends Component {
                                 <td className="text-center">
 
                                  <CButton style={styles.mgl5} outline color="primary" size="sm" onClick={async (e) => {
-                                          window.open("https://id.applamdep.com/#lich-su-ca-nhan/"+ item.phone, "_blank")
+                                          window.open("http://localhost:3003/#lich-su-ca-nhan/"+ item.phone, "_blank")
                                           
                                        }} >
                                         Lịch sử soi da
