@@ -9,7 +9,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
         "guzzlehttp/promises": "^1.5",
-        "guzzlehttp/psr7": "^2.4",
+        "guzzlehttp/psr7": "^2.7",
         "intervention/image": "^2.7",
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^8.54",

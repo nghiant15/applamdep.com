@@ -741,7 +741,7 @@ public function getDataInfo (Request $request)
 
             return view("welcomeZalo2", compact("slug","agent", "showOrHide","isTurnOfFooter","gameJoinTo","isLoginUser"));
         }
-        if($slug =="demo"   || $slug =="demoweb" || $slug =="soida" )
+        if($slug =="demo" || $slug =="demoai"   || $slug =="demoweb" || $slug =="soida" )
         {
          
             return view("welcomeZalo", compact("slug","agent", "showOrHide","isTurnOfFooter","gameJoinTo"));

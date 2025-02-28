@@ -57,6 +57,7 @@
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/status.css">
     <link rel="stylesheet" href="/css/soidanew.css">

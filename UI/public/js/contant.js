@@ -1,5 +1,4 @@
 var slug = window.location.pathname.split("/")[1];
-
 if (slug !== "") {
   slug += "/";
 }
@@ -15,7 +14,7 @@ var  api =  {
     api_getInfo: "api/get-end-user-byId",
     api_getHistory: "api/get-history-skin-by-id",
     api_getHistoryById:  "api/get-detail-history-skin",
-s
+
     api_CheckUrl: "api/check-access-slug",
 
     api_addUrl: `${slug}api/add-end-user`,
