@@ -48,7 +48,7 @@ async function getAllCampaign(idRender, value) {
             var src = ``;
             if (item.image_link && item.image_link.length > 0) {
              
-              src  = "http://localhost:3002/public/image_brand/" +item.image_link;
+              src  = "https://api-soida.applamdep.com/public/image_brand/" +item.image_link;
 
             } else {
               src = "https://api.thulamua.com/public/image_deal/yubhk.jpg";

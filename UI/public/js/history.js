@@ -400,6 +400,7 @@ function openDetaiIfram(hreflinkTarget = null, isShow = true) {
   }
 }
 function openHistoryPage() {
+  return;
   if (typeof slugGlobal === "undefined" || slugGlobal == null) {
     window.location.href = "/lich-su-soi-da-with-iframe";
   } else {

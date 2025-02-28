@@ -178,7 +178,9 @@ border-radius:30px;
  }
 
 setTimeout(() => {  
- 
+    
+    if( showOrHide  == "false" ||  showOrHide =="0") 
+        return;
 
     $(".tuvanform").show();
 

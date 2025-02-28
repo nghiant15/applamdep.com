@@ -8,14 +8,14 @@ if(slug === 'cong-tac-vien/' || slug === 'chinh-sach-va-bao-mat/' || slug === 'd
 }
 var  api =  {
 
-    baser_url:  "http://localhost:3002",
+    baser_url:  "https://api-soida.applamdep.com",
     api_addUrl: "api/add-end-user",
     api_loginUser: "api/login-end-user",
 
     api_getInfo: "api/get-end-user-byId",
     api_getHistory: "api/get-history-skin-by-id",
     api_getHistoryById:  "api/get-detail-history-skin",
-
+s
     api_CheckUrl: "api/check-access-slug",
 
     api_addUrl: `${slug}api/add-end-user`,

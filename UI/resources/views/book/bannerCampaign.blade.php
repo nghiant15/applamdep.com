@@ -273,7 +273,7 @@ Danh mục sách
         var html = ``;
         data.forEach((item, i) => {
       
-            var imageLink = "http://localhost:3002/public/image_brand/" +item.image_link;
+            var imageLink = "https://api-soida.applamdep.com/public/image_brand/" +item.image_link;
         if (i === 0) {
         li +=
         `<li data-target="#carouselExampleIndicators2" data-slide-to=${i} class="active"></li>`;
@@ -331,7 +331,7 @@ Danh mục sách
         data.forEach((item, i) => {
            
 
-        var imageLink = "http://localhost:3002/public/image_brand/" +item.image_link;
+        var imageLink = "https://api-soida.applamdep.com/public/image_brand/" +item.image_link;
         if (i === 0) {
         li +=
         `<li data-target="#carouselExampleIndicators1" data-slide-to=${i} class="active"></li>`;
@@ -538,7 +538,7 @@ function searchItems(searchCode,turnon =true )
     }
     $.ajax({
                 type: "GET",
-                url: "http://localhost:3002/api/book/fe/getAll",
+                url: "https://api-soida.applamdep.com/api/book/fe/getAll",
                 data:{
                  
                     code: searchCode
@@ -631,7 +631,7 @@ function getAllBook(type =0, turnon = true)
 {
     $.ajax({
                 type: "GET",
-                url: "http://localhost:3002/api/book/fe/getAll",
+                url: "https://api-soida.applamdep.com/api/book/fe/getAll",
                 data:{
                  
                     Type: type

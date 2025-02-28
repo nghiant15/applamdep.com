@@ -22,8 +22,8 @@
     else 
     {
         $bannerPage =   new \stdClass();
-        $bannerPage->imageBannerDesktop= "http://localhost:3002/image_brand/applamdep1320 (1).png";
-        $bannerPage->imageBannerMobile  = "http://localhost:3002/image_brand/applamdep1320 (1).png";
+        $bannerPage->imageBannerDesktop= "https://api-soida.applamdep.com/image_brand/applamdep1320 (1).png";
+        $bannerPage->imageBannerMobile  = "https://api-soida.applamdep.com/image_brand/applamdep1320 (1).png";
         
     }
     
@@ -312,13 +312,13 @@
                             @if($slug !="bibabo")
                                 <div class="flex" >
                                      <a  id ="poupgameJoin" class ="popupgame" style="display:none" onclick ="showRule()" href ="javascript:void(0)" >Luật chơi</a>
-                                     <a onclick="ToggleDisplayLogin('.status-modal-account',true,'Để xem lịch sử soi da online')"
+                                     <a onclick="ToggleDisplayLogin('.status-modal-account',true,'Để xem kết quả soi da')"
                                         href="javascript:void(0)"
                                         id="status__text__login"
                                         class=" btn_nav btn_nav-no-after navbar-a navbar-a"
                                         style="margin:auto;box-shadow:none; display: inline-block;">
                                       
-                                        Để xem lịch sử soi da online  
+                                        Để xem kết quả soi da  
                                         {{-- <i class="fa fa-gift" style="font-size:20px;color:red;"></i> --}}
                                     </a>
                     

@@ -1373,7 +1373,7 @@ margin: auto;
             $("#btnrewardLoading").show();
             $.ajax({
                 type: "PUT",
-                url: "http://localhost:3002/api/add-customer-request",
+                url: "https://api-soida.applamdep.com/api/add-customer-request",
                 data: JSON.stringify({
                     UserName: "TIKITECH",
                     Phone: $("#mobilePhone").val(),
@@ -1466,7 +1466,7 @@ margin: auto;
         setTimeout(() => {
     if(!isLogin)
     {
-        ToggleDisplayLogin('.status-modal-account',true,'Để xem lịch sử soi da online');
+        ToggleDisplayLogin('.status-modal-account',true,'Để xem kết quả soi da');
     }
      
    }, 4000);

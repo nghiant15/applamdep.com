@@ -57,7 +57,7 @@
 
                         <div class="form-group">
                                 <input name="phoneRel" type="text" class="my-form-control userName" id="phoneRel"
-                                    placeholder="Số điện thoại người giới thiệu" />
+                                    placeholder="Số điện thoại người giới thiệu " />
                                 <div class="errorMesssage" id="phoneRel">
                                     Không dược bỏ trống
                                 </div>

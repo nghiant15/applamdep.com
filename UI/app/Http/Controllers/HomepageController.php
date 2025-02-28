@@ -140,6 +140,7 @@ public function getDataInfo (Request $request)
           
             if($data->is_success)
             {
+           
                 
                 $dataInfo = json_decode($data->data[0]->Value);
                 
@@ -247,7 +248,7 @@ public function getDataInfo (Request $request)
     
     public function index (Request $request, $slug =null) 
     {  
-        
+        return redirect('/soida');
         $typeLogin =  session('typeLogin', null);
        
         $dataUpdate = [];
@@ -519,6 +520,7 @@ public function getDataInfo (Request $request)
       
           
               session(['TuVanData' =>$result]);
+            
          }
          
          return false;
@@ -595,6 +597,8 @@ public function getDataInfo (Request $request)
             $checkresult = $res->getBody()->getContents();
             $checkresult = json_decode($checkresult);
             $result = $checkresult->data;
+
+       
            
             session(['dataminisize' =>$result]);
              return $result;
@@ -603,18 +607,51 @@ public function getDataInfo (Request $request)
       
          return null;
     }
-    public function skinIndex (Request $request, $slug =null) 
+
+    private function getConfigSetting($companyId)
     {
 
+        $url ="https://api-soida.applamdep.com/api/settingBanner/getInfo";
+        $client = new Client();
+      
+
+        $res = $client->request('get', $url, [
+            'query' => [
+                'company_id'=> $companyId
+              ]
+        ]);
+
+        if($res->getStatusCode() ==200)
+        {
+            $checkresult = $res->getBody()->getContents();
+            $checkresult = json_decode($checkresult);
+            $result = $checkresult->data;
+             return $result;
+            
+         }
+      
+         return null;
+    }
+
+
+    public function skinIndex (Request $request, $slug =null) 
+    {
+        
+      
+        
+        if($slug == "" ||$slug ==null   )
+        {
+            return redirect('/soida');
+        }
+        
+        if($slug ==  "bsnho"  )
+        {
+            return redirect('/exomiyo');
+        }
+        
         $this->getTuVan($slug);
         
         $this->setHistoryId(null);
-        // $historyId =  session('historyId', null);
-    
-        // if($slug=="soida")
-        // {
-        //     return redirect()->to('/ngocdung');
-        // }
         $isCheck  = true;
         $isTurnOfFooter =  true;
 
@@ -629,18 +666,18 @@ public function getDataInfo (Request $request)
 
         $dataCompanyId =  $this->getCompanyId();
        
-       
         $this->getBeauty($slug);
-       
-
 
         $dataGame = $this->getGameActive($dataCompanyId);
 
       
 
         $gameMinisize = $this->getGameMinisize($dataCompanyId);
+        
       
-   
+        $conffigSetting = $this->getConfigSetting($dataCompanyId);
+
+    
         if( $dataGame != null)
         {
             $fromDate = Carbon::parse($dataGame->fromDate); 
@@ -672,6 +709,8 @@ public function getDataInfo (Request $request)
 
         $dataUserSession =  session('dataCompany', null);
 
+        $isLoginUser = false;
+
      
 
         if($dataUserSession)
@@ -682,6 +721,7 @@ public function getDataInfo (Request $request)
             $dataUserSession->data = $this->getDataById($dataUserId);
             session(['dataCompany' =>$dataUserSession]);
             $dataUserSession =  session('dataCompany', null);
+            $isLoginUser = true;
 
          
         }
@@ -695,21 +735,26 @@ public function getDataInfo (Request $request)
         {
        
         }
-
-        if($slug =="demo" || $slug =="demoweb" || $slug =="soida")
+        $showOrHide = $conffigSetting->showOrHide;
+        if( $slug =="bsnho" || $slug == "exomiyo" || $slug =="neomtech")
         {
-            return view("welcomeZalo", compact("slug","agent","isTurnOfFooter","gameJoinTo"));
+
+            return view("welcomeZalo2", compact("slug","agent", "showOrHide","isTurnOfFooter","gameJoinTo","isLoginUser"));
+        }
+        if($slug =="demo"   || $slug =="demoweb" || $slug =="soida" )
+        {
+         
+            return view("welcomeZalo", compact("slug","agent", "showOrHide","isTurnOfFooter","gameJoinTo"));
         }
         else  if($slug =="xemtuong")
         {
             $gameXemtuong = $this->getGameXemtuong($dataCompanyId);
-        
-            
-            return view("xemtuong", compact("slug","agent","isTurnOfFooter","gameJoinTo"));
+            return view("xemtuong", compact("slug", "showOrHide","agent","isTurnOfFooter","gameJoinTo"));
         }
         else 
         { 
-            return view("welcomeNormal", compact("slug","agent","isTurnOfFooter","gameJoinTo"));
+            
+            return view("welcomeNormal", compact("slug", "showOrHide","agent","isTurnOfFooter","gameJoinTo"));
         }
 
         
@@ -717,6 +762,7 @@ public function getDataInfo (Request $request)
         {
            
         }
+     
       
         return view("welcome", compact("slug","agent","isTurnOfFooter","gameJoinTo", "turnOnGame"));
     }
@@ -834,6 +880,9 @@ public function getDataInfo (Request $request)
 
 
 
+
+
+
         session(['gameJoinType1' =>false]);
         if( $dataGame != null)
         {
@@ -909,14 +958,7 @@ public function getDataInfo (Request $request)
 
        
       
-        //  if($slug =="soida")
-        // {
-        //     $slug = null;
-        // }
-        // if($slug == null )
-        // {
-
-        // }
+      
         $companyId = $this->getCompanyId();
  
         $agent = new Agent();
@@ -926,15 +968,31 @@ public function getDataInfo (Request $request)
          $gameJoinType1 =true;
      
          $gameMinisize = $this->getGameMinisize($companyId);
+         $showOrHide = $gameMinisize->showOrHide;
+
        
         if($slug !="")
         {
           
         }
+        if($slug =="demoai" )
+        {
+            return view("resultAI", compact("slug", "showOrHide",
+             "ageGame","ageGameReal","gameType","gameJoinType1",
+             "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
+        }
+        if($slug =="bsnho"  || $slug =="exomiyo" || $slug =="neomtech")
+        {
+
+           
+            return view("resultZalo2", compact("slug", "showOrHide",
+             "ageGame","ageGameReal","gameType","gameJoinType1",
+             "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
+        }
         
         if($slug =="demo"  || $slug =="soida")
         {
-            return view("resultZalo", compact("slug", 
+            return view("resultZalo", compact("slug", "showOrHide",
              "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
         }
@@ -948,14 +1006,14 @@ public function getDataInfo (Request $request)
         {
 
             $gameXemtuong = $this->getGameXemtuong($companyId);
-            return view("resultXemtuong", compact("slug", 
+            return view("resultXemtuong", compact("slug", "showOrHide",
              "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
         }
         else 
         {
             
-            return view("resultNormal", compact("slug", 
+            return view("resultNormal", compact("slug", "showOrHide",
               
             "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 

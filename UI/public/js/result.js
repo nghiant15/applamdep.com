@@ -1,4 +1,57 @@
 
+function getTextInfo() {
+
+  //   var htmldemo = '<div class="skin-analysis"> <h2 class="skin-analysis-title">PHÂN TÍCH TÌNH TRẠNG DA CHUYÊN SÂU</h2> <div class="skin-analysis-section"> <h3 class="skin-analysis-subtitle">Tổng Quan Chung</h3> <p><strong>Tuổi Da:</strong> 24 tuổi (Phù hợp với độ tuổi thực tế)</p> <p><strong>Loại Da:</strong> Da dầu (Cần kiểm soát dầu thừa)</p> <p><strong>Nốt Ruồi:</strong> Không có</p> </div> <div class="skin-analysis-section"> <h3 class="skin-analysis-subtitle">Đánh Giá Lão Hóa Da</h3> <p><strong>Dấu Hiệu Lão Hóa:</strong> Không phát hiện dấu hiệu lão hóa đáng kể (như nếp nhăn).</p> </div> <div class="skin-analysis-section"> <h3 class="skin-analysis-subtitle">Tình Trạng Mụn và Viêm</h3> <p><strong>Mụn Sẹo:</strong> Có (Số lượng: 12). Cần liệu trình cải thiện sẹo mụn</p> <p><strong>Mụn Đầu Đen:</strong> Không có</p> <p><strong>Mụn Viêm Đỏ:</strong> Hiện diện ở cằm, trán, má trái và má phải. Cần điều trị viêm và kiểm soát mụn.</p> </div> <div class="skin-analysis-section"> <h3 class="skin-analysis-subtitle">Quầng Thâm Mắt</h3> <p><strong>Mắt Trái:</strong> Quầng thâm (chưa xác định rõ nguyên nhân, cần kiểm tra thêm về mạch máu, sắc tố, bọng mắt).</p> <p><strong>Mắt Phải:</strong> Quầng thâm nhẹ (chưa xác định rõ nguyên nhân, cần kiểm tra thêm về mạch máu, sắc tố, bọng mắt).</p> </div> <div class="skin-analysis-section"> <h3 class="skin-analysis-subtitle">Lỗ Chân Lông</h3> <p><strong>Lỗ Chân Lông To:</strong> Không phát hiện.</p> </div> <div class="skin-analysis-section"> <h3 class="skin-analysis-subtitle">Đốm Thâm Nám</h3> <p><strong>Đốm Thâm Nám:</strong> Không có.</p> </div> <div class="skin-analysis-section"> <h3 class="skin-analysis-subtitle">KẾT LUẬN &amp; TƯ VẤN</h3> <p><strong>Kết luận:</strong> Da dầu, có mụn viêm đỏ, mụn sẹo và quầng thâm mắt. Không có dấu hiệu lão hóa đáng kể.</p> <p><strong>Tư Vấn:</strong></p> <ul> <li><strong>Điều trị mụn viêm:</strong> Sử dụng sản phẩm chuyên dụng chứa thành phần kháng viêm, giảm mụn (Salicylic Acid, Benzoyl Peroxide,...).</li> <li><strong>Kiểm soát dầu thừa:</strong> Sử dụng sữa rửa mặt dịu nhẹ, toner cân bằng da và kem dưỡng ẩm không gây bí tắc lỗ chân lông.</li> <li><strong>Cải thiện sẹo mụn:</strong> Cân nhắc các liệu trình chuyên nghiệp như laser, lăn kim, peel da.</li> <li><strong>Giảm quầng thâm:</strong> Sử dụng kem dưỡng mắt chứa vitamin K, caffeine, hoặc peptide. Đảm bảo ngủ đủ giấc và hạn chế các tác nhân gây quầng thâm (thiếu ngủ, stress,...).</li> <li><strong>Bảo vệ da khỏi ánh nắng:</strong> Sử dụng kem chống nắng phổ rộng hàng ngày để ngăn ngừa thâm mụn và lão hóa sớm.</li> <li><strong>Chế độ sinh hoạt:</strong> Uống đủ nước, ăn uống lành mạnh, hạn chế thức khuya và stress.</li> <li><strong>Thăm khám da liễu:</strong> Nên thăm khám bác sĩ da liễu để được tư vấn và điều trị chuyên sâu hơn.</li> </ul> </div> </div>';
+  //   document.getElementById("resultAI").innerHTML +=  htmldemo;
+  // return;
+    var faceData = objectReponse.data.facedata;
+    var imageInfo = faceData.image_info;
+    $("#imageResult").attr("src",imageInfo.url);
+    drawContentTongQuan(faceData.generalResult);
+    drawContentKetLuanTungPhan(faceData.specialResult);
+    // drawContentTuVanTongQuat(faceData.generalConclusion);
+    var textInfo = 'Dựa vào các thông số sau da sau, tổng hợp và phân tích chuyên sâu tình trạng da.  yêu cầu đưa ra kết luận  chi tiết về tình trạng da, gợi ý tư vấn, lời khuyển.. . Trình Kết quả hiển thị dưới dạng mã html chuyên môn  ngành thẩm mỹ,trang trọng không css, lược bỏ phần phụ chỉ lấy kết quả . Mô tả thông số da như sau ';
+    textInfo+= document.getElementById("idGeneralResult").textContent;
+    textInfo+= document.getElementById("danhsachketquatungphan").textContent;
+    Swal.fire({
+      title: 'AI đang đọc và xử lý kết quả  !',
+      allowEscapeKey: false,
+      showCancelButton: false,
+      showConfirmButton: false,
+      html: 'Vui lòng chờ trong giây lát',// add html attribute if you want or remove
+      allowOutsideClick: false,
+      onBeforeOpen: () => {
+          Swal.showLoading();
+
+      },
+  });
+
+
+  try {
+      $.ajax({
+          type: "POST",
+          data: {
+              "question": textInfo
+          },
+          url: "http://45.76.161.30:3030/api/skin/analysisAI",
+          success: function(data) {
+              swal.close();
+               document.getElementById("resultAI").innerHTML +=  data;
+               setTimeout(() => {
+                document.getElementById("fromResiger").style.display ="block";
+               }, 2000);
+          },
+          error: function(error) {
+            
+          }
+      });
+  } catch (e) {
+      // console.log('e1111', e)
+  
+  }
+
+
+  }
 
 function reDrawInfomation() {
  
@@ -7,7 +60,6 @@ function reDrawInfomation() {
   var faceData = objectReponse.data.facedata;
   var imageInfo = faceData.image_info;
   $("#imageResult").attr("src",imageInfo.url);
- 
  var generalResult  = faceData.generalResult;
  var specialResult = faceData.specialResult;
 
@@ -433,7 +485,7 @@ var bodyRequest = {
 };
 $.ajax({
  type: "POST",
- url: "http://localhost:3002/itemSdk/get_product_result",
+ url: "https://api-soida.applamdep.com/itemSdk/get_product_result",
  data: JSON.stringify(bodyRequest),
  contentType: "application/json",
  dataType: "json",
@@ -470,7 +522,7 @@ var bodyRequest = {
 };
 $.ajax({
 type: "POST",
-url: "http://localhost:3002/api/paramenterRecomed/getAllCocludeOverView",
+url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeOverView",
 data: JSON.stringify(bodyRequest),
 contentType: "application/json",
 dataType: "json",
@@ -551,7 +603,7 @@ var bodyRequest = {
 };
 $.ajax({
 type: "POST",
-url: "http://localhost:3002/api/paramenterRecomed/getAllCocludeDetail",
+url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeDetail",
 data: JSON.stringify(bodyRequest),
 contentType: "application/json",
 dataType: "json",
@@ -1026,7 +1078,7 @@ var listDataProducts = dataProducts.list_product;
 
 listDataProducts.forEach(element => {
  
-var pathImage = 'http://localhost:3002/public/image_plugin/' +'' +element.image_link +'';
+var pathImage = 'https://api-soida.applamdep.com/public/image_plugin/' +'' +element.image_link +'';
 
 var xhr = new XMLHttpRequest();
 xhr.open('HEAD', pathImage, false);
@@ -1136,7 +1188,7 @@ htmlTemplate+='  <div class="dataProduct">';
          htmlTemplate += '<div class="product-item">\
                          <div> \
                          <img\
-                         src="http://localhost:3002/public/image_plugin/toner-Dashu-0x0.jpg"\
+                         src="https://api-soida.applamdep.com/public/image_plugin/toner-Dashu-0x0.jpg"\
                          alt="">\
                          </div>\
                          <div class="product-title">\

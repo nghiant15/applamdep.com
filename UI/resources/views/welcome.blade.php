@@ -781,7 +781,7 @@ $dataSeo = "Soida liền tay";
                     };
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost:3002/itemSdk/get_product_result",
+                        url: "https://api-soida.applamdep.com/itemSdk/get_product_result",
                         data: JSON.stringify(bodyRequest),
                         contentType: "application/json",
                         dataType: "json",
@@ -818,7 +818,7 @@ $dataSeo = "Soida liền tay";
                             var itemProduct = listProduct[i];
 
                             if (itemProduct.image_link.length > 0) {
-                                imagelink = "http://localhost:3002/public/image_plugin/" + itemProduct
+                                imagelink = "https://api-soida.applamdep.com/public/image_plugin/" + itemProduct
                                     .image_link;
                             } else {
                                 imagelink = itemProduct.image;
@@ -1306,7 +1306,7 @@ $dataSeo = "Soida liền tay";
             $("#btnrewardLoading").show();
             $.ajax({
                 type: "PUT",
-                url: "http://localhost:3002/api/add-customer-request",
+                url: "https://api-soida.applamdep.com/api/add-customer-request",
                 data: JSON.stringify({
                     UserName: "TIKITECH",
                     Phone: $("#mobilePhone").val(),
@@ -1329,7 +1329,7 @@ $dataSeo = "Soida liền tay";
             $("#btnrewardLoading").show();
             $.ajax({
                 type: "PUT",
-                url: "http://localhost:3002/api/add-customer-request",
+                url: "https://api-soida.applamdep.com/api/add-customer-request",
                 data: JSON.stringify({
                     UserName: "TIKITECH",
                     Phone: $("#mobilePhone").val(),

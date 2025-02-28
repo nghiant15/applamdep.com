@@ -272,6 +272,12 @@ document.addEventListener("DOMContentLoaded", function(){
     // }
  
     setTimeout(() => {
+
+      if(typeof(showOrHide) == 'undefined' ||   showOrHide == "0")
+      {
+        document.getElementById("cammeraButton").style.display ="grid";
+        return;
+      }
       if(tips)
       {
         tips.style.display ="block";
@@ -451,6 +457,7 @@ function updateUser ( ) {
 
 function openHistoryPage() {
 
+  return;
     if( typeof slugGlobal === "undefined" || slugGlobal == null )
     {
      window.location.href = "/lich-su-soi-da";
@@ -522,7 +529,7 @@ function ToggleDisplayClass(myClass, status) {
        typeLogin ="2";
     }
 
-    if(title =="Để xem lịch sử soi da online")
+    if(title =="Để xem kết quả soi da")
     {
       typeLogin ="3";
     }
@@ -586,7 +593,7 @@ function ToggleDisplayClass(myClass, status) {
     }
   
 
-    if(title =="Để xem lịch sử soi da online")
+    if(title =="Để xem kết quả soi da")
     {
       typeLogin ="3";
     }
@@ -642,7 +649,7 @@ function ToggleDisplayClass(myClass, status) {
     //    typeLogin ="2";
     // }
 
-    if(title =="Để xem lịch sử soi da online")
+    if(title =="Để xem kết quả soi da")
     {
       typeLogin ="3";
     }
@@ -699,7 +706,7 @@ function ToggleDisplayClass(myClass, status) {
       //   document.querySelector(myClass).style.display = "none";
       // }
       // ToggleDisplayLogin('.status-modal-account',true,'ĐỂ XEM KẾT LUẬN CHI TIẾT & TƯ VẤN TỔNG QUÁT');
-      ToggleDisplayLogin('.status-modal-account',true,"ĐỂ XEM LỊCH SỬ SOI DA ONLINE");
+      ToggleDisplayLogin('.status-modal-account',true,"Để xem kết quả soi da");
   }
 
   function ToggleDisplayFormFollow2(myClass, status) {
@@ -712,7 +719,7 @@ function ToggleDisplayClass(myClass, status) {
     //   document.querySelector(myClass).style.display = "none";
     // }
     ToggleDisplayLogin2('.status-modal-account',true,'ĐỂ TƯ VẤN DA NGAY & 100% MIỄN PHÍ');
-    // ToggleDisplayLogin('.status-modal-account',true,"ĐỂ XEM LỊCH SỬ SOI DA ONLINE");
+    // ToggleDisplayLogin('.status-modal-account',true,"Để xem kết quả soi da");
 }
 
 
@@ -727,7 +734,7 @@ function ToggleDisplayFormFollow3(myClass, status) {
   //   document.querySelector(myClass).style.display = "none";
   // }
   ToggleDisplayLogin2('.status-modal-account',true,'ĐỂ XEM KẾT LUẬN CHI TIẾT & TƯ VẤN TỔNG QUÁT');
-  // ToggleDisplayLogin('.status-modal-account',true,"ĐỂ XEM LỊCH SỬ SOI DA ONLINE");
+  // ToggleDisplayLogin('.status-modal-account',true,"Để xem kết quả soi da");
 }
 
   function updateInfoUser() {
@@ -856,6 +863,7 @@ function ToggleDisplayFormFollow3(myClass, status) {
     
     }
     function openSoida() {
+    
 
       var locationHost = window.location.origin;
     const firstPath = window.location.pathname.split('/')[1]; 

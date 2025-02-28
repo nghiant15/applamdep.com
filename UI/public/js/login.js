@@ -180,7 +180,7 @@ function isVietnamesePhoneNumber(number) {
   }
   function openPageHistory() {
 
-    
+    return;
 
     // var base_url = window.location.origin + "/" + "lichsu-soida";
     // if(slugGlobal != null  &&  slugGlobal !== "")

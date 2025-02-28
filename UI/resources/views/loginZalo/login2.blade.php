@@ -55,14 +55,28 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                                <input name="phoneRel" type="text" class="my-form-control userName" id="phoneRel"
-                                    placeholder="Số điện thoại người giới thiệu" />
+                        @if($slug =="bsnho")
+                        <div class="form-group" style ="display:none">
+                                <input name="phoneRel"  type="text" class="my-form-control userName" id="phoneRel"
+                                    placeholder="Số điện thoại người giới thiệu " value ="" />
                                 <div class="errorMesssage" id="phoneRel">
                                     Không dược bỏ trống
                                 </div>
                             </div>
                         </div>
+                        @else
+
+                        <div class="form-group">
+                                <input name="phoneRel" type="text" class="my-form-control userName" id="phoneRel"
+                                    placeholder="Số điện thoại người giới thiệu " />
+                                <div class="errorMesssage" id="phoneRel">
+                                    Không dược bỏ trống
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+
+                       
 
                         <div class="form-group">
                             <div id="togglePassPj">

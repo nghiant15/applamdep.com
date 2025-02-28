@@ -374,7 +374,10 @@
 
 
         </div>
+        <script>
+        var  showOrHide = {!! json_encode($showOrHide) !!};
 
+        </script>
 
        
 
@@ -400,15 +403,7 @@
 
 
         <script>
-            //   setTimeout(() => {
-                  
-            //         document.getElementById("socialBLock").style.display = "block";
-
-                    
-
-
-                    
-            //     }, 1000);
+         
             window.scrollTo({
                 top: 0,
                 behavior: "smooth",
@@ -418,25 +413,12 @@
        
         </script>
         <script>
-            // setTimeout(() => {
-            //         document.getElementById("cammeraButton").style.display ="grid";
-                
-
-                    
-
-
-                    
-            //     }, 2500);
+          
               function hideTips() {
                 var tips = document.getElementById("tips");
                 tips.style.display = "none";
                 setTimeout(() => {
                     document.getElementById("cammeraButton").style.display ="grid";
-                    // document.getElementById("socialBLock").style.display = "block";
-
-                    
-
-
                     
                 }, 500);
                 var audio = document.createElement("AUDIO")
@@ -446,9 +428,6 @@
                 audio.muted = true;
                 audio.muted = false;
                 audio.play();
-              
-                
-               
                 audio.onended = function() {
                           return;
                         setTimeout(() => {
@@ -892,7 +871,7 @@
                     };
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost:3002/itemSdk/get_product_result",
+                        url: "https://api-soida.applamdep.com/itemSdk/get_product_result",
                         data: JSON.stringify(bodyRequest),
                         contentType: "application/json",
                         dataType: "json",
@@ -929,7 +908,7 @@
                             var itemProduct = listProduct[i];
 
                             if (itemProduct.image_link.length > 0) {
-                                imagelink = "http://localhost:3002/public/image_plugin/" + itemProduct
+                                imagelink = "https://api-soida.applamdep.com/public/image_plugin/" + itemProduct
                                     .image_link;
                             } else {
                                 imagelink = itemProduct.image;
@@ -1421,7 +1400,7 @@
             $("#btnrewardLoading").show();
             $.ajax({
                 type: "PUT",
-                url: "http://localhost:3002/api/add-customer-request",
+                url: "https://api-soida.applamdep.com/api/add-customer-request",
                 data: JSON.stringify({
                     UserName: "TIKITECH",
                     Phone: $("#mobilePhone").val(),
@@ -1444,7 +1423,7 @@
             $("#btnrewardLoading").show();
             $.ajax({
                 type: "PUT",
-                url: "http://localhost:3002/api/add-customer-request",
+                url: "https://api-soida.applamdep.com/api/add-customer-request",
                 data: JSON.stringify({
                     UserName: "TIKITECH",
                     Phone: $("#mobilePhone").val(),
