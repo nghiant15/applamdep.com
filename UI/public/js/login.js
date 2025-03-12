@@ -248,6 +248,15 @@ function isVietnamesePhoneNumber(number) {
         "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
       },
     });
+ console.log({
+  phoneRel: $("#phoneRel").val(), 
+  username: $("#nameLogin").val(),
+  phoneNumber: $("#phoneNumber").val(),
+  ageUser: $("#ageUser").val()
+});
+
+
+ 
     await $.ajax({
       url: api.serve.baser_urlServer + "/" + api.serve.api_loginServer,
       type: "post",
@@ -255,9 +264,10 @@ function isVietnamesePhoneNumber(number) {
         phoneRel: $("#phoneRel").val(), 
         username: $("#nameLogin").val(),
         phoneNumber: $("#phoneNumber").val(),
+        ageUser: $("#ageUser").val()
       },
       success: function (response) {
-
+        
         if (response.is_success) {
           
           if (isRequireLogin == null || isRequireLogin == false) {
@@ -541,23 +551,11 @@ function isVietnamesePhoneNumber(number) {
       errorMessagePassword.style.display = 'block';
       errorMessagePassword.innerHTML = "Số điện thoai không đúng, số điện thoại gồm 10 chữ số";
       indexError++;
-      // if(phoneNumber.value.length  > 6)
-      // {
-  
-      //   indexError++;
-      //     errorMessagePassword.style.display = 'block';
-      //     errorMessagePassword.innerHTML = "Sai số điện thoại"
-      // }else{
-      //       errorMessagePassword.style.display = 'none';
-      //   errorMessagePassword.innerHTML = ""
-      // }
+      
     }
     else {
       errorMessagePassword.style.display = "none";
     }
-  
-  
-
     return indexError < 1;
   }
 

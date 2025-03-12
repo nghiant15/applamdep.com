@@ -295,7 +295,7 @@ class HistoryController extends Controller
         $gameJoinType1 = session('gameJoinType1', false);
         $ageGame =  session('ageGame', null);
         $ageGameReal =  session('ageGameReal', null);
-        
+        $ageUser =  session('ageUser', '');
         $gameType =session('gameType', "");
         $client1 = new Client();
         $linkUrl = "http://ip-api.com/json/".$ipClient;
@@ -350,6 +350,7 @@ class HistoryController extends Controller
                     "typeLogin"=>$typeLogin,
                     "connectionType"=>  $connectionType,
                     "timeConnection"=>0,
+                    "ageUser" => $ageUser,
                     "Result"=> $result
                 ];
                 $client = new Client();

@@ -2053,8 +2053,8 @@ function OpenAction ( connectionType)
 function openRegister ( connectionType ="minisize")
 {   
 
-    window.open("https://chat.zalo.me/",'_blank');
-  return;
+//     window.open("https://chat.zalo.me/",'_blank');
+//   return;
    addContionType(connectionType);
    zaloLink =  "{{$dataMinisize->linkRegister}}";
    changeFormTuvan();

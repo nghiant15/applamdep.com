@@ -47,13 +47,20 @@ class UserController extends Controller
     {
         $historyId =  $this->getHistoryId();
         $company_id = $this->getCompanyId();
+        $ageUser = $request->input("ageUser","");
 
+        if($slug =="exomiyo")
+        {
+
+            session(['ageUser' =>$ageUser]);
+        }
         $dataRequestInput =[
             'username'=> $request->input("username"),
             'phoneRel'=> $request->input("phoneRel"),
             'password'=> $request->input("phoneNumber"),
             'phoneNumber'=> $request->input("phoneNumber"),
             'slug' => $slug,
+            'ageUser'=> $ageUser,
             'company_id'=> $company_id,
             'historyId' => $historyId
         ];
