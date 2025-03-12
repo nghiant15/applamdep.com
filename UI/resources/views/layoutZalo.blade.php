@@ -12,6 +12,7 @@
         $dataColor = "#1a214f";
     }
    
+   
 
     if (isset($globalData) && isset($globalData->banner)) {
 
@@ -26,7 +27,7 @@
         $bannerPage =   new \stdClass();
         $bannerPage->imageBannerDesktop= "https://api-soida.applamdep.com/image_brand/applamdep1320 (1).png";
         $bannerPage->imageBannerMobile  = "https://api-soida.applamdep.com/image_brand/applamdep1320 (1).png";
-        
+     
     }
 
 
@@ -49,6 +50,7 @@
         }
     
  
+       
 
  
  
@@ -596,21 +598,21 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                     <div div="" class="footer__space--mobi">
                     </div>    
                           <div class="footer__global-title font--main">
-                                <span> CÔNG TY TNHH CÔNG NGHỆ TIKITECH  </span>
+                                <span> CÔNG TY CỔ PHẦN TRANG ANH HEALTH & BEAUTY  </span>
                             </div>
                          
                             <div class="footer__global font--main">
-                            Số 91 Đường N1, Khu dân cư Hiệp Thành, Phường Hiệp Thành, Quận 12, Thành phố Hồ Chí Minhh
+                            VP06, Tầng 3, Tòa Stellar Garden, Số 35 Lê Văn Thiêm, Phường Thanh Xuân Trung, Quận Thanh Xuân, Thành Phố Hà Nội, Việt Nam
                             </div> 
                             <div class="footer__global font--main">
-                                Hotline: <a class="font--main" href="tel:0917 891 007">0917 891 007</a> 
+                                Hotline: <a class="font--main" href="tel:0965331830">0965331830</a> 
                                 
                             </div> 
 
 
                        
                             <div class="footer__global font--main"> 
-                                Email: <a class="font--main" href="mailto:hi@tikitech.vn">hi@tikitech.vn</a>
+                                Email: <a class="font--main" href="tuyendungtranganhbeauty@gmail.com">tuyendungtranganhbeauty@gmail.com</a>
                             </div>    
                 </div>
             </div>

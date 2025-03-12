@@ -36,7 +36,7 @@ function getTextInfo() {
           data: {
               "question": textInfo
           },
-          url: "https://applamdep.com/getResultAI",
+          url: "https://tranganh.applamdep.com/getResultAI",
           success: function(data) {
                 Swal.close();
            
@@ -219,7 +219,7 @@ let dataFace = objectReponse.data.faceAttitude;
 let indexDraw =0;
 ketLuanTungPhan.data.forEach((ketLuanTungPhanItem) => {
 indexDraw ++;
-let dataDrawFace  = " https://applamdep.com/images/image1.png";
+let dataDrawFace  = " https://tranganh.applamdep.com/images/image1.png";
 
 if(dataFace)
 {

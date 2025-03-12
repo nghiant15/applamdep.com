@@ -178,8 +178,8 @@ let dataFace = objectReponse.data.faceAttitude;
 let indexDraw =0;
 ketLuanTungPhan.data.forEach((ketLuanTungPhanItem) => {
 indexDraw ++;
-let dataDrawFace  = " https://applamdep.com/images/image1.png";
- https://applamdep.com/images/image1.png
+let dataDrawFace  = " https://tranganh.applamdep.com/images/image1.png";
+ https://tranganh.applamdep.com/images/image1.png
 if(dataFace)
 {
 switch(indexDraw) {

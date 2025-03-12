@@ -116,8 +116,7 @@ class Controller extends BaseController
          {
             $result  = $checkresult->data;
 
-            
-               
+      
             
             if($result == null)
             {
