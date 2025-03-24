@@ -1,18 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 Route::post('/addtype2', 'HistoryController@AddClickZalo2');
 Route::get('/', 'HomepageController@index')->name('homePage');
 Route::get('/get-all-history', 'HistoryController@GetAllHistory');
 Route::post('/AddClickZalo', 'HistoryController@AddClickZalo');
-
-
 Route::get('/{slug}/lichsu-soida', 'HistoryController@historySoida');
 Route::get('/{slug}/{id}/lichsu-soida', 'HistoryController@historySoida');
-
 Route::get('/{slug}/lich-su-soi-da-with-iframe/{id}', 'HomepageController@ViewhistoryWithIframe');
-
 Route::get('/lich-su-soi-da-with-iframe/{id}', 'HomepageController@ViewhistoryWithIframe');
 Route::get('/lichsu-soida', 'HistoryController@historySoida');
 Route::get('/thong-tin-tai-khoan', 'HomepageController@profile')->name('homePage');
@@ -27,19 +22,15 @@ Route::get('/ket-qua', 'HomepageController@result')->name('redireHOmePage');
 Route::get('/{slug}/ket-qua', 'HomepageController@result')->name('redireHOmePage');
 Route::get('{slug}/ket-qua', 'HomepageController@result')->name('redireHOmePage2');
 Route::get('/{slug}/ket-qua', 'HomepageController@result')->name('redireHOmePage3');
-// Route::post('/skin/add-history-skin-plugin', 'HistoryController@saveHistory')->name('saveHistory');
 Route::post('/{slug}/skin/call-soi-da', 'HomepageController@callSikin');
 Route::post('/skin/call-soi-da', 'HomepageController@callSikin');
 Route::post('/skin/add-history-skin-plugin', 'HistoryController@saveHistory')->name('saveHistory');
 Route::post('{slug}/skin/add-history-skin-plugin', 'HistoryController@saveHistory')->name('saveHistory');
 Route::post('/{slug}/{saleId}/skin/add-history-skin-plugin', 'HistoryController@saveHistory')->name('saveHistory');
 Route::post('/{slug}/skin/add-history-skin-plugin', 'HistoryController@saveHistory')->name('saveHistory');
-
-
 Route::post('/{slug}/dang-nhap-plugin', 'UserController@login')->name('loginSystem');
 Route::post('/dang-nhap-plugin', 'UserController@login')->name('loginSystem');
 Route::post('/dang-nhap-plugin', 'UserController@login')->name('loginSystem');
-
 Route::post('/{slug}/dang-nhap-plugin-game', 'UserController@loginGame')->name('loginSystem');
 Route::post('/dang-nhap-plugin-game', 'UserController@loginGame')->name('loginSystem');
 Route::post('/dang-nhap-plugin-game', 'UserController@loginGame')->name('loginSystem');
@@ -51,31 +42,17 @@ Route::get('/bat-dau-soi-da', 'HomepageController@start')->name('homePage');
 Route::get('/{slug}/lich-su-soi-da/{id}', 'HomepageController@history');
 Route::get('/{slug}/lich-su-soi-da', 'HomepageController@history');
 Route::get('/lich-su-soi-da', 'HomepageController@history')->name('redireHOmePage');
-
-
-
-
 Route::get('/makeup', 'HomepageController@redireHomePage')->name('redireHOmePage');
 Route::get('/makeup/{slug}', 'HomepageController@redireHomePage')->name('redireHOmePage');
-
 Route::get('/{slug}', 'HomepageController@skinIndex')->name('homePage');
-
 Route::post('/{slug}/dang-xuat-he-thong', 'UserController@logout')->name('logoutUser');
-
 Route::post('/dang-xuat-he-thong', 'UserController@logout')->name('logoutUser');
-
 Route::post('/dang-xuat-sale', 'UserController@logoutSale')->name('logoutUser');
 Route::post('/dang-xuat-khach-hang', 'UserController@logoutUser')->name('logoutUser');
-
-
-
 Route::get('/{slug}/get-my-info', 'ProfileController@getInfo')->name('getInfo');
-
 Route::get('/get-my-info', 'ProfileController@getInfo')->name('getInfo');
-
 Route::post('/{slug}/update-end-user', 'ProfileController@update')->name('update');
 Route::post('/update-end-user', 'ProfileController@update')->name('update');
 Route::post('/them-moi-khach-hang', 'ProfileController@saleAddUser')->name('saleAddUser');
 Route::post('/{slug}/them-moi-khach-hang', 'ProfileController@saleAddUser')->name('saleAddUser');
-// Route::get('lichsu-soida', 'HistoryController@historySoida');
 

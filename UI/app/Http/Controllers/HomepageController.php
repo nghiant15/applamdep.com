@@ -249,43 +249,8 @@ public function getDataInfo (Request $request)
     public function index (Request $request, $slug =null) 
     {  
         return redirect('/exomiyo');
-       
-       
     }
 
-
-   
-    
-    private function checkGameStatus($slug)
-    {
-
-        $url ="https://api-soida.applamdep.com/api/get-game-active";
-        $client = new Client();
-
-        $res = $client->request('get', $url, [
-            'json' => [
-                'slug'=> $slug
-              ]
-        ]);
-
-        if($res->getStatusCode() ==200)
-        {
-            $checkresult = $res->getBody()->getContents();
-            $checkresult = json_decode($checkresult);
-            $result = $checkresult->data;
-            if (str_contains($result->slugApply, $slug)) { 
-                session(['dataGame' =>$result]);
-                return true;
-            }
-            else 
-            {
-                session(['dataGame' =>null]);
-            }
-            session(['dataGame' =>null]);
-         }
-         session(['dataGame' =>null]);
-         return false;
-    }
     private function getDataById($id)
     {
     
@@ -370,32 +335,7 @@ public function getDataInfo (Request $request)
          return false;
     }
 
-    private function getGameXemtuong($companyId)
-    {
-
-        $url ="https://api-soida.applamdep.com/api/xemtuong/getInfoAdmin";
-        $client = new Client();
-      
-
-        $res = $client->request('get', $url, [
-            'query' => [
-                'company_id'=> $companyId
-              ]
-        ]);
-
-        if($res->getStatusCode() ==200)
-        {
-            $checkresult = $res->getBody()->getContents();
-            $checkresult = json_decode($checkresult);
-            $result = $checkresult->data;
-           
-            session(['dataXemtuong' =>$result]);
-             return $result;
-            
-         }
-      
-         return null;
-    }
+   
     private function getGameActive($companyId)
     {
 
@@ -741,14 +681,7 @@ public function getDataInfo (Request $request)
              "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
         }
-       else if($slug =="xemtuong")
-        {
-
-            $gameXemtuong = $this->getGameXemtuong($companyId);
-            return view("resultXemtuong", compact("slug", "showOrHide",
-             "ageGame","ageGameReal","gameType","gameJoinType1",
-             "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
-        }
+      
         else 
         {
             
