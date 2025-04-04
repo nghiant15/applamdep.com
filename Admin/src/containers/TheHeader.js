@@ -66,12 +66,12 @@ const TheHeader = () => {
 
       <CHeaderNav className="d-md-down-none mr-auto">
  
-        <CHeaderNavItem className="px-3" >
+        {/* <CHeaderNavItem className="px-3" >
           {
-            localStorage.getItem("type") == "0" || localStorage.getItem("type") == "1" ? "" :
+            localStorage.getItem("type") == "1" || localStorage.getItem("type") == "1" ? "" :
               <CButton color="info" onClick={() => { setShow(true) }} style={{ color: '#ffffff' }}>Hướng dẫn người dùng</CButton>
           }
-        </CHeaderNavItem>
+        </CHeaderNavItem> */}
 
      
       </CHeaderNav>
@@ -84,7 +84,7 @@ const TheHeader = () => {
       </CHeaderNav>
 
       {
-        localStorage.getItem("isAD") == "0" ? "" :
+        localStorage.getItem("isAD") == "1" ? "" :
           <Modal size="xl" isOpen={show}>
             <ModalHeader style={{ alignSelf: 'center' }}>
               <center>

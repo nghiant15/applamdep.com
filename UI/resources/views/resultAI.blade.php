@@ -13,6 +13,7 @@
          }
 
          $dataMinisize =  session('dataminisize', null);
+         
 
        
 @endphp
@@ -22,17 +23,14 @@
     <script>
         var successGameTrue =  {!! json_encode($successGame) !!};
         var showOrHide =  {!! json_encode($showOrHide) !!};
-        
-        function getAllText()
+        var recordHistory =  {!! json_encode($dataRecord) !!};
+         var recordHistoryVariable = null;
+        if( recordHistory != null)
         {
-             var texthtmlcontent = "";
-             texthtmlcontent += document.getElementById("idGeneralResult").textContent;
-             texthtmlcontent += document.getElementById("danhsachketquatungphan").textContent;
+            recordHistoryVariable = JSON.parse( recordHistory.Result);
 
-          
         }
-
-        
+        var dataConfigAI =  {!! json_encode($dataConfigAI) !!};
     </script>
 
 @include('popup.subscrible')
@@ -66,7 +64,6 @@
     <link rel="stylesheet" href="/styles/global/index.css">
     <link rel="stylesheet" href="/styles/global/global_responsive.css">
     <link rel ="stylesheet" href ="/css/welcomNew.css">
-    <link rel ="stylesheet" href ="/css/resultai.css">
     <!-- ASSETS CDN SLICK -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -97,7 +94,9 @@
 
 
 <style>
-
+.ressultContent {
+    display: block;
+}
 .toneColorSkin {
     font-family: SFU Futura !important;
     font-size: 14px;
@@ -142,6 +141,29 @@
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+#contentResultAI ul, li  {
+    font-family:unset !important; 
+    font-style: unset !important;
+    font-size: unset !important ;
+    line-height: 20px unset !important;
+    color: #1c213f ;
+    text-align: justify;
+
+}
+#contentResultAI h1,h2,h3,h4,h5,h6, strong {
+
+    margin-right: 5px;
+    font-weight: bold;
+    font-family: SFU Futura;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1c213f;
+}
+#contentResultAI{
+    padding: 0px 20px;
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -244,7 +266,10 @@
 @endsection
 @section('contentpage')
 
+@if($slug !="neomtech")
 
+@includeIf("tuvanMinisize")
+@endif
 
 @if ( $zaloLink != "" )
 <a  id ="zaloMessage" style ="display:none"  onclick="OpenAction('zalo')" ><div style="position:fixed;bottom:70px;right:30px; z-index:1000" class="messenger"><noscript>
@@ -397,10 +422,42 @@
            
         </div>
 
+        <span  id ="scoreAvg" class="score">  </span>  
 
-     
+        {{-- <div class="profilearea">
 
-      
+        <div class="dropdown">
+            <button class="dropbtn" >
+                <span id ="profileName"> </span>
+                <img src="/assets/drop-down-arrow.png"> 
+            </button>
+            <div class="dropdown-content">
+            <a href="javascript:void(0)" onclick ="openAccountPage()">Thông tin tài khoản</a>
+            <a href="javascript:void(0)" onclick ="openHomePage()">Soi da online</a>
+            <a href="javascript:void(0)" onclick ="openHistoryPage()">Lịch sử soi da</a>
+            <a href="javascript:void(0)" onclick="logout()"  >Đăng xuất</a>
+            </div>
+        </div>
+    </div> --}}
+
+        {{-- <div class="areaLogin">
+
+
+        <ul class="right-menu">
+
+
+
+
+            <li class="right-text login">
+                <a id="myBtn" href="javascript:void(0)" data-toggle="modal" data-target="#loginModal">Đăng nhập/Đăng ký</a>
+            </li>
+            <li class="right-text login">
+                <a href=" /" href="javascript:void(0)" data-toggle="modal"
+                    data-target="#signUpModal">Đăng ký</a>
+            </li>
+        </ul>
+
+    </div> --}}
 
         <style>
             .slick-slide img {
@@ -495,19 +552,19 @@
 
                 <div class="box-modal-suggestion">
                     <p class="text-center-box">
-                    Bây giờ hãy khám phá các <br>dấu hiệu lão hoá da của bạn một cách chi tiết
+                        Bây giờ hãy khám phá các <br>dấu hiệu lão hoá da của bạn một cách chi tiết
 
                     </p>
                 </div>
 
-                <div class="resultNote" id ="viewhistory" style ="display:none">
+                <div class="resultNote" id ="viewhistory">
 
+                    <p class="text-title-paragraph">
 
-                
                         Thông tin tổng quan
                     </p>
                 </div>
-                <div id="idGeneralResult" style ="display:none">
+                <div id="idGeneralResult">
 
                
                 </div>
@@ -516,10 +573,26 @@
 @if (Session()->has('dataCompany'))
 
 @else
-    
+       @if($slug !="bibabo")
+        
+
+                <div class="resultNote">
+                        
+                    <p class="maincontent text-suggest-login" id="suggest-login-content">
+
+                <span style="font-weight:600;text-decoration: underline;cursor:pointer" onclick="ToggleDisplayClass('.status-modal-account',true)">
+                THEO DÕI 
+                </span>
+                <span style ="text-indent: 3px;">  LỊCH SỬ SOI DA</span>
+
+                <span style="font-weight: 600;"></span>  
+                </p>
+
+                </div>
+        @endif
 @endif
 
- <div class ="toneColorSkin" style ="display:none">
+ <div class ="toneColorSkin">
     <p class="titleColor centerScreen"> 
     
         <span  class ="title2" > Màu trang điểm, quần áo.. </span>
@@ -558,33 +631,43 @@
                     <div class="modalpopup">
 
                         <p class="maincontent">
-                             Công nghệ AI: Chìa khóa cho làn da hoàn hảo.
+                            Chúng tôi muốn bạn có thể dễ dàng nắm bắt mọi thông tin và hiểu hơn trước khi vào sâu chi tiết
                         </p>
                      
                     </div>
                 </div>
-                <div class="resultNote" id ="resultAI">
+                <div class="resultNote">
 
-                 
+                    <p class="text-title-paragraph">
+
+                        Các vấn đề cần lưu ý nhất trên làn da
+                    </p>
+
+                    <p class="description">
+                        Hiểu chi tiết hơn về làn da giúp bạn biết cách chăm sóc và có làn da tuyệt vời nhất
+                    </p>
                 </div>
                 
                 
-                <div class="result-list" id="danhsachketquatungphan" style ="display:none">
+                <div class="result-list" id="danhsachketquatungphan">
 
 
 
 
                 </div>
 
-                <div class="title-overview" style ="display:none">
+                <div class="title-overview">
                     <div class="hcn">
 
                     </div>
-                    <div class="title-larger" id ="ketluachitiet" style ="display:none" >
+                    <div class="title-larger" id ="ketluachitiet" >
                         Kết luận chi tiết
                     </div>
 
                 </div>
+
+
+              
 
             </div>
 
@@ -597,6 +680,21 @@
                 }
                 .ConcludeItem  {
                 font-family: SFU Futura;
+                font-style: normal;
+                font-size: 14px;
+                line-height: 20px;
+                color: #1c213f;
+                }
+
+                .ConcludeItem1{
+                    padding: 0px 10px;
+                 
+                  
+                }
+
+              
+                .ConcludeItem1 {
+                /* font-family: SFU Futura; */
                 font-style: normal;
                 font-size: 14px;
                 line-height: 20px;
@@ -627,6 +725,12 @@
 
 }
 
+.paragraph-text-pa-v1 {
+    display: inline-flex;
+   
+
+}
+
 .bold-text-pa {
     margin-right: 5px;
     font-weight: bold;
@@ -634,6 +738,18 @@
 .bold-text-pa1 {
     font-weight: bold;
 }
+
+.paragraph-text-pa-v1 .bold-text-pa  {
+    font-weight: unset !important;
+   
+
+}
+
+.paragraph-text-pa-v1 .leveldegree {
+    color: #1c213f !important;
+    font-weight: unset !important;
+}
+
 .tooltip-target { position: relative; }
 
 .tooltip-content { 
@@ -681,15 +797,25 @@
             </style>
 
 
-            <div id ="ConcludeItemArea" class ="blurdiv1" style ="display:none" >
+            <div id ="ConcludeItemArea" class ="blurdiv1" >
         
             </div>
-        
-
-
-                <div class="title-overview blurdiv1" id ="tvtq_area" style ="display:none"  >
+            <div class="title-overview "   >
                     <div class="hcn">
 
+                    </div>
+                    <div class="title-larger">
+                        Phân tích cùng AI
+                    </div>
+
+            </div>
+
+            <div id ="contentResultAI">
+
+            </div>
+
+                <div class="title-overview blurdiv1" style ="display:none" id ="tvtq_area"   >
+                    <div class="hcn">
                     </div>
                     <div class="title-larger">
                         Tư vấn tổng quát
@@ -720,36 +846,13 @@
 
                     }
                 </style>
-                <div id="idtuvantongquan" class="blurdiv1"  style="
+                <div id="idtuvantongquan" style ="display:none" class="blurdiv1"  style="
                 text-align: justify;
-                display:none;
            
                 padding: 10px;
             ">
 
-                    {{-- <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Lão hoá da: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div>
-
-                    <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Mụn và mụn viêm đỏ: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div>
-
-                    <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Quầng thâm mắt: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div>
-
-                    <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Lỗ chân lông: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div>
-                    <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Đốm thâm nám: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div> --}}
+                    
 
                 </div>
                 @endif
@@ -758,13 +861,38 @@
             </div>
             <div class="recomend-title-box" id ="hideProductList"> 
 
+<div class="centerText"> 
+<p>GỢI Ý TỪ CHUYÊN GIA</p>
+<img src="/images/start-direct.png"> 
+
+</div>
+<div  class="title-strong"> 
+<p> CÁC SẢN PHẨM CHUYÊN GIA ĐỀ XUẤT RIÊNG CHO BẠN </p>
+</div>
+</div>
+
+<div id = "list-product">
+
 
 
 </div>
 
-
             @if (1==1)
-           
+            <div class="content-plugin" id ="buttonRecomand">
+                
+               
+                <div class="box-class-center" style="height:77px">
+                    <div class=" nav-button  spaceAjustVer btnrecomend">
+
+                        <a href="javascript:void(0)" onclick="openRecomendProduct()" style="width: 234px !important">
+                            <img src="/images/arrow.png"> GỢI Ý CHĂM SÓC TỪ CHUYÊN GIA </a>
+
+                    </div>
+                </div>
+
+
+
+            </div>
 
             @endif
 
@@ -789,7 +917,8 @@
             var zaloLink = '{!! $zaloLink !!}';
             var messengerLink = '{!! $messengerLink !!}';
             function openRecomendProduct() {
-
+                window.open("https://docs.google.com/forms/d/12okhAa0PxC0nG4xCPmygGaqWF_ZTTiqV3sT3MJ2nXMA/edit",'_blank');   
+                return;
                 var base_url = window.location.origin + "/" + "soida/nhan-de-xuat-cham-soc-da";
 
 
@@ -1521,7 +1650,7 @@
 
     <script type="text/javascript" src="/js/contant.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/result.js"></script>
+    <script type="text/javascript" src="/js/resultAI.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -1745,8 +1874,11 @@
             } else {
                 objectReponse = JSON.parse(resultCheck);
             }
+
             resultModule.startup();
-            getTextInfo();
+
+            reDrawInfomation();
+
             if(isLogin)
             {
                 drawProduction(objectReponse.data.facedata.hintResult);
@@ -1821,6 +1953,12 @@
    var refreshIntervalId;
 
 
+    // setTimeout(() => {
+    //     refreshIntervalId = setInterval(myTimer, 1000);
+    // }, 4000);
+
+
+
 let isPlaying = false;
 
 ["click", "mousemove", "mouseover","scroll","keypress", "touchmove", "focus"].forEach((eventName)=>{
@@ -1845,6 +1983,14 @@ let isPlaying = false;
 });
 
 
+setTimeout(() => {  
+    document.getElementById("fromResiger").style.display ="block";
+
+    // $("#status__text__login").click();
+   
+}, 5000);
+
+
 
 
 function myTimer() {
@@ -1857,7 +2003,8 @@ function myTimer() {
             { 
                 setTimeout(() => {
                       
-                        //  readTextConclude();
+                    return;
+                         readTextConclude();
                         clearInterval(refreshIntervalId);  
                 }, 2000);
                 
@@ -1896,13 +2043,34 @@ function openFormRegister2() {
     
 }
 
+function DowloadBook() 
+{   
+    return;
+    var item =  sessionStorage.linkhref;
 
+    
+
+    if(item != null &&  item != '')
+    {
+            var link = document.createElement("a");
+            link.setAttribute('download', name);
+            link.href = item;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            sessionStorage.removeItem("linkhref");
+            
+
+    }
+
+
+}
 
 const timeoutDisplayMessage = setTimeout(ShowZalo, 5000);
 
 function ShowZalo() {
- 
-  document.getElementById("socialBLock").style.display = "none";
+    return;
+  document.getElementById("socialBLock").style.display = "block";
 
   
 }
@@ -1912,7 +2080,7 @@ function OpenAction ( connectionType)
 {   
 
     addContionType(connectionType);
-   setTimeout(() => {
+  setTimeout(() => {
     if(zaloLink =="")
     {
         zaloLink =  "http://zalo.me/769304971095062899?src=qr";
@@ -1942,11 +2110,12 @@ function OpenAction ( connectionType)
 function openRegister ( connectionType ="minisize")
 {   
 
+//     window.open("https://chat.zalo.me/",'_blank');
+//   return;
    addContionType(connectionType);
    zaloLink =  "{{$dataMinisize->linkRegister}}";
    changeFormTuvan();
-
-   window.open(zaloLink,'_self');
+   window.open(zaloLink,'_blank');
    return;
 }
 
@@ -1979,9 +2148,7 @@ function openRegister ( connectionType ="minisize")
 </div>
 
 
-<div class ="imagebackground" id ="fromResiger" style="
-    display: none;
-" >
+<div class ="imagebackground" id ="fromResiger" >
     <a  onclick ="openRegister()" >
         <img src ="{{$dataMinisize->minisize}}">
     </a>
@@ -2108,6 +2275,5 @@ background-color: transparent;
  color: #ffffff;
 }
 </style>
-
 
 

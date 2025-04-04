@@ -95,11 +95,9 @@ module.exports = {
             const mykeys = cache.keys();
             cache.del(mykeys);
             const { username, password } = req.body;
-    
+         
       
-            var dataUser = await User.findOne().or([{ UserName: username, 
-                
-                Status: "Actived" }, { Email: username, Status: "Actived" }]);
+            var dataUser = await User.findOne().or([{ UserName: username, Status: "Actived" }, { Email: username, Password: password, Status: "Actived" }]);
         
             if (dataUser != null) {
                 var role = await Role.findOne({ _id: dataUser.Role_Id });

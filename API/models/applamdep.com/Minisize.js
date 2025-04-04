@@ -52,6 +52,11 @@ const Minisize = new Schema({
     {
         type:  String, 
         default: "3" 
+    },
+    showOrHide : 
+    {
+        type: String , 
+        default:0
     }
   
 });

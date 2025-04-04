@@ -10,6 +10,7 @@ const CompanyPlugin = new Schema({
     Email: {
         type: String,
         trim: true,
+        default: ""
     },
     Phone: {
         type: String,
@@ -22,7 +23,9 @@ const CompanyPlugin = new Schema({
         trim: true
     },
     Address: {
-        type: String
+        type: String,
+        default: "",
+       
     },
     Slug: {
         type: String,

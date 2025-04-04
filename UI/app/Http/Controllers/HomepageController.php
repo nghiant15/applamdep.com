@@ -526,6 +526,37 @@ public function getDataInfo (Request $request)
          return false;
     }
 
+
+
+    private function getHistoryById()
+    {
+        return false;
+    
+        $url ="https://api-soida.applamdep.com/api/get-hisotry-by-ip";
+        $ipClinet = "115.79.192.86";
+        $client = new Client();
+      
+        $res =$client->request('post', 'https://api-soida.applamdep.com/api/get-hisotry-by-ip', [
+            'json' => [
+                 'ipRequest'=> $ipClinet
+              ]
+        ]);
+        if($res->getStatusCode() ==200)
+        {
+            $checkresult = $res->getBody()->getContents();
+            $checkresult = json_decode($checkresult);
+          
+            $result = $checkresult->data;
+
+          
+
+            session(['dataHistoryRecord' =>$result]);
+            
+         }
+         return false;
+    }
+
+
     private function getGameXemtuong($companyId)
     {
 
@@ -573,6 +604,36 @@ public function getDataInfo (Request $request)
             session(['dataGame' =>$result]);
             
             return $result;
+            
+         }
+      
+         return null;
+    }
+
+
+    private function getAIConfig($slug)
+    {
+
+        $url ="https://api-soida.applamdep.com/api/aiConfig/getInfo";
+        $client = new Client();
+      
+
+        $res = $client->request('get', $url, [
+            'query' => [
+                'slug'=> $slug
+              ]
+        ]);
+
+        if($res->getStatusCode() ==200)
+        {
+            $checkresult = $res->getBody()->getContents();
+            $checkresult = json_decode($checkresult);
+            $result = $checkresult->data;
+
+       
+           
+            session(['dataaiConfig' =>$result]);
+             return $result;
             
          }
       
@@ -673,8 +734,14 @@ public function getDataInfo (Request $request)
       
 
         $gameMinisize = $this->getGameMinisize($dataCompanyId);
-        
+  
+    
+
+     
+
       
+
+
         $conffigSetting = $this->getConfigSetting($dataCompanyId);
 
     
@@ -838,6 +905,7 @@ public function getDataInfo (Request $request)
     }
     
 
+
     public function result (Request $request, $slug =null) 
     {
         $data  =  session('dataResult', null);
@@ -877,12 +945,6 @@ public function getDataInfo (Request $request)
         $ageGame = 0;
         $ageGameReal=0;
         $gameType = 1;
-
-
-
-
-
-
         session(['gameJoinType1' =>false]);
         if( $dataGame != null)
         {
@@ -969,21 +1031,32 @@ public function getDataInfo (Request $request)
      
          $gameMinisize = $this->getGameMinisize($companyId);
          $showOrHide = $gameMinisize->showOrHide;
-
-       
         if($slug !="")
         {
           
         }
         if($slug =="demoai" )
         {
-            return view("resultAI", compact("slug", "showOrHide",
+            // $this->getHistoryById();
+
+            $dataRecord   =  session('dataHistoryRecord', null);
+
+            if($dataRecord  != null)
+            {
+                $dataRecord = reset($dataRecord);
+            }
+
+            $dataConfigAI = $this->getAIConfig($slug);
+
+     
+
+            return view("resultAI", compact("slug", "dataConfigAI", "showOrHide", "dataRecord",
              "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
         }
         if($slug =="bsnho"  || $slug =="exomiyo" || $slug =="neomtech")
         {
-
+       
            
             return view("resultZalo2", compact("slug", "showOrHide",
              "ageGame","ageGameReal","gameType","gameJoinType1",

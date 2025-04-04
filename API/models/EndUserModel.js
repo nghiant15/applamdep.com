@@ -18,6 +18,10 @@ const EndUser = new Schema({
         type: String,
 
     },
+    ageUser: {
+        type: String,
+         default: "",
+    },
     company_id: {
         type: String
     },

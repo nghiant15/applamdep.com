@@ -286,8 +286,10 @@ class HistoryController extends Controller
 
         // if($ipClient =="127.0.0.1" || $ipClient =="192.168.1.24" || $ipClient ="125.235.233.250" )
         // {
-        //     $ipClient = "118.69.182.32";
+        //     $ipClient = "115.79.192.86";
         // }
+
+       
         $connectionType = $request->input('connectionType',"");
         $timeConnection = $request->input('timeConnection',"");
         $successGame   =  session('successGame', false);
@@ -353,6 +355,7 @@ class HistoryController extends Controller
                     "ageUser" => $ageUser,
                     "Result"=> $result
                 ];
+                
                 $client = new Client();
                 $res = $client->request('post',$loginUrl , [
                                         'headers' => 
@@ -374,7 +377,11 @@ class HistoryController extends Controller
                 }
                 return  ["is_success" =>false];
              }
-}
+    }
+
+
+
+    
     
 
 

@@ -521,7 +521,8 @@ module.exports = {
                     gameType,
                     connectionType,
                     timeConnection,
-                    ageGameReal, 
+                    ageGameReal,
+                    ageUser, 
                     slug,Name} = req.body;
                
                 let user = req.user;
@@ -616,6 +617,7 @@ module.exports = {
                 const result = await HistorySkin.create({
                     "saleName": saleName,
                     "saleId2": saleId2,
+                    "ageUser" : ageUser,
                  "companyName" :companyName,
                    "saleType": saleType,
                         "UserName": nameInput,
@@ -675,7 +677,9 @@ module.exports = {
                     connectionType,
                     timeConnection,
                     gameType,
-                Sale_Id,Image,ipClient, ipRequest,successGame, slug, regionName, dataCheckRegion } = req.body;
+                Sale_Id,Image,ipClient, ipRequest,successGame, slug, regionName, dataCheckRegion,
+                ageUser
+            } = req.body;
 
                
                 const compnayCheck = await CompanyPlugin.findOne({ _id: ObjectId(Company_Id)});
@@ -733,6 +737,7 @@ module.exports = {
                     "Sale_Id": Sale_Id,
                     "successGame": successGame,
                     "ageGame": ageGame,
+                    "ageUser" : ageUser,
                     "ageGameReal": ageGameReal,
                     "Create_Date": Date.now()
             });

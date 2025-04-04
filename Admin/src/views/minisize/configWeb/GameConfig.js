@@ -59,7 +59,26 @@ getTimeConver = (datetime) => {
             Lưu thay đổi
           </Button>
         </div>
+        <FormGroup>
+        <Label >
+        Ẩn hoặc hiện popup
+        </Label>
 
+        <CSelect
+              onChange={e => this.setStateByName("showOrHide", e.target.value)}   custom size="sm" name="showOrHide" 
+              value ={this.props.showOrHide}
+              id="company_idSearch">
+
+              <option   value ="0">
+              Ẩn popup
+              </option>
+              <option   value ="1">
+              Hiển thị popup
+              </option>
+
+        </CSelect>
+                   
+  </FormGroup>
        
       <FormGroup>
     <Label >

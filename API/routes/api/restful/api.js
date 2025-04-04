@@ -440,6 +440,19 @@ module.exports = function (app) {
     app.route("/api/minisize/getInfo").get(MinisinzeController.getInfo);
     app.route("/api/minisize/getInfoAdmin").get(MinisinzeController.getInfoAdmin);
 
+    const AIController = require("../../../controllers/AIController");
+    app.route("/api/aiConfig/update").post(AIController.addOrUpdate);
+
+    app.route("/api/aiConfig/getInfo").get(AIController.getInfo);
+    app.route("/api/aiConfig/getInfoAdmin").get(AIController.getInfoAdmin);
+
+    const SettingController = require("../../../controllers/SettingController");
+    app.route("/api/settingBanner/update").post(SettingController.addOrUpdate);
+    app.route("/api/settingBanner/getInfo").get(SettingController.getInfoPupup);
+
+
+
+    
     // sdk and notificaion
     const sdkRouter = require("../../../controllers/MakeUpControllerNew/SdkController");
     const itemRouter = require("../../../controllers/MakeUpControllerNew/ItemController");

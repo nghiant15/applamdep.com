@@ -237,9 +237,8 @@ module.exports = {
 
     LoginEndUserv2: async (req, res) => {
         try {
-            const { password, username,phoneNumber, company_id, slug, historyId } = req.body;
-
-            console.log("nghia",historyId);
+            const { password, ageUser, username,phoneNumber, company_id, slug, historyId } = req.body;
+            console.log(req.body);
             let role = 1;
             let filterLogin = {isDelete: false};
 
@@ -267,6 +266,7 @@ module.exports = {
                             "email": "",
                             "type" : "0",
                             "google_id": "",
+                            "ageUser":  ageUser,
                             "company_id": company_id,
                             "phone": phoneNumber,
                             "name": username,
@@ -335,17 +335,24 @@ module.exports = {
                 let objectUpdateHistory = {
                     "UserName":  username,
                     "Name": username,
+                    "ageUser": ageUser,
                     // "score": score, 
                     "Phone": phoneNumber,
                     "Create_Date": Date.now()
                     };
-                    
-                    
                     let result = await HistorySkin.updateOne({ _id: ObjectId(historyId) }, objectUpdateHistory);
             }
             if (dataUser != null) {
-
-               
+                
+                let userUpdate = {
+                   
+                    "ageUser": ageUser,
+                    "name": username,
+                    "username": username,
+                    // "score": score, 
+                    "Phone": phoneNumber
+                    };
+                     await User.updateOne({ _id: ObjectId(dataUser._id) }, userUpdate);
 
                  const token = jwt.sign({ _id: dataUser._id }, "qwertyuioplkjhgfdsazxcvbnm");
                 res.send(Response(200, "Đăng nhập thành công !!!", { "data": dataUser, "token": token, "role": role }, true));

@@ -116,30 +116,22 @@ $.ajax({
   contentType: "application/json; charset=utf-8",
   success: async function (data) {
      return;
-    
-
   },
   complete: function (data) {
-
-
-    setTimeout(() => {
-              
+        setTimeout(() => {
+                var base_url = window.location.origin + "/" + "soida/ket-qua";
+                if(slugGlobal != null  &&  slugGlobal !== "")
+                {
+                    base_url = window.location.origin + "/" + slugGlobal +"/" + "ket-qua";
             
-              var base_url = window.location.origin + "/" + "soida/ket-qua";
-              if(slugGlobal != null  &&  slugGlobal !== "")
-              {
-                  base_url = window.location.origin + "/" + slugGlobal +"/" + "ket-qua";
-          
-              }
-              if(slugGlobal =="book")
-              {
-                var bookSlug =  window.location.pathname.split("/").pop();
-                base_url = window.location.origin + "/" + slugGlobal +"/"+ bookSlug +"/" + "ket-qua";
-              }
-              window.open(base_url,"_self")
-          
-          
-          }, 1000);
+                }
+                if(slugGlobal =="book")
+                {
+                  var bookSlug =  window.location.pathname.split("/").pop();
+                  base_url = window.location.origin + "/" + slugGlobal +"/"+ bookSlug +"/" + "ket-qua";
+                }
+                window.open(base_url,"_self")
+            }, 1000);
 
 
   },

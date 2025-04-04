@@ -10,25 +10,19 @@ var  api =  {
     baser_url:  "https://api-soida.applamdep.com",
     api_addUrl: "api/add-end-user",
     api_loginUser: "api/login-end-user",
-
     api_getInfo: "api/get-end-user-byId",
     api_getHistory: "api/get-history-skin-by-id",
     api_getHistoryById:  "api/get-detail-history-skin",
-
     api_CheckUrl: "api/check-access-slug",
-
     api_addUrl: `${slug}api/add-end-user`,
     api_loginUser: `${slug}api/login-end-user`,
     api_loginAdmin: `${slug}api/plugin-login_pg`,
     api_createByPg: `${slug}them-moi-khach-hang`,
-  
     api_updateUser: `update-end-user`,
     api_getInfo: `${slug}api/get-end-user-byId`,
     api_getHistory: `${slug}api/get-history-skin-by-id`,
     api_getHistoryById: `${slug}api/get-detail-history-skin`,
     api_CheckUrl: `${slug}api/check-access-slug`,
-  
-
     serve: {
         baser_urlServer: "https://applamdep.com",
         get_banner: `api/evoucher/banner/getAll`,
@@ -48,18 +42,13 @@ var  api =  {
         get_listHistory: `${slug}skin/get-list-history`,
         get_color: `${slug}make-up/get-makeup-color-by-typeId`,
         post_datlich: `${slug}user/booking`,
-    
         get_api_soida: `${slug}skin/call-soi-da`,
         get_api_makeup: `${slug}skin/call-makup`,
         get_kltq2: `/${slug}get-ket-luan-chi-tiet`,
         get_tvtq2: `/${slug}get-tu-van-tong-quan`,
-    
         get_campaign: `${slug}api/campaign/getAll`,
-        get_banner: `api/evoucher/banner/getAll`,
         get_footerData: `api/footerPage/getAll`,
-    
         checkSlug: `api/check-access-url`,
         get_evoucher: `${slug}api/customer/requestVoucher`,
       },
-
 };

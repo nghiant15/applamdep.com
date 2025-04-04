@@ -586,6 +586,8 @@ function drawConcludeDetail(dataRequest) {
          continue;
       var valueGroupK = item['sdktype'];
       drawConcludev2( groupK, valueGroupK, item);
+      getStatusSkinGroup(groupK,valueGroupK,item);
+      getStatusSkinGroupPre(groupK,valueGroupK,item);
   }
 
 return;
@@ -801,6 +803,159 @@ $("#idtuvantongquan").append(htmlTemp);
 
 var sumScoreAvg  =0;
 
+function getStatusSkinGroup ( groupk, valuek, item) 
+{
+  var tilte = "";
+  var valueRel =  item['avg'];
+  if( typeof(valueRel) =="undefined")
+  {
+    return;
+  }
+  if(  valueRel<= 1)
+  {
+    valuek = 1;
+  }
+  else if( valueRel <= 2)
+  {
+    valuek = 2;
+  }
+  else if( valueRel <= 3)
+  {
+    valuek = 3;
+  }
+  var text = "Tốt";
+
+    valuek=  valuek+'';
+
+    switch(groupk) {
+      case "K5":
+        tilte = "Lão hoá da";
+        break;
+
+      case "K6":
+        tilte = "Mụn và mụn viêm đỏ";
+        break;
+      case "K7":
+        tilte ="Quầng thâm mắt";
+        break;
+      case "K8":
+        tilte ="Lỗ chân lông";
+      break;
+      case "K9":
+        tilte ="Đốm thâm nám";
+        break;
+      default:
+        break;
+    }
+   if(valuek ==2)
+   {
+       text = "Bình thường";
+   }
+   if(valuek >=3)
+   {
+       text = "Có nhiều vấn đề về da";
+   }
+   if(valuek>3)
+    valuek =3;
+
+   var valueLevel1 = valueRel*1;
+
+   if(valueLevel1 >3)
+   valueLevel1 = 3;
+
+ var percentage =  Math.round((valueLevel1/3) * 100);
+
+ var valuerel2 =  Math.round(valueRel/3*10);
+
+ var value23 = Math.round(10 - valuerel2);
+ sumScoreAvg+= value23;
+
+  percentage =  Math.round((value23/10) * 100);
+
+    var htmlTemp = ' <div class="ConcludeItem"><p class ="paragraph-text-pa"> <span class ="bold-text-pa">'+tilte+': </span>\
+    <span class ="leveldegree"> '+text+' (Mức '+value23 +'/10) </span>';
+
+    $("#resultAIContentCurrent").append(htmlTemp);
+
+}
+
+
+function getStatusSkinGroupPre ( groupk, valuek, item) 
+{
+  var tilte = "";
+  var valueRel =  item['avg'];
+  if( typeof(valueRel) =="undefined")
+  {
+    return;
+  }
+  if(  valueRel<= 1)
+  {
+    valuek = 1;
+  }
+  else if( valueRel <= 2)
+  {
+    valuek = 2;
+  }
+  else if( valueRel <= 3)
+  {
+    valuek = 3;
+  }
+  var text = "Tốt";
+
+    valuek=  valuek+'';
+
+    switch(groupk) {
+      case "K5":
+        tilte = "Lão hoá da";
+        break;
+
+      case "K6":
+        tilte = "Mụn và mụn viêm đỏ";
+        break;
+      case "K7":
+        tilte ="Quầng thâm mắt";
+        break;
+      case "K8":
+        tilte ="Lỗ chân lông";
+      break;
+      case "K9":
+        tilte ="Đốm thâm nám";
+        break;
+      default:
+        break;
+    }
+   if(valuek ==2)
+   {
+       text = "Bình thường";
+   }
+   if(valuek >=3)
+   {
+       text = "Có nhiều vấn đề về da";
+   }
+   if(valuek>3)
+    valuek =3;
+
+   var valueLevel1 = valueRel*1;
+
+   if(valueLevel1 >3)
+   valueLevel1 = 3;
+
+ var percentage =  Math.round((valueLevel1/3) * 100);
+
+ var valuerel2 =  Math.round(valueRel/3*10);
+
+ var value23 = Math.round(10 - valuerel2);
+ sumScoreAvg+= value23;
+
+  percentage =  Math.round((value23/10) * 100);
+
+    var htmlTemp = ' <div class="ConcludeItem"><p class ="paragraph-text-pa"> <span class ="bold-text-pa">'+tilte+': </span>\
+    <span class ="leveldegree"> '+text+' (Mức '+value23 +'/10) </span>';
+
+    $("#resultAIContentBefore").append(htmlTemp);
+
+}
+
 function drawConcludev2 ( groupk, valuek, item) 
 {
   var tilte = "";
@@ -946,10 +1101,6 @@ function drawConcludev2 ( groupk, valuek, item)
      if(valueLevel1 >3)
      valueLevel1 = 3;
 
-
-
-
-  
    var percentage =  Math.round((valueLevel1/3) * 100);
 
    var valuerel2 =  Math.round(valueRel/3*10);
