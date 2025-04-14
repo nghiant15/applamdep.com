@@ -683,8 +683,6 @@ function drawConcludeDetail(dataRequest) {
 
 }
 
-
-
 return;
 if (sessionStorage.getItem("dataCompany") === null) {
 
@@ -1670,7 +1668,7 @@ function avgScore()
 
     
 
-   document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
+   document.getElementById("score2").textContent =  ""+ parseFloat(avgFinal).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
 
    
@@ -1755,7 +1753,7 @@ function avgScorev2(dataDraw)
 
     avgFinal = (10 - avgFinal);
                                                                
-    document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
+    document.getElementById("score2").textContent =  ""+ parseFloat(avgFinal).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
 
 }

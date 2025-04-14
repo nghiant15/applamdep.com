@@ -1,19 +1,16 @@
 @php
-        $dataLikn =  session('TuVanData', null);
-         $zaloLink =  $dataLikn->zaloLink;
-         $messengerLink = $dataLikn->messengerLink;
-
-         if($zaloLink =='')
-         {
+            $dataLikn =  session('TuVanData', null);
+            $zaloLink =  $dataLikn->zaloLink;
+            $messengerLink = $dataLikn->messengerLink;
+            if($zaloLink =='')
+            {
             $zaloLink = "http://zalo.me/769304971095062899?src=qr";
-         }
-        if($messengerLink =='')
-         {
+            }
+            if($messengerLink =='')
+            {
             $messengerLink ="https://m.me/106007668343244?ref=mess";
-         }
-
-         $dataMinisize =  session('dataminisize', null);
-
+            }
+             $dataMinisize =  session('dataminisize', null);
        
 @endphp
 @extends('layoutZalo')
@@ -21,7 +18,7 @@
 
     <script>
         var successGameTrue =  {!! json_encode($successGame) !!};
-      
+        var dataConfigAI =  {!! json_encode($dataConfigAI) !!};
     </script>
 
 @include('popup.subscrible')
@@ -55,6 +52,8 @@
     <link rel="stylesheet" href="/styles/global/index.css">
     <link rel="stylesheet" href="/styles/global/global_responsive.css">
     <link rel ="stylesheet" href ="/css/welcomNew.css">
+
+    <link rel ="stylesheet" href ="/css/drawContentAI.css">
     <!-- ASSETS CDN SLICK -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -1399,6 +1398,7 @@
 
     <script type="text/javascript" src="/js/contant.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/cacluateAI.js"></script>
     <script type="text/javascript" src="/js/result.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

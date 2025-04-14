@@ -28,7 +28,6 @@
         if( recordHistory != null)
         {
             recordHistoryVariable = JSON.parse( recordHistory.Result);
-
         }
         var dataConfigAI =  {!! json_encode($dataConfigAI) !!};
     </script>
@@ -94,6 +93,11 @@
 
 
 <style>
+    #contentResultAI{
+
+        font-family: SFU Futura !important;
+        font-size: 14px !important;
+    }
 .ressultContent {
     display: block;
 }
@@ -805,7 +809,7 @@
 
                     </div>
                     <div class="title-larger">
-                        Phân tích cùng AI
+                    Chuẩn đoán & tư vấn da
                     </div>
 
             </div>

@@ -1035,6 +1035,9 @@ public function getDataInfo (Request $request)
         {
           
         }
+
+        $dataConfigAI = $this->getAIConfig($slug);
+
         if($slug =="demoai" )
         {
             // $this->getHistoryById();
@@ -1046,8 +1049,7 @@ public function getDataInfo (Request $request)
                 $dataRecord = reset($dataRecord);
             }
 
-            $dataConfigAI = $this->getAIConfig($slug);
-
+           
      
 
             return view("resultAI", compact("slug", "dataConfigAI", "showOrHide", "dataRecord",
@@ -1058,20 +1060,20 @@ public function getDataInfo (Request $request)
         {
        
            
-            return view("resultZalo2", compact("slug", "showOrHide",
+            return view("resultZalo2", compact("slug", "dataConfigAI", "showOrHide",
              "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
         }
         
         if($slug =="demo"  || $slug =="soida")
         {
-            return view("resultZalo", compact("slug", "showOrHide",
+            return view("resultZalo", compact("slug",   "dataConfigAI", "showOrHide",
              "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
         }
         else  if($slug =="demoweb" )
         {
-            return view("demo", compact("slug", 
+            return view("demo", compact("slug",   "dataConfigAI",
              "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
         }
@@ -1086,7 +1088,7 @@ public function getDataInfo (Request $request)
         else 
         {
             
-            return view("resultNormal", compact("slug", "showOrHide",
+            return view("resultNormal", compact("slug", "dataConfigAI", "showOrHide", 
               
             "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 

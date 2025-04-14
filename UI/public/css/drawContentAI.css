@@ -1,0 +1,29 @@
+#contentResultAI{
+
+  font-family: SFU Futura !important;
+  font-size: 14px !important;
+}
+
+#contentResultAI ul, li  {
+  font-family:unset !important; 
+  font-style: unset !important;
+  font-size: unset !important ;
+  line-height: 20px unset !important;
+  color: #1c213f ;
+  text-align: justify;
+
+}
+#contentResultAI h1,h2,h3,h4,h5,h6, strong {
+
+  margin-right: 5px;
+  font-weight: bold;
+  font-family: SFU Futura;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1c213f;
+}
+#contentResultAI{
+  padding: 0px 20px;
+
+}
