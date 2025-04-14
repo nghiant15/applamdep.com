@@ -68,7 +68,8 @@ getTimeConver = (datetime) => {
     <Input
       name ="question"
       placeholder="Nội dung câu hỏi"
-      type="text"
+      type="textarea"
+      rows="5" 
       value={this.props.question}
       onChange={(e) => {
         this.setStateByName( "question", e.target.value );
@@ -85,7 +86,8 @@ getTimeConver = (datetime) => {
     <Input
       name ="titleProduct"
       placeholder="Giải thích, lược bỏ thêm"
-      type="text"
+      type="textarea"
+      rows="5" 
       value={this.props.noted}
       onChange={(e) => {
         this.setStateByName( "noted", e.target.value );
