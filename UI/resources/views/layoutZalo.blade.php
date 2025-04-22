@@ -147,9 +147,6 @@
 
 
     <title>EXOSCAN  </title>
-  
-    0
-
 <link rel="icon" 
       type="image/x-icon"  href="/favicon.ico" sizes="48x48">
 @if( $slug == "exomiyo")
