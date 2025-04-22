@@ -58,22 +58,14 @@
     <link rel="stylesheet" type="text/css"
         href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-            @if (isset($dataSeo->title))
-                 <title>{{$dataSeo->title}} </title>
-            @else
-                <title>soida nhận ngay yêu thương</title>
-            @endif
+      
 
         @if (isset($dataSeo->description))
         <meta name="description" content="{{$dataSeo->description}}">
         @else
 
         @endif
-        @if (isset($dataSeo->imageShareSeo))
-        <link rel="icon" type="image/png" href="{{$dataSeo->imageShareSeo}}" />
-        @else
-
-     @endif
+    
     
        @if (isset($dataSeo->imageShare))
        <meta property="og:image"  content="{{$dataSeo->imageShare}}">

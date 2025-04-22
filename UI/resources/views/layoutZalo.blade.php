@@ -59,6 +59,7 @@
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+ 
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/status.css">
@@ -144,6 +145,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @yield('header')
 
+
+    <title>EXOSCAN  </title>
+  
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48">
 @if( $slug == "exomiyo")
 <!-- TikTok Pixel Code Start -->
 <script>
