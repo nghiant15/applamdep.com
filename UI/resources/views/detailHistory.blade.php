@@ -145,7 +145,7 @@
                     <a id="myBtn" href="javascript:void(0)" data-toggle="modal" data-target="#loginModal">Đăng nhập</a>
                 </li>
                 <li class="right-text login">
-                    <a href=" https://tranganh.applamdep.com/" href="javascript:void(0)" data-toggle="modal"
+                    <a href=" https://ai.exomiyo.com/" href="javascript:void(0)" data-toggle="modal"
                         data-target="#signUpModal">Đăng ký</a>
                 </li>
             </ul>

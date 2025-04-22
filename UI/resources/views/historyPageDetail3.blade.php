@@ -227,7 +227,7 @@
                 <a id="myBtn" href="javascript:void(0)" data-toggle="modal" data-target="#loginModal">Đăng nhập/Đăng ký</a>
             </li>
             <li class="right-text login">
-                <a href=" https://tranganh.applamdep.com/" href="javascript:void(0)" data-toggle="modal"
+                <a href=" https://ai.exomiyo.com/" href="javascript:void(0)" data-toggle="modal"
                     data-target="#signUpModal">Đăng ký</a>
             </li>
         </ul>
@@ -1918,8 +1918,8 @@ let dataFace = objectReponse.faceAttitude;
 let indexDraw =0;
 ketLuanTungPhan.data.forEach((ketLuanTungPhanItem) => {
 indexDraw ++;
-let dataDrawFace  = " https://tranganh.applamdep.com/images/image1.png";
-https://tranganh.applamdep.com/images/image1.png
+let dataDrawFace  = " https://ai.exomiyo.com/images/image1.png";
+https://ai.exomiyo.com/images/image1.png
 if(dataFace)
 {
 switch(indexDraw) {
