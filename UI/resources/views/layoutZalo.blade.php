@@ -148,7 +148,7 @@
 
     <title>EXOSCAN  </title>
   
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="https://ai.exomiyo.com/favicon.png" sizes="48x48">
 @if( $slug == "exomiyo")
 <!-- TikTok Pixel Code Start -->
 <script>
