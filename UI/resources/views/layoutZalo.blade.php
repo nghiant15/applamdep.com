@@ -221,12 +221,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     @if (Session()->has('dataCompany'))
             @include('profile.update')
             @include('profile.history')
-            @include('profile.isVoucher')
+        
             @include('loginZalo.login2')
     @else
             @include('profile.update')
             @include('profile.history')
-            @include('profile.isVoucher')
+   
             @include('loginZalo.login2')
 
     @endif

@@ -13,7 +13,7 @@ Route::get('/lichsu-soida', 'HistoryController@historySoida');
 Route::get('/thong-tin-tai-khoan', 'HomepageController@profile')->name('homePage');
 Route::get('/{slug}/thong-tin-tai-khoan', 'HomepageController@profile')->name('homePage');
 Route::get('/xemchitietlichsu/{id}', 'HomepageController@historyDetailPage');
-Route::get('/xemtuong/xemchitietlichsu/{id}', 'HomepageController@historyDetailPage3');
+
 Route::get('/xemchitietlichsu2/{id}', 'HomepageController@historyDetailPage2');
 Route::post('/typeLogin/setType', 'HistoryController@setType');
 Route::get('/{slug}/nhan-de-xuat-cham-soc-da', 'HomepageController@recomendProduct')->name('homePage');
@@ -37,13 +37,12 @@ Route::post('/dang-nhap-plugin-game', 'UserController@loginGame')->name('loginSy
 Route::get('/thong-tin-tong-quan', 'HomepageController@thongtintongquan')->name('homePage');
 Route::get('/tham-gia-chuong-trinh-qua-tang', 'HomepageController@formReward')->name('homePage');
 Route::get('/{slug}/thong-tin-tong-quan', 'HomepageController@thongtintongquan')->name('redireHOmePage');
-Route::get('/trang-chu', 'HomepageController@test')->name('homePage');
+
 Route::get('/bat-dau-soi-da', 'HomepageController@start')->name('homePage');
 Route::get('/{slug}/lich-su-soi-da/{id}', 'HomepageController@history');
 Route::get('/{slug}/lich-su-soi-da', 'HomepageController@history');
 Route::get('/lich-su-soi-da', 'HomepageController@history')->name('redireHOmePage');
-Route::get('/makeup', 'HomepageController@redireHomePage')->name('redireHOmePage');
-Route::get('/makeup/{slug}', 'HomepageController@redireHomePage')->name('redireHOmePage');
+
 Route::get('/{slug}', 'HomepageController@skinIndex')->name('homePage');
 Route::post('/{slug}/dang-xuat-he-thong', 'UserController@logout')->name('logoutUser');
 Route::post('/dang-xuat-he-thong', 'UserController@logout')->name('logoutUser');

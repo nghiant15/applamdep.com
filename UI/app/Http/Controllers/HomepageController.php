@@ -202,49 +202,7 @@ public function getDataInfo (Request $request)
     }
 
 
-    public function getAllFooterPage ( )
-    {
-        return;
-        $dataUpdate = [
-            
-            // "company_id"=>  $this->getCompanyId()
-        ];
-        
-        $params = [
-        'query' => [
-            'company_id' => "-1",
-           
-
-        ]
-     ];
-        $url = "https://api.deal24h.vn"."/".Footer_getAll;
-      $client = new Client();
-      $res = $client->request('get', $url, $params);
-         if($res->getStatusCode() ==200)
-        {
-            // return  ["is_success" =>false];
-
-            $checkresult = $res->getBody()->getContents();
-            $data = json_decode($checkresult);
-
-           
-            
-             if($data->is_success)
-           {
-               
-                Cache::put('allFooter', $data->data);
-           
-            
-                  
-           }
-        
-        }
-        else 
-        {
-            return response()->json(['message' => 'Lấy lịch sử thất bại'], $res->getStatusCode() );
-        }
-       
-    }
+    
     
     public function index (Request $request, $slug =null) 
     {  
@@ -506,11 +464,12 @@ public function getDataInfo (Request $request)
        
         }
         $showOrHide = $conffigSetting->showOrHide;
-        if( $slug =="bsnho" || $slug == "exomiyo" || $slug =="neomtech")
+        if( $slug =="bsnho" || $slug == "exomiyo" )
         {
 
             return view("welcomeZalo2", compact("slug","agent", "showOrHide","isTurnOfFooter","gameJoinTo","isLoginUser"));
         }
+        return view("welcomeZalo2", compact("slug","agent", "showOrHide","isTurnOfFooter","gameJoinTo","isLoginUser"));
     
     }
 
@@ -654,13 +613,7 @@ public function getDataInfo (Request $request)
         {
           
         }
-        if($slug =="demoai" )
-        {
-            return view("resultAI", compact("slug", "showOrHide",
-             "ageGame","ageGameReal","gameType","gameJoinType1",
-             "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
-        }
-        if($slug =="bsnho"  || $slug =="exomiyo" || $slug =="neomtech")
+        if($slug =="bsnho"  || $slug =="exomiyo")
         {
 
            
@@ -669,31 +622,10 @@ public function getDataInfo (Request $request)
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
         }
         
-        if($slug =="demo"  || $slug =="soida")
-        {
-            return view("resultZalo", compact("slug", "showOrHide",
-             "ageGame","ageGameReal","gameType","gameJoinType1",
-             "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
-        }
-        else  if($slug =="demoweb" )
-        {
-            return view("demo", compact("slug", 
-             "ageGame","ageGameReal","gameType","gameJoinType1",
-             "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
-        }
-      
-        else 
-        {
-            
-            return view("resultNormal", compact("slug", "showOrHide",
-              
-            "ageGame","ageGameReal","gameType","gameJoinType1",
-             "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
-        }
-
+        return view("resultZalo2", compact("slug", "showOrHide",
+        "ageGame","ageGameReal","gameType","gameJoinType1",
+        "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
      
-
-        return view("result", compact("slug", "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame"));
     }
 
     public function recomendProduct (Request $request, $slug =null) 
@@ -945,13 +877,10 @@ public function getDataInfo (Request $request)
                         'Accept'       => 'application/json',
                         'Content-Type' => 'application/json',   
                         'api-key'=>'5PecxlB3UM9eeeWzCBAdST1LY0cBOXkf',
-                       
                         'voice'=>'banmai'
                     ],
                     'body' => $d
                 ]);             
-
-
                 if($res1->getStatusCode() ==200)
                 { 
                     $checkresult = $res1->getBody()->getContents();
@@ -969,10 +898,6 @@ public function getDataInfo (Request $request)
     
                 }
              
-
-  
-       
-
             }
             else 
             {

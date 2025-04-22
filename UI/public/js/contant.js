@@ -25,12 +25,12 @@ var  api =  {
     api_updateUser: `update-end-user`,
     api_getInfo: `${slug}api/get-end-user-byId`,
     api_getHistory: `${slug}api/get-history-skin-by-id`,
-    api_getHistoryById: `${slug}api/get-detail-history-skin`,
+    api_getHistoryById: `${slug}api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /get-detail-history-skin`,
     api_CheckUrl: `${slug}api/check-access-slug`,
   
 
     serve: {
-        baser_urlServer: "https://tranganh.applamdep.com",
+        baser_urlServer: "https://ai.exomiyo.com",
         get_banner: `api/evoucher/banner/getAll`,
         api_logoutUser: `${slug}dang-xuat-he-thong`,
         api_registerUser: `${slug}dang-ky-nguoi-dung`,
@@ -40,7 +40,7 @@ var  api =  {
         api_get_all_company : `api/plugin-list-company`,
         api_get_information_config : `get-infomation-config`,
         api_registerCollaborators: `cong-tac-vien/them-moi-doi-tac`,
-        api_getCampaignCollaborators: `cong-tac-vien/get-infomation-campaign`,
+      api_getCampaignCollaborators: `cong-tac-vien/get-infomaption-campaign`,
         api_loginServer: `${slug}dang-nhap-plugin`,
         api_loginServerGame: `${slug}dang-nhap-plugin-game`,
         api_saveHistory: `${slug}skin/add-history-skin-plugin`,
