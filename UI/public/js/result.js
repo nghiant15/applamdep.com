@@ -181,10 +181,14 @@ var html= '<div class="record-content">\
               
               tempValue = tempValue.replace("29","30")
             }
-           
+
              var templateText = tempValue.split(":");
              var tile1 = templateText[0]+":";
              var tile2 = templateText[1];
+             if(tile1 == "Tuổi da:")
+             {
+              tile2 =  tile2 *1 +2;
+             }
 
              html  +=   '<p class="content-paragraph">'+tile1 + '<strong>'+tile2+' </strong>' +'</p>';
            });
@@ -577,16 +581,66 @@ for (var i = 0; i < item.length; i++) {
 
 function drawConcludeDetail(dataRequest) {
 
+
+  // for (var i = 0; i < dataRequest.length; i++)
+  // {
+  //     var item = dataRequest[i];
+  //     var groupK = item['level'];
+  //     if(groupK < "K5") 
+  //        continue;
+  //     var valueGroupK = item['sdktype'];
+  //     drawConcludev2( groupK, valueGroupK, item);
+  // }
+
   for (var i = 0; i < dataRequest.length; i++)
-  {
-      var item = dataRequest[i];
-    
-      var groupK = item['level'];
-      if(groupK < "K5") 
-         continue;
-      var valueGroupK = item['sdktype'];
-      drawConcludev2( groupK, valueGroupK, item);
-  }
+    {
+        var item = dataRequest[i];
+        var groupK = item['level'];
+        if(groupK != "K9") 
+          continue;
+        var valueGroupK = item['sdktype'];
+        drawConcludev2( groupK, valueGroupK, item);
+    }
+
+    for (var i = 0; i < dataRequest.length; i++)
+      {
+          var item = dataRequest[i];
+          var groupK = item['level'];
+          if(groupK != "K6") 
+            continue;
+          var valueGroupK = item['sdktype'];
+          drawConcludev2( groupK, valueGroupK, item);
+      }
+
+      
+    for (var i = 0; i < dataRequest.length; i++)
+      {
+          var item = dataRequest[i];
+          var groupK = item['level'];
+          if(groupK != "K5") 
+            continue;
+          var valueGroupK = item['sdktype'];
+          drawConcludev2( groupK, valueGroupK, item);
+      }
+      for (var i = 0; i < dataRequest.length; i++)
+        {
+            var item = dataRequest[i];
+            var groupK = item['level'];
+            if(groupK != "K7" ) 
+              continue;
+            var valueGroupK = item['sdktype'];
+            drawConcludev2( groupK, valueGroupK, item);
+        }
+
+        for (var i = 0; i < dataRequest.length; i++)
+          {
+              var item = dataRequest[i];
+              var groupK = item['level'];
+              if(groupK != "K8" ) 
+                continue;
+              var valueGroupK = item['sdktype'];
+              drawConcludev2( groupK, valueGroupK, item);
+          }
 
 return;
 if (sessionStorage.getItem("dataCompany") === null) {
@@ -625,18 +679,68 @@ success:function(data)
 function drawConcludeOverview( dataRequest)
 {
 
-  for (var i = 0; i < dataRequest.length; i++)
-  {
-    var item = dataRequest[i];
-      var groupK = item['level'];
-      if(groupK < "K5") 
-         continue;
-      var valueGroupK = item['sdktype'];
-      drawConcludeOverview2( groupK, valueGroupK, item);
+  // for (var i = 0; i < dataRequest.length; i++)
+  // {
+  //   var item = dataRequest[i];
+  //     var groupK = item['level'];
+  //     if(groupK < "K5") 
+  //        continue;
+  //     var valueGroupK = item['sdktype'];
+  //     drawConcludeOverview2( groupK, valueGroupK, item);
 
       
     
-  }
+  // }
+
+
+  for (var i = 0; i < dataRequest.length; i++)
+    {
+      var item = dataRequest[i];
+        var groupK = item['level'];
+        if(groupK != "K9") 
+           continue;
+        var valueGroupK = item['sdktype'];
+        drawConcludeOverview2( groupK, valueGroupK, item);
+    }
+    for (var i = 0; i < dataRequest.length; i++)
+      {
+        var item = dataRequest[i];
+          var groupK = item['level'];
+          if(groupK != "K6") 
+             continue;
+          var valueGroupK = item['sdktype'];
+          drawConcludeOverview2( groupK, valueGroupK, item);
+      }
+
+      for (var i = 0; i < dataRequest.length; i++)
+        {
+          var item = dataRequest[i];
+            var groupK = item['level'];
+            if(groupK != "K5") 
+               continue;
+            var valueGroupK = item['sdktype'];
+            drawConcludeOverview2( groupK, valueGroupK, item);
+        }
+
+        for (var i = 0; i < dataRequest.length; i++)
+          {
+            var item = dataRequest[i];
+              var groupK = item['level'];
+              if(groupK != "K7") 
+                 continue;
+              var valueGroupK = item['sdktype'];
+              drawConcludeOverview2( groupK, valueGroupK, item);
+          }
+          for (var i = 0; i < dataRequest.length; i++)
+            {
+              var item = dataRequest[i];
+                var groupK = item['level'];
+                if(groupK != "K8") 
+                   continue;
+                var valueGroupK = item['sdktype'];
+                drawConcludeOverview2( groupK, valueGroupK, item);
+            }
+          
 }
 
 
@@ -1334,6 +1438,7 @@ function avgScore()
     let avgfinal2 = (sumScoreAvg/5);
     avgFinal = avgFinal/3*10;
     avgFinal = (10 - avgFinal);
+    avgfinal2 = avgfinal2 -2;
 
     
 
