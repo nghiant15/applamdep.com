@@ -378,6 +378,15 @@ public function getDataInfo (Request $request)
 
     public function skinIndex (Request $request, $slug =null) 
     {
+
+        $sourceCode = $request->query('source');
+
+        if(!isset($sourceCode))
+        {
+            $sourceCode = "";
+        }
+        session(['sourceControl' =>$sourceCode]);
+
         if($slug == "" ||$slug ==null   )
         {
             return redirect('/exomiyo');
