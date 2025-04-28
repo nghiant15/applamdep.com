@@ -226,7 +226,7 @@ class EndUserv2 extends Component {
  
   openHistory = (item) => {
 
-    window.open("http://localhost:3003/#/historyskin?phoneNumber="+ item.phone,"_blank");
+    window.open("https://id.applamdep.com/#/historyskin?phoneNumber="+ item.phone,"_blank");
     
   }
   
@@ -330,7 +330,7 @@ class EndUserv2 extends Component {
                               datacompany = datacompany[0];
                              }
                              let hrefLink = "https://applamdep.com/"+datacompany.Slug;
-                             let hrefVievDetail ="http://localhost:3003/#/historyskin/"+datacompany._id;
+                             let hrefVievDetail ="https://id.applamdep.com/#/historyskin/"+datacompany._id;
                             return (
                               <tr key={i}>
                                 <td className="text-center">{i + 1}</td>

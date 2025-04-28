@@ -2,6 +2,7 @@
 function getTextInfo() {
 
 
+
     var faceData = objectReponse.data.facedata;
     var imageInfo = faceData.image_info;
     $("#imageResult").attr("src",imageInfo.url);
@@ -71,10 +72,11 @@ function reDrawInfomation() {
  drawContentTongQuan(faceData.generalResult);
  drawContentKetLuanTungPhan(faceData.specialResult);
 
+
  drawContentTuVanTongQuat(faceData.generalConclusion);
 
  // drawContentketLuanChiTiet(faceData.specialConclusion);
- return;
+//  return;
  // drawContent(generalResult);
  // drawContent(specialResult);
  // drawContentDetail(faceData.specialConclusion);
@@ -85,7 +87,7 @@ function reDrawInfomation() {
 function drawContentTuVanTongQuat(generalResult )
 {
 
-return;
+
 var index =0;
 generalResult.data.forEach((ketquatongquanItem) => {
 
@@ -528,6 +530,8 @@ var bodyRequest = {
 "result": dataRequest
 
 };
+
+console.log("bodyRequest", bodyRequest);
 $.ajax({
 type: "POST",
 url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeOverView",
@@ -536,8 +540,8 @@ contentType: "application/json",
 dataType: "json",
 success:function(data)
 { 
-
-
+ 
+ 
  drawConcludeOverviewItem(data.data.K5);
   drawConcludeOverviewItem(data.data.K6);
   drawConcludeOverviewItem(data.data.K7);
@@ -1440,7 +1444,8 @@ function avgScore()
     avgFinal = (10 - avgFinal);
     avgfinal2 = avgfinal2 -2;
 
-    
+
+  
 
    document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
@@ -1526,6 +1531,8 @@ function avgScorev2(dataDraw)
     let avgfinal2 = (sumScoreAvg/5);
 
     avgFinal = (10 - avgFinal);
+
+    avgfinal2 = avgfinal2 -2;
                                                                
     document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;

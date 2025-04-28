@@ -474,9 +474,17 @@ module.exports = {
            try {
             let body = req.body;
             
-            const {location} = req.body;
+            const {location , sourceControl} = req.body;
+
+            let sourceControlInput = sourceControl;
+            if(sourceControlInput == null ||  sourceControlInput == '')
+            {
+                sourceControlInput = "web";
+            }
+
             const result = await HistorySkin.create({
                 "UserName": body.UserName,
+                "sourceControl":  sourceControlInput,
                 "Result": body.Result,
                 "location": location,
                 "User_Id": body.User_Id,
@@ -521,7 +529,9 @@ module.exports = {
                     gameType,
                     connectionType,
                     timeConnection,
-                    ageGameReal, 
+                    ageGameReal,
+                    ageUser, 
+                    sourceControl,
                     slug,Name} = req.body;
                
                 let user = req.user;
@@ -529,6 +539,12 @@ module.exports = {
                 if(Name) 
                 {
                     nameInput = Name;
+                }
+
+                let sourceControlInput = sourceControl;
+                if(sourceControlInput == null ||  sourceControlInput == '')
+                {
+                    sourceControlInput = "web";
                 }
 
                 const beautyGame = await BeautyGame.findOne({
@@ -616,6 +632,7 @@ module.exports = {
                 const result = await HistorySkin.create({
                     "saleName": saleName,
                     "saleId2": saleId2,
+                    "ageUser" : ageUser,
                  "companyName" :companyName,
                    "saleType": saleType,
                         "UserName": nameInput,
@@ -636,7 +653,7 @@ module.exports = {
                         "ipClient": ipClient,
                         "ipRequest": ipRequest,
                         "Company_Id": Company_Id,
-                      
+                        "sourceControl":  sourceControlInput,
                       
                         "Sale_Id": Sale_Id,
                         "slug" : slug, 
@@ -675,9 +692,19 @@ module.exports = {
                     connectionType,
                     timeConnection,
                     gameType,
-                Sale_Id,Image,ipClient, ipRequest,successGame, slug, regionName, dataCheckRegion } = req.body;
+                Sale_Id,Image,ipClient, ipRequest,successGame, slug, regionName, dataCheckRegion,
+                ageUser,
+                sourceControl
+            } = req.body;
 
-               
+            console.log(req.body);
+     
+
+            let sourceControlInput = sourceControl;
+            if(sourceControlInput == null ||  sourceControlInput == '')
+            {
+                sourceControlInput = "web";
+            }
                 const compnayCheck = await CompanyPlugin.findOne({ _id: ObjectId(Company_Id)});
              
                 let saleName = '';
@@ -733,6 +760,8 @@ module.exports = {
                     "Sale_Id": Sale_Id,
                     "successGame": successGame,
                     "ageGame": ageGame,
+                    "ageUser" : ageUser,
+                    "sourceControl":  sourceControlInput,
                     "ageGameReal": ageGameReal,
                     "Create_Date": Date.now()
             });

@@ -418,7 +418,7 @@
                             Thông tin tổng quan
                     </p>
                 </div>
-                <div id =  "idGeneralResult"> 
+            <div id =  "idGeneralResult"> 
 
                 </div>
 

@@ -29,7 +29,7 @@ module.exports = {
             var result = null;
             var  filterSearch = {
             };
-           var columnDisplay =  'countDown showUp  title slch  minisize titleProduct priceText butonText imageLink linkRegister';
+           var columnDisplay =  'countDown showUp showOrHide  title slch  minisize titleProduct prieText butonText imageLicnk linkRegister';
           
             filterSearch["slug"] = slugQuerry;
             result = await Minisize.findOne(filterSearch);
@@ -48,6 +48,7 @@ module.exports = {
                 titleProduct: "la Roche-Posay Effaclar 50ml",
                 priceText : "Giá niêm yết 210.000",
                 butonText: "Đăng ký",
+                showOrHide: true, 
                 countDown:   "3",
                 showUp: "3",
                 imageLink: "https://applamdep.com/bannerTuVan.png",
@@ -80,7 +81,7 @@ module.exports = {
             });
             var  filterSearch = {
             };
-           var columnDisplay =  'countDown showUp title slch titleProduct priceText butonText imageLink linkRegister';
+           var columnDisplay =  'countDown  showOrHide showUp title slch titleProduct priceText butonText imageLink linkRegister';
            if(companyInfo)
             {
                 filterSearch["slug"] = slug;
@@ -98,6 +99,7 @@ module.exports = {
                 slch: "Số lượng có hạn",
                 countDown: "3",
                 showUp: "3",
+                showOrHide : "1", 
                 minisize: "https://applamdep.com/minisize.png",
                 titleProduct: "la Roche-Posay Effaclar 50ml",
                 priceText : "Giá niêm yết 210.000",
@@ -120,8 +122,9 @@ module.exports = {
 
     addOrUpdate: async (req, res) => {
         try {
-            const { countDown, showUp,company_id,minisize, title,slch,titleProduct,priceText,butonText, imageLink,linkRegister, slug } = req.body;
-            console.log("showUp",showUp);
+            const { countDown, showOrhide, showUp,company_id,minisize,
+                 title,slch,titleProduct,priceText,butonText, imageLink,linkRegister, slug } = req.body;
+        
             var slugCompany = "-1";
             if(company_id != null && company_id !="" && company_id != "-1")
             {
@@ -137,6 +140,8 @@ module.exports = {
                 filterSearch["slug"] = slugCompany;
             }
              let result = await Minisize.findOne(filterSearch);
+
+            
             if(result)
             {
                 var objUpdate = {
@@ -144,14 +149,18 @@ module.exports = {
                     slch: slch,
                     showUp: showUp,
                     countDown: countDown,
+                 
                     minisize: minisize,
                     titleProduct: titleProduct,
                     priceText : priceText,
                     butonText:butonText,
                     imageLink: imageLink,
                     linkRegister: linkRegister,
+                    showOrHide : showOrhide
                   
                 };
+
+             
               
                 await Minisize.updateOne({ _id: ObjectId(result._id) }, objUpdate);
             
@@ -166,6 +175,7 @@ module.exports = {
                     titleProduct: "la Roche-Posay Effaclar 50ml",
                     priceText : "Giá niêm yết 210.000",
                     butonText: "Đăng ký",
+                    showOrHide : "1", 
                     imageLink: "https://applamdep.com/bannerTuVan.png",
                     linkRegister: "https://docs.google.com/forms/d/e/1FAIpQLSccgb1yrHC7tjSQkbeRfH3cnEV1w2Mm0s1cpu5Co34nQ5OC7A/viewform",
                     slug: slugCompany

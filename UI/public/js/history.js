@@ -74,6 +74,14 @@
 function saveHistory(isRedirect, result = null) {
   
 
+  const params = new URLSearchParams(location.search);
+
+  var sourceInput =params.get('source');
+
+  if(sourceInput == null || sourceInput =="")
+  {
+    sourceInput = "web";
+  }
 
   var loading = document.querySelector(".status-loader-22");
   
@@ -108,6 +116,7 @@ $.ajax({
   data: JSON.stringify({
     saleId: saleIdOutput,
     slug: slugOutput,
+    sourceInput:  sourceInput,
     Result: JSON.stringify(result),
  
 

@@ -131,7 +131,6 @@ public function getDataInfo (Request $request)
         $url = API_BaseUrl."/".config_get_by_key;
         $client = new Client();
         $res = $client->request('get',$url ,$params);
-       
         if($res->getStatusCode() ==200)
         { 
             $checkresult = $res->getBody()->getContents();
@@ -383,17 +382,17 @@ public function getDataInfo (Request $request)
 
         if(!isset($sourceCode))
         {
-            $sourceCode = "";
+            $sourceCode = "web";
         }
-        session(['sourceControl' =>$sourceCode]);
-
-        if($slug == "" ||$slug ==null   )
+        $this->setHistoryId($sourceCode);
+     
+        if($slug == "" ||$slug ==null  )
         {
-            return redirect('/exomiyo');
+             return redirect('/exomiyo');
         }
         if($slug ==  "bsnho"  )
         {
-            return redirect('/exomiyo');
+             return redirect('/exomiyo');
         }
         $this->getTuVan($slug);
         $this->setHistoryId(null);
@@ -408,16 +407,10 @@ public function getDataInfo (Request $request)
             $isCheck = $this->CheckUrl($slug);
         } 
         $dataCompanyId =  $this->getCompanyId();
-       
         $this->getBeauty($slug);
         $dataGame = $this->getGameActive($dataCompanyId);
-
         $gameMinisize = $this->getGameMinisize($dataCompanyId);
-        
-      
         $conffigSetting = $this->getConfigSetting($dataCompanyId);
-
-    
         if( $dataGame != null)
         {
             $fromDate = Carbon::parse($dataGame->fromDate); 
@@ -436,9 +429,6 @@ public function getDataInfo (Request $request)
             session()->forget('turnOnGame');
         
         }
-      
-       
-      
         if(!$isCheck)
         {
             return view("notfound");
@@ -446,12 +436,10 @@ public function getDataInfo (Request $request)
         }
         $agent = new Agent();
         $gameJoinTo= false;
-
         $dataUserSession =  session('dataCompany', null);
-
-      
-
+  
         $isLoginUser = false;
+       
         if($dataUserSession)
         {
             $dataUserId=  $dataUserSession->data->_id;
@@ -459,10 +447,8 @@ public function getDataInfo (Request $request)
             session(['dataCompany' =>$dataUserSession]);
             $dataUserSession =  session('dataCompany', null);
             $isLoginUser = true;
-
          
         }
-    
       
         if($dataUserSession)
         {
@@ -473,6 +459,8 @@ public function getDataInfo (Request $request)
        
         }
         $showOrHide = $conffigSetting->showOrHide;
+
+      
         if( $slug =="bsnho" || $slug == "exomiyo" )
         {
 
@@ -489,9 +477,8 @@ public function getDataInfo (Request $request)
     {
         $data  =  session('dataResult', null);
         $dataGame = Session('dataGame', null);
-         $this->getTuVan($slug);
-         
-
+        $dataUserSession =  session('dataCompany', null);
+        $this->getTuVan($slug);
         $contetnFail ="Chúc Quý khách may mắn lần sau NHƯNG  bạn vẫn được nhận  Ưu Đãi từ Nhãn Hàng chính hãng tài trợ";
         $contentSuccess = "CHÚC MỪNG BẠN ĐÃ TRÚNG THƯỞNG";
       
@@ -524,11 +511,6 @@ public function getDataInfo (Request $request)
         $ageGame = 0;
         $ageGameReal=0;
         $gameType = 1;
-
-
-
-
-
 
         session(['gameJoinType1' =>false]);
         if( $dataGame != null)

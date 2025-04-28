@@ -76,7 +76,7 @@ module.exports = {
         } catch (err) {
 
             console.log(err);
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
         }
     },
 
@@ -96,7 +96,7 @@ module.exports = {
         } catch (err) {
 
             console.log(err);
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
         }
     },
 
@@ -116,13 +116,13 @@ module.exports = {
                         arrUser.push(Object.assign(val, { UserName: "" }));
                     }
                 })
-                res.send(Response(200, "Láº¥y dá»¯ liá»‡u thÃ nh cÃ´ng", arrUser, true));
+                res.send(Response(200, "Lấy dữ liệu thành công", arrUser, true));
 
             } else {
-                res.send(Response(200, "Láº¥y dá»¯ liá»‡u tháº¥t báº¡i", [], true));
+                res.send(Response(200, "Lấy dữ liệu thất bại", [], true));
             }
         } catch (err) {
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
         }
     },
 
@@ -136,7 +136,7 @@ module.exports = {
                 res.send(Response(200, "Fail", result, false));
             }
         } catch (err) {
-            res.send(Response(202, "ÄÃ£ xáº£y ra lá»—i á»Ÿ: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Đã xảy ra lỗi ở: " + JSON.stringify(err.keyValue), err, false));
         }
 
 
@@ -152,7 +152,7 @@ module.exports = {
                 res.send(Response(200, "Fail", result, false));
             }
         } catch (err) {
-            res.send(Response(202, "ÄÃ£ xáº£y ra lá»—i á»Ÿ: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Đã xảy ra lỗi ở: " + JSON.stringify(err.keyValue), err, false));
         }
 
 
@@ -167,11 +167,11 @@ module.exports = {
             let countSlug = await Company.find({ Slug: Slug });
 
             if (countUserName.length > 0) {
-                res.send(Response(202, `TÃªn Ä‘Äƒng nháº­p (${UserName}) Ä‘Ã£ tá»“n táº¡i trong cÆ¡ sá»Ÿ dá»¯ liá»‡u !!!`, [], false));
+                res.send(Response(202, `Tên đăng nhập (${UserName}) đã tồn tại trong cơ sở dữ liệu !!!`, [], false));
             } else if (countPhone.length > 0) {
-                res.send(Response(202, `Sá»‘ Ä‘iá»‡n thoáº¡i (${Phone}) Ä‘Ã£ tá»“n táº¡i trong cÆ¡ sá»Ÿ dá»¯ liá»‡u !!!`, [], false));
+                res.send(Response(202, `Số điện thoại (${Phone}) đã tồn tại trong cơ sở dữ liệu !!!`, [], false));
             } else if (countSlug.length > 0) {
-                res.send(Response(202, `TÃªn thÆ°Æ¡ng hiá»‡u (${Slug}) Ä‘Ã£ tá»“n táº¡i trong cÆ¡ sá»Ÿ dá»¯ liá»‡u !!!`, [], false));
+                res.send(Response(202, `Tên thương hiệu (${Slug}) đã tồn tại trong cơ sở dữ liệu !!!`, [], false));
             } else {
 
                 var role = await Role.findOne({ isDelete: false, Type: "2" });
@@ -310,11 +310,11 @@ module.exports = {
 
                                 if (!addOrder) {
                                     transaction(company_id, us_id)
-                                    res.send(Response(202, "ÄÃ£ xáº£y ra lá»—i trong quÃ¡ trÃ¬nh thÃªm gÃ³i tÃ­nh nÄƒng !!!", [], false));
+                                    res.send(Response(202, "Đã xảy ra lỗi trong quá trình thêm gói tính năng !!!", [], false));
                                 }
                             } else {
                                 transaction(company_id, us_id)
-                                res.send(Response(202, "ÄÃ£ xáº£y ra lá»—i trong quÃ¡ trÃ¬nh copy dá»¯ liá»‡u !!!", [], false));
+                                res.send(Response(202, "Đã xảy ra lỗi trong quá trình copy dữ liệu !!!", [], false));
                             }
                         }
 
@@ -323,67 +323,69 @@ module.exports = {
 
                             let feature = await FeatureModel.find({ Type: "1" });
 
-                            res.send(Response(200, "HoÃ n táº¥t táº¡o tÃ i khoáº£n cho khÃ¡ch hÃ ng !!!", { data: resData, feature: feature }, true));
+                            res.send(Response(200, "Hoàn tất tạo tài khoản cho khách hàng !!!", { data: resData, feature: feature }, true));
                         } else {
                             let resData = await User.findOne({ _id: ObjectId(res_user._id) }).populate("Sale_Id", "Discount");
 
                             let feature = await FeatureModel.find({ Type: "1" });
 
-                            res.send(Response(200, "HoÃ n táº¥t táº¡o tÃ i khoáº£n cho khÃ¡ch hÃ ng !!!", { data: resData, feature: feature }, true));
+                            res.send(Response(200, "Hoàn tất tạo tài khoản cho khách hàng !!!", { data: resData, feature: feature }, true));
                         }
 
                     } else {
                         transaction(company_id, us_id)
-                        res.send(Response(202, "CÃ³ lá»—i Ä‘Ã£ xáº£y ra !!!", [], false));
+                        res.send(Response(202, "Có lỗi đã xảy ra !!!", [], false));
                     }
 
                 } else {
                     transaction(company_id, us_id)
-                    res.send(Response(202, "Kiá»ƒm tra láº¡i báº£ng phÃ¢n quyá»n vÃ¬ khÃ´ng cÃ³ quyá»n nÃ o lÃ  COMPANY", [], false));
+                    res.send(Response(202, "Kiểm tra lại bảng phân quyền vì không có quyền nào là COMPANY", [], false));
                 }
 
             }
         } catch (err) {
             transaction(company_id, us_id)
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i trong cÆ¡ sá»Ÿ dá»¯ liá»‡u !!! Cá»¥ thá»ƒ " + JSON.stringify(err.keyValue) + " ", err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại trong cơ sở dữ liệu !!! Cụ thể " + JSON.stringify(err.keyValue) + " ", err, false));
         }
     },
 
     addCompanyForWebApp: async (req, res) => {
         try {
             const { UserName, Email, Phone, Slug, Sale_Code, Password, Type, Name, saleId, packageId } = req.body;
+            console.log(req.body);
             let countUserName = await User.find({ UserName: UserName });
             let countPhone = await Company.find({ Phone: Phone });
             let countSlug = await Company.find({ Slug: Slug });
 
             var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
-            var accentArray = ["Ã¡", "Ã ", "Ã£", "Ã¢", "Ã©", "Ã¨", "Ãª", "Ã­", "Ã¬", "Ã®", "Ãµ", "Ã³", "Ã²", "Ã´", "Ãº", "Ã¹", "Ã»"]
+            var accentArray = ["á", "à", "ã", "â", "é", "è", "ê", "í", "ì", "î", "õ", "ó", "ò", "ô", "ú", "ù", "û"]
 
             for (var i = 0; i < UserName.length; i++) {
                 for (var j = 0; j < accentArray.length; j++) {
                     if (UserName[i].toUpperCase() == accentArray[j].toUpperCase()) {
-                        res.send(Response(202, `TÃªn Ä‘Äƒng nháº­p pháº£i Ä‘Æ°á»£c viáº¿t liá»n khÃ´ng dáº¥u !!!`, [], false));
+                        res.send(Response(202, `Tên đăng nhập phải được viết liền không dấu !!!`, [], false));
                         return
                     }
                 }
             }
             if (format.test(UserName) == true) {
-                res.send(Response(202, `TÃªn Ä‘Äƒng nháº­p khÃ´ng Ä‘Æ°á»£c chá»©a khoáº£ng trá»‘ng hoáº·c kÃ­ tá»± Ä‘áº·c biá»‡t !!!`, [], false));
+                res.send(Response(202, `Tên đăng nhập không được chứa khoảng trống hoặc kí tự đặc biệt !!!`, [], false));
             } else if (countUserName.length > 0) {
-                res.send(Response(202, `TÃªn Ä‘Äƒng nháº­p (${UserName}) Ä‘Ã£ tá»“n táº¡i trong cÆ¡ sá»Ÿ dá»¯ liá»‡u !!!`, [], false));
+                res.send(Response(202, `Tên đăng nhập (${UserName}) đã tồn tại trong cơ sở dữ liệu !!!`, [], false));
             } else if (countPhone.length > 0) {
-                res.send(Response(202, `Sá»‘ Ä‘iá»‡n thoáº¡i (${Phone}) Ä‘Ã£ tá»“n táº¡i trong cÆ¡ sá»Ÿ dá»¯ liá»‡u !!!`, [], false));
+                res.send(Response(202, `Số điện thoại (${Phone}) đã tồn tại trong cơ sở dữ liệu !!!`, [], false));
             }else {
 
          
                 var role = await Role.findOne({ isDelete: false, Type: "2" });
                 if (role) {
                   
-
+                   
                     let getAdminRole = await Role.findOne({ Type: '0' });
                     var getAdminAcc = await User.findOne({ Role_Id: getAdminRole._id });
                     let resSaleCode =null;
+                  
                     if(saleId)
                     {
                         resSaleCode = await User.find({ _id: ObjectId(saleId), isSale: true });
@@ -394,6 +396,8 @@ module.exports = {
                     {
                          resSaleCode = await User.find({ Phone: Sale_Code, isSale: true });
                     }
+
+                
                     const result = await Company.create({
                         "Name": UserName,
                         "Email": Email,
@@ -403,9 +407,11 @@ module.exports = {
                         "Type": Type,
                         "Status": "Actived"
                     });
-                    
+                
+                 
                     if (result) {
                         var company_id = result._id;
+                        
 
                         var res_user = await User.create({
                             "Name": UserName,
@@ -490,11 +496,11 @@ module.exports = {
 
                                 if (!addOrder) {
                                     transaction(company_id, us_id)
-                                    res.send(Response(202, "ÄÃ£ xáº£y ra lá»—i trong quÃ¡ trÃ¬nh thÃªm gÃ³i tÃ­nh nÄƒng !!!", [], false));
+                                    res.send(Response(202, "Đã xảy ra lỗi trong quá trình thêm gói tính năng !!!", [], false));
                                 }
                             } else {
                                 transaction(company_id, us_id)
-                                res.send(Response(202, "ÄÃ£ xáº£y ra lá»—i trong quÃ¡ trÃ¬nh copy dá»¯ liá»‡u !!!", [], false));
+                                res.send(Response(202, "Đã xảy ra lỗi trong quá trình copy dữ liệu !!!", [], false));
                             }
                         }
 
@@ -503,30 +509,30 @@ module.exports = {
 
                             let feature = await FeatureModel.find({ Type: "1" });
 
-                            res.send(Response(200, "HoÃ n táº¥t táº¡o tÃ i khoáº£n cho khÃ¡ch hÃ ng !!!", { data: resData, feature: feature }, true));
+                            res.send(Response(200, "Hoàn tất tạo tài khoản cho khách hàng !!!", { data: resData, feature: feature }, true));
                         } else {
                             let resData = await User.findOne({ _id: ObjectId(res_user._id) }).populate("Sale_Id", "Discount");
 
                             let feature = await FeatureModel.find({ Type: "1" });
 
-                            res.send(Response(200, "HoÃ n táº¥t táº¡o tÃ i khoáº£n cho khÃ¡ch hÃ ng !!!", { data: resData, feature: feature }, true));
+                            res.send(Response(200, "Hoàn tất tạo tài khoản cho khách hàng !!!", { data: resData, feature: feature }, true));
                         }
 
                     } else {
                         transaction(company_id, us_id)
-                        res.send(Response(202, "CÃ³ lá»—i Ä‘Ã£ xáº£y ra !!!", [], false));
+                        res.send(Response(202, "Có lỗi đã xảy ra !!!", [], false));
                     }
 
                 } else {
                     transaction(company_id, us_id)
-                    res.send(Response(202, "Kiá»ƒm tra láº¡i báº£ng phÃ¢n quyá»n vÃ¬ khÃ´ng cÃ³ quyá»n nÃ o lÃ  COMPANY", [], false));
+                    res.send(Response(202, "Kiểm tra lại bảng phân quyền vì không có quyền nào là COMPANY", [], false));
                 }
 
             }
         } catch (err) {
 
             transaction(company_id, us_id)
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i trong cÆ¡ sá»Ÿ dá»¯ liá»‡u !!! Cá»¥ thá»ƒ " + JSON.stringify(err.keyValue) + " ", err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại trong cơ sở dữ liệu !!! Cụ thể " + JSON.stringify(err.keyValue) + " ", err, false));
         }
 
     },
@@ -537,7 +543,7 @@ module.exports = {
             var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
             if (format.test(Slug) == true) {
-                res.send(Response(202, `Äá»‹nh danh khÃ´ng Ä‘Æ°á»£c chá»©a khoáº£ng trá»‘ng hoáº·c kÃ­ tá»± Ä‘áº·c biá»‡t !!!`, [], false));
+                res.send(Response(202, `Định danh không được chứa khoảng trống hoặc kí tự đặc biệt !!!`, [], false));
             }
 
             const objUpdate = {
@@ -555,12 +561,12 @@ module.exports = {
             let result = await Company.updateOne({ _id: ObjectId(id) }, objUpdate);
             await UserPlugin.updateOne({ Company_Id: id }, { UserName: UserName });
             if (result) {
-                res.send(Response(200, "Cáº­p nháº­t thÃ nh cÃ´ng !!!", [], true));
+                res.send(Response(200, "Cập nhật thành công !!!", [], true));
             } else {
-                res.send(Response(202, "Cáº­p nháº­t tháº¥t báº¡i !!!", [], false));
+                res.send(Response(202, "Cập nhật thất bại !!!", [], false));
             }
         } catch (err) {
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
         }
     },
 
@@ -570,7 +576,7 @@ module.exports = {
             var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
             if (format.test(body.Slug) == true) {
-                res.send(Response(202, `Äá»‹nh danh khÃ´ng Ä‘Æ°á»£c chá»©a khoáº£ng trá»‘ng hoáº·c kÃ­ tá»± Ä‘áº·c biá»‡t !!!`, [], false));
+                res.send(Response(202, `Định danh không được chứa khoảng trống hoặc kí tự đặc biệt !!!`, [], false));
             }
 
             const objUpdate = {
@@ -585,7 +591,7 @@ module.exports = {
                 res.send(Response(202, "Fail", [], false));
             }
         } catch (err) {
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
         }
     },
 
@@ -603,7 +609,7 @@ module.exports = {
                 res.send(Response(202, "Fail", [], false));
             }
         } catch (err) {
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
         }
     },
 
@@ -617,28 +623,28 @@ module.exports = {
                 if (resultAdmin) {
                     let resultRes = await Company.findOneAndUpdate({ _id: resultAdmin._id }, { Res_makeup: Number(resultAdmin.Res_makeup) + 1 });
                     if (resultRes) {
-                        res.send(Response(200, "ThÃªm view thÃ nh cÃ´ng", [], true));
+                        res.send(Response(200, "Thêm view thành công", [], true));
                     } else {
-                        res.send(Response(202, "ThÃªm view tháº¥t báº¡i", [], false));
+                        res.send(Response(202, "Thêm view thất bại", [], false));
                     }
                 } else {
-                    res.send(Response(202, "TÃªn thÆ°á»ng hiá»‡u khÃ´ng tá»“n táº¡i !!!", [], false));
+                    res.send(Response(202, "Tên thường hiệu không tồn tại !!!", [], false));
                 }
             } else {
                 if (result) {
                     let resultRes = await Company.findOneAndUpdate({ _id: result._id }, { Res_skin: Number(result.Res_skin) + 1 });
                     if (resultRes) {
-                        res.send(Response(200, "ThÃªm view thÃ nh cÃ´ng", [], true));
+                        res.send(Response(200, "Thêm view thành công", [], true));
                     } else {
-                        res.send(Response(202, "ThÃªm view tháº¥t báº¡i", [], false));
+                        res.send(Response(202, "Thêm view thất bại", [], false));
                     }
                 } else {
-                    res.send(Response(202, "TÃªn thÆ°á»ng hiá»‡u khÃ´ng tá»“n táº¡i !!!", [], false));
+                    res.send(Response(202, "Tên thường hiệu không tồn tại !!!", [], false));
                 }
             }
 
         } catch (err) {
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
         }
     },
 
@@ -651,27 +657,27 @@ module.exports = {
                 if (resultAdmin) {
                     let resultRes = await Company.findOneAndUpdate({ _id: resultAdmin._id }, { Res_makeup: Number(resultAdmin.Res_makeup) + 1 });
                     if (resultRes) {
-                        res.send(Response(200, "ThÃªm view thÃ nh cÃ´ng", [], true));
+                        res.send(Response(200, "Thêm view thành công", [], true));
                     } else {
-                        res.send(Response(202, "ThÃªm view tháº¥t báº¡i", [], false));
+                        res.send(Response(202, "Thêm view thất bại", [], false));
                     }
                 } else {
-                    res.send(Response(202, "TÃªn thÆ°á»ng hiá»‡u khÃ´ng tá»“n táº¡i !!!", [], false));
+                    res.send(Response(202, "Tên thường hiệu không tồn tại !!!", [], false));
                 }
             } else {
                 if (result) {
                     let resultRes = await Company.findOneAndUpdate({ _id: result._id }, { Res_makeup: Number(result.Res_makeup) + 1 });
                     if (resultRes) {
-                        res.send(Response(200, "ThÃªm view thÃ nh cÃ´ng", [], true));
+                        res.send(Response(200, "Thêm view thành công", [], true));
                     } else {
-                        res.send(Response(202, "ThÃªm view tháº¥t báº¡i", [], false));
+                        res.send(Response(202, "Thêm view thất bại", [], false));
                     }
                 } else {
-                    res.send(Response(202, "TÃªn thÆ°á»ng hiá»‡u khÃ´ng tá»“n táº¡i !!!", [], false));
+                    res.send(Response(202, "Tên thường hiệu không tồn tại !!!", [], false));
                 }
             }
         } catch (err) {
-            res.send(Response(202, "Dá»¯ liá»‡u Ä‘Ã£ tá»“n táº¡i: " + JSON.stringify(err.keyValue), err, false));
+            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
         }
     },
    

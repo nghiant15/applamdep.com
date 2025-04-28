@@ -537,7 +537,7 @@ value={this.getTimeConver(this.state.endDate)}
                       <th className="text-center"> Tuổi da</th>
                       <th className="text-center">Kết quả</th>
                       <th className="text-center">Thông tin click</th>
-                    
+                      <th className="text-center">Nguồn</th>
                       <th className="text-
                       center">Công ty</th>
                         <th className="text-
@@ -589,7 +589,7 @@ value={this.getTimeConver(this.state.endDate)}
                                
                                 <img src={item.Result != undefined ? resultItem.facedata.image_info.url : ""} style={{ width: '50%', height: 50 }} />
                               </td>
-                              <td className="text-center">{resultItem.facedata.generalResult.data[0].data[0].value}</td>
+                              <td className="text-center">{resultItem.facedata.generalResult.data[0].data[0].value*1 +2}</td>
                               <td className="text-center">
                                 <CButton outline color="primary" onClick={e => {
                                   this.setState({
@@ -611,6 +611,7 @@ value={this.getTimeConver(this.state.endDate)}
     </span></>}
      
 </td>
+<td>{ item.sourceControl} </td>
                               <td className="text-center displayblock ">{
                              
                               }

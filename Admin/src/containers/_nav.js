@@ -409,6 +409,20 @@ const _navOrther = [
       </CTooltip>,
     }
   },
+
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Danh sách sale',
+    to: '/subsale',
+    icon: <CIcon style={css} name="cil-laptop" customClasses="c-sidebar-nav-icon" />,
+    role: ['2'],
+    badge: {
+      color: 'info',
+      text: <CTooltip placement={"right"} content={content.package_company}>
+        <CIcon content={freeSet.cilBellExclamation} />
+      </CTooltip>,
+    }
+  },
   // {
   //   _tag: 'CSidebarNavItem',
   //   name: 'Quản lý nâng cấp',
@@ -783,13 +797,20 @@ const _naveUser = [
   const _navMinisize = [
     {
       _tag: 'CSidebarNavTitle',
-      _children: ['Quản lý Banner kết quả'],
+      _children: ['Quản lý popup'],
       role: [ '0','1','2']
     },
     {
       _tag: 'CSidebarNavItem',
-      name: 'Banner kết quả',
+      name: 'Poup kết quả',
       to: '/banner-ket-qua',
+      icon: <CIcon style={css} content={freeSet.cilList} customClasses="c-sidebar-nav-icon" />,
+      role: [ '0','1','2']
+    },
+    {
+      _tag: 'CSidebarNavItem',
+      name: 'Poup hướng dẫn',
+      to: '/banner-huong-dan',
       icon: <CIcon style={css} content={freeSet.cilList} customClasses="c-sidebar-nav-icon" />,
       role: [ '0','1','2']
     } 
@@ -1281,6 +1302,22 @@ const _naveUser = [
   }
 }
       ]
-  
 
-export default [_navVendor, _naveUser,_navMinisize,_navManagementConclue, _navBeauty,_navTuvan,_navSoida,_navGame,_navDisplay, _navOrther, _navContact, _navLogOut,_navSpecialProduct  ]
+      
+
+      const _navAiConfig = [
+        {
+          _tag: 'CSidebarNavTitle',
+          _children: ['Cấu hình câu hỏi AI'],
+          role: [ '0','1','2']
+        },
+        {
+          _tag: 'CSidebarNavItem',
+          name: 'Cấu hình câu hỏi',
+          to: '/cau-hinh-ai',
+          icon: <CIcon style={css} content={freeSet.cilList} customClasses="c-sidebar-nav-icon" />,
+          role: [ '0','1','2']
+        } 
+      ]      
+
+export default [_navVendor, _naveUser,_navMinisize,_navAiConfig,_navManagementConclue, _navBeauty,_navTuvan,_navSoida,_navGame,_navDisplay, _navOrther, _navContact, _navLogOut,_navSpecialProduct  ]

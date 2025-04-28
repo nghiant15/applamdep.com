@@ -46,6 +46,7 @@ class ConfigWeb extends Component {
         minisize: "",
         linkRegister:"",
         score: "",
+        showOrHide: "0",
         dataListBeauty: [],
         dataCompany: []
   
@@ -224,7 +225,8 @@ class ConfigWeb extends Component {
             showUp:data.showUp,  
             titleProduct: data.titleProduct,
             image: data.imageLink,
-            minisize: data.minisize
+            minisize: data.minisize,
+            showOrHide : data.showOrHide
            
            
           },
@@ -319,8 +321,10 @@ class ConfigWeb extends Component {
       slch:this.state.slch,
       title:this.state.title,
       minisize: this.state.minisize, 
+
       countDown: this.state.countDown, 
       showUp: this.state.showUp, 
+      showOrhide: this.state.showOrHide,
       
       titleProduct: this.state.titleProduct
 
@@ -362,7 +366,7 @@ class ConfigWeb extends Component {
                   title= {this.state.title}
                   countDown = {this.state.countDown}
                   showUp = {this.state.showUp}
-                  
+                  showOrHide = {this.state.showOrHide}
                   minisize = {this.state.minisize}
                   titleProduct= {this.state.titleProduct}
                 />

@@ -1,8 +1,8 @@
 export default {
  
-   "BASE_URL" : "http://localhost:3002",
+   "BASE_URL" : "https://api-soida.applamdep.com",
   "BASE_URL_HISTORY_SKIN" : "https://applamdep.com/xemchitietlichsu/",
-  "BASE_URL_CURRENT" : "http://localhost:3003",
+  "BASE_URL_CURRENT" : "https://id.applamdep.com",
   "LIST_USER" : "/api/list-user",
   "LIST_USER_WITH_ID" : "/api/list-user?id=",
   "ADD_USER" : "/api/add-user",
@@ -29,6 +29,7 @@ export default {
   "UPDATE_TYPEKEY" : "/api/update-typekey",
   "DELETE_TYPEKEY" : "/api/delete-typekey",
 
+  
   "LIST_HARDWARE" : "/api/list-hardware",
   "LIST_HARDWARE_WITH_ID" : "/api/list-hardware?id=",
   "ADD_HARDWARE" : "/api/add-hardware",
