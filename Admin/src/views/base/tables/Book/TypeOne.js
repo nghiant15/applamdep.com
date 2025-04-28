@@ -168,7 +168,7 @@ class SuggestItem extends Component {
       this.setState({ isLoadingTable: true });
 
       const res_suggest = await API_CONNECT(
-        //https://api-soida.applamdep.com/itemSdk/search/611f1461ef623903dbb4f75d/1?&key=c
+        //http://localhost:3002/itemSdk/search/611f1461ef623903dbb4f75d/1?&key=c
         Constants.SEARCH_SUGGEST_ITEM_COMPANY + JSON.parse(userData).company_id + `/${idSDK}?&key=` + key, {}, "", "GET")
 
       const res_sdk = await axios({
@@ -1007,7 +1007,7 @@ class SuggestItem extends Component {
               {
                 this.state.image == "" ? "" :
                   <img width="250" height="300" src={
-                    this.state.image_show == "" ? `https://api-soida.applamdep.com/public/image_plugin/${this.state.image_link}` : this.state.image} style={{ marginBottom: 20 }} />
+                    this.state.image_show == "" ? `http://localhost:3002/public/image_plugin/${this.state.image_link}` : this.state.image} style={{ marginBottom: 20 }} />
               }
 
             <TextFieldGroup
@@ -1020,7 +1020,7 @@ class SuggestItem extends Component {
               {
                 this.state.image == "" ? "" :
                   <img width="250" height="300" src={
-                    this.state.linkFiePdf_show == "" ? `https://api-soida.applamdep.com/public/image_plugin/${this.state.linkFiePdf_show}` : this.state.linkFiePdf} style={{ marginBottom: 20 }} />
+                    this.state.linkFiePdf_show == "" ? `http://localhost:3002/public/image_plugin/${this.state.linkFiePdf_show}` : this.state.linkFiePdf} style={{ marginBottom: 20 }} />
               }
 
 

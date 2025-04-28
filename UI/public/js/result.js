@@ -2,6 +2,7 @@
 function getTextInfo() {
 
 
+
     var faceData = objectReponse.data.facedata;
     var imageInfo = faceData.image_info;
     $("#imageResult").attr("src",imageInfo.url);
@@ -36,7 +37,7 @@ function getTextInfo() {
           data: {
               "question": textInfo
           },
-          url: "https://applamdep.com/getResultAI",
+          url: "https://ai.exomiyo.com/getResultAI",
           success: function(data) {
                 Swal.close();
            
@@ -71,10 +72,11 @@ function reDrawInfomation() {
  drawContentTongQuan(faceData.generalResult);
  drawContentKetLuanTungPhan(faceData.specialResult);
 
+
  drawContentTuVanTongQuat(faceData.generalConclusion);
 
  // drawContentketLuanChiTiet(faceData.specialConclusion);
- return;
+//  return;
  // drawContent(generalResult);
  // drawContent(specialResult);
  // drawContentDetail(faceData.specialConclusion);
@@ -85,7 +87,7 @@ function reDrawInfomation() {
 function drawContentTuVanTongQuat(generalResult )
 {
 
-return;
+
 var index =0;
 generalResult.data.forEach((ketquatongquanItem) => {
 
@@ -181,10 +183,14 @@ var html= '<div class="record-content">\
               
               tempValue = tempValue.replace("29","30")
             }
-           
+
              var templateText = tempValue.split(":");
              var tile1 = templateText[0]+":";
              var tile2 = templateText[1];
+             if(tile1 == "Tuổi da:")
+             {
+              tile2 =  tile2 *1 +2;
+             }
 
              html  +=   '<p class="content-paragraph">'+tile1 + '<strong>'+tile2+' </strong>' +'</p>';
            });
@@ -219,7 +225,7 @@ let dataFace = objectReponse.data.faceAttitude;
 let indexDraw =0;
 ketLuanTungPhan.data.forEach((ketLuanTungPhanItem) => {
 indexDraw ++;
-let dataDrawFace  = " https://applamdep.com/images/image1.png";
+let dataDrawFace  = " https://ai.exomiyo.com/images/image1.png";
 
 if(dataFace)
 {
@@ -524,6 +530,8 @@ var bodyRequest = {
 "result": dataRequest
 
 };
+
+console.log("bodyRequest", bodyRequest);
 $.ajax({
 type: "POST",
 url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeOverView",
@@ -532,8 +540,8 @@ contentType: "application/json",
 dataType: "json",
 success:function(data)
 { 
-
-
+ 
+ 
  drawConcludeOverviewItem(data.data.K5);
   drawConcludeOverviewItem(data.data.K6);
   drawConcludeOverviewItem(data.data.K7);
@@ -577,18 +585,66 @@ for (var i = 0; i < item.length; i++) {
 
 function drawConcludeDetail(dataRequest) {
 
+
+  // for (var i = 0; i < dataRequest.length; i++)
+  // {
+  //     var item = dataRequest[i];
+  //     var groupK = item['level'];
+  //     if(groupK < "K5") 
+  //        continue;
+  //     var valueGroupK = item['sdktype'];
+  //     drawConcludev2( groupK, valueGroupK, item);
+  // }
+
   for (var i = 0; i < dataRequest.length; i++)
-  {
-      var item = dataRequest[i];
-    
-      var groupK = item['level'];
-      if(groupK < "K5") 
-         continue;
-      var valueGroupK = item['sdktype'];
-      drawConcludev2( groupK, valueGroupK, item);
-      getStatusSkinGroup(groupK,valueGroupK,item);
-      getStatusSkinGroupPre(groupK,valueGroupK,item);
-  }
+    {
+        var item = dataRequest[i];
+        var groupK = item['level'];
+        if(groupK != "K9") 
+          continue;
+        var valueGroupK = item['sdktype'];
+        drawConcludev2( groupK, valueGroupK, item);
+    }
+
+    for (var i = 0; i < dataRequest.length; i++)
+      {
+          var item = dataRequest[i];
+          var groupK = item['level'];
+          if(groupK != "K6") 
+            continue;
+          var valueGroupK = item['sdktype'];
+          drawConcludev2( groupK, valueGroupK, item);
+      }
+
+      
+    for (var i = 0; i < dataRequest.length; i++)
+      {
+          var item = dataRequest[i];
+          var groupK = item['level'];
+          if(groupK != "K5") 
+            continue;
+          var valueGroupK = item['sdktype'];
+          drawConcludev2( groupK, valueGroupK, item);
+      }
+      for (var i = 0; i < dataRequest.length; i++)
+        {
+            var item = dataRequest[i];
+            var groupK = item['level'];
+            if(groupK != "K7" ) 
+              continue;
+            var valueGroupK = item['sdktype'];
+            drawConcludev2( groupK, valueGroupK, item);
+        }
+
+        for (var i = 0; i < dataRequest.length; i++)
+          {
+              var item = dataRequest[i];
+              var groupK = item['level'];
+              if(groupK != "K8" ) 
+                continue;
+              var valueGroupK = item['sdktype'];
+              drawConcludev2( groupK, valueGroupK, item);
+          }
 
 return;
 if (sessionStorage.getItem("dataCompany") === null) {
@@ -627,18 +683,68 @@ success:function(data)
 function drawConcludeOverview( dataRequest)
 {
 
-  for (var i = 0; i < dataRequest.length; i++)
-  {
-    var item = dataRequest[i];
-      var groupK = item['level'];
-      if(groupK < "K5") 
-         continue;
-      var valueGroupK = item['sdktype'];
-      drawConcludeOverview2( groupK, valueGroupK, item);
+  // for (var i = 0; i < dataRequest.length; i++)
+  // {
+  //   var item = dataRequest[i];
+  //     var groupK = item['level'];
+  //     if(groupK < "K5") 
+  //        continue;
+  //     var valueGroupK = item['sdktype'];
+  //     drawConcludeOverview2( groupK, valueGroupK, item);
 
       
     
-  }
+  // }
+
+
+  for (var i = 0; i < dataRequest.length; i++)
+    {
+      var item = dataRequest[i];
+        var groupK = item['level'];
+        if(groupK != "K9") 
+           continue;
+        var valueGroupK = item['sdktype'];
+        drawConcludeOverview2( groupK, valueGroupK, item);
+    }
+    for (var i = 0; i < dataRequest.length; i++)
+      {
+        var item = dataRequest[i];
+          var groupK = item['level'];
+          if(groupK != "K6") 
+             continue;
+          var valueGroupK = item['sdktype'];
+          drawConcludeOverview2( groupK, valueGroupK, item);
+      }
+
+      for (var i = 0; i < dataRequest.length; i++)
+        {
+          var item = dataRequest[i];
+            var groupK = item['level'];
+            if(groupK != "K5") 
+               continue;
+            var valueGroupK = item['sdktype'];
+            drawConcludeOverview2( groupK, valueGroupK, item);
+        }
+
+        for (var i = 0; i < dataRequest.length; i++)
+          {
+            var item = dataRequest[i];
+              var groupK = item['level'];
+              if(groupK != "K7") 
+                 continue;
+              var valueGroupK = item['sdktype'];
+              drawConcludeOverview2( groupK, valueGroupK, item);
+          }
+          for (var i = 0; i < dataRequest.length; i++)
+            {
+              var item = dataRequest[i];
+                var groupK = item['level'];
+                if(groupK != "K8") 
+                   continue;
+                var valueGroupK = item['sdktype'];
+                drawConcludeOverview2( groupK, valueGroupK, item);
+            }
+          
 }
 
 
@@ -803,159 +909,6 @@ $("#idtuvantongquan").append(htmlTemp);
 
 var sumScoreAvg  =0;
 
-function getStatusSkinGroup ( groupk, valuek, item) 
-{
-  var tilte = "";
-  var valueRel =  item['avg'];
-  if( typeof(valueRel) =="undefined")
-  {
-    return;
-  }
-  if(  valueRel<= 1)
-  {
-    valuek = 1;
-  }
-  else if( valueRel <= 2)
-  {
-    valuek = 2;
-  }
-  else if( valueRel <= 3)
-  {
-    valuek = 3;
-  }
-  var text = "Tốt";
-
-    valuek=  valuek+'';
-
-    switch(groupk) {
-      case "K5":
-        tilte = "Lão hoá da";
-        break;
-
-      case "K6":
-        tilte = "Mụn và mụn viêm đỏ";
-        break;
-      case "K7":
-        tilte ="Quầng thâm mắt";
-        break;
-      case "K8":
-        tilte ="Lỗ chân lông";
-      break;
-      case "K9":
-        tilte ="Đốm thâm nám";
-        break;
-      default:
-        break;
-    }
-   if(valuek ==2)
-   {
-       text = "Bình thường";
-   }
-   if(valuek >=3)
-   {
-       text = "Có nhiều vấn đề về da";
-   }
-   if(valuek>3)
-    valuek =3;
-
-   var valueLevel1 = valueRel*1;
-
-   if(valueLevel1 >3)
-   valueLevel1 = 3;
-
- var percentage =  Math.round((valueLevel1/3) * 100);
-
- var valuerel2 =  Math.round(valueRel/3*10);
-
- var value23 = Math.round(10 - valuerel2);
- sumScoreAvg+= value23;
-
-  percentage =  Math.round((value23/10) * 100);
-
-    var htmlTemp = ' <div class="ConcludeItem"><p class ="paragraph-text-pa"> <span class ="bold-text-pa">'+tilte+': </span>\
-    <span class ="leveldegree"> '+text+' (Mức '+value23 +'/10) </span>';
-
-    $("#resultAIContentCurrent").append(htmlTemp);
-
-}
-
-
-function getStatusSkinGroupPre ( groupk, valuek, item) 
-{
-  var tilte = "";
-  var valueRel =  item['avg'];
-  if( typeof(valueRel) =="undefined")
-  {
-    return;
-  }
-  if(  valueRel<= 1)
-  {
-    valuek = 1;
-  }
-  else if( valueRel <= 2)
-  {
-    valuek = 2;
-  }
-  else if( valueRel <= 3)
-  {
-    valuek = 3;
-  }
-  var text = "Tốt";
-
-    valuek=  valuek+'';
-
-    switch(groupk) {
-      case "K5":
-        tilte = "Lão hoá da";
-        break;
-
-      case "K6":
-        tilte = "Mụn và mụn viêm đỏ";
-        break;
-      case "K7":
-        tilte ="Quầng thâm mắt";
-        break;
-      case "K8":
-        tilte ="Lỗ chân lông";
-      break;
-      case "K9":
-        tilte ="Đốm thâm nám";
-        break;
-      default:
-        break;
-    }
-   if(valuek ==2)
-   {
-       text = "Bình thường";
-   }
-   if(valuek >=3)
-   {
-       text = "Có nhiều vấn đề về da";
-   }
-   if(valuek>3)
-    valuek =3;
-
-   var valueLevel1 = valueRel*1;
-
-   if(valueLevel1 >3)
-   valueLevel1 = 3;
-
- var percentage =  Math.round((valueLevel1/3) * 100);
-
- var valuerel2 =  Math.round(valueRel/3*10);
-
- var value23 = Math.round(10 - valuerel2);
- sumScoreAvg+= value23;
-
-  percentage =  Math.round((value23/10) * 100);
-
-    var htmlTemp = ' <div class="ConcludeItem"><p class ="paragraph-text-pa"> <span class ="bold-text-pa">'+tilte+': </span>\
-    <span class ="leveldegree"> '+text+' (Mức '+value23 +'/10) </span>';
-
-    $("#resultAIContentBefore").append(htmlTemp);
-
-}
-
 function drawConcludev2 ( groupk, valuek, item) 
 {
   var tilte = "";
@@ -1101,6 +1054,10 @@ function drawConcludev2 ( groupk, valuek, item)
      if(valueLevel1 >3)
      valueLevel1 = 3;
 
+
+
+
+  
    var percentage =  Math.round((valueLevel1/3) * 100);
 
    var valuerel2 =  Math.round(valueRel/3*10);
@@ -1476,7 +1433,7 @@ function avgScore()
     }
     else if( avgFinal  <= 2 )
     {
-      textDegree = "Bình thường";
+      textDegree = "Da mất cân bằng – Cần can thiệp sớm";
     }
     else 
     {
@@ -1485,10 +1442,12 @@ function avgScore()
     let avgfinal2 = (sumScoreAvg/5);
     avgFinal = avgFinal/3*10;
     avgFinal = (10 - avgFinal);
+    avgfinal2 = avgfinal2 -2;
 
-    
 
-   document.getElementById("score2").textContent =  ""+ parseFloat(avgFinal).toFixed(1) +"/10";
+  
+
+   document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
 
    
@@ -1572,8 +1531,10 @@ function avgScorev2(dataDraw)
     let avgfinal2 = (sumScoreAvg/5);
 
     avgFinal = (10 - avgFinal);
+
+    avgfinal2 = avgfinal2 -2;
                                                                
-    document.getElementById("score2").textContent =  ""+ parseFloat(avgFinal).toFixed(1) +"/10";
+    document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
 
 }

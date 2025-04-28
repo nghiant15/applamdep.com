@@ -74,6 +74,14 @@
 function saveHistory(isRedirect, result = null) {
   
 
+  const params = new URLSearchParams(location.search);
+
+  var sourceInput =params.get('source');
+
+  if(sourceInput == null || sourceInput =="")
+  {
+    sourceInput = "web";
+  }
 
   var loading = document.querySelector(".status-loader-22");
   
@@ -108,6 +116,7 @@ $.ajax({
   data: JSON.stringify({
     saleId: saleIdOutput,
     slug: slugOutput,
+    sourceInput:  sourceInput,
     Result: JSON.stringify(result),
  
 
@@ -116,22 +125,30 @@ $.ajax({
   contentType: "application/json; charset=utf-8",
   success: async function (data) {
      return;
+    
+
   },
   complete: function (data) {
-        setTimeout(() => {
-                var base_url = window.location.origin + "/" + "soida/ket-qua";
-                if(slugGlobal != null  &&  slugGlobal !== "")
-                {
-                    base_url = window.location.origin + "/" + slugGlobal +"/" + "ket-qua";
+
+
+    setTimeout(() => {
+              
             
-                }
-                if(slugGlobal =="book")
-                {
-                  var bookSlug =  window.location.pathname.split("/").pop();
-                  base_url = window.location.origin + "/" + slugGlobal +"/"+ bookSlug +"/" + "ket-qua";
-                }
-                window.open(base_url,"_self")
-            }, 1000);
+              var base_url = window.location.origin + "/" + "soida/ket-qua";
+              if(slugGlobal != null  &&  slugGlobal !== "")
+              {
+                  base_url = window.location.origin + "/" + slugGlobal +"/" + "ket-qua";
+          
+              }
+              if(slugGlobal =="book")
+              {
+                var bookSlug =  window.location.pathname.split("/").pop();
+                base_url = window.location.origin + "/" + slugGlobal +"/"+ bookSlug +"/" + "ket-qua";
+              }
+              window.open(base_url,"_self")
+          
+          
+          }, 1000);
 
 
   },

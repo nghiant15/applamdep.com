@@ -121,6 +121,11 @@ const HistorySkin = new Schema({
         type: String,
          default: "",
     },
+    sourceControl: {
+        type: String,
+         default: "",
+    }
+
 });
 
 module.exports = mongoose.model('HistorySkin', HistorySkin, 'HistorySkin');

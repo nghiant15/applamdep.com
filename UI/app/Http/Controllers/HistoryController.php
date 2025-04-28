@@ -283,15 +283,15 @@ class HistoryController extends Controller
      
       
         $ipClient = $this->get_ip();
+        $ipClient = "118.69.182.32";
 
         // if($ipClient =="127.0.0.1" || $ipClient =="192.168.1.24" || $ipClient ="125.235.233.250" )
         // {
-        //     $ipClient = "115.79.192.86";
+        //     $ipClient = "118.69.182.32";
         // }
-
-       
         $connectionType = $request->input('connectionType',"");
         $timeConnection = $request->input('timeConnection',"");
+        $sourceInput = $request->input('sourceInput',"web");
         $successGame   =  session('successGame', false);
         $typeLogin =  session('typeLogin', null);
         $gameJoinType1 = session('gameJoinType1', false);
@@ -299,6 +299,8 @@ class HistoryController extends Controller
         $ageGameReal =  session('ageGameReal', null);
         $ageUser =  session('ageUser', '');
         $gameType =session('gameType', "");
+
+        $sourceControl = $sourceInput;
         $client1 = new Client();
         $linkUrl = "http://ip-api.com/json/".$ipClient;
         $res1 = $client1->request('get',$linkUrl);
@@ -352,10 +354,10 @@ class HistoryController extends Controller
                     "typeLogin"=>$typeLogin,
                     "connectionType"=>  $connectionType,
                     "timeConnection"=>0,
+                    "sourceControl" => $sourceControl,
                     "ageUser" => $ageUser,
                     "Result"=> $result
                 ];
-                
                 $client = new Client();
                 $res = $client->request('post',$loginUrl , [
                                         'headers' => 
@@ -377,11 +379,7 @@ class HistoryController extends Controller
                 }
                 return  ["is_success" =>false];
              }
-    }
-
-
-
-    
+}
     
 
 

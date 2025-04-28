@@ -96,7 +96,7 @@ class EndUserv2 extends Component {
     const { company_id } = this.state;
     this.setState({ isLoading: true });
     const res = await axios({
-      baseURL: "https://api-soida.applamdep.com",
+      baseURL: "http://localhost:3002",
       url: "/api/report/getOverviewDashboard?page=1",
       data: {
         company_id : company_id

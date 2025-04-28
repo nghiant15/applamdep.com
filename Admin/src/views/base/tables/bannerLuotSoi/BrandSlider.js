@@ -448,7 +448,7 @@ class BrandSlider extends Component {
                                 <td className="text-center">
                                   {
                                     item.image_link == null || item.image_link == "" ? <img src={`${item.image}`} width={"400px"} /> :
-                                      <img src={`https://api-soida.applamdep.com/public/image_brand/${item.image_link}`} width={"400px"}  />
+                                      <img src={`http://localhost:3002/public/image_brand/${item.image_link}`} width={"400px"}  />
                                   }
                                 </td>
 
@@ -534,7 +534,7 @@ class BrandSlider extends Component {
                    this.state.image == "" || this.state.image == null || this.state.image == undefined ?
                   "" :
                     <img width="80%" height="auto" src={
-                    this.state.image_show == "" ? `https://api-soida.applamdep.com/public/image_brand/${this.state.image_link}` : this.state.image} style={{ marginBottom: 20 }} />
+                    this.state.image_show == "" ? `http://localhost:3002/public/image_brand/${this.state.image_link}` : this.state.image} style={{ marginBottom: 20 }} />
               }
 
 

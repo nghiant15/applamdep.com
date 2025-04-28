@@ -423,7 +423,7 @@ class BrandPlugin extends Component {
                                 <td className="text-center">
                                   {
                                     item.image_link == null || item.image_link == "" ? <img src={`${item.image}`} width={"60px"} height={"60px"} /> :
-                                      <img src={`https://api-soida.applamdep.com/public/image_brand/${item.image_link}`} width={"60px"} height={"60px"} />
+                                      <img src={`http://localhost:3002/public/image_brand/${item.image_link}`} width={"60px"} height={"60px"} />
                                   }
                                 </td>
                                 <td className="text-center">
@@ -495,7 +495,7 @@ class BrandPlugin extends Component {
                 this.state.image == "" || this.state.image == null || this.state.image == undefined ?
                   "" :
                   <img width="250" height="300" src={
-                    this.state.image_show == "" ? `https://api-soida.applamdep.com/public/image_brand/${this.state.image_link}` : this.state.image} style={{ marginBottom: 20 }} />
+                    this.state.image_show == "" ? `http://localhost:3002/public/image_brand/${this.state.image_link}` : this.state.image} style={{ marginBottom: 20 }} />
               }
 
               <TextFieldGroup
