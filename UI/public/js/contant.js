@@ -7,7 +7,7 @@ if(slug === 'cong-tac-vien/' || slug === 'chinh-sach-va-bao-mat/' || slug === 'd
 }
 var  api =  {
 
-    baser_url:  "https://api-soida.applamdep.com",
+    baser_url:  "https://api-ai.exomiyo.com",
     api_addUrl: "api/add-end-user",
     api_loginUser: "api/login-end-user",
 

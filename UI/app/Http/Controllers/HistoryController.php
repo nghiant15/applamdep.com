@@ -70,10 +70,10 @@ class HistoryController extends Controller
     {
 
      
-        $checkacssSlugUrl ="https://api-soida.applamdep.com/api/check-access-slug";
+        $checkacssSlugUrl ="https://api-ai.exomiyo.com/api/check-access-slug";
         $client = new Client();
 
-        $res = $client->request('post', 'https://api-soida.applamdep.com/api/check-access-slug', [
+        $res = $client->request('post', 'https://api-ai.exomiyo.com/api/check-access-slug', [
             'json' => [
                 'slug'=> $slug
               ]
@@ -401,7 +401,7 @@ public function AddClickZalo (Request $request)
 
         ];
         $client = new Client();
-        $res = $client->request('post',"https://api-soida.applamdep.com/api/add-type-contact" , [
+        $res = $client->request('post',"https://api-ai.exomiyo.com/api/add-type-contact" , [
         'json' =>$dataUpdate
         ]   
         );
@@ -427,7 +427,7 @@ public function AddClickZalo (Request $request)
             "Company_Id"=> $this->getCompanyId()
          ];
          $client = new Client();
-         $res = $client->request('post',"https://api-soida.applamdep.com/api/add-type-contact2" , [
+         $res = $client->request('post',"https://api-ai.exomiyo.com/api/add-type-contact2" , [
          'json' =>$dataUpdate
          ]   
          );

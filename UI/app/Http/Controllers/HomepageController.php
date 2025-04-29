@@ -27,10 +27,10 @@ class HomepageController extends Controller
 
     public function CheckUrl ($slug) 
     {
-        $checkacssSlugUrl ="https://api-soida.applamdep.com/api/check-access-slug";
+        $checkacssSlugUrl ="https://api-ai.exomiyo.com/api/check-access-slug";
         $client = new Client();
 
-        $res = $client->request('post', 'https://api-soida.applamdep.com/api/check-access-slug', [
+        $res = $client->request('post', 'https://api-ai.exomiyo.com/api/check-access-slug', [
             'json' => [
                 'slug'=> $slug
               ]
@@ -211,7 +211,7 @@ public function getDataInfo (Request $request)
     private function getDataById($id)
     {
     
-        $url ="https://api-soida.applamdep.com/api/getInfoUser?id=".$id;
+        $url ="https://api-ai.exomiyo.com/api/getInfoUser?id=".$id;
         $client = new Client();
         $res = $client->request('get', $url, [
             'json' => [
@@ -238,7 +238,7 @@ public function getDataInfo (Request $request)
     private function getBeauty($slug)
     {
     
-        $url ="https://api-soida.applamdep.com/api/gameBeauty/getInfo2?slug=".$slug;
+        $url ="https://api-ai.exomiyo.com/api/gameBeauty/getInfo2?slug=".$slug;
         $client = new Client();
 
         $res = $client->request('get', $url, [
@@ -266,7 +266,7 @@ public function getDataInfo (Request $request)
     private function getTuVan($slug)
     {
     
-        $url ="https://api-soida.applamdep.com/api/tuvan/getInfo2?slug=".$slug;
+        $url ="https://api-ai.exomiyo.com/api/tuvan/getInfo2?slug=".$slug;
         $client = new Client();
 
         $res = $client->request('get', $url, [
@@ -296,7 +296,7 @@ public function getDataInfo (Request $request)
     private function getGameActive($companyId)
     {
 
-        $url ="https://api-soida.applamdep.com/api/get-game-active";
+        $url ="https://api-ai.exomiyo.com/api/get-game-active";
         $client = new Client();
       
 
@@ -323,7 +323,7 @@ public function getDataInfo (Request $request)
     private function getGameMinisize($companyId)
     {
 
-        $url ="https://api-soida.applamdep.com/api/minisize/getInfoAdmin";
+        $url ="https://api-ai.exomiyo.com/api/minisize/getInfoAdmin";
         $client = new Client();
       
 
@@ -352,7 +352,7 @@ public function getDataInfo (Request $request)
     private function getConfigSetting($companyId)
     {
 
-        $url ="https://api-soida.applamdep.com/api/settingBanner/getInfo";
+        $url ="https://api-ai.exomiyo.com/api/settingBanner/getInfo";
         $client = new Client();
       
 
@@ -656,9 +656,9 @@ public function getDataInfo (Request $request)
         }
         
         $slug = "";
-        $checkacssSlugUrl ="https://api-soida.applamdep.com/api/get-detail-history-skin";
+        $checkacssSlugUrl ="https://api-ai.exomiyo.com/api/get-detail-history-skin";
         $client = new Client();
-        $res = $client->request('post', 'https://api-soida.applamdep.com/api/get-detail-history-skin', [
+        $res = $client->request('post', 'https://api-ai.exomiyo.com/api/get-detail-history-skin', [
             'json' => [
                  'id'=> $id
               ]
@@ -705,9 +705,9 @@ public function getDataInfo (Request $request)
         }
         
         $slug = "";
-        $checkacssSlugUrl ="https://api-soida.applamdep.com/api/get-detail-history-skin";
+        $checkacssSlugUrl ="https://api-ai.exomiyo.com/api/get-detail-history-skin";
         $client = new Client();
-        $res = $client->request('post', 'https://api-soida.applamdep.com/api/get-detail-history-skin', [
+        $res = $client->request('post', 'https://api-ai.exomiyo.com/api/get-detail-history-skin', [
             'json' => [
                  'id'=> $id
               ]

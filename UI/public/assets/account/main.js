@@ -73,7 +73,7 @@ function submitRequest() {
 
     var form = $("#formrequest");
     $.ajax({
-        url: "https://api-soida.applamdep.com/api/plugin-add-company-auto-wa",
+        url: "https://api-ai.exomiyo.com/api/plugin-add-company-auto-wa",
         type: "post",
         data: form.serialize(),
         success: function(response) {

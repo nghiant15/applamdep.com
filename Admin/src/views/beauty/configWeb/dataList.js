@@ -92,7 +92,7 @@ export default class Voucher extends Component {
   saveBeauty() {
 
     
-  var baseUrlapi = "https://api-soida.applamdep.com";
+  var baseUrlapi = "https://api-ai.exomiyo.com";
     let url = baseUrlapi + "/api/gameBeauty/adminUpdate";
     
     const bodyRequest = {

@@ -441,7 +441,7 @@ var bodyRequest = {
 };
 $.ajax({
  type: "POST",
- url: "https://api-soida.applamdep.com/itemSdk/get_product_result",
+ url: "https://api-ai.exomiyo.com/itemSdk/get_product_result",
  data: JSON.stringify(bodyRequest),
  contentType: "application/json",
  dataType: "json",
@@ -478,7 +478,7 @@ var bodyRequest = {
 };
 $.ajax({
 type: "POST",
-url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeOverView",
+url: "https://api-ai.exomiyo.com/api/paramenterRecomed/getAllCocludeOverView",
 data: JSON.stringify(bodyRequest),
 contentType: "application/json",
 dataType: "json",
@@ -559,7 +559,7 @@ var bodyRequest = {
 };
 $.ajax({
 type: "POST",
-url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeDetail",
+url: "https://api-ai.exomiyo.com/api/paramenterRecomed/getAllCocludeDetail",
 data: JSON.stringify(bodyRequest),
 contentType: "application/json",
 dataType: "json",
@@ -1035,7 +1035,7 @@ var listDataProducts = dataProducts.list_product;
 
 listDataProducts.forEach(element => {
  
-var pathImage = 'https://api-soida.applamdep.com/public/image_plugin/' +'' +element.image_link +'';
+var pathImage = 'https://api-ai.exomiyo.com/public/image_plugin/' +'' +element.image_link +'';
 
 var xhr = new XMLHttpRequest();
 xhr.open('HEAD', pathImage, false);
@@ -1145,7 +1145,7 @@ htmlTemplate+='  <div class="dataProduct">';
          htmlTemplate += '<div class="product-item">\
                          <div> \
                          <img\
-                         src="https://api-soida.applamdep.com/public/image_plugin/toner-Dashu-0x0.jpg"\
+                         src="https://api-ai.exomiyo.com/public/image_plugin/toner-Dashu-0x0.jpg"\
                          alt="">\
                          </div>\
                          <div class="product-title">\

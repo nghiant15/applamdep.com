@@ -135,7 +135,7 @@ class Login extends Component {
                     <div>
                       <h2>Đăng ký</h2>
                       <p>Bạn muốn tạo tài khoản để sử dụng dịch vụ của TiKiTech. Hãy tham gia cùng chúng tôi ngay bên dưới.</p>
-                      <a href="https://applamdep.com/" target="_blank">
+                      <a href="https://ai.exomiyo.com/" target="_blank">
                         <CButton color="primary" className="mt-3" active tabIndex={-1}>Đăng ký ngay</CButton>
                       </a>
                     </div>

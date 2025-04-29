@@ -329,7 +329,7 @@ class EndUserv2 extends Component {
                             {
                               datacompany = datacompany[0];
                              }
-                             let hrefLink = "https://applamdep.com/"+datacompany.Slug;
+                             let hrefLink = "https://ai.exomiyo.com/"+datacompany.Slug;
                              let hrefVievDetail ="https://id.applamdep.com/#/historyskin/"+datacompany._id;
                             return (
                               <tr key={i}>

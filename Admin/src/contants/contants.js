@@ -1,7 +1,7 @@
 export default {
  
-   "BASE_URL" : "https://api-soida.applamdep.com",
-  "BASE_URL_HISTORY_SKIN" : "https://applamdep.com/xemchitietlichsu/",
+   "BASE_URL" : "https://api-ai.exomiyo.com",
+  "BASE_URL_HISTORY_SKIN" : "https://ai.exomiyo.com/xemchitietlichsu/",
   "BASE_URL_CURRENT" : "https://id.applamdep.com",
   "LIST_USER" : "/api/list-user",
   "LIST_USER_WITH_ID" : "/api/list-user?id=",

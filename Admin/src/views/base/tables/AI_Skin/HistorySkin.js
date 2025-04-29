@@ -340,11 +340,7 @@ class HistorySkin extends Component {
             {
                 saleText= compnayName;
                 compnayName =  element.saleName;
-                
-
             }
-
-
             let connectionType =  '';
             let timetext = '';
 
@@ -358,7 +354,7 @@ class HistorySkin extends Component {
               userName: element.UserName, 
               Phone: element.Phone, 
               Image: element.Image,
-              linkDetail: "https://applamdep.com/xemchitietlichsu/"+ element._id,
+              linkDetail: "https://ai.exomiyo.com/xemchitietlichsu/"+ element._id,
               Slug: compnayName,
               ipClient: element.ipClient,
               regionName: regionName, 
@@ -376,7 +372,8 @@ class HistorySkin extends Component {
     let workBook = XLSX.utils.book_new();
     const Heading = [
     [
-      'STT', 'Tên', 'Số điện thoại','Link hình ảnh', 'Link xem soi da','Công ty','IP','Tỉnh thành(Dự đoán)', 'Ngày soi da' ,  'SaleName', 'Thông tin click'
+      'STT', 'Tên', 'Số điện thoại','Link hình ảnh', 'Link xem soi da','Công ty','IP',
+      'Tỉnh thành(Dự đoán)', 'Ngày soi da' ,  'SaleName', 'Thông tin click'
     ]
     ];
       
@@ -677,6 +674,8 @@ value={this.getTimeConver(this.state.endDate)}
             </div>
           </Col>
         </Row>
+
+      
 
         <IframeModal toggleView={toggleHistory} link={Constants.BASE_URL_HISTORY_SKIN + idHistory} closeModal={this.closeModal} />
       </div>

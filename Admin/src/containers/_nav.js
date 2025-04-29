@@ -286,18 +286,7 @@ const _navMakeUp = [
 ]
 
 const _navBeauty = [
-  {
-    _tag: 'CSidebarNavTitle',
-    _children: ['Quản lý điểm đẹp'],
-    role: [ '0','1','2']
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Quản lý điểm đẹp',
-    to: '/quan-ly-diem-dep',
-    icon: <CIcon style={css} content={freeSet.cilList} customClasses="c-sidebar-nav-icon" />,
-    role: [ '0','1','2']
-  } 
+ 
 ]
 
 const _navTuvan = [
@@ -315,18 +304,7 @@ const _navTuvan = [
   } 
 ]
 const _navGame = [
-  {
-    _tag: 'CSidebarNavTitle',
-    _children: ['Quản lý game'],
-    role: [ '0','1','2']
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Game tuổi da',
-    to: '/game-tuoi-da',
-    icon: <CIcon style={css} content={freeSet.cilList} customClasses="c-sidebar-nav-icon" />,
-    role: [ '0','1','2']
-  } 
+  
 ]
 const _navOrther = [
   {
@@ -823,20 +801,7 @@ const _naveUser = [
       _children: ['Quản lý kết luận và chi tiết'],
       role: ['0', '1', '2'],
     },
-    {
-      _tag: 'CSidebarNavItem',
-      name: 'Kết luận chi tiết',
-  
-      to: '/skin/configContent',
-      icon: <CIcon style={css} content={freeSet.cilMoodVeryGood} customClasses="c-sidebar-nav-icon" />,
-      role: ['0', '1', '2'],
-      badge: {
-        color: 'info',
-        text: <CTooltip placement={"right"} content={content.suggest}>
-          <CIcon content={freeSet.cilBellExclamation} />
-        </CTooltip>,
-      },
-    },
+ 
      {
       _tag: 'CSidebarNavItem',
       name: 'Tư vấn tổng quát',

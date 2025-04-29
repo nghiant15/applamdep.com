@@ -87,56 +87,8 @@ function reDrawInfomation() {
 function drawContentTuVanTongQuat(generalResult )
 {
 
+  return;
 
-var index =0;
-generalResult.data.forEach((ketquatongquanItem) => {
-
-index ++;
-
-if( index%2 == 0)
-{
-var html= '<div class="description-tuvan"> \
-\
-<div class="content-tuvan">\
-<h6>'+ketquatongquanItem.title+'</h6>\
-\
- <ul>';
-
- html  +=   '<li class="content-paragraph">'+ketquatongquanItem.valueVI+'</li>';
-
-   
-html+= '</ul>\
-</div>\
-<div class="image-demo"> \
-   <img src ="/images/86336.png"></div></div>';
-$("#idtuvantongquan").append(html);
-
-}
-else 
-{
-var html= ' <div class="description-tuvan column-second"> \
-\
-<div class="image-demo"> \
-    <img src ="/images/86336.png"> \
-</div>\
-<div class="content-tuvan">\
-<h6>'+ketquatongquanItem.title+'</h6>\
-\
-<ul>';
-
-
- 
-html  +=   '<li class="content-paragraph">'+ketquatongquanItem.valueVI+'</li>';
-
-    
-html += '</ul>\
-</div>\
-\
-</div>';
-$("#idtuvantongquan").append(html);
-}
-
-});
 
 
 }
@@ -495,7 +447,7 @@ var bodyRequest = {
 };
 $.ajax({
  type: "POST",
- url: "https://api-soida.applamdep.com/itemSdk/get_product_result",
+ url: "https://api-ai.exomiyo.com/itemSdk/get_product_result",
  data: JSON.stringify(bodyRequest),
  contentType: "application/json",
  dataType: "json",
@@ -531,10 +483,10 @@ var bodyRequest = {
 
 };
 
-console.log("bodyRequest", bodyRequest);
+
 $.ajax({
 type: "POST",
-url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeOverView",
+url: "https://api-ai.exomiyo.com/api/paramenterRecomed/getAllCocludeOverView",
 data: JSON.stringify(bodyRequest),
 contentType: "application/json",
 dataType: "json",
@@ -556,6 +508,7 @@ var indexstt =1;
 function drawConcludeOverviewItem (item) 
 {
 
+  return;
 if(item)
 {
 for (var i = 0; i < item.length; i++) {
@@ -583,68 +536,180 @@ for (var i = 0; i < item.length; i++) {
 }
 }
 
-function drawConcludeDetail(dataRequest) {
+var datalCocludeOverView = {};
+
+function drawItemOverView2 ( groupK, valueGroupK, item)
+{
+  
+  var tilte = "";
+  var des = "";
+   var text = "Mức độ nhẹ";
+  var valueRel =  item['avg'];
+  if( typeof(valueRel) =="undefined")
+  {
+    return;
+  }
+ 
+  if(  valueRel < 1)
+  {
+    valuek = 1;
+  }
+  else if( valueRel < 2)
+  {
+    valuek = 2;
+  }
+  else if( valueRel < 3)
+  {
+    valuek = 3;
+  }
+  var arrayResult = datalCocludeOverView[groupK];
 
 
-  // for (var i = 0; i < dataRequest.length; i++)
-  // {
-  //     var item = dataRequest[i];
-  //     var groupK = item['level'];
-  //     if(groupK < "K5") 
-  //        continue;
-  //     var valueGroupK = item['sdktype'];
-  //     drawConcludev2( groupK, valueGroupK, item);
-  // }
+  if ( arrayResult == null || arrayResult.length < 1)
+  {
+    return;
+  }
+  if(valuek >3)
+    valuek = 3;
+    
+    valuek=  valuek+'';
 
-  for (var i = 0; i < dataRequest.length; i++)
-    {
-        var item = dataRequest[i];
-        var groupK = item['level'];
-        if(groupK != "K9") 
-          continue;
-        var valueGroupK = item['sdktype'];
-        drawConcludev2( groupK, valueGroupK, item);
+    for (let index = 0; index < arrayResult.length; index++) {
+      const itemCompare = arrayResult[index];
+      if(itemCompare.Level == valuek)
+      {
+          des = itemCompare.Content;
+          break;
+      }
+      
     }
 
-    for (var i = 0; i < dataRequest.length; i++)
-      {
-          var item = dataRequest[i];
-          var groupK = item['level'];
-          if(groupK != "K6") 
-            continue;
-          var valueGroupK = item['sdktype'];
-          drawConcludev2( groupK, valueGroupK, item);
-      }
+    switch (groupK) {
+        case "K5":
+          tilte = "Lão hoá da";
+        break;
+        case "K6":
+          tilte = "Mụn và mụn viêm đỏ";
+        break;
+        case "K7":
+          tilte ="Quầng thâm mắt";
+        break;
+        case "K8":
+          tilte ="Lỗ chân lông";
+        break;
+    
+        case "K9":
+          tilte ="Đốm thâm nám";
+        break;
+      default:
+        break;
+    }
+    debugger;
+      var htmlTemp = '<div class ="tuvantongquanItem"> \
+      <p class ="titletvtq">'+ tilte + ' </p>\
+      <p class ="paragraphText">'+des.replace(/<[^>]*>?/gm, '')+ '</p> </div> ';
+      $("#idtuvantongquan").append(htmlTemp);
+}
+function drawConcludeDetail(dataRequest) {
+  debugger;
+  var company =null  ;
 
-      
-    for (var i = 0; i < dataRequest.length; i++)
-      {
-          var item = dataRequest[i];
-          var groupK = item['level'];
-          if(groupK != "K5") 
-            continue;
-          var valueGroupK = item['sdktype'];
-          drawConcludev2( groupK, valueGroupK, item);
-      }
-      for (var i = 0; i < dataRequest.length; i++)
-        {
-            var item = dataRequest[i];
-            var groupK = item['level'];
-            if(groupK != "K7" ) 
-              continue;
-            var valueGroupK = item['sdktype'];
-            drawConcludev2( groupK, valueGroupK, item);
-        }
 
-        for (var i = 0; i < dataRequest.length; i++)
-          {
-              var item = dataRequest[i];
-              var groupK = item['level'];
-              if(groupK != "K8" ) 
-                continue;
-              var valueGroupK = item['sdktype'];
-              drawConcludev2( groupK, valueGroupK, item);
-          }
+
+
+
+  if (sessionStorage.getItem("dataCompany") === null) {
+  
+  company = companyIdGlobal;
+  }
+  else 
+  {
+  company = JSON.parse(sessionStorage.getItem("dataCompany"));
+  company = company.company_data;
+  }
+  
+  var bodyRequest = {
+  
+  "company_id": company,
+  "result": dataRequest
+  
+  };
+  
+
+  $.ajax({
+    type: "POST",
+    url: "https://api-ai.exomiyo.com/api/paramenterRecomed/getAllCocludeOverView",
+    data: JSON.stringify(bodyRequest),
+    contentType: "application/json",
+    dataType: "json",
+    success:function(data)
+    { 
+
+          datalCocludeOverView =data.data;
+
+            for (var i = 0; i < dataRequest.length; i++)
+              {
+                  var item = dataRequest[i];
+                  var groupK = item['level'];
+                  if(groupK != "K9") 
+                    continue;
+                  var valueGroupK = item['sdktype'];
+                   drawConcludev2( groupK, valueGroupK, item);
+                  // debugger;
+                  drawItemOverView2( groupK,valueGroupK,item);
+              }
+
+              for (var i = 0; i < dataRequest.length; i++)
+                {
+                    var item = dataRequest[i];
+                    var groupK = item['level'];
+                    if(groupK != "K6") 
+                      continue;
+                    var valueGroupK = item['sdktype'];
+                    drawConcludev2( groupK, valueGroupK, item);
+                    drawItemOverView2( groupK, valueGroupK, item);
+                }
+          
+                
+              for (var i = 0; i < dataRequest.length; i++)
+                {
+                    var item = dataRequest[i];
+                    var groupK = item['level'];
+                    if(groupK != "K5") 
+                      continue;
+                    var valueGroupK = item['sdktype'];
+                    drawConcludev2( groupK, valueGroupK, item);
+                    drawItemOverView2( groupK, valueGroupK, item);
+                }
+                for (var i = 0; i < dataRequest.length; i++)
+                  {
+                      var item = dataRequest[i];
+                      var groupK = item['level'];
+                      if(groupK != "K7" ) 
+                        continue;
+                      var valueGroupK = item['sdktype'];
+                      drawConcludev2( groupK, valueGroupK, item);
+                      drawItemOverView2( groupK, valueGroupK, item);
+                  }
+          
+                  for (var i = 0; i < dataRequest.length; i++)
+                    {
+                        var item = dataRequest[i];
+                        var groupK = item['level'];
+                        if(groupK != "K8" ) 
+                          continue;
+                        var valueGroupK = item['sdktype'];
+                        drawConcludev2( groupK, valueGroupK, item);
+                        drawItemOverView2( groupK, valueGroupK, item);
+                    }
+    }
+    });
+
+return;
+
+  
+
+ 
 
 return;
 if (sessionStorage.getItem("dataCompany") === null) {
@@ -665,7 +730,7 @@ var bodyRequest = {
 };
 $.ajax({
 type: "POST",
-url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeDetail",
+url: "https://api-ai.exomiyo.com/api/paramenterRecomed/getAllCocludeDetail",
 data: JSON.stringify(bodyRequest),
 contentType: "application/json",
 dataType: "json",
@@ -682,19 +747,6 @@ success:function(data)
 
 function drawConcludeOverview( dataRequest)
 {
-
-  // for (var i = 0; i < dataRequest.length; i++)
-  // {
-  //   var item = dataRequest[i];
-  //     var groupK = item['level'];
-  //     if(groupK < "K5") 
-  //        continue;
-  //     var valueGroupK = item['sdktype'];
-  //     drawConcludeOverview2( groupK, valueGroupK, item);
-
-      
-    
-  // }
 
 
   for (var i = 0; i < dataRequest.length; i++)
@@ -750,6 +802,7 @@ function drawConcludeOverview( dataRequest)
 
 function drawConcludeOverview2 ( groupk, valuek, item) 
 {
+  return;
   var tilte = "";
   var des = "";
   
@@ -903,7 +956,8 @@ function drawConcludeOverview2 ( groupk, valuek, item)
    var htmlTemp = '<div class ="tuvantongquanItem"> \
    <p class ="titletvtq">'+ tilte + ': </p>\
    <p class ="paragraphText">'+des+ '</p> </div> ';
-$("#idtuvantongquan").append(htmlTemp);
+  
+   $("#idtuvantongquan").append(htmlTemp);
 
 }
 
@@ -1190,7 +1244,7 @@ var listDataProducts = dataProducts.list_product;
 
 listDataProducts.forEach(element => {
  
-var pathImage = 'https://api-soida.applamdep.com/public/image_plugin/' +'' +element.image_link +'';
+var pathImage = 'https://api-ai.exomiyo.com/public/image_plugin/' +'' +element.image_link +'';
 
 var xhr = new XMLHttpRequest();
 xhr.open('HEAD', pathImage, false);
@@ -1300,7 +1354,7 @@ htmlTemplate+='  <div class="dataProduct">';
          htmlTemplate += '<div class="product-item">\
                          <div> \
                          <img\
-                         src="https://api-soida.applamdep.com/public/image_plugin/toner-Dashu-0x0.jpg"\
+                         src="https://api-ai.exomiyo.com/public/image_plugin/toner-Dashu-0x0.jpg"\
                          alt="">\
                          </div>\
                          <div class="product-title">\

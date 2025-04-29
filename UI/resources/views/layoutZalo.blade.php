@@ -25,8 +25,8 @@
     else 
     {
         $bannerPage =   new \stdClass();
-        $bannerPage->imageBannerDesktop= "https://api-soida.applamdep.com/image_brand/applamdep1320 (1).png";
-        $bannerPage->imageBannerMobile  = "https://api-soida.applamdep.com/image_brand/applamdep1320 (1).png";
+        $bannerPage->imageBannerDesktop= "https://api-ai.exomiyo.com/image_brand/applamdep1320 (1).png";
+        $bannerPage->imageBannerMobile  = "https://api-ai.exomiyo.com/image_brand/applamdep1320 (1).png";
      
     }
 

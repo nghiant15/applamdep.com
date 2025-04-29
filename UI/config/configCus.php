@@ -4,7 +4,7 @@ return [
 
     'urlSystem' => [
 
-        'checkAcessSlug' =>"https://api-soida.applamdep.com/api/check-access-slug",
+        'checkAcessSlug' =>"https://api-ai.exomiyo.com/api/check-access-slug",
        
 
     ],

@@ -729,12 +729,9 @@
             </style>
 
 
-            <div id ="ConcludeItemArea" class ="blurdiv1" >
-        
-            </div>
-        
-
-
+                <div id ="ConcludeItemArea" class ="blurdiv1" >
+            
+                </div>
                 <div class="title-overview blurdiv1" id ="tvtq_area"  >
                     <div class="hcn">
 
@@ -768,38 +765,11 @@
 
                     }
                 </style>
-                <div id="idtuvantongquan" class="blurdiv1"  style="
-                text-align: justify;
-           
-                padding: 10px;
-            ">
-
-                    {{-- <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Lão hoá da: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div>
-
-                    <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Mụn và mụn viêm đỏ: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div>
-
-                    <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Quầng thâm mắt: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div>
-
-                    <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Lỗ chân lông: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div>
-                    <div class ="tuvantongquanItem"> 
-                        <p class ="titletvtq">Đốm thâm nám: </p>
-                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
-                    </div> --}}
-
+                <div id="idtuvantongquan" class="blurdiv1"  style="text-align: justify; padding: 10px; ">
                 </div>
                 @endif
+
+
                 
 
             </div>
@@ -1546,7 +1516,7 @@
             $("#btnrewardLoading").show();
             $.ajax({
                 type: "PUT",
-                url: "https://api-soida.applamdep.com/api/add-customer-request",
+                url: "https://api-ai.exomiyo.com/api/add-customer-request",
                 data: JSON.stringify({
                     UserName: "TIKITECH",
                     Phone: $("#mobilePhone").val(),
@@ -1914,7 +1884,15 @@ let isPlaying = false;
        
       try{
         setTimeout(() => {
-            readTextConclude();
+             readTextConclude();
+            $('.dataProduct').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true
+     
+            });
+
         }, 5000);
        
         isPlaying = true;
