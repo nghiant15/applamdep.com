@@ -168,21 +168,18 @@ module.exports = {
 
     update: async (req, res) => {
         try {
-            // const { name,des,image_link,hrefLink, company_id } = req.body;
- 
-            // const { id, title,content,level,priorites ,type,icon,status } = req.body;
+           
             const {id, key,value,dataType,type } = req.body;
             console.log(req.body);
 
-            console.log(req.body);
-            console.log(req.body);
+          
             var objUpdate = {
                 Value: value,
                 DataType: dataType,
                 Type : type,
             };
-        
 
+            
             let result = await ModelDB.updateOne({ _id: ObjectId(id) }, objUpdate);
 
             if (result) {

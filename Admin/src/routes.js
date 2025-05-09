@@ -82,8 +82,10 @@ const configWeb = React.lazy(() => import("./views/config/configWeb"));
 const AIConfig = React.lazy(() => import("./views/aiConfig/AiConfig"));
 
 const configMinisize = React.lazy(() => import("./views/minisize/configBeauty"));
-const configconfigGuildline = React.lazy(() => import("./views/guildline/Guildline"));
+const configSound = React.lazy(() => import("./views/configRessult/configBeauty"));
 
+
+const configconfigGuildline = React.lazy(() => import("./views/guildline/Guildline"));
 const configGame = React.lazy(() => import("./views/game/configWeb"));
 
 const configBeauty = React.lazy(() => import("./views/beauty/configBeauty"));
@@ -152,6 +154,12 @@ const routes = [
     name: "configBeauty",
     component: configMinisize,
   },
+  {
+    path: "/cau-hinh-am-thanh",
+    name: "configSound",
+    component: configSound,
+  }
+  ,
   {
     path: "/banner-huong-dan",
     name: "configGuildline",

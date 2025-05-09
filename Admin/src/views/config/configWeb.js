@@ -20,6 +20,8 @@ import { IoLogoBuffer } from "@react-icons/all-files/io/IoLogoBuffer";
 import Chats from "./configWeb/Chats";
 import Embeds from "./configWeb/InfoCompany";
 import BannerAia from "./configWeb/BannerAia";
+import BannerClip from "./configWeb/BannerClip";
+import SoundResult from "./configWeb/SoundResult";
 import Logo from "./configWeb/Logo";
 import SlideShow from "./configWeb/SlideShow";
 import Mxh from "./configWeb/Mxh";
@@ -52,7 +54,14 @@ class ConfigWeb extends Component {
       configData: [],
       tabNameConfig: [
        
-       
+        {
+          _id: "55",
+          name: "Video và hình ảnh",
+          icon: (
+            <BiSlideshow style={{ width: "24px ", height: "24px " }} />
+          ),
+        },
+      
         {
           _id: "9",
           name: "Banner trang",
@@ -86,6 +95,14 @@ class ConfigWeb extends Component {
             <IoColorPaletteOutline style={{ width: "24px ", height: "24px " }} />
           ),
         },
+        {
+          _id: "56",
+          name: "Âm thanh",
+          icon: (
+            <IoColorPaletteOutline style={{ width: "24px ", height: "24px " }} />
+          ),
+        },
+
         {
           _id: "10",
           name: "Thông tin mạng xã hội",
@@ -205,6 +222,7 @@ class ConfigWeb extends Component {
 
           let valueConfig = JSON.parse(dataConfig.Value);
           console.log("webinfo", valueConfig);
+     
           this.setState(
             {
               dataConfigWeb: valueConfig,
@@ -216,11 +234,12 @@ class ConfigWeb extends Component {
               homepage: valueConfig.value.homepage,
               slideShow: valueConfig.value.slideShow,
               mxh: valueConfig.value.mxh,
-              
+              soundContent: valueConfig.value.soundContent,
               statusConfig: valueConfig.value.statusConfig,
               configData: valueConfig.value.statusConfig,
               footer: valueConfig.value.footer,
               banner: valueConfig.value.banner,
+              bannerClip: valueConfig.value.bannerClip,
               button: valueConfig.value.button,
               voucher: valueConfig.value.voucher,
               form: valueConfig.value.form,
@@ -243,6 +262,7 @@ class ConfigWeb extends Component {
                 mxh,
                 footer,
                 banner,
+                bannerClip,
                 button,
                 voucher,
                 form,
@@ -250,7 +270,8 @@ class ConfigWeb extends Component {
                 bannerCampaign,
                 embedHotline,
                 embeddFacebook,
-                embeddZalo
+                embeddZalo,
+                soundContent
 
               } = this.state;
               if (aia) {
@@ -315,6 +336,24 @@ class ConfigWeb extends Component {
                   imageBannerMobile: this.state.banner.imageBannerMobile,
                   imageBannerMobile_link: this.state.banner.imageBannerMobile,
                   imageBannerMobile_show: this.state.banner.imageBannerMobile,
+                });
+              }
+
+
+              this.setState({
+                soundContent : soundContent
+
+               
+              });
+              if (bannerClip) {
+
+            
+                this.setState({
+                  imageVideoClip: bannerClip.imageVideoClip,
+                  imageVideoClip_link: bannerClip.imageVideoClip,
+                  imageVideoClip_show: bannerClip.imageVideoClip
+
+                 
                 });
               }
               if(bannerCampaign){
@@ -634,6 +673,7 @@ class ConfigWeb extends Component {
       image3_link,
       embeddFacebook,
       embeddZalo,
+      soundContent,
       embedHotline
     } = this.state;
     var baseUrlapi = Constants.BASE_URL;
@@ -669,6 +709,8 @@ class ConfigWeb extends Component {
       coppyData.value.chatMess = this.state.codeMess;
       coppyData.value.tawk = this.state.codeChat;
     }
+
+    coppyData.value.soundContent = soundContent;
 
     if (change === "embeds") {
       coppyData.value.embeddFacebook = this.state.embeddFacebook;
@@ -860,6 +902,44 @@ class ConfigWeb extends Component {
         dataConfigWeb: coppyData,
       });
     }
+
+
+
+
+
+    if (change === "logos") {
+      if (!coppyData.value.logos) {
+        coppyData.value.logos = {};
+      }
+      coppyData.value.logos.classLogo = this.state.classLogo;
+      let newImage = await this.postImage(this.state.image_link);
+      if (newImage) {
+        coppyData.value.logos.header.logo = `${Constants.BASE_URL}/image_brand/${newImage}`;
+      }
+      let newImage2 = await this.postImage(this.state.imgLogoFooter_link);
+      if (newImage2) {
+        coppyData.value.logos.footer.logo = `${Constants.BASE_URL}/image_brand/${newImage2}`;
+      }
+      coppyData.value.logos.footer.href = this.state.hrefLogoFooter;
+      coppyData.value.logos.header.href = this.state.hrefLogoHeader;
+      this.setState({
+        dataConfigWeb: coppyData,
+      });
+    }
+    if (change === "bannerClip") {
+      if (!coppyData.value.bannerClip) {
+        coppyData.value.bannerClip = {};
+      }
+      let newImage = await this.postImage(this.state.imageVideoClip_link);
+      if (newImage) {
+        coppyData.value.bannerClip.imageVideoClip = `${Constants.BASE_URL}/image_brand/${newImage}`;
+      }
+      this.setState({
+        dataConfigWeb: coppyData,
+      });
+    }
+
+
     await axios
       .post(url, {
         value: JSON.stringify(coppyData),
@@ -1445,6 +1525,29 @@ class ConfigWeb extends Component {
                   hrefImageBannerMobile={this.state.hrefImageBannerMobile}
                 />
               </div>
+
+              <div id="tabcontent55" className="tabcontent">
+                <BannerClip
+                  SaveAllConfigWeb={this.SaveAllConfigWeb}
+                  setStateByName={this.setStateByName}
+                  onChangeImage={this.onChangeImage}
+                  imageVideoClip={this.state.imageVideoClip}
+                  imageVideoClip_link={this.state.imageVideoClip}
+                  imageVideoClip_show={this.state.imageVideoClip}
+                 
+                />
+              </div>
+              <div id="tabcontent56" className="tabcontent">
+                <SoundResult
+                  SaveAllConfigWeb={this.SaveAllConfigWeb}
+                  setStateByName={this.setStateByName}
+                  onChangeImage={this.onChangeImage}
+                  soundContent={this.state.soundContent}
+               
+                />
+              </div>
+
+              
               <div id="tabcontent10" className="tabcontent ">
                 <Embeds
                   SaveAllConfigWeb={this.SaveAllConfigWeb}

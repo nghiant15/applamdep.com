@@ -783,11 +783,13 @@ class Users extends Component {
           
 
           <div class="accordion" id="accordionExample">
-            {this.renderProductsSuggest(this.state.listK5,"headingOne","collapser1","Hỗ trợ giảm lão hóa da",true,"K5")}
+          {this.renderProductsSuggest(this.state.listK9,"headingFive","collapser5","Hỗ trợ điều trị Nám, Tàn nhang",false,"K9")}
+            {this.renderProductsSuggest(this.state.listK5,"headingOne","collapser1","Hỗ trợ phục hồi da lão hóa",true,"K5")}
             {this.renderProductsSuggest(this.state.listK6,"headingTwo","collapser2","Hỗ trợ điều trị mụn",false,"K6")}
-            {this.renderProductsSuggest(this.state.listK7,"headingThree","collapser3","Hỗ trợ giảm quầng thâm mắt",false,"K7")}
             {this.renderProductsSuggest(this.state.listK8,"headingFour","collapser4","Hỗ trợ giảm lỗ chân lông",false,"K8")}
-            {this.renderProductsSuggest(this.state.listK9,"headingFive","collapser5","Hỗ trợ giảm thâm nám da",false,"K9")}
+            {this.renderProductsSuggest(this.state.listK7,"headingThree","collapser3","Hỗ trợ giảm quầng thâm mắt",false,"K7")}
+           
+         
                                   
           </div>
     
@@ -836,19 +838,22 @@ class Users extends Component {
 
           <br></br>
           <label className="control-label">Mô tả</label>
-         
           <CKEditor
                     editor={ ClassicEditor }
                     data={
                       this.state.updateDesc
                     }
+                    config={{
+                      toolbar: []
+                     
+                  }}
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );
                     } }
                     onChange={ ( event, editor ) => {
-                        const data = editor.getData();
-                    
+                        const data = editor.getData().replace(/<[^>]*>/g, '');
+         
                         this.setState({ updateDesc: data });
                     } }
                     onBlur={ ( event, editor ) => {
@@ -858,15 +863,7 @@ class Users extends Component {
                      
                     } }
                 />
-          {/* <CTextarea
-            name="updateDesc"
-            rows="4"
-            value={this.state.updateDesc}
-            onChange={(e) => {
-              this.setState({ updateDesc: e.target.value });
-            }}
-            
-          /> */}
+        
          
           <div style={{ width: "100%" }} className="mt-3">
                 <CLabel>Mức độ:</CLabel>
