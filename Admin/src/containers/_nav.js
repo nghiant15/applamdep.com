@@ -1254,4 +1254,4 @@ const _naveUser = [
         } 
       ]      
 
-export default [_navVendor, _naveUser,_navMinisize,_navManagementConclue,  _navBeauty,_navTuvan,_navSoida,_navDisplay, _navOrther, _navContact, _navLogOut,_navSpecialProduct  ]
+export default [_navVendor, _naveUser,_navMinisize,_navManagementConclue,  _navBeauty,_navTuvan,_navDisplay, _navOrther, _navContact, _navLogOut  ]

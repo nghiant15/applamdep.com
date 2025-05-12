@@ -76,7 +76,7 @@ function saveHistory(isRedirect, result = null) {
 
   const params = new URLSearchParams(location.search);
 
-  var sourceInput =params.get('source');
+  var sourceInput =params.toString();
 
   if(sourceInput == null || sourceInput =="")
   {
@@ -130,7 +130,7 @@ $.ajax({
   },
   complete: function (data) {
 
-
+   
     setTimeout(() => {
               
             

@@ -70,10 +70,10 @@ class HistoryController extends Controller
     {
 
      
-        $checkacssSlugUrl ="http://localhost:3002/api/check-access-slug";
+        $checkacssSlugUrl ="https://api-ai.exomiyo.com/api/check-access-slug";
         $client = new Client();
 
-        $res = $client->request('post', 'http://localhost:3002/api/check-access-slug', [
+        $res = $client->request('post', 'https://api-ai.exomiyo.com/api/check-access-slug', [
             'json' => [
                 'slug'=> $slug
               ]
@@ -284,10 +284,10 @@ class HistoryController extends Controller
       
         $ipClient = $this->get_ip();
        
-        if($ipClient =="127.0.0.1" || $ipClient =="192.168.1.24" || $ipClient ="125.235.233.250" )
-        {
-            $ipClient = "118.69.182.32";
-        }
+        // if($ipClient =="127.0.0.1" || $ipClient =="192.168.1.24" || $ipClient ="125.235.233.250" )
+        // {
+        //     $ipClient = "118.69.182.32";
+        // }
         $connectionType = $request->input('connectionType',"");
         $timeConnection = $request->input('timeConnection',"");
         $sourceInput = $request->input('sourceInput',"web");
@@ -401,7 +401,7 @@ public function AddClickZalo (Request $request)
 
         ];
         $client = new Client();
-        $res = $client->request('post',"http://localhost:3002/api/add-type-contact" , [
+        $res = $client->request('post',"https://api-ai.exomiyo.com/api/add-type-contact" , [
         'json' =>$dataUpdate
         ]   
         );
@@ -427,7 +427,7 @@ public function AddClickZalo (Request $request)
             "Company_Id"=> $this->getCompanyId()
          ];
          $client = new Client();
-         $res = $client->request('post',"http://localhost:3002/api/add-type-contact2" , [
+         $res = $client->request('post',"https://api-ai.exomiyo.com/api/add-type-contact2" , [
          'json' =>$dataUpdate
          ]   
          );

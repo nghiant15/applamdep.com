@@ -1,6 +1,6 @@
 export default {
  
-   "BASE_URL" : "https://api-ai.exomiyo.com",
+   "BASE_URL" : "http://localhost:3002",
   "BASE_URL_HISTORY_SKIN" : "https://ai.exomiyo.com/xemchitietlichsu/",
   "BASE_URL_CURRENT" : "https://id.applamdep.com",
   "LIST_USER" : "/api/list-user",
