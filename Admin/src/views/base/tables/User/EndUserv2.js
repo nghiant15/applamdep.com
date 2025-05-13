@@ -251,7 +251,7 @@ class EndUserv2 extends Component {
  
   openHistory = (item) => {
 
-    window.open("https://id.applamdep.com/#/historyskin?phoneNumber="+ item.phone,"_blank");
+    window.open("http://admin.exomiyo.com/#/historyskin?phoneNumber="+ item.phone,"_blank");
     
   }
   
@@ -515,7 +515,7 @@ let exportFileName = `user.xls`;
                                 <td className="text-center">
 
 <CButton style={styles.mgl5} outline color="primary" size="sm" onClick={async (e) => {
-         window.open("https://id.applamdep.com/#lich-su-ca-nhan/"+ item.Phone, "_blank")
+         window.open("http://admin.exomiyo.com/#lich-su-ca-nhan/"+ item.Phone, "_blank")
          
       }} >
        Lịch sử soi da

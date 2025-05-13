@@ -1122,6 +1122,8 @@ function drawConcludev2 ( groupk, valuek, item)
     percentage =  Math.round((value23/10) * 100);
 
    
+
+   
    
    var htmlTemp = ' <div class="ConcludeItem"><p class ="paragraph-text-pa"> <span class ="bold-text-pa">'+tilte+': </span>\
 <span class ="leveldegree"> '+text+' (Mức '+value23 +'/10) </span>\
@@ -1499,7 +1501,10 @@ function avgScore()
     avgfinal2 = avgfinal2 -2;
 
 
-  
+  if( avgfinal2 < 0 )
+  {
+    avgfinal2 =1;
+  }
 
    document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;

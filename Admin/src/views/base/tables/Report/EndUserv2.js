@@ -96,7 +96,7 @@ class EndUserv2 extends Component {
     const { company_id } = this.state;
     this.setState({ isLoading: true });
     const res = await axios({
-      baseURL: "http://localhost:3002",
+      baseURL: "https://api-ai.exomiyo.com",
       url: "/api/report/getOverviewDashboard?page=1",
       data: {
         company_id : company_id
@@ -226,7 +226,7 @@ class EndUserv2 extends Component {
  
   openHistory = (item) => {
 
-    window.open("https://id.applamdep.com/#/historyskin?phoneNumber="+ item.phone,"_blank");
+    window.open("http://admin.exomiyo.com/#/historyskin?phoneNumber="+ item.phone,"_blank");
     
   }
   
@@ -330,7 +330,7 @@ class EndUserv2 extends Component {
                               datacompany = datacompany[0];
                              }
                              let hrefLink = "https://ai.exomiyo.com/"+datacompany.Slug;
-                             let hrefVievDetail ="https://id.applamdep.com/#/historyskin/"+datacompany._id;
+                             let hrefVievDetail ="http://admin.exomiyo.com/#/historyskin/"+datacompany._id;
                             return (
                               <tr key={i}>
                                 <td className="text-center">{i + 1}</td>
