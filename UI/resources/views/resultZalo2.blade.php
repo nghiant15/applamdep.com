@@ -13,7 +13,6 @@
          }
 
          $dataMinisize =  session('dataminisize', null);
-         
 
        
 @endphp
@@ -23,6 +22,8 @@
     <script>
         var successGameTrue =  {!! json_encode($successGame) !!};
         var showOrHide =  {!! json_encode($showOrHide) !!};
+        var dataConfigAI =  {!! json_encode($dataConfigAI) !!};
+        
       
     </script>
 
@@ -57,6 +58,7 @@
     <link rel="stylesheet" href="/styles/global/index.css">
     <link rel="stylesheet" href="/styles/global/global_responsive.css">
     <link rel ="stylesheet" href ="/css/welcomNew.css">
+    <link rel ="stylesheet" href ="/css/drawContentAI.css">
     <!-- ASSETS CDN SLICK -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -234,10 +236,7 @@
 @endsection
 @section('contentpage')
 
-@if($slug !="neomtech")
-
 @includeIf("tuvanMinisize")
-@endif
 
 @if ( $zaloLink != "" )
 <a  id ="zaloMessage" style ="display:none"  onclick="OpenAction('zalo')" ><div style="position:fixed;bottom:70px;right:30px; z-index:1000" class="messenger"><noscript>
@@ -729,10 +728,25 @@
             </style>
 
 
-                <div id ="ConcludeItemArea" class ="blurdiv1" >
-            
-                </div>
-                <div class="title-overview blurdiv1" id ="tvtq_area"  >
+            <div id ="ConcludeItemArea" class ="blurdiv1" >
+        
+            </div>
+            <div class="title-overview "   >
+                    <div class="hcn">
+
+                    </div>
+                    <div class="title-larger">
+                    Chuẩn đoán & tư vấn da
+                    </div>
+
+            </div>
+
+            <div id ="contentResultAI">
+
+            </div>
+
+
+                <div class="title-overview blurdiv1" id ="tvtq_area" style =" display:none;"   >
                     <div class="hcn">
 
                     </div>
@@ -765,11 +779,39 @@
 
                     }
                 </style>
-                <div id="idtuvantongquan" class="blurdiv1"  style="text-align: justify; padding: 10px; ">
+                <div id="idtuvantongquan" class="blurdiv1"  style="
+                text-align: justify;
+                display:none;
+           
+                padding: 10px;
+            ">
+
+                    {{-- <div class ="tuvantongquanItem"> 
+                        <p class ="titletvtq">Lão hoá da: </p>
+                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
+                    </div>
+
+                    <div class ="tuvantongquanItem"> 
+                        <p class ="titletvtq">Mụn và mụn viêm đỏ: </p>
+                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
+                    </div>
+
+                    <div class ="tuvantongquanItem"> 
+                        <p class ="titletvtq">Quầng thâm mắt: </p>
+                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
+                    </div>
+
+                    <div class ="tuvantongquanItem"> 
+                        <p class ="titletvtq">Lỗ chân lông: </p>
+                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
+                    </div>
+                    <div class ="tuvantongquanItem"> 
+                        <p class ="titletvtq">Đốm thâm nám: </p>
+                        <p class ="paragraphText">Làm sạch da 2 lần/ngày,bôi kem dưỡng mỗi ngày, đắp mặt nạ dưỡng ẩm 2-3 lần/tuần , tẩy tế bào chết và ngừng sử dụng các sản phẩm chăm sóc da gây dị ứng. </p>   
+                    </div> --}}
+
                 </div>
                 @endif
-
-
                 
 
             </div>
@@ -831,8 +873,7 @@
             var zaloLink = '{!! $zaloLink !!}';
             var messengerLink = '{!! $messengerLink !!}';
             function openRecomendProduct() {
-                window.open("https://docs.google.com/forms/d/12okhAa0PxC0nG4xCPmygGaqWF_ZTTiqV3sT3MJ2nXMA/edit",'_blank');   
-                return;
+
                 var base_url = window.location.origin + "/" + "soida/nhan-de-xuat-cham-soc-da";
 
 
@@ -1516,7 +1557,7 @@
             $("#btnrewardLoading").show();
             $.ajax({
                 type: "PUT",
-                url: "https://api-ai.exomiyo.com/api/add-customer-request",
+                url: "https://api-soida.applamdep.com/api/add-customer-request",
                 data: JSON.stringify({
                     UserName: "TIKITECH",
                     Phone: $("#mobilePhone").val(),
@@ -1564,6 +1605,7 @@
 
     <script type="text/javascript" src="/js/contant.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/cacluateAI.js"></script>
     <script type="text/javascript" src="/js/result.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -1802,6 +1844,9 @@
             drawConcludeOverview(objectReponse.data.facedata.hintResult);
             avgScore();
             drawProduction(objectReponse.data.facedata.hintResult);
+            setTimeout(() => {
+                drawResultAI();
+            }, 1000);
             if(  turnOffGame == true)
             {
 
@@ -1884,15 +1929,7 @@ let isPlaying = false;
        
       try{
         setTimeout(() => {
-             readTextConclude();
-            $('.dataProduct').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true
-     
-            });
-
+            readTextConclude();
         }, 5000);
        
         isPlaying = true;
@@ -1907,11 +1944,8 @@ let isPlaying = false;
 
 setTimeout(() => {  
     document.getElementById("fromResiger").style.display ="block";
-
-    // $("#status__text__login").click();
    
 }, 5000);
-
 
 
 
@@ -2031,12 +2065,11 @@ function OpenAction ( connectionType)
 function openRegister ( connectionType ="minisize")
 {   
 
-//     window.open("https://chat.zalo.me/",'_blank');
-//   return;
    addContionType(connectionType);
    zaloLink =  "{{$dataMinisize->linkRegister}}";
    changeFormTuvan();
-   window.open(zaloLink,'_blank');
+
+   window.open(zaloLink,'_self');
    return;
 }
 

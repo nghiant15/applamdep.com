@@ -598,25 +598,41 @@ public function getDataInfo (Request $request)
      
          $gameMinisize = $this->getGameMinisize($companyId);
          $showOrHide = $gameMinisize->showOrHide;
+           $dataConfigAI = $this->getAIConfig($slug);
 
-       
-        if($slug !="")
-        {
-          
-        }
-        if($slug =="bsnho"  || $slug =="exomiyo")
-        {
-
-           
-            return view("resultZalo2", compact("slug", "showOrHide",
-             "ageGame","ageGameReal","gameType","gameJoinType1",
-             "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
-        }
-        
-        return view("resultZalo2", compact("slug", "showOrHide",
+        return view("resultZalo2", compact("slug","dataConfigAI", "showOrHide",
         "ageGame","ageGameReal","gameType","gameJoinType1",
         "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
      
+    }
+
+     private function getAIConfig($slug)
+    {
+
+        $url ="https://api-soida.applamdep.com/api/aiConfig/getInfo";
+        $client = new Client();
+      
+
+        $res = $client->request('get', $url, [
+            'query' => [
+                'slug'=> $slug
+              ]
+        ]);
+
+        if($res->getStatusCode() ==200)
+        {
+            $checkresult = $res->getBody()->getContents();
+            $checkresult = json_decode($checkresult);
+            $result = $checkresult->data;
+
+       
+           
+            session(['dataaiConfig' =>$result]);
+             return $result;
+            
+         }
+      
+         return null;
     }
 
     public function recomendProduct (Request $request, $slug =null) 
@@ -673,6 +689,7 @@ public function getDataInfo (Request $request)
 
             
             $checkresult = json_decode($checkresult);
+
             if($checkresult->is_success)
             {
                 
@@ -703,7 +720,6 @@ public function getDataInfo (Request $request)
           return ;
 
         }
-        
         $slug = "";
         $checkacssSlugUrl ="https://api-ai.exomiyo.com/api/get-detail-history-skin";
         $client = new Client();
@@ -713,22 +729,23 @@ public function getDataInfo (Request $request)
               ]
         ]);
         
+      
      
        
   
         if($res->getStatusCode() ==200)
         {
             $checkresult = $res->getBody()->getContents();
-
-            
             $checkresult = json_decode($checkresult);
-                if($checkresult->is_success)
+            
+           
+            if($checkresult->is_success)
             {
                 
                     $result  = $checkresult->data;  
-                    
-                
-                    return view("historyPageDetail",compact("id","result", "slug","agent"));
+                    $companyId= $result->Company_Id;
+                    $resultAI=  $result->resultAI;
+                    return view("historyPageDetail",compact("id","result","resultAI", "slug","agent","companyId"));
 
             }
                 return  "Không có dữ liệu";
@@ -789,6 +806,7 @@ public function getDataInfo (Request $request)
             {
             
             }
+            
         return view("historyPageDetail",compact("id","slug","agent"));    
         
     }

@@ -124,7 +124,11 @@ const HistorySkin = new Schema({
     sourceControl: {
         type: String,
          default: "",
-    }
+    }, 
+    resultAI: {
+         type: String,
+         default: "",
+    },
 
 });
 

@@ -10,7 +10,6 @@ var  api =  {
     baser_url:  "https://api-ai.exomiyo.com",
     api_addUrl: "api/add-end-user",
     api_loginUser: "api/login-end-user",
-
     api_getInfo: "api/get-end-user-byId",
     api_getHistory: "api/get-history-skin-by-id",
     api_getHistoryById:  "api/get-detail-history-skin",
@@ -30,7 +29,7 @@ var  api =  {
   
 
     serve: {
-        baser_urlServer: "https://ai.exomiyo.com",
+        baser_urlServer: "https://api-ai.exomiyo.com",
         get_banner: `api/evoucher/banner/getAll`,
         api_logoutUser: `${slug}dang-xuat-he-thong`,
         api_registerUser: `${slug}dang-ky-nguoi-dung`,

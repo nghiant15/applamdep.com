@@ -129,6 +129,7 @@ module.exports = function (app) {
     app.route("/api/list-history-skin").post(HistorySkinController.getHistorySkin);
     app.route("/api/add-history-skin").post(HistorySkinController.addHistorySkin);
     app.route("/api/add-type-contact").post(HistorySkinController.addContionType);
+    app.route("/api/update_resultAI").post(HistorySkinController.updateResultAI);
     app.route("/api/add-type-contact2").post(HistorySkinController.addContionType2);
     app.route("/api/add-history-skin-plugin").post(authEndUser, HistorySkinController.addHistorySkin_Plugin);
     app.route("/api/add-history-no-user").post( HistorySkinController.addHistorySkin_PluginNoUser);

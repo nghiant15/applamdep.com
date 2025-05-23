@@ -39,7 +39,35 @@
 
 
 <style>
+#contentResultAI{
 
+  font-family: SFU Futura !important;
+  font-size: 14px !important;
+}
+
+#contentResultAI ul, li  {
+  font-family:unset !important; 
+  font-style: unset !important;
+  font-size: unset !important ;
+  line-height: 20px unset !important;
+  color: #1c213f ;
+  text-align: justify;
+
+}
+#contentResultAI h1,h2,h3,h4,h5,h6, strong {
+
+  margin-right: 5px;
+  font-weight: bold;
+  font-family: SFU Futura;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1c213f;
+}
+#contentResultAI{
+  padding: 0px 20px;
+
+}
     .toneColorSkin {
         font-family: SFU Futura !important;
         font-size: 14px;
@@ -190,6 +218,8 @@
 <script> 
     
     var slugGlobal = {!! json_encode($slug) !!};
+
+    var resultAI =  {!! json_encode($resultAI) !!};
    
 </script>
 
@@ -492,24 +522,29 @@
     
                 </div>
 
+
+
+              
+
                 <div id ="ConcludeItemArea">
 
                 </div>
-                <div class="title-overview">
-                    <div class="hcn"> 
-    
-                    </div>
-                    <div class="title-larger"> 
-                        Tư vấn tổng quát
-                    </div>
-    
-                </div>
+              
 
-                <div id = "idtuvantongquan">
-                   
-                    
-                </div>
 
+                  <div class="title-overview "   >
+                    <div class="hcn">
+
+                    </div>
+                    <div class="title-larger">
+                    Chuẩn đoán & tư vấn da
+                    </div>
+
+            </div>
+
+            <div id ="contentResultAI">
+
+            </div>
             
         </div>  
     </div>
@@ -1289,8 +1324,6 @@
 
         }
 
-
-
         $(document).ready(function ($) {
 
             //loadDataRecomendProductNew();
@@ -1309,7 +1342,7 @@
 
 <script>
     function getBaseUrl() {
-        // return "https://ungdungsoida.netlify.app/";
+      
         return "./";
     }
 </script>
@@ -1322,7 +1355,7 @@
 
     document.addEventListener("DOMContentLoaded", function () {
 
-        // sessionStorage.setItem('dataCompany', JSON.stringify(dataCompany));
+      
 
 
     });
@@ -1332,31 +1365,7 @@
 <script>
 
 
-    function sendreward() {
-        $("#btnreward").hide();
-        $("#btnrewardLoading").show();
-        $.ajax({
-            type: "PUT",
-            url: "https://api-ai.exomiyo.com/api/add-customer-request",
-            data: JSON.stringify({
-                UserName: "TIKITECH",
-                Phone: $("#mobilePhone").val(),
-                Type: 0,
-            }),
-            contentType: "application/json",
-            dataType: "json",
-            complete: function (data) {
-                $("#btnreward").show();
-                $("#btnrewardLoading").hide();
-                $("#formContact").hide();
-                $("#result").show();
-
-            },
-        });
-    }
-
-
-
+    
     function closePopup(elementclose) {
 
         var elementRemove = elementclose.closest("div");
@@ -1383,6 +1392,7 @@
 
 <script>
     var objectReponse = {!! json_encode($result) !!};
+      var companyIdGlobal = {!! json_encode($companyId) !!};
 
     let dataIput = {};
     if(objectReponse.Result.data)
@@ -1406,29 +1416,12 @@
         
         var resultCheck =objectReponse;
        
-        // if(resultCheck ==null)
-        // {
-            
-        //     window.location.href ="/";
-
-        // }
-        // else 
-        // {
-        //     objectReponse = resultCheck.Result;
-        
-        // }
-        
         resultModule.startup();
-        
         reDrawInfomation();
-
-    
-
         drawConcludeDetail(objectReponse.data.facedata.hintResult);
         drawConcludeOverview(objectReponse.data.facedata.hintResult);
-   
+        document.getElementById("contentResultAI").innerHTML +=  resultAI;
         avgScorev2(objectReponse);
-
         readInfoToneSkin(objectReponse.data.facedata.dataReponse);
             drawImageTone(objectReponse.data.facedata.image_info.url,objectReponse.data.rectangle );
             setTimeout(() => {
@@ -1470,9 +1463,7 @@
         slidesToScroll: 1
       }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
+  
   ]
           
 

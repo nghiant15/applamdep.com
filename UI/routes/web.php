@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+Route::post('/getResultAI', 'GegemiController@GetResult');
 Route::post('/addtype2', 'HistoryController@AddClickZalo2');
 Route::get('/', 'HomepageController@index')->name('homePage');
 Route::get('/get-all-history', 'HistoryController@GetAllHistory');

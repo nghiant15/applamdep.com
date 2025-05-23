@@ -2,7 +2,6 @@
 function getTextInfo() {
 
 
-
     var faceData = objectReponse.data.facedata;
     var imageInfo = faceData.image_info;
     $("#imageResult").attr("src",imageInfo.url);
@@ -37,7 +36,7 @@ function getTextInfo() {
           data: {
               "question": textInfo
           },
-          url: "https://ai.exomiyo.com/getResultAI",
+          url: "https://applamdep.com/getResultAI",
           success: function(data) {
                 Swal.close();
            
@@ -72,11 +71,10 @@ function reDrawInfomation() {
  drawContentTongQuan(faceData.generalResult);
  drawContentKetLuanTungPhan(faceData.specialResult);
 
-
  drawContentTuVanTongQuat(faceData.generalConclusion);
 
  // drawContentketLuanChiTiet(faceData.specialConclusion);
-//  return;
+ return;
  // drawContent(generalResult);
  // drawContent(specialResult);
  // drawContentDetail(faceData.specialConclusion);
@@ -87,8 +85,56 @@ function reDrawInfomation() {
 function drawContentTuVanTongQuat(generalResult )
 {
 
-  return;
+return;
+var index =0;
+generalResult.data.forEach((ketquatongquanItem) => {
 
+index ++;
+
+if( index%2 == 0)
+{
+var html= '<div class="description-tuvan"> \
+\
+<div class="content-tuvan">\
+<h6>'+ketquatongquanItem.title+'</h6>\
+\
+ <ul>';
+
+ html  +=   '<li class="content-paragraph">'+ketquatongquanItem.valueVI+'</li>';
+
+   
+html+= '</ul>\
+</div>\
+<div class="image-demo"> \
+   <img src ="/images/86336.png"></div></div>';
+$("#idtuvantongquan").append(html);
+
+}
+else 
+{
+var html= ' <div class="description-tuvan column-second"> \
+\
+<div class="image-demo"> \
+    <img src ="/images/86336.png"> \
+</div>\
+<div class="content-tuvan">\
+<h6>'+ketquatongquanItem.title+'</h6>\
+\
+<ul>';
+
+
+ 
+html  +=   '<li class="content-paragraph">'+ketquatongquanItem.valueVI+'</li>';
+
+    
+html += '</ul>\
+</div>\
+\
+</div>';
+$("#idtuvantongquan").append(html);
+}
+
+});
 
 
 }
@@ -135,14 +181,10 @@ var html= '<div class="record-content">\
               
               tempValue = tempValue.replace("29","30")
             }
-
+           
              var templateText = tempValue.split(":");
              var tile1 = templateText[0]+":";
              var tile2 = templateText[1];
-             if(tile1 == "Tuổi da:")
-             {
-              tile2 =  tile2 *1 +2;
-             }
 
              html  +=   '<p class="content-paragraph">'+tile1 + '<strong>'+tile2+' </strong>' +'</p>';
            });
@@ -177,7 +219,7 @@ let dataFace = objectReponse.data.faceAttitude;
 let indexDraw =0;
 ketLuanTungPhan.data.forEach((ketLuanTungPhanItem) => {
 indexDraw ++;
-let dataDrawFace  = " https://ai.exomiyo.com/images/image1.png";
+let dataDrawFace  = " https://applamdep.com/images/image1.png";
 
 if(dataFace)
 {
@@ -447,7 +489,7 @@ var bodyRequest = {
 };
 $.ajax({
  type: "POST",
- url: "https://api-ai.exomiyo.com/itemSdk/get_product_result",
+ url: "https://api-soida.applamdep.com/itemSdk/get_product_result",
  data: JSON.stringify(bodyRequest),
  contentType: "application/json",
  dataType: "json",
@@ -482,23 +524,21 @@ var bodyRequest = {
 "result": dataRequest
 
 };
-
-
 $.ajax({
 type: "POST",
-url: "https://api-ai.exomiyo.com/api/paramenterRecomed/getAllCocludeOverView",
+url: "https://api-soida.applamdep.com/api/paramenterRecomed/getAllCocludeOverView",
 data: JSON.stringify(bodyRequest),
 contentType: "application/json",
 dataType: "json",
 success:function(data)
 { 
- 
- 
+ drawConcludeOverviewItem(data.data.K9);
+
  drawConcludeOverviewItem(data.data.K5);
   drawConcludeOverviewItem(data.data.K6);
   drawConcludeOverviewItem(data.data.K7);
   drawConcludeOverviewItem(data.data.K8);
- drawConcludeOverviewItem(data.data.K9);
+
 }
 });
 }
@@ -508,7 +548,6 @@ var indexstt =1;
 function drawConcludeOverviewItem (item) 
 {
 
-  return;
 if(item)
 {
 for (var i = 0; i < item.length; i++) {
@@ -535,9 +574,6 @@ for (var i = 0; i < item.length; i++) {
 }
 }
 }
-
-var datalCocludeOverView = {};
-
 function drawItemOverView2 ( groupK, valueGroupK, item)
 {
   
@@ -577,7 +613,7 @@ function drawItemOverView2 ( groupK, valueGroupK, item)
     for (let index = 0; index < arrayResult.length; index++) {
       const itemCompare = arrayResult[index];
       if(itemCompare.Level == valuek)
-      {
+      { 
           des = itemCompare.Content;
           break;
       }
@@ -604,22 +640,16 @@ function drawItemOverView2 ( groupK, valueGroupK, item)
       default:
         break;
     }
-    debugger;
+
       var htmlTemp = '<div class ="tuvantongquanItem"> \
       <p class ="titletvtq">'+ tilte + ' </p>\
       <p class ="paragraphText">'+des.replace(/<[^>]*>?/gm, '')+ '</p> </div> ';
       $("#idtuvantongquan").append(htmlTemp);
 }
+
 function drawConcludeDetail(dataRequest) {
-  debugger;
   var company =null  ;
-
-
-
-
-
   if (sessionStorage.getItem("dataCompany") === null) {
-  
   company = companyIdGlobal;
   }
   else 
@@ -705,104 +735,12 @@ function drawConcludeDetail(dataRequest) {
     }
     });
 
-return;
 
-  
-
- 
-
-return;
-if (sessionStorage.getItem("dataCompany") === null) {
-
-company = companyIdGlobal;
-}
-else 
-{
-company = JSON.parse(sessionStorage.getItem("dataCompany"));
-company = company.company_data;
-}
-
-var bodyRequest = {
-
-"company_id": company,
-"result": dataRequest
-
-};
-$.ajax({
-type: "POST",
-url: "https://api-ai.exomiyo.com/api/paramenterRecomed/getAllCocludeDetail",
-data: JSON.stringify(bodyRequest),
-contentType: "application/json",
-dataType: "json",
-success:function(data)
-{
- drawConclude(data.data.K5);
- drawConclude(data.data.K6);
- drawConclude(data.data.K7);
- drawConclude(data.data.K8);
- drawConclude(data.data.K9);
-}
-});
-}
-
-function drawConcludeOverview( dataRequest)
-{
-
-
-  for (var i = 0; i < dataRequest.length; i++)
-    {
-      var item = dataRequest[i];
-        var groupK = item['level'];
-        if(groupK != "K9") 
-           continue;
-        var valueGroupK = item['sdktype'];
-        drawConcludeOverview2( groupK, valueGroupK, item);
-    }
-    for (var i = 0; i < dataRequest.length; i++)
-      {
-        var item = dataRequest[i];
-          var groupK = item['level'];
-          if(groupK != "K6") 
-             continue;
-          var valueGroupK = item['sdktype'];
-          drawConcludeOverview2( groupK, valueGroupK, item);
-      }
-
-      for (var i = 0; i < dataRequest.length; i++)
-        {
-          var item = dataRequest[i];
-            var groupK = item['level'];
-            if(groupK != "K5") 
-               continue;
-            var valueGroupK = item['sdktype'];
-            drawConcludeOverview2( groupK, valueGroupK, item);
-        }
-
-        for (var i = 0; i < dataRequest.length; i++)
-          {
-            var item = dataRequest[i];
-              var groupK = item['level'];
-              if(groupK != "K7") 
-                 continue;
-              var valueGroupK = item['sdktype'];
-              drawConcludeOverview2( groupK, valueGroupK, item);
-          }
-          for (var i = 0; i < dataRequest.length; i++)
-            {
-              var item = dataRequest[i];
-                var groupK = item['level'];
-                if(groupK != "K8") 
-                   continue;
-                var valueGroupK = item['sdktype'];
-                drawConcludeOverview2( groupK, valueGroupK, item);
-            }
-          
 }
 
 
 function drawConcludeOverview2 ( groupk, valuek, item) 
 {
-  return;
   var tilte = "";
   var des = "";
   
@@ -956,12 +894,164 @@ function drawConcludeOverview2 ( groupk, valuek, item)
    var htmlTemp = '<div class ="tuvantongquanItem"> \
    <p class ="titletvtq">'+ tilte + ': </p>\
    <p class ="paragraphText">'+des+ '</p> </div> ';
-  
-   $("#idtuvantongquan").append(htmlTemp);
+$("#idtuvantongquan").append(htmlTemp);
 
 }
 
 var sumScoreAvg  =0;
+
+function getStatusSkinGroup ( groupk, valuek, item) 
+{
+  var tilte = "";
+  var valueRel =  item['avg'];
+  if( typeof(valueRel) =="undefined")
+  {
+    return;
+  }
+  if(  valueRel<= 1)
+  {
+    valuek = 1;
+  }
+  else if( valueRel <= 2)
+  {
+    valuek = 2;
+  }
+  else if( valueRel <= 3)
+  {
+    valuek = 3;
+  }
+  var text = "Tốt";
+
+    valuek=  valuek+'';
+
+    switch(groupk) {
+      case "K5":
+        tilte = "Lão hoá da";
+        break;
+
+      case "K6":
+        tilte = "Mụn và mụn viêm đỏ";
+        break;
+      case "K7":
+        tilte ="Quầng thâm mắt";
+        break;
+      case "K8":
+        tilte ="Lỗ chân lông";
+      break;
+      case "K9":
+        tilte ="Đốm thâm nám";
+        break;
+      default:
+        break;
+    }
+   if(valuek ==2)
+   {
+       text = "Bình thường";
+   }
+   if(valuek >=3)
+   {
+       text = "Có nhiều vấn đề về da";
+   }
+   if(valuek>3)
+    valuek =3;
+
+   var valueLevel1 = valueRel*1;
+
+   if(valueLevel1 >3)
+   valueLevel1 = 3;
+
+ var percentage =  Math.round((valueLevel1/3) * 100);
+
+ var valuerel2 =  Math.round(valueRel/3*10);
+
+ var value23 = Math.round(10 - valuerel2);
+ sumScoreAvg+= value23;
+
+  percentage =  Math.round((value23/10) * 100);
+
+    var htmlTemp = ' <div class="ConcludeItem"><p class ="paragraph-text-pa"> <span class ="bold-text-pa">'+tilte+': </span>\
+    <span class ="leveldegree"> '+text+' (Mức '+value23 +'/10) </span>';
+
+    $("#resultAIContentCurrent").append(htmlTemp);
+
+}
+
+
+function getStatusSkinGroupPre ( groupk, valuek, item) 
+{
+  var tilte = "";
+  var valueRel =  item['avg'];
+  if( typeof(valueRel) =="undefined")
+  {
+    return;
+  }
+  if(  valueRel<= 1)
+  {
+    valuek = 1;
+  }
+  else if( valueRel <= 2)
+  {
+    valuek = 2;
+  }
+  else if( valueRel <= 3)
+  {
+    valuek = 3;
+  }
+  var text = "Tốt";
+
+    valuek=  valuek+'';
+
+    switch(groupk) {
+      case "K5":
+        tilte = "Lão hoá da";
+        break;
+
+      case "K6":
+        tilte = "Mụn và mụn viêm đỏ";
+        break;
+      case "K7":
+        tilte ="Quầng thâm mắt";
+        break;
+      case "K8":
+        tilte ="Lỗ chân lông";
+      break;
+      case "K9":
+        tilte ="Đốm thâm nám";
+        break;
+      default:
+        break;
+    }
+   if(valuek ==2)
+   {
+       text = "Bình thường";
+   }
+   if(valuek >=3)
+   {
+       text = "Có nhiều vấn đề về da";
+   }
+   if(valuek>3)
+    valuek =3;
+
+   var valueLevel1 = valueRel*1;
+
+   if(valueLevel1 >3)
+   valueLevel1 = 3;
+
+ var percentage =  Math.round((valueLevel1/3) * 100);
+
+ var valuerel2 =  Math.round(valueRel/3*10);
+
+ var value23 = Math.round(10 - valuerel2);
+ sumScoreAvg+= value23;
+
+  percentage =  Math.round((value23/10) * 100);
+
+    var htmlTemp = ' <div class="ConcludeItem"><p class ="paragraph-text-pa"> <span class ="bold-text-pa">'+tilte+': </span>\
+    <span class ="leveldegree"> '+text+' (Mức '+value23 +'/10) </span>';
+
+    $("#resultAIContentBefore").append(htmlTemp);
+
+}
 
 function drawConcludev2 ( groupk, valuek, item) 
 {
@@ -1108,10 +1198,6 @@ function drawConcludev2 ( groupk, valuek, item)
      if(valueLevel1 >3)
      valueLevel1 = 3;
 
-
-
-
-  
    var percentage =  Math.round((valueLevel1/3) * 100);
 
    var valuerel2 =  Math.round(valueRel/3*10);
@@ -1120,8 +1206,6 @@ function drawConcludev2 ( groupk, valuek, item)
    sumScoreAvg+= value23;
 
     percentage =  Math.round((value23/10) * 100);
-
-   
 
    
    
@@ -1246,7 +1330,7 @@ var listDataProducts = dataProducts.list_product;
 
 listDataProducts.forEach(element => {
  
-var pathImage = 'https://api-ai.exomiyo.com/public/image_plugin/' +'' +element.image_link +'';
+var pathImage = 'https://api-soida.applamdep.com/public/image_plugin/' +'' +element.image_link +'';
 
 var xhr = new XMLHttpRequest();
 xhr.open('HEAD', pathImage, false);
@@ -1356,7 +1440,7 @@ htmlTemplate+='  <div class="dataProduct">';
          htmlTemplate += '<div class="product-item">\
                          <div> \
                          <img\
-                         src="https://api-ai.exomiyo.com/public/image_plugin/toner-Dashu-0x0.jpg"\
+                         src="https://api-soida.applamdep.com/public/image_plugin/toner-Dashu-0x0.jpg"\
                          alt="">\
                          </div>\
                          <div class="product-title">\
@@ -1489,7 +1573,7 @@ function avgScore()
     }
     else if( avgFinal  <= 2 )
     {
-      textDegree = "Da mất cân bằng – Cần can thiệp sớm";
+      textDegree = "Bình thường";
     }
     else 
     {
@@ -1498,15 +1582,10 @@ function avgScore()
     let avgfinal2 = (sumScoreAvg/5);
     avgFinal = avgFinal/3*10;
     avgFinal = (10 - avgFinal);
-    avgfinal2 = avgfinal2 -2;
 
+    
 
-  if( avgfinal2 < 0 )
-  {
-    avgfinal2 =1;
-  }
-
-   document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
+   document.getElementById("score2").textContent =  ""+ parseFloat(avgFinal).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
 
    
@@ -1590,10 +1669,8 @@ function avgScorev2(dataDraw)
     let avgfinal2 = (sumScoreAvg/5);
 
     avgFinal = (10 - avgFinal);
-
-    avgfinal2 = avgfinal2 -2;
                                                                
-    document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
+    document.getElementById("score2").textContent =  ""+ parseFloat(avgFinal).toFixed(1) +"/10";
     document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
 
 }
