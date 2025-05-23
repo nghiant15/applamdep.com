@@ -460,10 +460,11 @@ public function getDataInfo (Request $request)
         }
         $showOrHide = $conffigSetting->showOrHide;
 
-      
+    
         if( $slug =="bsnho" || $slug == "exomiyo" )
         {
 
+          
             return view("welcomeZalo2", compact("slug","agent", "showOrHide","isTurnOfFooter","gameJoinTo","isLoginUser"));
         }
         return view("welcomeZalo2", compact("slug","agent", "showOrHide","isTurnOfFooter","gameJoinTo","isLoginUser"));
@@ -475,6 +476,7 @@ public function getDataInfo (Request $request)
 
     public function result (Request $request, $slug =null) 
     {
+            
         $data  =  session('dataResult', null);
         $dataGame = Session('dataGame', null);
         $dataUserSession =  session('dataCompany', null);
@@ -599,6 +601,7 @@ public function getDataInfo (Request $request)
          $gameMinisize = $this->getGameMinisize($companyId);
          $showOrHide = $gameMinisize->showOrHide;
            $dataConfigAI = $this->getAIConfig($slug);
+        
 
         return view("resultZalo2", compact("slug","dataConfigAI", "showOrHide",
         "ageGame","ageGameReal","gameType","gameJoinType1",

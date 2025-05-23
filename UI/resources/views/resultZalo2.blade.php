@@ -873,7 +873,8 @@
             var zaloLink = '{!! $zaloLink !!}';
             var messengerLink = '{!! $messengerLink !!}';
             function openRecomendProduct() {
-
+            window.open("https://docs.google.com/forms/d/12okhAa0PxC0nG4xCPmygGaqWF_ZTTiqV3sT3MJ2nXMA/edit",'_blank');  
+            return;
                 var base_url = window.location.origin + "/" + "soida/nhan-de-xuat-cham-soc-da";
 
 
