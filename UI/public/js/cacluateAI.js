@@ -17,7 +17,7 @@ function drawResultAI() {
                 "historyId": historyId,
                   "question": textQuestion
               },
-              url: "https://api-ai.exomiyo.com/getResultAI",
+              url: "https://ai.exomiyo.com/getResultAI",
               success: function(data) {
                     Swal.close();
                     document.getElementById("contentResultAI").innerHTML +=  data;
