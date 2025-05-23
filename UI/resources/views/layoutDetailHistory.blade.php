@@ -9,7 +9,7 @@
     }
     else 
     {
-        $dataColor = "#1a214f";
+        $dataColor = "#592c7e";
     }
    
 
@@ -133,8 +133,8 @@
  
 <div class="hadernav">
     <div class="title-header">
-        <span class="soida"> SOI DA </span>
-        <span class="online"> ONLINE </span>
+         <span class="soida"> EXOSCAN </span>
+        
         <span class="ai">AI </span>
     </div>
 
