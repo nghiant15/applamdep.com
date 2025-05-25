@@ -24,6 +24,11 @@
     .form1{
        
     }
+    .frompopup input,textarea {
+        margin-bottom: 10px;
+       border-color: #84b5df !important;
+    }
+
     .tuvanform1 {
      
         border-radius: 25px;
@@ -166,6 +171,31 @@ border-radius:30px;
     border-radius: 50%;
     text-align: center;
    }
+
+   .btn_formPopup {
+    height: 45px;
+    font-size: 14px;
+    display: flex
+;
+    width: 100%;
+    border: 1px solid #f33f2e;
+    outline: none !important;
+    color: white;
+    text-transform: uppercase;
+    font-family: var(--font-main);
+    font-style: normal;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    background: #f33f2e ;
+    position: relative;
+    border-radius: 8px;
+}
+.frompopup {
+   padding-bottom:10px;
+   padding-top:10px;
+}
 </style>
 
 <script>    
@@ -176,7 +206,55 @@ border-radius:30px;
  {
     numbershowUpDp  = numbershowUpDp*1000;
  }
+ function addPopup(){
 
+    var addressPopup =  $("#txtAddressReward").val();
+    if(addressPopup =="")
+    {
+        $("#txtAddressRewardError").show();
+        return;
+    }
+    else {
+          $("#txtAddressRewardError").hide();
+    }
+    var henLichBacSiPopup =  $("#txtHenLichBacSi").val();
+
+    if(henLichBacSiPopup =="")
+    {
+        $("#txtHenLichBacSierrorMesssage").show();
+         return;
+    }
+    else 
+    {
+         $("#txtHenLichBacSierrorMesssage").hide();
+    }
+
+    var bodyRequest =  {
+            address : addressPopup,
+            contentAddvice: henLichBacSiPopup,
+            slug:  slugInput,
+            phone: phoneNumberUser
+    };
+    $.ajaxSetup({
+        headers: {
+        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+    });
+    $.ajax({
+        type: "POST",
+        data: bodyRequest,
+        url: "https://ai.exomiyo.com/add-popup",
+        success: function(data) {
+            $("#textDisplay").show();
+            $("#btnReward").hide();
+            document.getElementById("contentResultAI").innerHTML +=  data;
+        },
+        error: function(error) {
+        
+        }
+    });
+        
+ }
 setTimeout(() => {  
     
     if( showOrHide  == "false" ||  showOrHide =="0") 
@@ -255,29 +333,44 @@ setTimeout(() => {
                    
                 
                     <img src ="{{ $dataMinisize->imageLink }}"> 
-                  
-                    
-                    <div class="title_nav-tuvan">
-                        <p>{{ $dataMinisize->title }}</p>
+                    <form class="formReward frompopup" id="formLogin" style="overflow: hidden">
+                    <div class="form-group">
+                    <input  type="text" class="my-form-control fullName" id="txtAddressReward" placeholder="Địa chỉ nhận quà">
+                    <div class="errorMesssage" id="txtAddressRewardError">
+                    Yêu cầu nhập địa chỉ nhận quà
                     </div>
-                  
-                    <div class ="des-introduction">
-                        {{ $dataMinisize->slch }}
                     </div>
-                    <div class ="des-title">
-                        {{ $dataMinisize->titleProduct }}
-                     </div>
-                     <div class ="des-price">
-                        {{ $dataMinisize->priceText }}
-                      </div>
+                    <div class="form-group">
+                    <div id="toggleNumber">
+                    <textarea   type="text" rows = "4" class="my-form-control userName" id="txtHenLichBacSi"
+                      placeholder="Hẹn lịch bác sĩ "></textarea >
+                    <div class="errorMesssage" id="txtHenLichBacSierrorMesssage">
+                    Đặt lịch hẹn, tư vấn,...
+                    </div>
+                    </div>
+                    </div>
 
-                     <div class="des-register">
+
+                    <p id ="textDisplay" style="display:none;
+                    font-weight: bold;
+                    text-align: center;
+                    color: red;
+                    ">Bạn đã đặt lịch thành công, hãy để ý điện thoại."</p>
+                    <div class="mt-4">
+
+
+
+                  <button type="button" id="btnReward" onclick="addPopup()" class="btn_formPopup btn-shadow">
+                        <p style="
+                        margin: auto;
+                        ">
+                        Đăng ký tư vấn miễn phí
+                        </p>
                     
-                          <a class ="minisize" onclick ="openRegister('minisize')"> {{ $dataMinisize->butonText }}
-                          <img src ="/messenger.png"> 
-                         </a>
+                    </button>
                     </div>
-                  
+                    </form>
+                   
 
                    
             </div>

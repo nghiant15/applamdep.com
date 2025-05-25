@@ -17,16 +17,13 @@
        
 @endphp
 @extends('layoutZalo')
-
-
-    <script>
-        var successGameTrue =  {!! json_encode($successGame) !!};
-        var showOrHide =  {!! json_encode($showOrHide) !!};
-        var dataConfigAI =  {!! json_encode($dataConfigAI) !!};
-        
-      
-    </script>
-
+<script>
+    var successGameTrue =  {!! json_encode($successGame) !!};
+    var showOrHide =  {!! json_encode($showOrHide) !!};
+    var dataConfigAI =  {!! json_encode($dataConfigAI) !!};
+    var phoneNumberUser =  {!! json_encode($phoneNumber) !!};
+    var slugInput  =  {!! json_encode($slug) !!};
+</script>
 @include('popup.subscrible')
 
 @section('header')

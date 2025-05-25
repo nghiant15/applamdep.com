@@ -55,4 +55,5 @@ Route::post('/{slug}/update-end-user', 'ProfileController@update')->name('update
 Route::post('/update-end-user', 'ProfileController@update')->name('update');
 Route::post('/them-moi-khach-hang', 'ProfileController@saleAddUser')->name('saleAddUser');
 Route::post('/{slug}/them-moi-khach-hang', 'ProfileController@saleAddUser')->name('saleAddUser');
+Route::post('/add-popup', 'PopupController@Addpopup');
 

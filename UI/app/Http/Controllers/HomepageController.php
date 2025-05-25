@@ -378,6 +378,7 @@ public function getDataInfo (Request $request)
     public function skinIndex (Request $request, $slug =null) 
     {
 
+      
         $sourceCode = $request->query('source');
 
         if(!isset($sourceCode))
@@ -437,6 +438,8 @@ public function getDataInfo (Request $request)
         $agent = new Agent();
         $gameJoinTo= false;
         $dataUserSession =  session('dataCompany', null);
+
+      
   
         $isLoginUser = false;
        
@@ -480,7 +483,9 @@ public function getDataInfo (Request $request)
         $data  =  session('dataResult', null);
         $dataGame = Session('dataGame', null);
         $dataUserSession =  session('dataCompany', null);
+       
         $this->getTuVan($slug);
+
         $contetnFail ="Chúc Quý khách may mắn lần sau NHƯNG  bạn vẫn được nhận  Ưu Đãi từ Nhãn Hàng chính hãng tài trợ";
         $contentSuccess = "CHÚC MỪNG BẠN ĐÃ TRÚNG THƯỞNG";
       
@@ -493,27 +498,18 @@ public function getDataInfo (Request $request)
         }
 
         $dataUserSession =  session('dataCompany', null);
-
-     
-
         if($dataUserSession)
         {
             $dataUserId=  $dataUserSession->data->_id;
-         
-           
             $dataUserSession->data = $this->getDataById($dataUserId);
             session(['dataCompany' =>$dataUserSession]);
             $dataUserSession =  session('dataCompany', null);
-
-         
         }
-        
         $turnOffGame = false;
         $successGame = false;
         $ageGame = 0;
         $ageGameReal=0;
         $gameType = 1;
-
         session(['gameJoinType1' =>false]);
         if( $dataGame != null)
         {
@@ -582,29 +578,23 @@ public function getDataInfo (Request $request)
                     }
                 }
          }
-
-         
-
          session(['successGame' =>$successGame]);
-
-       
-      
-      
         $companyId = $this->getCompanyId();
- 
         $agent = new Agent();
         $turnOffGame = false;
-      
         $rewardCheck  =  session('rewardCheck', false);
-         $gameJoinType1 =true;
-     
-         $gameMinisize = $this->getGameMinisize($companyId);
-         $showOrHide = $gameMinisize->showOrHide;
-           $dataConfigAI = $this->getAIConfig($slug);
-        
-
+        $gameJoinType1 =true;
+        $gameMinisize = $this->getGameMinisize($companyId);
+        $showOrHide = $gameMinisize->showOrHide;
+        $dataConfigAI = $this->getAIConfig($slug);
+         $phoneNumber ="";
+         if(isset($dataUserSession))
+         {
+             $phoneNumber = $dataUserSession->data->phone;
+         }
+       
         return view("resultZalo2", compact("slug","dataConfigAI", "showOrHide",
-        "ageGame","ageGameReal","gameType","gameJoinType1",
+        "ageGame","ageGameReal","gameType","gameJoinType1", 'phoneNumber',
         "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
      
     }
