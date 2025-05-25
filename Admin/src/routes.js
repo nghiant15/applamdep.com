@@ -58,6 +58,8 @@ const bannerLuotSoi = React.lazy(() => import('./views/base/tables/bannerLuotSoi
 
 const PluginSubSaleTable = React.lazy(() => import('./views/base/tables/AI_Skin/PluginSubSaleTable'));
 
+const RewardList  =  React.lazy(() => import('./views/base/tables/AI_Skin/RewardList'));
+
 //User
 const EndUserPlugin = React.lazy(() => import('./views/base/tables/User/EndUser'));
 const EndUser2Plugin = React.lazy(() => import('./views/base/tables/AI_Skin/userRegiger'));
@@ -141,6 +143,7 @@ const routes = [
   { path: '/contact', name: 'Contact', component: ContactCustomer },
   { path: '/brand_skin', name: 'Brand Skin', component: BrandPlugin },
   { path: '/subsale', name: 'Sub Sale', component: PluginSubSaleTable },
+    { path: '/danh-sach-nhan-qua', name: 'Sub Sale', component: RewardList },
   { path: '/skin/config', name: 'confgSkinDisplay', component: configSkinDisplay },
   //admin product
   { path: '/products-special', name: 'productSpecial', component: ProductPlugin },

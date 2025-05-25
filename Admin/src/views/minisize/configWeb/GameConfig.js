@@ -95,20 +95,7 @@ getTimeConver = (datetime) => {
     />
   </FormGroup>
      
-  <FormGroup>
-    <Label >
-    Số lượng có hạn
-    </Label>
-    <Input
-      name ="slch"
-      placeholder="Số lượng có hạn"
-      type="text"
-      value={this.props.slch}
-      onChange={(e) => {
-        this.setStateByName( "slch", e.target.value );
-      }}
-    />
-  </FormGroup>
+  
 
   <FormGroup>
     <Label >
@@ -126,49 +113,6 @@ getTimeConver = (datetime) => {
   </FormGroup>
  
 
-  <FormGroup>
-    <Label >
-    Giá sản phẩm
-    </Label>
-    <Input
-      name ="priceText"
-      placeholder="Giá sản phẩm"
-      type="text"
-      value={this.props.priceText}
-      onChange={(e) => {
-        this.setStateByName( "priceText", e.target.value );
-      }}
-    />
-  </FormGroup>
-
-  <FormGroup>
-    <Label >
-    buton Đăng ký
-    </Label>
-    <Input
-      name ="butonText"
-      placeholder="buton Đăng ký"
-      type="text"
-      value={this.props.butonText}
-      onChange={(e) => {
-        this.setStateByName( "butonText", e.target.value );
-      }}
-    />
-  </FormGroup>
-  <FormGroup>
-    <Label >
-    Link đăng ký
-    </Label>
-    <Input
-      name ="linkRegister"
-      placeholder="Link đăng ký"
-      type="text"
-      value={this.props.linkRegister}
-      onChange={(e) => {
-        this.setStateByName( "linkRegister", e.target.value );
-      }}
-    />
-  </FormGroup>
   <FormGroup>
     <Label >
     Thời gian hiện nút tắt(giây)

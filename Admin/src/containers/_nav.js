@@ -759,6 +759,23 @@ const _naveUser = [
     } 
   ]
 
+
+    const _navRewardList = [
+    {
+      _tag: 'CSidebarNavTitle',
+      _children: ['Danh sách nhận quà'],
+      role: [ '0','1','2']
+    },
+    {
+      _tag: 'CSidebarNavItem',
+      name: 'Danh sách',
+      to: '/danh-sach-nhan-qua',
+      icon: <CIcon style={css} content={freeSet.cilList} customClasses="c-sidebar-nav-icon" />,
+      role: [ '0','1','2']
+    }
+   
+  ]
+
   const _navSettting = [
  
 
@@ -1254,4 +1271,4 @@ const _naveUser = [
         } 
       ]      
 
-export default [_navVendor, _naveUser,_navMinisize,_navAiConfig,_navManagementConclue,  _navBeauty,_navTuvan,_navDisplay, _navOrther, _navContact, _navLogOut  ]
+export default [_navVendor, _naveUser,_navMinisize,_navRewardList,_navAiConfig,_navManagementConclue,  _navBeauty,_navTuvan,_navDisplay, _navOrther, _navContact, _navLogOut  ]

@@ -131,6 +131,7 @@ export default {
   "PLUGIN_LIST_USER" : "/api/plugin-list-user",
   "PLUGIN_ALL_USER" : "/api/plugin-all-user",
   "PLUGIN_SUBSALE_USER" : "/api/plugin-subsale-user",
+  "Reward_getList" : "/api/popup/getAll",
   "PLUGIN_ADD_USER" : "/api/plugin-add-user",
   "PLUGIN_ADD_SALE" : "/api/plugin-add-sale",
   "PLUGIN_ADD_SUBSALE" : "/api/plugin-add-subsale",
