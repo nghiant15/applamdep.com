@@ -284,10 +284,10 @@ class HistoryController extends Controller
       
         $ipClient = $this->get_ip();
 
-        // if($ipClient =="127.0.0.1" || $ipClient =="192.168.1.24" || $ipClient ="125.235.233.250" )
-        // {
-        //     $ipClient = "115.79.192.86";
-        // }
+        if($ipClient =="127.0.0.1" || $ipClient =="192.168.1.24" || $ipClient ="125.235.233.250" )
+        {
+            $ipClient = "115.79.192.86";
+        }
 
        
         $connectionType = $request->input('connectionType',"");
@@ -372,10 +372,17 @@ class HistoryController extends Controller
                     $this->setHistoryId($checkresult->data->_id);
                     session(['noUser' =>  true]);
                     return  [
-                            "is_success" =>true
-                        ];
+                    "is_success" =>true,
+                    "dataCheckRegion"=> $data1,
+                    "historyId"=>$checkresult->data->_id
+                    ];
                 }
-                return  ["is_success" =>false];
+              
+                return 
+                        [
+                            "is_success" =>false,
+                            "historyId"=> ""
+                       ];
              }
     }
 

@@ -34,7 +34,35 @@
 <link rel="stylesheet" type="text/css"
     href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <style>
+#contentResultAI{
 
+  font-family: SFU Futura !important;
+  font-size: 14px !important;
+}
+
+#contentResultAI ul, li  {
+  font-family:unset !important; 
+  font-style: unset !important;
+  font-size: unset !important ;
+  line-height: 20px unset !important;
+  color: #1c213f ;
+  text-align: justify;
+
+}
+#contentResultAI h1,h2,h3,h4,h5,h6, strong {
+
+  margin-right: 5px;
+  font-weight: bold;
+  font-family: SFU Futura;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1c213f;
+}
+#contentResultAI{
+  padding: 0px 20px;
+
+}
 </style>
 
 
@@ -190,7 +218,7 @@
 <script> 
     
     var slugGlobal = {!! json_encode($slug) !!};
-   
+    var resultAI = {!! json_encode($resultAI) !!};
 </script>
 
 <style>
@@ -495,7 +523,7 @@
                 <div id ="ConcludeItemArea">
 
                 </div>
-                <div class="title-overview">
+                <div class="title-overview" style ="display:none">
                     <div class="hcn"> 
     
                     </div>
@@ -505,10 +533,24 @@
     
                 </div>
 
-                <div id = "idtuvantongquan">
+                <div id = "idtuvantongquan" style ="display:none">
                    
                     
                 </div>
+
+                <div class="title-overview "   >
+                    <div class="hcn">
+
+                    </div>
+                    <div class="title-larger">
+                    Chuẩn đoán & tư vấn da
+                    </div>
+
+            </div>
+
+            <div id ="contentResultAI">
+
+            </div>
 
             
         </div>  
@@ -1322,7 +1364,7 @@
 
     document.addEventListener("DOMContentLoaded", function () {
 
-        // sessionStorage.setItem('dataCompany', JSON.stringify(dataCompany));
+         document.getElementById("contentResultAI").innerHTML +=  resultAI;
 
 
     });

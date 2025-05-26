@@ -1,8 +1,13 @@
 
 function drawResultAI() {
 
+        var dataRegion =  JSON.parse( sessionStorage.dataCheckRegion);
+        var outputCity =  "; Kết quả được thực hiện soi da ở  "  + dataRegion.city + "; ";
         var textQuestion =  $("#idGeneralResult").text() +  $("#danhsachketquatungphan").text() 
-          + "; output" + dataConfigAI.question   +  " " + dataConfigAI.noted;
+          + outputCity 
+          + "; output" + dataConfigAI.question   
+          +  " " + dataConfigAI.noted;
+         var historyId = sessionStorage.historyId;
         try {
         $.ajaxSetup({
           headers: {
@@ -12,13 +17,18 @@ function drawResultAI() {
           $.ajax({
               type: "POST",
               data: {
-                  "question": textQuestion
+                  "question": textQuestion,
+                    "historyId": historyId
               },
               url: "https://applamdep.com/getResultAI",
               success: function(data) {
                     Swal.close();
                     document.getElementById("contentResultAI").innerHTML +=  data;
+
+                  const htmlParser= new DOMParser().parseFromString(data , 'text/html');
+                  const textString= htmlParser.body.textContent;
                   
+              
               },
               error: function(error) {
               

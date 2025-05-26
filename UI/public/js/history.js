@@ -118,6 +118,13 @@ $.ajax({
      return;
   },
   complete: function (data) {
+
+    var historyId =data.responseJSON.historyId;
+    sessionStorage.setItem('historyId', historyId);
+
+    var dataCheckRegion  = data.responseJSON.dataCheckRegion;
+    sessionStorage.setItem('dataCheckRegion', JSON.stringify(dataCheckRegion));
+
         setTimeout(() => {
                 var base_url = window.location.origin + "/" + "soida/ket-qua";
                 if(slugGlobal != null  &&  slugGlobal !== "")

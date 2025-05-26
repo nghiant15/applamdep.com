@@ -264,7 +264,7 @@ public function getDataInfo (Request $request)
 
         $dataGlobal =null;
         if($res->getStatusCode() ==200)
-        {
+        {   
             $checkresult = $res->getBody()->getContents();
             $data = json_decode($checkresult);
             $dataGlobal = $data->data;
@@ -904,11 +904,45 @@ public function getDataInfo (Request $request)
         return view("bookingZalo", compact("slugBook","slug","agent","isTurnOfFooter","gameJoinTo", "turnOnGame"));
     }
     
+    public function CallFPTClient( $inputText) {
+                $url ="https://api.fpt.ai/hmi/tts/v5";
+                $client = new Client();
+                $res1 = $client->request('post', $url, [
+                    'headers' => [
+                        'Accept'       => 'application/json',
+                        'Content-Type' => 'application/json',   
+                        'api-key'=>'5PecxlB3UM9eeeWzCBAdST1LY0cBOXkf',
+                       
+                        'voice'=>'banmai'
+                    ],
+                    'body' => $inputText
+                ]);             
+                if($res1->getStatusCode() ==200)
+                { 
+                    $checkresult = $res1->getBody()->getContents();
+                    $data1= json_decode($checkresult);
+                    return $data1;
+                }
+                return "";
+    }
 
 
     public function result (Request $request, $slug =null) 
     {
         $data  =  session('dataResult', null);
+        // $textResultAI = $this->getTextGegemi($data,$slug);
+        // $textContent = $this->GetResultAI($textResultAI);
+        
+        // $plain_text = strip_tags($textContent);
+      
+        // $textReadSound = str_replace(["<br>", "<br/>", "<br />"], "\n", $plain_text); // Nếu xử lý trước strip_tags
+        // $textReadSound = str_replace("\\n", "\n", $textReadSound);
+         
+        // $resultSuond = $this->CallFPTClient($textReadSound);
+
+        // dd($resultSuond);
+        
+
         $dataGame = Session('dataGame', null);
          $this->getTuVan($slug);
          
@@ -1058,8 +1092,6 @@ public function getDataInfo (Request $request)
         }
         if($slug =="bsnho"  || $slug =="exomiyo" || $slug =="neomtech")
         {
-       
-           
             return view("resultZalo2", compact("slug", "dataConfigAI", "showOrHide",
              "ageGame","ageGameReal","gameType","gameJoinType1",
              "contetnFail", "contentSuccess",  "agent","companyId", "displayGame", "rewardCheck", "turnOffGame","successGame","dataGame")); 
@@ -1302,8 +1334,9 @@ public function getDataInfo (Request $request)
             {
                 
                     $result  = $checkresult->data;
+                   
                 
-                    return view("historyPageDetail3",compact("id","result", "slug","agent"));
+                    return view("historyPageDetail",compact("id","result", "resultAI","companyId", "slug","agent"));
 
             }
                 return  "Không có dữ liệu";
@@ -1352,8 +1385,10 @@ public function getDataInfo (Request $request)
                 
                     $result  = $checkresult->data;  
                     
-                
-                    return view("historyPageDetail",compact("id","result", "slug","agent"));
+                   $companyId= $result->Company_Id;
+                    $resultAI=  $result->resultAI;
+                    
+                    return view("historyPageDetail",compact("id","companyId","resultAI","result", "slug","agent"));
 
             }
                 return  "Không có dữ liệu";
@@ -1469,12 +1504,13 @@ public function getDataInfo (Request $request)
             ]);
             if($res->getStatusCode() ==200)
             { 
+
                 $checkresult = $res->getBody()->getContents();
                 $data = json_decode($checkresult);
 
             
                 $data = $data->data;
-         
+                
 
                 session(['dataResult' =>$data]);
                 session(['rewardCheck' =>true]);
@@ -1504,7 +1540,6 @@ public function getDataInfo (Request $request)
                 { 
                     $checkresult = $res1->getBody()->getContents();
                     $data1= json_decode($checkresult);
-                  
                     $data->data->sound = $data1;
                     session(['dataResult' =>$data]);
                     $this->HandleSkin();
@@ -1527,6 +1562,66 @@ public function getDataInfo (Request $request)
                   session(['webinfo' =>[]]);
             }
         }
+
+
+
+ public function getTextGegemi($dataResult, $slug)
+ {
+     $dataConfigAI = $this->getAIConfig($slug);
+    $resultText = "";
+    $generalResultData = $dataResult->data->facedata->generalResult->data;
+    foreach ($generalResultData as $item) {
+          $dataArray = $item->data;
+          foreach ($dataArray as $item2) {
+            $valueText = $item2->value;
+            $valueText= $valueText."";
+             $resultText = $resultText ."". $item2->key . ": " .  $valueText . $item2->valueVI .";";
+          }
+    }
+    $specialResultData = $dataResult->data->facedata->specialResult->data;
+    foreach ($specialResultData as $item) {
+          $dataArray = $item->data;
+          $title = $item->title->vi;
+          $description  = $item->descript->vi;
+          $resultText =  $resultText ."". $title . "" . $description. "; ";
+          foreach ($dataArray as $item2) {
+            $valueText = $item2->value;
+            $valueText= $valueText."";
+             $resultText = $resultText ."". $item2->key . ": " .  $valueText.";" . $item2->valueVI .";";
+          }
+    }
+
+    $resultText = $resultText."; output" . $dataConfigAI->question . " " . $dataConfigAI->noted;
+    return $resultText;
+ }
+
+
+ public function GetResultAI ($inputText) 
+    {
+           
+            $url ="http://45.76.161.30:3030/api/skin/analysisAI";
+            $client = new Client();
+            $headers = [];
+            $body = [
+               'question' =>$inputText
+            ];
+            // Send an asynchronous request.
+            $res = $client->requestAsync('post',$url , [
+               'json' =>$body
+               ]   
+            );
+
+            $result =  $res->wait();
+            If($result->getStatusCode() ==200)
+            {
+               $checkresult = $result->getBody()->getContents();
+                return $checkresult;
+            }
+            else 
+            {
+               return "";
+            }
+     }
 
      public function SaveSound($hintResult)
  {
