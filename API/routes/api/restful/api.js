@@ -129,6 +129,7 @@ module.exports = function (app) {
     app.route("/api/list-history-skin").post(HistorySkinController.getHistorySkin);
     app.route("/api/add-history-skin").post(HistorySkinController.addHistorySkin);
     app.route("/api/add-type-contact").post(HistorySkinController.addContionType);
+    app.route("/api/update_resultAI").post(HistorySkinController.updateResultAI);
     app.route("/api/add-type-contact2").post(HistorySkinController.addContionType2);
     app.route("/api/add-history-skin-plugin").post(authEndUser, HistorySkinController.addHistorySkin_Plugin);
     app.route("/api/add-history-no-user").post( HistorySkinController.addHistorySkin_PluginNoUser);
@@ -459,12 +460,16 @@ module.exports = function (app) {
     const messageRouter = require("../../../controllers/MakeUpControllerNew/MessageController");
 
 
-    const XemtuongController = require("../../../controllers/XemtuongController");
-    app.route("/api/xemtuong/addorupdate").post(XemtuongController.addOrUpdate);
-    app.route("/api/xemtuong/getInfo").get(XemtuongController.getInfo);
-    app.route("/api/xemtuong/getInfoAdmin").get(XemtuongController.getInfoAdmin);
-    app.route("/api/xemtuong/getAllCustomer").get(XemtuongController.getAllCustomer);
-    app.route("/api/xemtuong/getallCompany").get(XemtuongController.getallCompany);
+    // const XemtuongController = require("../../../controllers/XemtuongController");
+    // app.route("/api/xemtuong/addorupdate").post(XemtuongController.addOrUpdate);
+    // app.route("/api/xemtuong/getInfo").get(XemtuongController.getInfo);
+    // app.route("/api/xemtuong/getInfoAdmin").get(XemtuongController.getInfoAdmin);
+    // app.route("/api/xemtuong/getAllCustomer").get(XemtuongController.getAllCustomer);
+    // app.route("/api/xemtuong/getallCompany").get(XemtuongController.getallCompany);
+
+    const PopupResultController = require("../../../controllers/PopupResultController");
+    app.route("/api/popup/add").post(PopupResultController.add);
+    app.route("/api/popup/getAll").get(PopupResultController.getAll);
 
     app.use("/sdk", sdkRouter);
     app.use("/itemSdk", itemRouter);

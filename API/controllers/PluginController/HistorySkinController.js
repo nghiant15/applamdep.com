@@ -452,6 +452,32 @@ module.exports = {
         res.send(Response(202, "Fail", [], false));
      }
  },
+  updateResultAI:  async (req, res) => {
+        try {
+         let body = req.body;
+         
+         const {historyId, resultAI} = req.body;
+         console.log(req.body);
+         const result = await HistorySkin.findOne({
+             "_id": ObjectId(historyId)
+         });
+         if (result) {
+
+
+            let objUpdate = {
+                "resultAI": resultAI,
+           
+             };
+           
+             let result1 = await HistorySkin.updateOne({ _id: ObjectId(historyId) }, objUpdate);
+             res.send(Response(200, "Fail", [], true));
+         } else {
+             res.send(Response(200, "Fail", [], false));
+         }
+     } catch (err) {
+        res.send(Response(202, "Fail", [], false));
+     }
+ },
  addContionType2:  async (req, res) => {
     try {
         let body = req.body;
@@ -474,9 +500,17 @@ module.exports = {
            try {
             let body = req.body;
             
-            const {location} = req.body;
+            const {location , sourceControl} = req.body;
+
+            let sourceControlInput = sourceControl;
+            if(sourceControlInput == null ||  sourceControlInput == '')
+            {
+                sourceControlInput = "web";
+            }
+
             const result = await HistorySkin.create({
                 "UserName": body.UserName,
+                "sourceControl":  sourceControlInput,
                 "Result": body.Result,
                 "location": location,
                 "User_Id": body.User_Id,
@@ -523,6 +557,7 @@ module.exports = {
                     timeConnection,
                     ageGameReal,
                     ageUser, 
+                    sourceControl,
                     slug,Name} = req.body;
                
                 let user = req.user;
@@ -530,6 +565,12 @@ module.exports = {
                 if(Name) 
                 {
                     nameInput = Name;
+                }
+
+                let sourceControlInput = sourceControl;
+                if(sourceControlInput == null ||  sourceControlInput == '')
+                {
+                    sourceControlInput = "web";
                 }
 
                 const beautyGame = await BeautyGame.findOne({
@@ -638,7 +679,7 @@ module.exports = {
                         "ipClient": ipClient,
                         "ipRequest": ipRequest,
                         "Company_Id": Company_Id,
-                      
+                        "sourceControl":  sourceControlInput,
                       
                         "Sale_Id": Sale_Id,
                         "slug" : slug, 
@@ -678,10 +719,18 @@ module.exports = {
                     timeConnection,
                     gameType,
                 Sale_Id,Image,ipClient, ipRequest,successGame, slug, regionName, dataCheckRegion,
-                ageUser
+                ageUser,
+                sourceControl
             } = req.body;
 
-               
+            console.log(req.body);
+     
+
+            let sourceControlInput = sourceControl;
+            if(sourceControlInput == null ||  sourceControlInput == '')
+            {
+                sourceControlInput = "web";
+            }
                 const compnayCheck = await CompanyPlugin.findOne({ _id: ObjectId(Company_Id)});
              
                 let saleName = '';
@@ -738,6 +787,7 @@ module.exports = {
                     "successGame": successGame,
                     "ageGame": ageGame,
                     "ageUser" : ageUser,
+                    "sourceControl":  sourceControlInput,
                     "ageGameReal": ageGameReal,
                     "Create_Date": Date.now()
             });

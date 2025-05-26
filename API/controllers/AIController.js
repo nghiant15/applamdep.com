@@ -6,7 +6,6 @@ const Gamebeauty = require('../models/PluginCollection/BeautyGame');
 const CompanyPlugin = require('../models/PluginCollection/CompanyPluginModel');
 const AIQuesttion = require('../models/applamdep.com/AIQuesttion');
 module.exports = {
-
    
     getInfoAdmin: async (req, res) => {
         const {  company_id} = req.query;
@@ -61,9 +60,8 @@ module.exports = {
             res.send(Response(202, JSON.stringify(err), err, false));
         }
     },
-
     getInfo: async (req, res) => {
-        const {  slug} = req.body;
+        const {  slug} = req.query;
         try {
             
             var result = null;
@@ -105,8 +103,6 @@ module.exports = {
             res.send(Response(202, JSON.stringify(err), err, false));
         }
     },
-
- 
     addOrUpdate: async (req, res) => {
         try {
             const { question,noted, company_id, slug } = req.body;
