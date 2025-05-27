@@ -24,7 +24,7 @@ var  api =  {
     api_getHistoryById: `${slug}api/get-detail-history-skin`,
     api_CheckUrl: `${slug}api/check-access-slug`,
     serve: {
-        baser_urlServer: "https://applamdep.com",
+        baser_urlServer: "http://localhost:8000",
         get_banner: `api/evoucher/banner/getAll`,
         api_logoutUser: `${slug}dang-xuat-he-thong`,
         api_registerUser: `${slug}dang-ky-nguoi-dung`,

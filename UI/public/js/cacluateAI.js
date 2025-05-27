@@ -14,7 +14,7 @@ function drawResultAI() {
               data: {
                   "question": textQuestion
               },
-              url: "https://applamdep.com/getResultAI",
+              url: "http://localhost:8000/getResultAI",
               success: function(data) {
                     Swal.close();
                     document.getElementById("contentResultAI").innerHTML +=  data;

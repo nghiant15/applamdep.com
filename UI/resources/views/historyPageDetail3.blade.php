@@ -227,7 +227,7 @@
                 <a id="myBtn" href="javascript:void(0)" data-toggle="modal" data-target="#loginModal">Đăng nhập/Đăng ký</a>
             </li>
             <li class="right-text login">
-                <a href=" https://applamdep.com/" href="javascript:void(0)" data-toggle="modal"
+                <a href=" http://localhost:8000/" href="javascript:void(0)" data-toggle="modal"
                     data-target="#signUpModal">Đăng ký</a>
             </li>
         </ul>
@@ -1918,8 +1918,8 @@ let dataFace = objectReponse.faceAttitude;
 let indexDraw =0;
 ketLuanTungPhan.data.forEach((ketLuanTungPhanItem) => {
 indexDraw ++;
-let dataDrawFace  = " https://applamdep.com/images/image1.png";
-https://applamdep.com/images/image1.png
+let dataDrawFace  = " http://localhost:8000/images/image1.png";
+http://localhost:8000/images/image1.png
 if(dataFace)
 {
 switch(indexDraw) {
