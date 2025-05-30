@@ -412,6 +412,7 @@ public function getDataInfo (Request $request)
         $dataGame = $this->getGameActive($dataCompanyId);
         $gameMinisize = $this->getGameMinisize($dataCompanyId);
         $conffigSetting = $this->getConfigSetting($dataCompanyId);
+  
         if( $dataGame != null)
         {
             $fromDate = Carbon::parse($dataGame->fromDate); 
@@ -453,6 +454,7 @@ public function getDataInfo (Request $request)
          
         }
       
+       
         if($dataUserSession)
         {
             $isTurnOfFooter=false;
@@ -672,9 +674,6 @@ public function getDataInfo (Request $request)
                  'id'=> $id
               ]
         ]);
-        
-     
-       
   
         if($res->getStatusCode() ==200)
         {
@@ -913,8 +912,6 @@ public function getDataInfo (Request $request)
     $begintext ="";
   
     foreach ($hintResult as &$item1) {
-       
-
         if($item1->sdktype*1.0 <5)
         continue;
      
@@ -958,6 +955,23 @@ public function getDataInfo (Request $request)
             $begintext=$begintext."Bạn có các vấn đề do lỗ chân lông tình trạng ";
         break;
         case "9":
+            if( $value23 >=9)
+            {
+                $textDegree = "Da khoẻ – kiểm soát tốt";
+            }
+            else if( $value23 >=9)
+            {
+                $textDegree ="Nám đang hình thành";
+            }
+             else if( $value23 >=5)
+            {
+                $textDegree =" Nám đã bắt đầu lan sâu";
+            }
+            else {
+                  $textDegree ="  Nám nặng đã ăn sâu nguy hiểm";
+            }
+             
+           
             $begintext=$begintext."Bạn có Đốm thâm nám tình trạng ";
         break;
     

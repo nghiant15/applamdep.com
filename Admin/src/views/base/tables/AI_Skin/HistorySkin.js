@@ -533,7 +533,7 @@ value={this.getTimeConver(this.state.endDate)}
                       <th className="text-center">Hình ảnh</th>
                       <th className="text-center"> Tuổi da</th>
                       <th className="text-center">Kết quả</th>
-                      <th className="text-center">Thông tin click</th>
+                  
                       <th className="text-center">Nguồn</th>
                       <th className="text-
                       center">Công ty</th>
@@ -598,16 +598,7 @@ value={this.getTimeConver(this.state.endDate)}
                             
                                 
 
-<td className="text-left displayblock">
-    { connectionType != "" && <><span> 
-      Loại click:  <strong>{connectionType}</strong>
-    </span>
-    <span >
-      Thời gian: <strong>{timetext}</strong> 
 
-    </span></>}
-     
-</td>
 <td>{ item.sourceControl} </td>
                               <td className="text-center displayblock ">{
                              

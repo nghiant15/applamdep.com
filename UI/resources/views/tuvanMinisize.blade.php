@@ -196,7 +196,181 @@ border-radius:30px;
    padding-bottom:10px;
    padding-top:10px;
 }
+
+
+
 </style>
+
+<style>
+ 
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup {
+      background: linear-gradient(to bottom, #639dd5, #aac8e5);
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      width: 380px;
+      max-width: 100%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      text-align: center;
+      position: relative;
+    }
+
+    .popup h1 {
+      font-size: 18px;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .big-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #7ff8ff;
+      text-shadow: 1px 1px 3px #003366;
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      font-size: 14px;
+      color: #ffe97a;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      background: #ffffff;
+      color: #002b55;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 22px;
+      font-weight: bold;
+      min-width: 65px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .btn {
+      background: #fff;
+      color: #002b55;
+      font-weight: bold;
+      padding: 6px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 1px 1px 2px #aaa;
+      white-space: nowrap;
+    }
+
+    .highlight {
+      color: #ff4444;
+      font-weight: bold;
+    }
+
+    .progress-container {
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      height: 8px;
+      width: 100%;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 75%;
+      background-color: #0033cc;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: #ffffff;
+      color: #333;
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .open-btn {
+      margin: 20px auto;
+      display: block;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .popup {
+        padding: 20px 10px;
+      }
+
+      .big-title {
+        font-size: 26px;
+      }
+
+      .time-box {
+        font-size: 18px;
+        padding: 8px 12px;
+        min-width: 55px;
+      }
+
+      .btn {
+        font-size: 13px;
+        padding: 5px 10px;
+      }
+
+      .popup h1 {
+        font-size: 16px;
+      }
+
+      .info {
+        font-size: 14px;
+      }
+    }
+  </style>
 
 <script>    
   var numberTextDp = {!! json_encode($numberText) !!};
@@ -209,14 +383,7 @@ border-radius:30px;
  function addPopup(){
 
     var addressPopup =  $("#txtAddressReward").val();
-    if(addressPopup =="")
-    {
-        $("#txtAddressRewardError").show();
-        return;
-    }
-    else {
-          $("#txtAddressRewardError").hide();
-    }
+
     var henLichBacSiPopup =  $("#txtHenLichBacSi").val();
 
     if(henLichBacSiPopup =="")
@@ -255,6 +422,9 @@ border-radius:30px;
     });
         
  }
+ setTimeout(() => {
+      $("#socialBLock").show();
+ }, 10000);
 setTimeout(() => {  
     
     if( showOrHide  == "false" ||  showOrHide =="0") 
@@ -292,9 +462,40 @@ setTimeout(() => {
     
 }
    
-}, numbershowUpDp);
+}, 15000);
 
 
+
+
+
+let countdownInterval;
+  function startCountdown() {
+    clearInterval(countdownInterval);
+    const countdownTime = new Date().getTime() + 25 * 60 * 1000;
+
+    countdownInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownTime - now;
+
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+      }
+    }, 1000);
+  }
+
+ startCountdown();
+ 
 </script>
 <div class="status-modal-account tuvanform " >
     
@@ -314,25 +515,35 @@ setTimeout(() => {
                <span class ="number" id ="numberText" >6 </span>
             </div>
 
-            <div class="position-close2 position-close3" id ="closeButton" style ="display:none" onclick="changeFormTuvan()">
-                <svg viewBox="0 0 24 24" size="24" class="sc-11csm01-0 fivNSm">
-                    <path
-                        d="M14.8284 12L19.4142 16.5858C20.1953 17.3668 20.1953 18.6332 19.4142 19.4142
-                            C18.6332 20.1953 17.3668 20.1953 16.5858 19.4142L12 14.8284L7.41421 19.4142
-                            C6.63317 20.1953 5.36684 20.1953 4.58579 19.4142C3.80474 18.6332 3.80474 17.3668 4.58579 16.5858L9.17157 12
-                            L4.58579 7.41421C3.80474 6.63317 3.80474 5.36684 4.58579 4.58579
-                            C5.36684 3.80474 6.63317 3.80474 7.41421 4.58579L12 9.17157L16.5858 4.58579
-                            C17.3668 3.80474 18.6332 3.80474 19.4142 4.58579C20.1953 5.36684 20.1953 6.63317 19.4142 7.41421L14.8284 12Z"
-                        transform=""></path>
-                </svg>
-            </div>
            
             <div class="status__isLogin body-tu-van" style="
             font-family: 'SFU Futura';
         ">
                    
                 
-                    <img src ="{{ $dataMinisize->imageLink }}"> 
+                    <!-- <img src ="{{ $dataMinisize->imageLink }}">  -->
+
+                     <div class="popup">
+    <button class="close-btn" onclick="changeFormTuvan()">×</button>
+    <h1>ĐẶT HÀNG LIỀN TAY NHẬN NGAY</h1>
+    <div class="big-title">Ưu đãi khủng</div>
+    <div class="sub">Thời gian ưu đãi kết thúc sau</div>
+
+    <div class="countdown">
+      <div class="time-box"><span id="hours">00</span><span>Giờ</span></div>
+      <div class="time-box"><span id="minutes">00</span><span>Phút</span></div>
+      <div class="time-box"><span id="seconds">00</span><span>Giây</span></div>
+    </div>
+
+    <div class="info">
+      <div class="btn">Nhanh tay lên</div>
+      <div>Số lượng chỉ còn <span class="highlight">68</span> sản phẩm</div>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
                     <form class="formReward frompopup" id="formLogin" style="overflow: hidden">
                     <div class="form-group">
                     <input  type="text" class="my-form-control fullName" id="txtAddressReward" placeholder="Địa chỉ nhận quà">
@@ -343,9 +554,9 @@ setTimeout(() => {
                     <div class="form-group">
                     <div id="toggleNumber">
                     <textarea   type="text" rows = "4" class="my-form-control userName" id="txtHenLichBacSi"
-                      placeholder="Hẹn lịch bác sĩ "></textarea >
+                      placeholder="Thời gian mong muốn được tư vấn "></textarea >
                     <div class="errorMesssage" id="txtHenLichBacSierrorMesssage">
-                    Đặt lịch hẹn, tư vấn,...
+                    Thời gian mong muốn được tư vấn,...
                     </div>
                     </div>
                     </div>
@@ -388,5 +599,7 @@ setTimeout(() => {
 <script>
     function changeFormTuvan(){
         $('.status-modal-account').hide();
+      
     }
+
 </script>

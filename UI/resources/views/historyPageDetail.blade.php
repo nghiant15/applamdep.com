@@ -710,32 +710,32 @@
                 "$.data.facedata.generalResult.data[*].data[?(@.key == 'SkinMole')]";
             // "$.data.facedata.generalConclusion.data[*].data[?(@.key == 'SkinMole')]";
 
-            const SKIN_DRAWERS = [{
-                selector: SKIN_SPOT_SELECTOR,
-                checkboxId: "myCheckSpot",
-                plotContainerId: "spotContainer",
-                plotColor: "#FEA500",
-            }, {
-                selector: SKIN_ACNE_SELECTOR,
-                checkboxId: "myCheckAcne",
-                plotContainerId: "acneContainer",
-                plotColor: "#FFFF00",
-            }, {
-                selector: SKIN_PIMPLE_SELECTOR,
-                checkboxId: "myCheckPimple",
-                plotContainerId: "pimpleContainer",
-                plotColor: "##00A853",
-            }, {
-                selector: SKIN_BLACKHEADS_SELECTOR,
-                checkboxId: "myCheckBlackhead",
-                plotContainerId: "blackHeadContainer",
-                plotColor: "#FF50AF",
-            }, {
-                selector: SKIN_MOLE_SELECTOR,
-                checkboxId: "myCheckMole",
-                plotContainerId: "moleContainer",
-                plotColor: "#FE0000",
-            },];
+           const SKIN_DRAWERS = [{
+                    selector: SKIN_SPOT_SELECTOR,
+                    checkboxId: "myCheckSpot",
+                    plotContainerId: "spotContainer",
+                    plotColor: "#fe0000",
+                }, {
+                    selector: SKIN_ACNE_SELECTOR,
+                    checkboxId: "myCheckAcne",
+                    plotContainerId: "acneContainer",
+                    plotColor: "#ff0",
+                }, {
+                    selector: SKIN_PIMPLE_SELECTOR,
+                    checkboxId: "myCheckPimple",
+                    plotContainerId: "pimpleContainer",
+                    plotColor: "##00A853",
+                }, {
+                    selector: SKIN_BLACKHEADS_SELECTOR,
+                    checkboxId: "myCheckBlackhead",
+                    plotContainerId: "blackHeadContainer",
+                    plotColor: "#ff4500",
+                }, {
+                    selector: SKIN_MOLE_SELECTOR,
+                    checkboxId: "myCheckMole",
+                    plotContainerId: "moleContainer",
+                    plotColor: "#0000ff",
+                }, ];
 
             var dataJson = null;
 

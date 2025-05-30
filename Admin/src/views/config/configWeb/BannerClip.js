@@ -41,16 +41,67 @@ export default class BannerClip extends Component {
             onClick={(e) => {e.target.value = null;this.setStateByName("imageVideoClip_show", "")}} 
    
           />
-          <div class="text-center">
-            <img
-              alt=""
-              style={{ width: "400px" }}
-              height="auto"
-              src={this.props.imageVideoClip}
-            />
-          </div>
+         
+
+
+          <div className="text-center">
+        {/\.(mp4|webm|ogg)$/i.test(this.props.imageVideoClip) ? (
+        <video
+        width="400"
+        controls
+        style={{ height: "auto" }}
+        >
+        <source src={this.props.imageVideoClip} type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+        ) : (
+        <img
+        alt=""
+        style={{ width: "400px", height: "auto" }}
+        src={this.props.imageVideoClip}
+        />
+        )}
+        </div>
        
         </div>
+
+
+        <div class="mt-3">
+          <h1>Video/Image Home(mobile) </h1>
+          <TextFieldGroup
+            field="image"
+            label="Hình ảnh /Video"
+            type={"file"}
+            onChange={(e) => this.onChangeImage(
+                e,
+                "imageVideoMobileClip",
+                "imageVideoMobile_link",
+                "imageVideoMobile_show"
+              )}
+            onClick={(e) => {e.target.value = null;this.setStateByName("imageVideoMobile_show", "")}} 
+   
+          />
+        <div className="text-center">
+        {/\.(mp4|webm|ogg)$/i.test(this.props.imageVideoMobileClip) ? (
+        <video
+        width="400"
+        controls
+        style={{ height: "auto" }}
+        >
+        <source src={this.props.imageVideoMobileClip} type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+        ) : (
+        <img
+        alt=""
+        style={{ width: "400px", height: "auto" }}
+        src={this.props.imageVideoMobileClip}
+        />
+        )}
+        </div>
+       
+        </div>
+   
    
        
       </>

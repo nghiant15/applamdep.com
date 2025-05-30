@@ -14,7 +14,7 @@ module.exports = {
             var result = null;
             var columnDisplay =  'fullName, contentAddvice,address, slug, phone, create_date';
             var filterSearch=  {};
-            result = await Model.find(filterSearch);
+            result = await Model.find(filterSearch).sort({ _id: -1 });;
             if(result)
             {
                 return  res.send(Response(200, "Thông tin thành công", result,true));

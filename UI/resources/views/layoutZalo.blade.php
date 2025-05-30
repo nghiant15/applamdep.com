@@ -2,7 +2,6 @@
 @php
    $dataColor  = null;
    $bannerPage = null;
-   
     if (isset($globalColor)) {
         $dataColor = $globalColor->mainColor;
 
@@ -11,16 +10,8 @@
     {
         $dataColor = "#1a214f";
     }
-   
-   
-
     if (isset($globalData) && isset($globalData->banner)) {
-
-
         $bannerPage = $globalData->banner;
-
-       
-        
     }
     else 
     {
@@ -29,31 +20,17 @@
         $bannerPage->imageBannerMobile  = "https://api-ai.exomiyo.com/image_brand/applamdep1320 (1).png";
      
     }
-
-
-
-   
     $dataUserSales = session('dataCompany', null);
-
-    
     $beautyData = session('beautyData', null);
-    
-
     $dataUser = null;
-
-
         if($dataUserSales)
         {
             $dataUser = $dataUserSales->data;
 
            
         }
-    
- 
-       
 
- 
- 
+     
 @endphp
 <html>
 
@@ -259,16 +236,24 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     <div class="content-plugin">
     <div class="banner">
+   
 
 
-    @if ($agent->isMobile())
-  
-        <img id ="bannerId" src="{{$bannerPage->imageBannerMobile}}">
-    @else 
 
-         <img id ="bannerId" src="{{$bannerPage->imageBannerDesktop}}">
+    @php
+    $isMobile = $agent->isMobile();
+    $mediaUrl = $isMobile ? $bannerPage->imageBannerMobile : $bannerPage->imageBannerDesktop;
+    $extension = pathinfo($mediaUrl, PATHINFO_EXTENSION);
+    @endphp
+
+    @if (in_array(strtolower($extension), ['mp4', 'webm', 'ogg']))
+    <video autoplay muted loop playsinline>
+    <source src="{{ $mediaUrl }}" type="video/{{ $extension }}">
+    Trình duyệt của bạn không hỗ trợ video.
+    </video>
+    @else
+       <img id ="bannerId" src="{{$mediaUrl}}">
     @endif
-
   
 
    

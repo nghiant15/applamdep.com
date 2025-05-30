@@ -355,6 +355,14 @@ class ConfigWeb extends Component {
 
                  
                 });
+
+                   this.setState({
+                  imageVideoMobileClip: bannerClip.imageVideoMobileClip,
+                  imageVideoMobile_link: bannerClip.imageVideoMobileClip,
+                  imageVideoMobile_show: bannerClip.imageVideoMobileClip
+
+                 
+                });
               }
               if(bannerCampaign){
                 this.setState({
@@ -934,12 +942,25 @@ class ConfigWeb extends Component {
       if (newImage) {
         coppyData.value.bannerClip.imageVideoClip = `${Constants.BASE_URL}/image_brand/${newImage}`;
       }
+
+      console.log(this.state);
+
+      debugger;
+
+      let newImage2 = await this.postImage(this.state.imageVideoMobile_link);
+      if (newImage2) {
+        coppyData.value.bannerClip.imageVideoMobileClip = `${Constants.BASE_URL}/image_brand/${newImage2}`;
+      }
+
+
+        
+
       this.setState({
         dataConfigWeb: coppyData,
       });
     }
 
-
+    console.log(coppyData);
     await axios
       .post(url, {
         value: JSON.stringify(coppyData),
@@ -1402,11 +1423,11 @@ class ConfigWeb extends Component {
               </div>
               <div id="tabcontent12" className="tabcontent">
                 <Form
-              title_get_voucher={this.state.title_get_voucher}
-              textSales={this.state.textSales}
-              receiveVoucherSuccess={this.state.receiveVoucherSuccess}
-              loginWatchVoucher={this.state.loginWatchVoucher}
-              registerGetVoucher={this.state.registerGetVoucher}
+                  title_get_voucher={this.state.title_get_voucher}
+                  textSales={this.state.textSales}
+                  receiveVoucherSuccess={this.state.receiveVoucherSuccess}
+                  loginWatchVoucher={this.state.loginWatchVoucher}
+                  registerGetVoucher={this.state.registerGetVoucher}
                   SaveAllConfigWeb={this.SaveAllConfigWeb}
                   setStateByName={this.setStateByName}
                   btn_login={this.state.btn_login}
@@ -1534,6 +1555,10 @@ class ConfigWeb extends Component {
                   imageVideoClip={this.state.imageVideoClip}
                   imageVideoClip_link={this.state.imageVideoClip}
                   imageVideoClip_show={this.state.imageVideoClip}
+
+                  imageVideoMobileClip={this.state.imageVideoMobileClip}
+                  imageVideoMobile_link={this.state.imageVideoMobileClip}
+                  imageVideoMobile_show={this.state.imageVideoMobileClip}
                  
                 />
               </div>

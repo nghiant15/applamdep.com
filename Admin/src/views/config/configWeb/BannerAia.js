@@ -27,7 +27,7 @@ export default class BannerAia extends Component {
           </Button>
         </div>
         <div class="mt-3">
-          <h1>Banner Desktop</h1>
+          <h1>Banner Desktop </h1>
           <TextFieldGroup
             field="image"
             label="Hình ảnh"
@@ -41,14 +41,26 @@ export default class BannerAia extends Component {
             onClick={(e) => {e.target.value = null;this.setStateByName("imageBannerDesktop_show", "")}} 
    
           />
-          <div class="text-center">
-            <img
-              alt=""
-              style={{ width: "400px" }}
-              height="auto"
-              src={this.props.imageBannerDesktop}
-            />
-          </div>
+      
+
+            <div className="text-center">
+        {/\.(mp4|webm|ogg)$/i.test(this.props.imageBannerDesktop) ? (
+        <video
+        width="400"
+        controls
+        style={{ height: "auto" }}
+        >
+        <source src={this.props.imageBannerDesktop} type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+        ) : (
+        <img
+        alt=""
+        style={{ width: "400px", height: "auto" }}
+        src={this.props.imageBannerDesktop}
+        />
+        )}
+        </div>
           <TextFieldGroup
             field="hrefImageBannerDesktop"
             label="Đường dẫn"
@@ -81,14 +93,26 @@ export default class BannerAia extends Component {
 
           
           />
-          <div class="text-center">
-            <img
-              alt=""
-              style={{ width: "400px" }}
-              height="auto"
-              src={this.props.imageBannerMobile}
-            />
-          </div>
+         
+
+            <div className="text-center">
+        {/\.(mp4|webm|ogg)$/i.test(this.props.imageBannerMobile) ? (
+        <video
+        width="400"
+        controls
+        style={{ height: "auto" }}
+        >
+        <source src={this.props.imageBannerMobile} type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+        ) : (
+        <img
+        alt=""
+        style={{ width: "400px", height: "auto" }}
+        src={this.props.imageBannerMobile}
+        />
+        )}
+        </div>
           <TextFieldGroup
             field="hrefImageBannerMobile"
             label="Đường dẫn"

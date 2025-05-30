@@ -45,20 +45,19 @@
     line-height: 17px;
     font-weight: bold;
     font-family: SFU Futura;
-font-style: normal;
-font-weight: bold;
-font-size: 12px;
-line-height: 17px;
-/* identical to box height */
-
-
-color: #FFFFFF;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 17px;
+    color: #fff;
 }
 .ai-skin__button--disabled > button,
 .ai-skin__button--disabled > a {
     background: #e0e0e0;
     color: #fff;
-    box-shadow: inset 0px -3px 3px rgba(0, 0, 0, 0.25), inset 0px 2px 3px rgba(255, 255, 255, 0.4);
+    box-shadow:
+        inset 0px -3px 3px rgba(0, 0, 0, 0.25),
+        inset 0px 2px 3px rgba(255, 255, 255, 0.4);
     border-radius: 10px;
 }
 .ai-skin__button--hidden {
@@ -104,33 +103,24 @@ color: #FFFFFF;
     max-height: 100%;
 }
 .ai-skin__result-checkContainer {
-   display: flex;
-   width: 300px;
-   padding: 15px 0px;
-   .rowcolum1 {
-
-    width: 100px;
-   }
-   .rowcolum1:last-child { 
-       .ai-skin__result-checkbox {
-           float: right;
-       }
-    }
-    .column2 {
-        width: 130px !important;
-    }
-    .column3 {
-        width: 70px !important;
-    }
-   
-
+    display: flex;
+    width: 300px;
+    padding: 15px 0px;
 }
-.ai-skin__result-checkContainer :nth-child(3n) {
-    
+.ai-skin__result-checkContainer .rowcolum1 {
+    width: 100px;
+}
+.ai-skin__result-checkContainer .rowcolum1:last-child .ai-skin__result-checkbox {
+    float: right;
+}
+.ai-skin__result-checkContainer .column2 {
+    width: 130px !important;
+}
+.ai-skin__result-checkContainer .column3 {
+    width: 70px !important;
 }
 .ai-skin__result-checkbox {
     display: grid;
-    grid-template-columns: -webkit-min-content auto;
     grid-template-columns: min-content auto;
     grid-gap: 5px;
     font-family: SFU Futura;
@@ -170,7 +160,7 @@ color: #FFFFFF;
     margin: 1;
 }
 .ai-skin__result-checkbox-input input[id="myCheckSpot"]:checked + .ai-skin__result-checkmark > span {
-    background: #fea500;
+    background: #fe0000;
 }
 .ai-skin__result-checkbox-input input[id="myCheckAcne"]:checked + .ai-skin__result-checkmark > span {
     background: #ff0;
@@ -179,10 +169,10 @@ color: #FFFFFF;
     background: #00a853;
 }
 .ai-skin__result-checkbox-input input[id="myCheckBlackhead"]:checked + .ai-skin__result-checkmark > span {
-    background: #ff50af;
+    background: #ff4500;
 }
 .ai-skin__result-checkbox-input input[id="myCheckMole"]:checked + .ai-skin__result-checkmark > span {
-    background: #fe0000;
+    background: #0000ff;
 }
 .ai-skin__separator-group {
     display: flex;
@@ -276,8 +266,8 @@ color: #FFFFFF;
     object-fit: cover;
 }
 .ai-skin__skin-video-player > video {
-   width: 100%;
-   height: 100%;
+    width: 100%;
+    height: 100%;
     align-self: center;
     transform: scaleX(-1);
 }
@@ -285,8 +275,8 @@ color: #FFFFFF;
     display: none;
 }
 .ai-skin__skin-image-show > img[src] {
-   width: 100%;
-   height: 100%;
+    width: 100%;
+    height: 100%;
     display: block;
 }
 .ai-skin__skin-image-show > img {
@@ -344,7 +334,6 @@ color: #FFFFFF;
 }
 .ai-skin__result-image > img {
     width: 100%;
-    // height: 29.125rem;
 }
 .ai-skin__result-plot {
     position: absolute;
@@ -396,7 +385,9 @@ color: #FFFFFF;
 .ai-skin__result-option {
     width: 14.5625rem;
     height: 3.4375rem;
-    box-shadow: inset 0px -3px 3px rgba(0, 0, 0, 0.25), inset 0px 2px 3px rgba(255, 255, 255, 0.4);
+    box-shadow:
+        inset 0px -3px 3px rgba(0, 0, 0, 0.25),
+        inset 0px 2px 3px rgba(255, 255, 255, 0.4);
     border-radius: 0.75rem;
     border: none;
     cursor: pointer;
@@ -513,7 +504,6 @@ color: #FFFFFF;
     border-radius: 0 3px 3px 0;
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 .next {
@@ -554,14 +544,6 @@ color: #FFFFFF;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
-}
-@-webkit-keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
 }
 @keyframes fade {
     from {
@@ -654,7 +636,6 @@ body {
     padding: 5px 16px;
     background-color: #f55581;
     color: #fff;
-    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
     border-radius: 20px;
@@ -674,7 +655,7 @@ body {
     padding: 10px 0px;
 }
 button:hover {
-    background-color: #f71e58ec;
+    background-color: rgba(247, 30, 88, 0.9254901961);
 }
 .titleProductRecomend {
     color: #f55581 !important;
@@ -872,7 +853,9 @@ img {
     width: 50%;
     height: 40px;
     background-color: #f55581;
-    box-shadow: inset 0px -3px 3px rgba(0, 0, 0, 0.25), inset 0px 2px 3px rgba(255, 255, 255, 0.4);
+    box-shadow:
+        inset 0px -3px 3px rgba(0, 0, 0, 0.25),
+        inset 0px 2px 3px rgba(255, 255, 255, 0.4);
     border-radius: 0.75rem;
     border: none;
     margin: auto;
@@ -900,14 +883,14 @@ img {
 .slick-list {
     padding-right: 8% !important;
 }
-
 .loadingImage {
-    
-  
     overflow: auto;
     margin: auto;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     z-index: 10000;
 }
 .ai-skin__container {
@@ -916,177 +899,134 @@ img {
 #displayLoading {
     display: none;
 }
-
-
-.iconClose{
-   text-align: center;
-   float: right;
-   color:#ffffff;
-   width: 32px;
-   height: 32px;
-   justify-content: center;
-   font-weight: 700;
-   border-radius: 50%;
-  
-   a:hover {
-     color:#ffffff;
-    
-
-   }
+.iconClose {
+    text-align: center;
+    float: right;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 50%;
 }
-.iconClose:hover{
+.iconClose a:hover {
+    color: #fff;
+}
+.iconClose:hover {
     transform: scale(1.2);
     text-align: center;
-    color:#ffffff;
+    color: #fff;
     width: 32px;
     font-weight: 700;
     border-radius: 50%;
-   
-    a {
-      color:#ffffff !important;
-      text-decoration: none;
-    
-     
-     
- 
-    }
- }
-
- .imagebackground 
- {
-    position:fixed;
-   width:100%;
-   text-align: center;
-   img {
-    width: 600px;
-   }
-    display:none;
+}
+.iconClose:hover a {
+    color: #fff !important;
+    text-decoration: none;
+}
+.imagebackground {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    display: none;
     bottom: 0;
     z-index: 1000;
-    background-color: #ffffff;
- }
- .imagebackground2 {
-    position:fixed;
-   width:100%;
-   text-align: center;
-   img {
+    background-color: #fff;
+}
+.imagebackground img {
     width: 600px;
-   }
-    display:none;
+}
+.imagebackground2 {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    display: none;
     bottom: 0;
     z-index: 1000;
-    background-color: #ffffff;
- }
- @media only screen and (max-width: 600px) {
-    
-
+    background-color: #fff;
+}
+.imagebackground2 img {
+    width: 600px;
+}
+@media only screen and (max-width: 600px) {
     .title_nav-tuvan {
         text-align: center;
-        
-
-
     }
     .bottom-button img {
         width: 30px;
     }
-    .body-tu-van {
-
-        // margin-top: 50px;
-    }
-   
-    .title_nav-tuvan  
-
-    {
-       
-   }
-   .title_nav-tuvan p {
+    .title_nav-tuvan p {
         font-size: 15px !important;
-   }
-   .bottom-button {
-    width: 100%;
-    text-align: center;
-    font-size: 13px;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-   }
-   .bottom-button a:hover {
-    opacity: 0.7;
-   }
-   .bottom-button a {
-
-
-    height: 30px;
-    display: flex;
-    background-color: #9946e8;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 16px !important;
-
-   }
-   .zalobac {
-    background-color: #1272e8 !important;
-   }
-   .bottom-button a span {
-     color: #ffffff;
-     text-align: center;
-     margin: auto;
-   }
-   .des-introduction{
-    margin-top: 10px;
-    font-size: 17px !important;
-   }
-   .des-title{
-    text-align: center;
-    color:  rgb(2, 52, 157);
-    // -webkit-text-stroke: 0.5px   rgb(2, 52, 157) !important;
-    
-    // margin-top: 15px;
-   
-    
-   }
-   .des-price{
-    margin-top: 10px;
-    text-align: center;
-    color:  rgb(247, 27, 41);
-    font-size:22px !important;
-    font-weight: bold;
-    // -webkit-text-stroke: 0.2px   rgb(247, 27, 41);
-    margin-bottom: 15px;
-   }
-   .des-register{
-    margin: auto;
-    margin-bottom: 20px;
-
-    text-align: center;
-    color:  rgb(250,251,254);
-    font-size:16px !important;
-    font-weight: bold;
-    margin-bottom: 30px;
-   }
-   .des-register a {
-    width: max-content;
-   
-   
-    margin: auto;
-
-   }
-   .des-register a {
-    width: max-content;
-  
-    
-    margin: auto;
-
-
-   }
-   .des-register a:hover {
-    text-decoration: none;
-    color:  rgb(250,251,254 )!important;
-    opacity: 0.7;
-
-   }
-  }
-  .position-close3 {
+    }
+    .bottom-button {
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .bottom-button a:hover {
+        opacity: 0.7;
+    }
+    .bottom-button a {
+        height: 30px;
+        display: flex;
+        background-color: #9946e8;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px !important;
+    }
+    .zalobac {
+        background-color: #1272e8 !important;
+    }
+    .bottom-button a span {
+        color: #fff;
+        text-align: center;
+        margin: auto;
+    }
+    .des-introduction {
+        margin-top: 10px;
+        font-size: 17px !important;
+    }
+    .des-title {
+        text-align: center;
+        color: #02349d;
+    }
+    .des-price {
+        margin-top: 10px;
+        text-align: center;
+        color: #f71b29;
+        font-size: 22px !important;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .des-register {
+        margin: auto;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #fafbfe;
+        font-size: 16px !important;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    .des-register a {
+        width: -moz-max-content;
+        width: max-content;
+        margin: auto;
+    }
+    .des-register a {
+        width: -moz-max-content;
+        width: max-content;
+        margin: auto;
+    }
+    .des-register a:hover {
+        text-decoration: none;
+        color: #fafbfe !important;
+        opacity: 0.7;
+    }
+}
+.position-close3 {
     position: absolute;
     right: 28px;
     top: 28px;

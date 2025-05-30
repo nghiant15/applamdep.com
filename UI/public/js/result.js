@@ -1055,6 +1055,7 @@ function getStatusSkinGroupPre ( groupk, valuek, item)
 
 function drawConcludev2 ( groupk, valuek, item) 
 {
+
   var tilte = "";
   var des = "";
   var valueRel =  item['avg'];
@@ -1207,7 +1208,25 @@ function drawConcludev2 ( groupk, valuek, item)
 
     percentage =  Math.round((value23/10) * 100);
 
-   
+   if(groupk =="K9")
+   {
+          if(value23 >=9  )
+          {
+          text ="Da khoẻ – kiểm soát tốt";
+          } 
+          else  if(value23 >=7  )
+          text ="Nám đang hình thành";
+
+          else  if(value23 >=5  )
+          text ="Nám đã bắt đầu lan sâu";
+          else {
+          text ="Nám nặng đã “ăn sâu nguy hiểm";
+          }
+    }
+  
+
+    
+  
    
    var htmlTemp = ' <div class="ConcludeItem"><p class ="paragraph-text-pa"> <span class ="bold-text-pa">'+tilte+': </span>\
 <span class ="leveldegree"> '+text+' (Mức '+value23 +'/10) </span>\
@@ -1573,7 +1592,7 @@ function avgScore()
     }
     else if( avgFinal  <= 2 )
     {
-      textDegree = "Bình thường";
+      textDegree = "Da mất cân bằng, cần cải thiện";
     }
     else 
     {
@@ -1655,7 +1674,7 @@ function avgScorev2(dataDraw)
     }
     else if( avgFinal  <= 2 )
     {
-      textDegree = "Bình thường";
+      textDegree = "Da mất cân bằng, cần cải thiện";
     }
     else 
     {

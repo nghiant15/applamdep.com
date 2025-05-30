@@ -1,11 +1,11 @@
     @php
     $dataSeo = "Soida liền tay";
     $dataLikn =  session('TuVanData', null);
-
     $dataMinisize =  session('dataminisize', null);
     $zaloLink =  $dataLikn->zaloLink;
     $messengerLink = $dataLikn->messengerLink;
     $linkRegister = $dataMinisize->linkRegister;
+    
     if (isset($globalData)) 
     {
         $dataSeo = $globalData->seoInfo;
@@ -33,8 +33,11 @@
     {
         $dataSeo-> title ="Soi da online";
     }
-  
+    $bannerClipAccess = $globalcompanyData->data->value->bannerClip;
+    
     $dataSeo->description ="Soi Da Online .Ngay tại nhà, Kiểm tra, tuổi da & hơn 40 thông số về da khác. Một lần quét, nói với bạn mọi điều .#soidaonline";
+
+
 @endphp
 @extends('layoutZalo')
 
@@ -175,8 +178,23 @@
 
                 <div class="ai-skin-skin-body">
                     <div class="ai-skin__skin-image ai-skin__skin-image--inactive" id="skinImage">
-                        <img class="ai-skin__skin-image__background" data-src="/images/imageTakeCamera.png"
-                            src="/images/imageTakeCamera.png">
+                      
+
+                        @php
+                        $isMobile = $agent->isMobile();
+                        $mediaUrl = $isMobile ? $bannerClipAccess->imageVideoMobileClip : $bannerClipAccess->imageVideoClip;
+                    
+                        $extension = pathinfo($mediaUrl, PATHINFO_EXTENSION);
+                        @endphp
+
+                        @if (in_array(strtolower($extension), ['mp4', 'webm', 'ogg']))
+                        <video class="ai-skin__skin-image__background" autoplay muted loop playsinline>
+                        <source src="{{ $mediaUrl }}" type="video/{{ $extension }}">
+                        Trình duyệt của bạn không hỗ trợ video.
+                        </video>
+                        @else
+                        <img class="ai-skin__skin-image__background" src="{{ $mediaUrl }}" alt="Clip Background">
+                        @endif
                         <div class="ai-skin__skin-video-player" id="videoPlayer">
                             <video id="video" autoplay="" muted="" playsinline="">
                                 No video available
@@ -187,15 +205,7 @@
                             <img id="imageShow">
                         </div>
                         <div class="ai-skin__skin-focus">
-                            {{-- <img data-src="contain/img/placeholders/corner-top-left.svg" class="ai-skin__skin-focus__tl"
-                            src="/img/placeholders/corner-top-left.svg">
-                        <img data-src="contain/img/placeholders/corner-top-right.svg"
-                            class="ai-skin__skin-focus__tr" src="/img/placeholders/corner-top-right.svg">
-                        <img data-src="contain/img/placeholders/corner-bottom-left.svg"
-                            class="ai-skin__skin-focus__bl" src="/img/placeholders/corner-bottom-left.svg">
-                        <img data-src="contain/img/placeholders/corner-bottom-right.svg"
-                            class="ai-skin__skin-focus__br"
-                            src="/img/placeholders/corner-bottom-right.svg"> --}}
+                         
                         </div>
                         <img id="output" hidden="">
                     </div>

@@ -406,7 +406,7 @@ class User extends Component {
                         <th className="text-center">Slug</th>
                         <th className="text-center">Địa chỉ</th>
                         <th className="text-center">Nội dung</th>
-                        <th className="text-center">#</th>
+                        <th className="text-center">Ngày yêu cầu</th>
 
                       </tr>
                     </thead>
@@ -421,11 +421,12 @@ class User extends Component {
                                 <td className="text-center">{item.phone}</td>
                                 <td className="text-center">{item.fullName}</td>
                                 <td className="text-center">{item.slug}</td>
+                                <td className="text-center">{item.address}</td>
                                 <td className="text-center">{item.contentAddvice}</td>
-                                  <td className="text-center">{item.address}</td>
-                                
-                                
-                                
+                                <td className="text-center">
+                                    <p>{new Date(item.create_date).toLocaleDateString('vi-VN')}</p>
+                                    <p>{new Date(item.create_date).toLocaleTimeString('vi-VN')}</p>
+                                </td>
                               </tr>
                             );
                           }) : ""

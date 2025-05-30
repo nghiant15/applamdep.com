@@ -82,9 +82,7 @@ function saveHistory(isRedirect, result = null) {
   {
     sourceInput = "web";
   }
-
   var loading = document.querySelector(".status-loader-22");
-  
   if (result == null) {
     if (sessionStorage.getItem("_t") === null) {
       return;

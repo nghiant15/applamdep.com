@@ -41,7 +41,6 @@ module.exports = {
 
           //resultVendorBanner
 
-
           resultVendorBanner = await VendorBanner.find(
             filterSearch ,
             columnDisplay

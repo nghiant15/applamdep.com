@@ -3019,7 +3019,7 @@ function avgScore()
    }
    else if( avgFinal  <= 2 )
    {
-     textDegree = "Bình thường";
+     textDegree = "Da mất cân bằng, cần cải thiện;
    }
    else 
    {
@@ -3032,7 +3032,7 @@ function avgScore()
    
 
   document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
-   document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
+  //  document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
 
   
 
@@ -3101,7 +3101,7 @@ function avgScorev2(dataDraw)
    }
    else if( avgFinal  <= 2 )
    {
-     textDegree = "Bình thường";
+     textDegree = "Da mất cân bằng, cần cải thiện";
    }
    else 
    {
@@ -3117,7 +3117,7 @@ function avgScorev2(dataDraw)
    avgFinal = (10 - avgFinal);
                                                               
    document.getElementById("score2").textContent =  ""+ parseFloat(avgfinal2).toFixed(1) +"/10";
-   document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
+    // document.getElementById("scoreAvg").textContent = "   ( " + textDegree + " )" ;
 
 }
 

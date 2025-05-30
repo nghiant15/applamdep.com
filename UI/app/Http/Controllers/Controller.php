@@ -119,7 +119,8 @@ class Controller extends BaseController
       
             
             if($result == null)
-            {
+            { 
+                View::share('globalcompanyData',  null );
                
                View::share('globalColor',  null );
                View::share('globalData',  null); 
@@ -128,7 +129,7 @@ class Controller extends BaseController
             else 
             {
 
-               
+               View::share('globalcompanyData',  $result );
                   View::share('globalColor',  $result->dataColor );
                   View::share('globalData',  $result->data->value );  
                   View::share('infobeauty',   $result->infobeauty); 

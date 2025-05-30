@@ -13,6 +13,8 @@
          }
 
          $dataMinisize =  session('dataminisize', null);
+         $tuvanData =   session('TuVanData', null);
+        
 
        
 @endphp
@@ -1042,12 +1044,12 @@
                     selector: SKIN_SPOT_SELECTOR,
                     checkboxId: "myCheckSpot",
                     plotContainerId: "spotContainer",
-                    plotColor: "#FEA500",
+                    plotColor: "#fe0000",
                 }, {
                     selector: SKIN_ACNE_SELECTOR,
                     checkboxId: "myCheckAcne",
                     plotContainerId: "acneContainer",
-                    plotColor: "#FFFF00",
+                    plotColor: "#ff0",
                 }, {
                     selector: SKIN_PIMPLE_SELECTOR,
                     checkboxId: "myCheckPimple",
@@ -1057,12 +1059,12 @@
                     selector: SKIN_BLACKHEADS_SELECTOR,
                     checkboxId: "myCheckBlackhead",
                     plotContainerId: "blackHeadContainer",
-                    plotColor: "#FF50AF",
+                    plotColor: "#ff4500",
                 }, {
                     selector: SKIN_MOLE_SELECTOR,
                     checkboxId: "myCheckMole",
                     plotContainerId: "moleContainer",
-                    plotColor: "#FE0000",
+                    plotColor: "#0000ff",
                 }, ];
 
                 var dataJson = null;
@@ -1304,7 +1306,6 @@
                 $('.message').removeClass('typing');
                 $('.phone').removeClass('typing');
                 $('.address').removeClass('typing');
-
                 $('.cd-popup').removeClass('is-visible');
                 $('.notification').addClass('is-visible');
                 $('#notification-text').html("Cám ơn bạn đã tin dùng dịch vụ chúng tôi!");
@@ -1371,126 +1372,10 @@
 
             }
 
-
-
-
             function loadRecommendData(data = null) {
 
                 return;
-                var htmlTemplate = sessionStorage.getItem("htmlTemplate");
-
-                $("#formProductSuggestion").empty();
-                $("#formProductSuggestion").html(htmlTemplate);
-
-
-                $('.slick-carousel').slick({
-                    slidesToShow: 3,
-                    settings: "unslick",
-                    slidesToScroll: 1,
-                    arrows: true,
-                    infinite: false,
-                    touchThreshold: 100,
-                    prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-                    nextArrow: '<button class="slide-arrow next-arrow"></button>',
-                    responsive: [{
-                            breakpoint: 1024,
-                            settings: {
-                                slidesToShow: 3,
-
-                                slidesToScroll: 1,
-                            },
-                        }, {
-                            breakpoint: 768,
-                            settings: {
-                                slidesToShow: 3,
-
-                                slidesToScroll: 1,
-                                arrows: true,
-                            },
-                        }, {
-                            breakpoint: 576,
-                            settings: {
-                                slidesToShow: 2,
-
-                                slidesToScroll: 1,
-                                arrows: true,
-                            },
-                        }
-
-
-                    ],
-                });
-
-                return;
-
-
-                var slideItemData = ''
-                var slideControlItem = ''
-                var slidesDiv = document.getElementById("slidbannerProduct");
-                // var dotsDiv = document.getElementById("slideshow-control");
-
-                for (i = 0; i < data.length; i++) {
-                    var item = data[i];
-
-                    slideItemData += '<div class="card mr-2">\
-                            <img src="' + item.image + '" alt="">\
-                            <div class="product-title">\
-                                <div>\
-                                     ' + item.title + ' \
-                                </div>\
-                            </div>\
-                        </div>';
-
-
-
-
-                }
-
-                for (i = 0; i < data.length; i++) {
-                    var item = data[i];
-                    slideItemData += '<div class="card mr-2">\
-                            <img src="' + item.image + '" alt="">\
-                            <div class="product-title">\
-                                <div>\
-                                     ' + item.title + ' \
-                                </div>\
-                            </div>\
-                        </div>';
-                }
-
-                $("#slidbannerProduct").empty();
-                $("#slidbannerProduct").html(slideItemData);
-                $("#slidbannerProduct2").empty();
-                $("#slidbannerProduct2").html(slideItemData);
-                $("#slidbannerProduct3").html(slideItemData);
-                $("#slidbannerProduct4").html(slideItemData);
-                $("#slidbannerProduct5").html(slideItemData);
-                $('.slick-carousel').slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    arrows: true,
-                    infinite: false,
-                    touchThreshold: 1000,
-                    prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-                    nextArrow: '<button class="slide-arrow next-arrow"></button>',
-                    responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-
-                            slidesToScroll: 1,
-                        },
-                    }, {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 3,
-
-                            slidesToScroll: 1,
-                            arrows: false,
-                        },
-                    }, ],
-                });
-                showSlides(1)
+                
             };
 
 
@@ -1503,15 +1388,7 @@
                     }
 
                 });
-
-            
-
-             
-
-             
-
-                
-            });
+             });
 
             window.onscroll = function(ev) {
                 if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
@@ -1522,34 +1399,15 @@
 
 
     </div>
-
-
-
-
-
-
-
     <script>
             var companyIdGlobal = {!! json_encode($companyId) !!};
     </script>
     
+
     <script>
-        function getBaseUrl() {
-            // return "https://ungdungsoida.netlify.app/";
+         function getBaseUrl() {
             return "./";
         }
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-
-            // sessionStorage.setItem('dataCompany', JSON.stringify(dataCompany));
-
-
-        });
-    </script>
-
-    <script>
         function sendreward() {
             $("#btnreward").hide();
             $("#btnrewardLoading").show();
@@ -1910,9 +1768,9 @@
    var refreshIntervalId;
 
 
-    // setTimeout(() => {
-    //     refreshIntervalId = setInterval(myTimer, 1000);
-    // }, 4000);
+    setTimeout(() => {
+        refreshIntervalId = setInterval(myTimer, 1000);
+    }, 3000);
 
 
 
@@ -1952,12 +1810,12 @@ function myTimer() {
         
     if(isOnScreen($('#ketluachitiet'))) { 
         
-            
+           
             if(!isLogin )
             { 
                 setTimeout(() => {
                       
-                         readTextConclude();
+                        //readTextConclude();
                         clearInterval(refreshIntervalId);  
                 }, 2000);
                 
@@ -2033,14 +1891,14 @@ function OpenAction ( connectionType)
 {   
 
     addContionType(connectionType);
-  setTimeout(() => {
+    setTimeout(() => {
     if(zaloLink =="")
     {
-        zaloLink =  "http://zalo.me/769304971095062899?src=qr";
+        zaloLink =  "{{$tuvanData->zaloLink}}";
     }
      if(messengerLink =="")
     {
-        messengerLink =  "https://m.me/106007668343244?ref=mess";
+        messengerLink =  "{{$tuvanData->messengerLink}}";
     }
     if(connectionType =="messenger")
     {
@@ -2076,22 +1934,20 @@ function openRegister ( connectionType ="minisize")
 
 
 
-<div id ="socialBLock" class="actionToolbar_mobile toolbar_style_2  " style="
-    display: none;
-">
+<div id ="socialBLock" class="actionToolbar_mobile toolbar_style_2  " style ="display:none" >
 	<div class=" container-pd">
-		<div class="toolbar-wrapper d-flex justify-content-around">
+		<div class="toolbar-wrapper d-flex justify-content-around" style ="display:flex">
 			<div class="toolbar-item toolbar-item-zalo">
 				<a class="toolbar-item--boxlink cta-chatzalo" onclick="OpenAction('zalo')"  target="_blank" rel="noopener noreferrer" aria-label="zalo">
                     <img src ="/zaloClick.jpg">
-					<span class="box-text">Tư vấn chăm sóc da Zalo</span>
+					<span class="box-text">Tư vấn Miễm Phí</span>
 				</a>
 			</div>
 			
 			<div class="toolbar-item toolbar-item-msg">
 				<a class="toolbar-item--boxlink cta-chatmessager" onclick="OpenAction('messenger')"  target="_blank" rel="noopener" aria-label="messenger">
 					<img src ="/messengerClick.png" >
-                    <span class="box-text">Tư vấn chăm sóc da Messenger</span>
+                    <span class="box-text">Tư vấn Miễm Phí</span>
 				</a>
 			</div>
 		
@@ -2100,11 +1956,11 @@ function openRegister ( connectionType ="minisize")
 </div>
 
 
-<div class ="imagebackground" id ="fromResiger" >
+<!-- <div class ="imagebackground" id ="fromResiger" >
     <a  onclick ="openRegister()" >
         <img src ="{{$dataMinisize->minisize}}">
     </a>
-</div>
+</div> -->
 <style>
 
 .actionToolbar_mobile.toolbar_style_2 {
@@ -2133,7 +1989,8 @@ function openRegister ( connectionType ="minisize")
     padding: 0 1px;
     -webkit-flex: 1 1;
     flex: 1 1;
-    max-width: 96%;
+    max-width: 50%;
+  
 }
 
 .actionToolbar_mobile.toolbar_style_2 .toolbar-wrapper {
@@ -2187,8 +2044,8 @@ function openRegister ( connectionType ="minisize")
     flex: 0 0 auto;
     width: calc(100% - 30px);
     padding: 2px 6px 2px 4px;
-    line-height: 1.3;
-    font-size: 8px;
+    line-height: 1.7;
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
     white-space: initial;
@@ -2197,6 +2054,8 @@ function openRegister ( connectionType ="minisize")
     -webkit-box-orient: vertical;
     display: -webkit-box;
 }
+
+
 .actionToolbar_mobile.toolbar_style_2 .toolbar-item--boxlink {
     border-radius: 20px;
     padding: 2px;
@@ -2208,6 +2067,24 @@ function openRegister ( connectionType ="minisize")
     background: var(--shop-color-main);
     color: #ffffff;
     background: #9946e8;
+}
+
+@media only screen and (max-width: 600px) {
+  .actionToolbar_mobile.toolbar_style_2 .toolbar-item--boxlink .box-text {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: calc(100% - 30px);
+    padding: unset !important;
+    line-height: unset !important;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    white-space: initial;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
 }
 #socialBLock a:hover {
  opacity: 0.7;

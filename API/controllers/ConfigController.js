@@ -179,7 +179,7 @@ module.exports = {
                 Type : type,
             };
 
-            
+            console.log(objUpdate);
             let result = await ModelDB.updateOne({ _id: ObjectId(id) }, objUpdate);
 
             if (result) {
