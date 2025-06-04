@@ -534,7 +534,7 @@ value={this.getTimeConver(this.state.endDate)}
                       <th className="text-center">Tên</th>
                       <th className="text-center">Số điện thoại</th>
                       <th className="text-center">Hình ảnh</th>
-                      <th className="text-center"> Tuổi da</th>
+                      <th className="text-center"> Tuổi da </th>
                       <th className="text-center">Kết quả</th>
                       <th className="text-center">Thông tin click</th>
                     
