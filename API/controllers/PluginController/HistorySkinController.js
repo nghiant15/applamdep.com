@@ -191,7 +191,7 @@ module.exports = {
              }
    
             var result = await HistorySkin.find(fitersearch)
-            .select('regionName saleName connectionType timeConnection minisizeClick timeminisizeClick  ipClient companyName dataCheckRegion Create_Date successGame typeLogin gameType isDelete gameJoinType1 location score ageGame ageGameReal _id UserName User_Id Phone Image  Company_Id Sale_Id ')
+            .select('regionName saleName sourceControl connectionType timeConnection minisizeClick timeminisizeClick  ipClient companyName dataCheckRegion Create_Date successGame typeLogin gameType isDelete gameJoinType1 location score ageGame ageGameReal _id UserName User_Id Phone Image  Company_Id Sale_Id ')
             .limit(1000);
              if (result) {
                   res.send(Response(200, "Lấy danh sách lịch sử soi da thành công", { data: result, total: 0 }, true));

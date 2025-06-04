@@ -304,7 +304,7 @@ class HistorySkin extends Component {
         });
 
         let data = res.data.data;
-        console.log(data);
+     
         this.exportDataExcel(data);
 
         
@@ -361,7 +361,8 @@ class HistorySkin extends Component {
               create_Date: element.Create_Date,
               SaleName: saleText,
               clickType: connectionType,
-              timeclick: timetext
+              timeclick: timetext, 
+              source: element.sourceControl
 
 
             };
@@ -372,8 +373,8 @@ class HistorySkin extends Component {
     let workBook = XLSX.utils.book_new();
     const Heading = [
     [
-      'STT', 'Tên', 'Số điện thoại','Link hình ảnh', 'Link xem soi da','Công ty','IP',
-      'Tỉnh thành(Dự đoán)', 'Ngày soi da' ,  'SaleName', 'Thông tin click'
+      'STT', 'Tên', 'Số điện thoại', 'Link hình ảnh', 'Link xem soi da','Công ty','IP',
+      'Tỉnh thành(Dự đoán)', 'Ngày soi da' ,  'SaleName', 'Thông tin click', 'thời điểm click', 'Nguồn'
     ]
     ];
       

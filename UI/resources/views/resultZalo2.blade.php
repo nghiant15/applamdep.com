@@ -64,6 +64,12 @@
     <link rel="stylesheet" type="text/css"
         href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        .body {
+            height: 5000px;
+        }
+        .box-text {
+                font-size: 16px !important;
+        }
 .animated-gradient {
   background: repeating-linear-gradient(to right, red 0%, blue 50%, red 100%);
   width: 100%;
@@ -734,7 +740,7 @@
                     <div class="hcn">
 
                     </div>
-                    <div class="title-larger">
+                    <div class="title-larger" id="chuandoanvatuvanda">
                     Chuẩn đoán & tư vấn da
                     </div>
 
@@ -749,7 +755,7 @@
                     <div class="hcn">
 
                     </div>
-                    <div class="title-larger">
+                    <div class="title-larger" >
                         Tư vấn tổng quát
                     </div>
 
@@ -1622,7 +1628,7 @@
            
 
         }
-
+ var tempId;
         document.addEventListener("DOMContentLoaded", function() {
    
 
@@ -1748,9 +1754,7 @@
         slidesToScroll: 1
       }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
+  
   ]
           
 
@@ -1760,6 +1764,13 @@
         
                 
         });
+
+
+       
+
+        setTimeout(() => {
+            tempId = setInterval(meetdivchamsocdaAI, 1000);
+        }, 3000);
     </script>
 @endsection
 
@@ -1769,8 +1780,11 @@
 
 
     setTimeout(() => {
-        refreshIntervalId = setInterval(myTimer, 1000);
+        refreshIntervalId = setInterval(meetdivKetLuanChiTiet, 1000);
     }, 3000);
+
+
+    
 
 
 
@@ -1803,9 +1817,23 @@ setTimeout(() => {
    
 }, 5000);
 
+function meetdivchamsocdaAI() {
+
+        
+    if(isOnScreen($('#chuandoanvatuvanda'))) { 
+        
+                     setTimeout(() => {
+                      
+                        showPopupGlobal();
+                        clearInterval(tempId);  
+                }, 2000);
+                
+
+    };
+}
 
 
-function myTimer() {
+function meetdivKetLuanChiTiet() {
 
         
     if(isOnScreen($('#ketluachitiet'))) { 
@@ -1829,10 +1857,20 @@ function myTimer() {
 
 function isOnScreen(element)
 {
-    var curPos = element.offset();
-    var curTop = curPos.top;
-    var screenHeight = $(window).height();
-    return (curTop > screenHeight) ? false : true;
+    // var curPos = element.offset();
+    // var curTop = curPos.top;
+    // var screenHeight = $(window).height();
+    // return (curTop > screenHeight) ? false : true;
+
+        if (!element || !element.length) return false;
+
+    var elementTop = element.offset().top;
+    var elementBottom = elementTop + element.outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
 }
 function openFormRegister() {
     if(!isLogin)
@@ -1940,14 +1978,14 @@ function openRegister ( connectionType ="minisize")
 			<div class="toolbar-item toolbar-item-zalo">
 				<a class="toolbar-item--boxlink cta-chatzalo" onclick="OpenAction('zalo')"  target="_blank" rel="noopener noreferrer" aria-label="zalo">
                     <img src ="/zaloClick.jpg">
-					<span class="box-text">Tư vấn Miễm Phí</span>
+					<span class="box-text">Tư vấn Miễn Phí</span>
 				</a>
 			</div>
 			
 			<div class="toolbar-item toolbar-item-msg">
 				<a class="toolbar-item--boxlink cta-chatmessager" onclick="OpenAction('messenger')"  target="_blank" rel="noopener" aria-label="messenger">
 					<img src ="/messengerClick.png" >
-                    <span class="box-text">Tư vấn Miễm Phí</span>
+                    <span class="box-text">Tư vấn Miễn Phí</span>
 				</a>
 			</div>
 		
@@ -2045,7 +2083,7 @@ function openRegister ( connectionType ="minisize")
     width: calc(100% - 30px);
     padding: 2px 6px 2px 4px;
     line-height: 1.7;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     text-align: center;
     white-space: initial;
@@ -2076,7 +2114,7 @@ function openRegister ( connectionType ="minisize")
     width: calc(100% - 30px);
     padding: unset !important;
     line-height: unset !important;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     text-align: center;
     white-space: initial;

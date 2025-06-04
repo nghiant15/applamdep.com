@@ -247,7 +247,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     @endphp
 
     @if (in_array(strtolower($extension), ['mp4', 'webm', 'ogg']))
-    <video autoplay muted loop playsinline>
+    <video   preload="auto" autoplay muted loop playsinline>
     <source src="{{ $mediaUrl }}" type="video/{{ $extension }}">
     Trình duyệt của bạn không hỗ trợ video.
     </video>

@@ -123,6 +123,23 @@
         var  showOrHide = {!! json_encode($showOrHide) !!};
         var  isLoginUser = {!! json_encode($isLoginUser) !!};
     </script>
+
+    <script>
+let isPlayingAudioVideo = false;
+
+["click", "mousemove", "mouseover","scroll","keypress", "touchmove", "focus"].forEach((eventName)=>{
+  window.addEventListener(eventName, ()=>{
+ 
+
+    if(!isPlayingAudioVideo){
+       
+       
+      
+      
+    }
+  }); 
+});
+</script>
        
 
     <div id="b-placeholder">
@@ -188,7 +205,12 @@
                         @endphp
 
                         @if (in_array(strtolower($extension), ['mp4', 'webm', 'ogg']))
-                        <video class="ai-skin__skin-image__background" autoplay muted loop playsinline>
+                        <video id ="videopLayInput" preload="auto"
+                          class="ai-skin__skin-image__background" 
+                          autoplay muted  
+                          loop
+                          playsinline
+                          >
                         <source src="{{ $mediaUrl }}" type="video/{{ $extension }}">
                         Trình duyệt của bạn không hỗ trợ video.
                         </video>
@@ -435,6 +457,18 @@
                     
             //     }, 2500);
               function hideTips() {
+              
+                  const vid = document.getElementById("videopLayInput");
+
+                  if (vid) {
+                vid.muted = false;
+                vid.playsInline = true;
+                vid.play().then(() => {
+              
+                }).catch((e) => {
+               
+                });
+                }
                 var tips = document.getElementById("tips");
                 tips.style.display = "none";
                 setTimeout(() => {

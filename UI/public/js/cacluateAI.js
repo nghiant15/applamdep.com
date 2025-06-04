@@ -5,6 +5,8 @@ function drawResultAI() {
           + "; output" + dataConfigAI.question   +  " " + dataConfigAI.noted;
 
               var historyId = sessionStorage.historyId;
+
+
         try {
         $.ajaxSetup({
           headers: {
