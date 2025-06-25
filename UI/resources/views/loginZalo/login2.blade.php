@@ -70,8 +70,23 @@
                         @if( $slug == "exomiyo")
                               
                                 <div class="form-group">
-                                        <input name="ageUser" type="text" class="my-form-control userName" id="ageUser"
-                                            placeholder="Nhập tuổi của ban" />
+                                     <select   class="form-select my-form-control userName " id = "ageUser">
+                                                <option value="" disabled selected hidden> Thời gian nghe tư vấn qua điện thoại </option>         
+                                                 <option value ="8 giờ">Ngay bây giờ</option> 
+                                                <option value ="8 giờ">8 giờ</option>
+                                                <option value ="9 giờ">9 giờ</option>
+                                                <option value ="10 giờ"> 10 giờ</option>
+                                                <option value ="11 giờ"> 11 giờ</option>
+                                                <option value ="14 giờ">14 giờ</option>
+                                                <option value ="15 giờ">15 giờ</option>
+                                                <option value ="16 giờ">16 giờ</option>
+                                                <option value ="17 giờ">17 giờ</option>
+                                                <option value ="18 giờ">18 giờ</option>
+                                                <option value ="19 giờ">19 giờ</option>
+                                                <option value ="19 giờ">20 giờ</option>
+                                                <option value ="19 giờ">21 giờ</option>
+                                        </select>
+                           
                                         <div class="errorMesssage" id="ageUser1">
                                             Không dược bỏ trống
                                         </div>

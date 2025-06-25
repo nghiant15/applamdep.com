@@ -114,7 +114,9 @@ class User extends Component {
     }, this.state.token, "GET")
 
     let val = res.data;
+    val.sort((a, b) => new Date(b.create_date) - new Date(a.create_date));
     this.pagination(val);
+
     this.setState({ dataApi: val });
 
     let active = 0

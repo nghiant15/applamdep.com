@@ -14,13 +14,13 @@ module.exports = {
             var result = null;
             var columnDisplay =  'fullName, contentAddvice,address, slug, phone, create_date';
             var filterSearch=  {};
-            result = await Model.find(filterSearch).sort({ _id: -1 });;
+            result = await Model.find(filterSearch)
+            .sort({ create_date: -1 });;
             if(result)
             {
                 return  res.send(Response(200, "Thông tin thành công", result,true));
             }
             return  res.send(Response(200, "lấy thất bại", result,true));
-
         } catch (err) {
 
             res.send(Response(202, JSON.stringify(err), err, false));

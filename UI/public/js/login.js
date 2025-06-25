@@ -231,15 +231,11 @@ function isVietnamesePhoneNumber(number) {
   }
   }
   async function login() {
-    
-
      var pathname = window.location.pathname;
-    
     var loading = document.querySelector(".status-loader-22");
     if (validateFormLogin() == false) {
       return;
     }
-  
     if (loading) {
       loading.classList.add("block");
     }
@@ -248,15 +244,6 @@ function isVietnamesePhoneNumber(number) {
         "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
       },
     });
- console.log({
-  phoneRel: $("#phoneRel").val(), 
-  username: $("#nameLogin").val(),
-  phoneNumber: $("#phoneNumber").val(),
-  ageUser: $("#ageUser").val()
-});
-
-
- 
     await $.ajax({
       url: api.serve.baser_urlServer + "/" + api.serve.api_loginServer,
       type: "post",
@@ -276,6 +263,7 @@ function isVietnamesePhoneNumber(number) {
                 loading.classList.remove("block");
               }
               ToggleAlert(true, "Thao tác thành công!", true);
+
             }, 1000);
                  setTimeout(() => {
               ToggleAlert(false, "", false);
@@ -381,7 +369,7 @@ function isVietnamesePhoneNumber(number) {
         debugger;
       },
     });
-  //  saveHistoryAfterSkinScreen();
+
   }
   function loginGetVoucherAia() {
     var loading = document.querySelector(".status-loader-22-get-voucher-aia");
@@ -528,6 +516,21 @@ function isVietnamesePhoneNumber(number) {
     var formInput = $("#formLogin")[0];
     var usserNameInput = document.getElementById("nameLogin");
     var errorMessageUserName = document.getElementById("fullNameerrorMesssage");
+    var ageUserInput = document.getElementById("ageUser");
+    var ageUser1 = document.getElementById("ageUser1");
+
+    if (ageUserInput.value == "" || ageUserInput.value.length < 1) {
+        
+        ageUser1.textContent = "Hãy cho chúng tôi biết thời gian bạn có thể nghe điện thoại tư vấn";
+        ageUser1.style.display = "block";
+        indexError++;
+    }
+    else 
+    {
+         ageUser1.style.display = "none";
+    }
+
+
     if (usserNameInput.value == "" || usserNameInput.value.length < 1) {
       errorMessageUserName.textContent = "Hãy cho chúng tôi biết tên";
   
@@ -536,6 +539,7 @@ function isVietnamesePhoneNumber(number) {
     } else {
       errorMessageUserName.style.display = "none";
     }
+      
   
     var phoneNumber = document.getElementById("phoneNumber");
     var errorMessagePassword = document.getElementById(

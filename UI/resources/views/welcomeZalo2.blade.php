@@ -205,15 +205,17 @@ let isPlayingAudioVideo = false;
                         @endphp
 
                         @if (in_array(strtolower($extension), ['mp4', 'webm', 'ogg']))
-                        <video id ="videopLayInput" preload="auto"
+                        <video id="videoPlayInput" preload="auto"
                           class="ai-skin__skin-image__background" 
-                          autoplay muted  
-                          loop
+                          autoplay   
+                          
                           playsinline
                           >
                         <source src="{{ $mediaUrl }}" type="video/{{ $extension }}">
                         Trình duyệt của bạn không hỗ trợ video.
                         </video>
+
+                     
                         @else
                         <img class="ai-skin__skin-image__background" src="{{ $mediaUrl }}" alt="Clip Background">
                         @endif
@@ -458,13 +460,13 @@ let isPlayingAudioVideo = false;
             //     }, 2500);
               function hideTips() {
               
-                  const vid = document.getElementById("videopLayInput");
+                  const vid = document.getElementById("videoPlayInput");
 
                   if (vid) {
                 vid.muted = false;
                 vid.playsInline = true;
                 vid.play().then(() => {
-              
+                        
                 }).catch((e) => {
                
                 });
@@ -1434,9 +1436,27 @@ let isPlayingAudioVideo = false;
         window.addEventListener("popstate", router);
 
         document.addEventListener("DOMContentLoaded", function() {
-            //     
-            //     sessionStorage.setItem('dataCompany', JSON.stringify(dataCompany));
-            //
+
+            
+                    const video = document.getElementById('videoPlayInput');
+                    let playCount = 1;
+
+                    // Bắt đầu phát
+                    video.play().catch(err => {
+                    console.warn('Autoplay bị chặn:', err);
+                    });
+
+                    video.addEventListener('ended', function () {
+                    if (playCount < 2) {
+                    playCount++;
+                    console.log(playCount);
+                    video.currentTime = 0;
+                    video.play();
+                    }
+                    // Sau 2 lần thì dừng, không làm gì thêm
+                    });
+                  
+
         });
     </script>
 
@@ -1514,12 +1534,18 @@ let isPlayingAudioVideo = false;
         }
 
         function haldleOpenCamera() {
+            const video1 = document.getElementById('videoPlayInput');
+            if (video1) {
+            video1.pause();           // Dừng video
+            video1.currentTime = 0;   // (Tùy chọn) đưa về đầu
+            }
+
             if( isLoginUser  == false)
         {
             ToggleDisplayLogin('.status-modal-account',true,'Để soi da online');
             return;
         }
-
+            
             opencamera();
             return;
             // hideTips();

@@ -37,64 +37,49 @@ module.exports = {
         }
     },
 
-    getAllUserNew: async (req, res) => {
-        try {
-            var filterSearch = { isDelete: false };
-            const { phone,company_id, limit,page} =  req.body;
-            const fromDate = req.body.fromDate || null;
-            const endDate = req.body.endDate || null;
-            const pageNumber = page || 1;
-            const limit1 = limit || 20;
-            const skip = pageNumber * limit1;
-            var dataResult =  {};
-        
-            if(fromDate && endDate )
-            {
+   getAllUserNew: async (req, res) => {
+  try {
+    const { phone, company_id, limit, page, fromDate, endDate } = req.body;
 
-                filterSearch["create_date"] = 
-                    {
-                        
-                        $gte: fromDate,
-                        $lte: endDate
-                    };
+    const pageNumber = Number(page) || 1;
+    const pageLimit = Number(limit) || 20;
+    const skip = (pageNumber - 1) * pageLimit;
 
-            }
-        
+    const filterSearch = { isDelete: false };
 
-            if(phone)
-            {
+    if (fromDate && endDate) {
+      filterSearch.create_date = {
+        $gte: new Date(fromDate),
+        $lte: new Date(endDate)
+      };
+    }
 
-                filterSearch["phone"] = { $regex: '.*' + phone + '.*' };
-            }
-            if(company_id)
-            {
+    if (phone) {
+      filterSearch.phone = { $regex: '.*' + phone + '.*', $options: 'i' }; // thêm $options: 'i' để không phân biệt hoa thường
+    }
 
-                filterSearch["company_id"] = company_id;
-            }
-           
-            
-            console.log(filterSearch);
-     
-            var dataUser = await User.find(filterSearch)
-            .limit(Number(limit1))
-            .skip(Number(pageNumber - 1) * Number(limit1
-                ))
-            .sort( { "score": -1 } );
+    if (company_id) {
+      filterSearch.company_id = company_id;
+    }
 
-            
-            if (dataUser) {
-                dataResult.data = dataUser;
-                dataResult.total = 100;
-                
-                res.send(Response(200, "Lấy dữ liệu thành công !!!", dataResult, true));
-            } else {
-                res.send(Response(202, "Lấy dữ liệu thất bại !!!", [], true));
-            }
-        } catch (err) {
-            console.log(err);
-            res.send(Response(202, "Dữ liệu đã tồn tại: " + JSON.stringify(err.keyValue), err, false));
-        }
-    },
+    const dataUser = await User.find(filterSearch)
+      .sort({ create_date: -1 })
+      .skip(skip)
+      .limit(pageLimit);
+
+    const totalCount = await User.countDocuments(filterSearch);
+
+    const dataResult = {
+      data: dataUser,
+      total: totalCount
+    };
+
+    res.send(Response(200, "Lấy dữ liệu thành công !!!", dataResult, true));
+  } catch (err) {
+    console.log(err);
+    res.send(Response(500, "Đã xảy ra lỗi", err.message || err, false));
+  }
+},
 
     
 
@@ -234,11 +219,10 @@ module.exports = {
         }
 
     },
-
     LoginEndUserv2: async (req, res) => {
         try {
             const { password, ageUser, username,phoneNumber, company_id, slug, historyId } = req.body;
-            console.log(req.body);
+         
             let role = 1;
             let filterLogin = {isDelete: false};
 
@@ -255,10 +239,6 @@ module.exports = {
             .or([
                 filterLogin
             ]);
-          
-            
-
-
             
             if(dataUser == null  && role <2 )
             {
@@ -276,9 +256,6 @@ module.exports = {
                     dataUser = resultUser;
             }
             
-            
-            
-
 
             const historyExit  = await HistorySkin.findOne({ 
                 _id : ObjectId(historyId)

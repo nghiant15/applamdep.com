@@ -28,9 +28,8 @@ const PopupRequest = new Schema({
     },
       create_date: {
         type: Date,
-        default: Date.now()
+        default: Date.now
     }, 
-
   
 });
 

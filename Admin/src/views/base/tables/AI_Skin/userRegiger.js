@@ -501,10 +501,10 @@ changeCompanySet = (e) => {
                       <th className="text-center">Tên đăng nhập</th>
                       <th className="text-center">Họ tên</th>
                       <th className="text-center">Số điện thoại	</th>
-                         
+                       <th className="text-center">Thời gian tư vấn	</th>
                       <th className="text-center">Ngày tham gia</th>
                       <th className="text-center">Công ty</th>
-                      <th className="text-center">Điểm đẹp</th>
+            
 {/*                   <th className="text-center">Điểm đẹp</th>
                       <th className="text-center">Sale</th> */}
                       {/* <th className="text-center">Đăng ký tư vấn </th>   */}
@@ -531,7 +531,7 @@ changeCompanySet = (e) => {
                               <td className="text-center">{item.username}</td>
                               <td className="text-center">{item.name}</td>
                               <td className="text-center">{item.phone}</td>
-                         
+                             <td className="text-center">{item.ageUser}	</td>
                     
                               {/* <td className="text-center">{item.Sale_Id == null ? "ADMIN" : item.Sale_Id.Name}</td> */}
                          
@@ -540,10 +540,10 @@ changeCompanySet = (e) => {
                                 <p>{(new Date(item.create_date)).toLocaleTimeString()} </p>
                               </td>
                               <td className="text-center">{compnayName}</td>
-                              <td className="text-center">{item.score}</td>
+                            
                               <td className="text-center">
                                               <CButton style={styles.mgl5} outline color="primary" size="sm" onClick={async (e) => {
-                                              window.open("http://admin.exomiyo.com/#lich-su-ca-nhan/"+ item.Phone, "_blank")
+                                              window.open("http://admin.exomiyo.com/#lich-su-ca-nhan/"+ item.phone, "_blank")
 
                                               }} >
                                               Lịch sử soi da

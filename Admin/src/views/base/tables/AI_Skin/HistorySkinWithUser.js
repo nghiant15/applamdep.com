@@ -72,9 +72,14 @@ class HistorySkin extends Component {
   getData = async () => {
 
     var keyText = window.location.href.split("/").pop();
-
-    const { activePage, itemPerPage ,phoneNumber} = this.state;
     
+    const { activePage, itemPerPage ,phoneNumber} = this.state;
+    console.log({
+        page: activePage,
+        keyText:  keyText,
+        limit: itemPerPage
+      });
+
     this.setState({ isLoading: true });
     const res = await axios({
       baseURL: Constants.BASE_URL,
@@ -86,6 +91,8 @@ class HistorySkin extends Component {
       },
       method: 'POST'
     });
+
+    console.log(data);
 
     let data = res.data.data;
 

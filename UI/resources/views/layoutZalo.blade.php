@@ -334,7 +334,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                             @if($slug !="bibabo")
                                 <div class="flex" >
                                      <a  id ="poupgameJoin" class ="popupgame" style="display:none" onclick ="showRule()" href ="javascript:void(0)" >Luật chơi</a>
-                                     <a onclick="ToggleDisplayLogin('.status-modal-account',true,'Để xem kết quả soi da')"
+                                     <a onclick="ToggleDisplayLogin('.status-modal-account',true,'Soi da và tư vấn')"
                                         href="javascript:void(0)"
                                         id="status__text__login"
                                         class=" btn_nav btn_nav-no-after navbar-a navbar-a"

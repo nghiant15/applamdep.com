@@ -600,7 +600,9 @@ value={this.getTimeConver(this.state.endDate)}
                                 
 
 
-<td>{ item.sourceControl} </td>
+                            <td style={{ maxWidth: "300px", overflow: "hidden", whiteSpace: "normal", wordBreak: "break-word" }}>
+                              
+                              { item.sourceControl} </td>
                               <td className="text-center displayblock ">{
                              
                               }

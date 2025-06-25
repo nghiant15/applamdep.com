@@ -844,10 +844,7 @@ public function getDataInfo (Request $request)
                 "image_base64"=> $request->input("bas64Request"),
                
             ];
-
- 
             $url = "https://portal.applamdep.com/api/skin/portalApp";
-
             $client = new Client();
             $res = $client->request('post',$url , [
                 'json' =>$dataUpdate

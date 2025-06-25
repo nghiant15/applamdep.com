@@ -15,8 +15,6 @@ module.exports = {
 
     
         try {
-
-
             const page = req.body.page || 1;
             const limit = req.body.limit || 5;
             const phoneNumber = req.body.phoneNumber || null;
@@ -41,18 +39,7 @@ module.exports = {
                     };
 
             }
-        
-            // if(endDate)
-            // {
-
-            //        fitersearch["Create_Date"] = 
-            //         {
-                        
-            //             $gte: fromDate
-            //         };
-
-            // }
-        
+       
 
              if(phoneNumber)
              {
