@@ -14,6 +14,7 @@ module.exports = {
             var result = null;
             var columnDisplay =  'fullName, contentAddvice,address, slug, phone, create_date';
             var filterSearch=  {};
+     
             result = await Model.find(filterSearch)
             .sort({ create_date: -1 });;
             if(result)

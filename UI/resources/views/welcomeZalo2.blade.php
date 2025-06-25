@@ -205,17 +205,15 @@ let isPlayingAudioVideo = false;
                         @endphp
 
                         @if (in_array(strtolower($extension), ['mp4', 'webm', 'ogg']))
-                        <video id="videoPlayInput" preload="auto"
+                        <video id ="videopLayInput" preload="auto"
                           class="ai-skin__skin-image__background" 
-                          autoplay   
-                          
+                          autoplay muted  
+                          loop
                           playsinline
                           >
                         <source src="{{ $mediaUrl }}" type="video/{{ $extension }}">
                         Trình duyệt của bạn không hỗ trợ video.
                         </video>
-
-                     
                         @else
                         <img class="ai-skin__skin-image__background" src="{{ $mediaUrl }}" alt="Clip Background">
                         @endif
@@ -460,13 +458,13 @@ let isPlayingAudioVideo = false;
             //     }, 2500);
               function hideTips() {
               
-                  const vid = document.getElementById("videoPlayInput");
+                  const vid = document.getElementById("videopLayInput");
 
                   if (vid) {
                 vid.muted = false;
                 vid.playsInline = true;
                 vid.play().then(() => {
-                        
+              
                 }).catch((e) => {
                
                 });
