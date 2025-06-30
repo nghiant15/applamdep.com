@@ -118,12 +118,10 @@ module.exports = {
                 filterSearch["company_id"] = company_id;
             }
            
-            
-            console.log(filterSearch);
      
             var dataUser = await User.find(filterSearch)
           
-            .sort( { "score": -1 } );
+            .sort( { "create_date": -1 } );
 
             
             if (dataUser) {

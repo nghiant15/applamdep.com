@@ -8,7 +8,7 @@ export default {
   "ADD_USER" : "/api/add-user",
   "UPDATE_USER" : "/api/update-user",
   "DELETE_USER" : "/api/delete-user",
-"LOGIN_ADMIN" : "/api/login_admin",
+  "LOGIN_ADMIN" : "/api/login_admin",
   "GET_SHOP" : "/api/get-shop",
   "GET_SALE" : "/api/get-s ale",
   "GET_COEFFICIENT" : "/api/calculator-coefficient-user",

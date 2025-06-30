@@ -329,7 +329,7 @@ getTimeConver = (datetime) => {
               userName: element.username, 
               Phone: element.phone, 
               companyName: compnayName,
-              score: element.score,
+              score: element.ageUser,
               create_Date: element.create_date
 
             };
@@ -340,7 +340,7 @@ getTimeConver = (datetime) => {
     let workBook = XLSX.utils.book_new();
     const Heading = [
     [
-      'STT', 'Tên đăng nhập', 'Số điện thoại','công ty', 'điểm làm đẹp','Ngày tạo'
+      'STT', 'Tên đăng nhập', 'Số điện thoại','công ty', 'cột giờ hẹn','Ngày tạo'
     ]
     ];
       
@@ -543,7 +543,7 @@ changeCompanySet = (e) => {
                             
                               <td className="text-center">
                                               <CButton style={styles.mgl5} outline color="primary" size="sm" onClick={async (e) => {
-                                              window.open("http://admin.exomiyo.com/#lich-su-ca-nhan/"+ item.phone, "_blank")
+                                              window.open("https://exomiyo-admin.applamdep.com/#lich-su-ca-nhan/"+ item.phone, "_blank")
 
                                               }} >
                                               Lịch sử soi da
