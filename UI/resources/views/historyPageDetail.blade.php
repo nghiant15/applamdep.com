@@ -16,6 +16,7 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
+<script type="text/javascript" src="/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 <!-- <link rel="stylesheet" href="http://localhost:5000/contain/css/style.css" /> -->
 <link rel="stylesheet" href="/css/style.css">
@@ -1420,7 +1421,7 @@
         reDrawInfomation();
         drawConcludeDetail(objectReponse.data.facedata.hintResult);
         drawConcludeOverview(objectReponse.data.facedata.hintResult);
-        document.getElementById("contentResultAI").innerHTML +=  resultAI;
+        document.getElementById("contentResultAI").innerHTML += marked.parse(resultAI);
         avgScorev2(objectReponse);
         readInfoToneSkin(objectReponse.data.facedata.dataReponse);
             drawImageTone(objectReponse.data.facedata.image_info.url,objectReponse.data.rectangle );

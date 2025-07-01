@@ -22,7 +22,7 @@ function drawResultAI() {
               url: "https://ai.exomiyo.com/getResultAI",
               success: function(data) {
                     Swal.close();
-                    document.getElementById("contentResultAI").innerHTML +=  data;
+                    document.getElementById("contentResultAI").innerHTML +=  marked.parse(data);;
                   
               },
               error: function(error) {

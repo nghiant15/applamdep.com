@@ -685,6 +685,7 @@ public function getDataInfo (Request $request)
             if($checkresult->is_success)
             {
                 
+              
                     $result  = $checkresult->data;
                 
                     return view("historyPageDetail3",compact("id","result", "slug","agent"));
@@ -697,6 +698,8 @@ public function getDataInfo (Request $request)
             {
             
             }
+
+           
         return view("historyPageDetail",compact("id","slug","agent"));
 
        
@@ -733,7 +736,7 @@ public function getDataInfo (Request $request)
            
             if($checkresult->is_success)
             {
-                
+               
                     $result  = $checkresult->data;  
                     $companyId= $result->Company_Id;
                     $resultAI=  $result->resultAI;

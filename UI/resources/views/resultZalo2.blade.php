@@ -1470,6 +1470,8 @@
     <script type="text/javascript" src="/js/cacluateAI.js"></script>
     <script type="text/javascript" src="/js/result.js"></script>
 
+     <script type="text/javascript" src="/marked.min.js"></script>
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
