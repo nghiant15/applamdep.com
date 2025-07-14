@@ -1532,6 +1532,8 @@ let isPlayingAudioVideo = false;
         }
 
         function haldleOpenCamera() {
+               alert("xin lỗi, gian đoạn dịch vụ, quay lại sau");
+            return;
             const video1 = document.getElementById('videoPlayInput');
             if (video1) {
             video1.pause();           // Dừng video
@@ -1544,6 +1546,8 @@ let isPlayingAudioVideo = false;
             return;
         }
             
+          alert("xin lỗi, gian đoạn dịch vụ, quay lại sau");
+            return;
             opencamera();
             return;
             // hideTips();
